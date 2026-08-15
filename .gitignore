@@ -1,0 +1,18 @@
+# Credentials — never commit
+ebay.env
+
+# Scanner outputs — but the canonical nightly scan result IS committed
+*.csv
+!ebay_deals.csv
+
+# Python
+__pycache__/
+*.pyc
+
+# Large research artifacts
+buy_browse_oas3.yaml
+ebay_de_category_tree.json
+
+# OS noise
+Thumbs.db
+.DS_Store
