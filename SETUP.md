@@ -80,6 +80,7 @@ git push -u origin main
 | Seite zeigt alten Stand | Cache | Strg+F5; Deploy-Lauf in Actions abwarten |
 | Seite zeigt „Could not load the report data“ | `site/data/ebay_deals.csv` fehlt (noch kein Run) oder Datei direkt per `file://` geöffnet | Datei lokal per HTTP-Server öffnen (siehe unten); nach dem ersten Workflow-Run liegt die CSV automatisch in `site/data/` |
 | Kein Run um 05:00 UTC | Cron-Wiederholung pausiert nach 60 Tagen Inaktivität | Einmal manuell `Run workflow` — danach läuft der Cron wieder |
+| Push abgelehnt: `! [rejected] ... (fetch first)` | Zwei Runs haben sich überschnitten (z. B. manueller Dispatch + Cron) und der Runner-Checkout war veraltet | Der Workflow fetcht + rebased + wiederholt den Push jetzt automatisch (5 Versuche) — einfach erneut `Run workflow` starten |
 
 ## Optionen (optional)
 

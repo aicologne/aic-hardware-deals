@@ -4,6 +4,7 @@ ebay.env
 # Scanner outputs — but the canonical nightly scan result IS committed
 *.csv
 !ebay_deals.csv
+!site/data/ebay_deals.csv
 
 # Python
 __pycache__/

@@ -51,10 +51,25 @@ jobs:
           git add ebay_deals.csv LATEST.md site/
           if git diff --cached --quiet; then
             echo "No changes — nothing to commit"
-          else
-            git commit -m "chore: refresh eBay price report ($(date -u +%Y-%m-%d))"
-            git push origin HEAD:${GITHUB_REF_NAME}
+            exit 0
           fi
+          git commit -m "chore: refresh eBay price report ($(date -u +%Y-%m-%d))"
+          # The nightly cron can race other runs (manual dispatch, retries): the
+          # remote main may have advanced past this checkout, so a plain push gets
+          # rejected as non-fast-forward. Fetch, rebase onto the latest remote and
+          # retry a few times before giving up.
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main || { echo "fetch failed — retry $attempt/5 in 5s..."; sleep 5; continue; }
+            if git rebase origin/main; then
+              git push origin HEAD:${GITHUB_REF_NAME} && exit 0
+            else
+              git rebase --abort 2>/dev/null || true
+            fi
+            echo "remote moved — rebase/push retry $attempt/5 in 5s..."
+            sleep 5
+          done
+          echo "Could not push after 5 attempts" >&2
+          exit 1
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
