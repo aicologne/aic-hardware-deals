@@ -165,7 +165,7 @@ Every nightly run commits `ebay_deals.csv` and renders **`LATEST.md`** — a sel
 - Per-category sections with the **deal window, median, cheapest item**, and per-listing notes (`🔥 at/near buy-low` / `⚠️ above scan window`)
 - Market context, methodology, and a fees disclaimer
 
-The workflow also builds `site/index.html` from it and deploys it to **GitHub Pages**, so the report is readable as a web page — not just as a CSV dump.
+The workflow also publishes `ebay_deals.csv` into `site/data/` and deploys `site/` to **GitHub Pages**. The page (`site/index.html`) is a thin shell: it **reads its listings from the generated CSV at runtime** (`app.js` fetches `data/ebay_deals.csv`), renders the same deal highlights, per-category tables and medians in the browser, and builds a table of contents with scroll-spy navigation. No listing data is baked into the HTML, so the nightly scan alone refreshes the site.
 
 ---
 
@@ -182,7 +182,9 @@ The workflow also builds `site/index.html` from it and deploys it to **GitHub Pa
 ## Ideas for the next iteration
 
 - [x] **Scheduled nightly scan** (GitHub Actions) that commits fresh `ebay_deals.csv` + rendered `LATEST.md`
-- [x] **LATEST.md as the final price report** — deal highlights, per-category medians/windows, buy-low flags; deployed to **GitHub Pages** as `site/index.html`
+- [x] **LATEST.md as the final price report** — deal highlights, per-category medians/windows, buy-low flags
+- [x] **CSV-driven web report** — `site/` reads `ebay_deals.csv` at runtime (no data embedded in HTML) + table of contents
+- [x] **Visitor tracking (GoatCounter)** — cookieless; set your site code in `site/index.html` (see SETUP.md)
 - [ ] Telegram/e-mail notification when a listing hits the buy-low window (e.g., a workflow step comparing against thresholds)
 - [ ] Margin column (subtract ~13 % eBay fees per hit)
 - [ ] Sold-price tracking via Terapeak / third-party data for true resale anchors

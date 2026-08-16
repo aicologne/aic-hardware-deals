@@ -55,10 +55,10 @@ git push -u origin main
 
 1. Repo → **Actions** → **"eBay deal scan (nightly)"** (links)
 2. Rechts → **Run workflow** → grünen Button klicken
-3. Ablauf (≈2–3 Min.): Scan (21 Queries) → `LATEST.md` rendern → `site/index.html` bauen → **Commit + Push** → **Pages-Deploy**
+3. Ablauf (≈2–3 Min.): Scan (21 Queries) → `LATEST.md` rendern → `ebay_deals.csv` in `site/data/` veröffentlichen → **Commit + Push** → **Pages-Deploy**
 4. Fertig: Der Report liegt als
    - **Datei:** `LATEST.md` im Repo
-   - **Webseite:** `https://<DEIN-USERNAME>.github.io/<REPO-NAME>/`
+   - **Webseite:** `https://<DEIN-USERNAME>.github.io/<REPO-NAME>/` (die Seite liest ihre Daten zur Laufzeit aus `data/ebay_deals.csv`)
 
 ## 6. Verifizieren
 
@@ -78,6 +78,7 @@ git push -u origin main
 | `LATEST.md` zeigt 0 Treffer | Deal-Fenster aktuell leer (z. B. 3090 unter €750) | Normal — Fenster in `ebay-search-skill/ebay_search.py` anpassen |
 | Pages-Deploy fehlt / alte Seite | Source nicht auf "GitHub Actions" | Settings → Pages → Source: GitHub Actions |
 | Seite zeigt alten Stand | Cache | Strg+F5; Deploy-Lauf in Actions abwarten |
+| Seite zeigt „Could not load the report data“ | `site/data/ebay_deals.csv` fehlt (noch kein Run) oder Datei direkt per `file://` geöffnet | Datei lokal per HTTP-Server öffnen (siehe unten); nach dem ersten Workflow-Run liegt die CSV automatisch in `site/data/` |
 | Kein Run um 05:00 UTC | Cron-Wiederholung pausiert nach 60 Tagen Inaktivität | Einmal manuell `Run workflow` — danach läuft der Cron wieder |
 
 ## Optionen (optional)
@@ -89,6 +90,28 @@ git push -u origin main
   - **Last scan** — Datum des letzten Commits von `LATEST.md` (≈ letzter Scan)
   - **License / Python** — statisch, funktionieren sofort
 - **Report in der README verlinken:** `[Aktueller Report](LATEST.md)` — GitHub rendert ihn direkt im Repo.
+
+- **Lokal testen:** Die Seite liest ihre Daten client-seitig aus `data/ebay_deals.csv` — `file://` blockiert das. Also mit HTTP-Server im Repo-Ordner testen:
+  ```powershell
+  cd E:\Development\ai_buying\publish
+  python -m http.server 8000
+  # dann im Browser: http://localhost:8000/site/
+  ```
+
+## Besucher-Tracking (optional, GoatCounter)
+
+Die Seite enthält bereits den GoatCounter-Snippet — kostenlos, cookieless und DSGVO-freundlich (kein Consent-Banner nötig). Einrichten in 2 Minuten:
+
+1. Konto anlegen unter [goatcounter.com](https://www.goatcounter.com) (Free-Tier reicht).
+2. Dort deinen **Site-Code** kopieren, z. B. `meinedeals` (bzw. die komplette URL `https://meinedeals.goatcounter.com/count`).
+3. In `site/index.html` die Zeile anpassen:
+   ```html
+   <script data-goatcounter="https://meinedeals.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+   ```
+   → `YOURSITE` durch deinen Site-Code ersetzen, den Rest stehen lassen, committen & pushen.
+4. Fertig: Jeder Seitenaufruf wird gezählt; Dashboard unter `https://meinedeals.goatcounter.com`. Sobald konfiguriert, erscheint im Seitenfuß automatisch ein Link „Visitor stats (GoatCounter)“.
+
+> Solange der Platzhalter `YOURSITE` drinsteht, wird **nichts** getrackt — der Snippet ist dann inaktiv.
 
 ## Sicherheit
 
