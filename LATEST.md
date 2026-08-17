@@ -1,6 +1,6 @@
 # 🛒 eBay.de Used Hardware — Price Report
 
-_Generated 2026-08-16 17:35 UTC · 212 items across 13 categories · marketplace eBay.de, used, EUR_
+_Generated 2026-08-17 06:05 UTC · 211 items across 13 categories · marketplace eBay.de, used, EUR_
 
 **Market context (2026):** the DRAM/GDDR shortage keeps used prices elevated. Used RTX 3090s ask €1000–1500 on eBay.de; DDR5 German retail is ~4.2–4.5× its July-2025 level; DDR4 RDIMM shops ask €219–230 for 32 GB while private sellers still move pre-shortage stock at €60–120. Note the new-price anchors: a BOSGAME M5 (Strix Halo, 128 GB) costs €1581–1700 new — used Strix Halo above that is not a deal. Verify everything live — prices move weekly.
 
@@ -25,7 +25,7 @@ Listings currently **at or within 15 % of the buy-low target** — the shortlist
 
 ## DDR4 RDIMM 32GB (48 items)
 
-_Window €40–120 · median **€88,00** · cheapest **€40,00** · 2 at/near buy-low_
+_Window €40–120 · median **€89,11** · cheapest **€40,00** · 2 at/near buy-low_
 
 | Price | Condition | Title | Seller | Note |
 |---|---|---|---|---|
@@ -50,7 +50,6 @@ _Window €40–120 · median **€88,00** · cheapest **€40,00** · 2 at/near
 | **€81,89** | Used | [SK Hynix 32GB (4x 8GB) ECC RAM 2Rx8 DDR4 HMA41GR7AFR8N-TF PC4-2133P-RE0-11](https://www.ebay.de/itm/377303754078?_skw=DDR4+RDIMM+32GB&hash=item57d90e655e:g:AZ8AAeSwxiZqKxbf) | janh007 | ok |
 | **€84,99** | Gebraucht | [Kingston 32GB DDR4 2400 KTH-PL424/32G PC4-19200R ECC Reg RDIMM Server Speicher](https://www.ebay.de/itm/127957451165?_skw=DDR4+RDIMM+32GB&hash=item1dcadbc19d:g:wNIAAeSwXmlqAwnQ) | rampire | ok |
 | **€85,00** | Gebraucht | [32GB Crucial / Micron Server Arbeitsspeicher – DDR4 2133MHz RDIMM](https://www.ebay.de/itm/206236012142?_skw=DDR4+RDIMM+32GB&hash=item30049fce6e:g:Ta0AAeSwisJp73Xw) | fabye66 | ok |
-| **€85,00** | Gebraucht | [32GB DDR4 RDIMM 2400Mhz \| MTA36ASF4G72PZ-2G3B1 2Rx4](https://www.ebay.de/itm/178175417774?_skw=DDR4+RDIMM+32GB&hash=item297c151dae:g:WlQAAeSwj1JqGc41) | marviwend3 | ok |
 | **€85,00** | Gebraucht | [SK hynix 32GB DDR4 SDRAM RDIMM PC4-2400T ECC Registered RAM HMA84GR7AFR4N](https://www.ebay.de/itm/117296890630?_skw=DDR4+RDIMM+32GB&hash=item1b4f708306:g:KiMAAeSwQkNqOXjq) | drproto | ok |
 | **€87,00** | Gebraucht | [32GB Micron DDR4 ECC REG Server RAM PC4-2133P RDIMM 288Pin](https://www.ebay.de/itm/800039881537?_skw=DDR4+RDIMM+32GB&hash=itemba4617cb41:g:fbcAAeSwPeFqDF2R) | mubidonline | ok |
 | **€89,00** | Gebraucht | [Micron MTA36ASF4G72PZ-2G6D1SG - 32GB DDR4 2666 RDIMM](https://www.ebay.de/itm/147268813775?_skw=DDR4+RDIMM+32GB&hash=item2249e7c3cf:g:daEAAeSwyAtpsXbM) | oberzivi83 | ok |
@@ -63,24 +62,25 @@ _Window €40–120 · median **€88,00** · cheapest **€40,00** · 2 at/near
 | **€95,99** | Gebraucht | [Kingston 32GB DDR4 RDIMM 2Rx4 PC4-2666V-RB2 KDT-PE424/32G ECC Server RAM](https://www.ebay.de/itm/366515922333?_skw=DDR4+RDIMM+32GB&hash=item55560d259d:g:~VsAAeSwts9qRVYh) | omnivero | ok |
 | **€98,00** | Gebraucht | [SK hynix 32GB 2RX4 PC4 DDR4-2400 RDIMM-LBO-11 HMA84GL7AFR4N -UH Server-Speicher](https://www.ebay.de/itm/227415955215?_skw=DDR4+RDIMM+32GB&hash=item34f30c170f:g:ifUAAeSwoZlqSLhj) | mesnaelektroremarketing-8 | ok |
 | **€99,00** | Gebraucht | [SAMSUNG 32GB DDR4 RDIMM ECC 2666MHz](https://www.ebay.de/itm/366572489436?_skw=DDR4+RDIMM+32GB&hash=item55596c4adc:g:aWUAAeSwgjxqIUNx) | the_best_bargains | ok |
-| **€99,00** | Gebraucht | [32GB 2x16GB Crucial DDR4-2133 1.2v CT16G4RFD4213 DR x4 RDIMM MTA36ASF2G72PZ ECC](https://www.ebay.de/itm/307116682726?_skw=DDR4+RDIMM+32GB&hash=item478194ade6:g:wJsAAeSw8KJqXNBu) | sohome11 | ok |
+| **€99,00** | Gebraucht | [32GB 2x16GB Crucial DDR4-2133 1.2v CT16G4RFD4213 DR x4 RDIMM MTA36ASF2G72PZ ECC](https://www.ebay.de/itm/307130197015?_skw=DDR4+RDIMM+32GB&hash=item478262e417:g:wJsAAeSw8KJqXNBu) | sohome11 | ok |
 | **€99,00** | Gebraucht | [32GB Kit (4x 8GB) SK hynix RAM \| DDR4-2133P RDIMM \| HMA41GR7AFRAN \| Geprüft](https://www.ebay.de/itm/227211264926?_skw=DDR4+RDIMM+32GB&hash=item34e6d8c39e:g:W8gAAeSw~n5pixCa) | ofenloc285 | ok |
 | **€99,00** | Gebraucht | [SKhynix 32GB DDR4-2666V RDIMM Server-Speicher (HMA84GR7AFR4N-VK) RAM](https://www.ebay.de/itm/278268280413?_skw=DDR4+RDIMM+32GB&hash=item40ca14fe5d:g:-qAAAeSwSUhqesAv) | heise91 | ok |
+| **€99,80** | Gebraucht | [32GB Kit (4x8GB) SK Hynix DDR4-2133 ECC RDIMM 2Rx8 PC4-17000 HMA41GR7AFR8N-TF](https://www.ebay.de/itm/137629976381?_skw=DDR4+RDIMM+32GB&hash=item200b62c73d:g:rmUAAeSw7pFqEo71) | bitract | ok |
 | **€99,95** | Gebraucht | [32GB (2x16GB) SK hynix DDR4-2133 ECC RDIMM HMA42GR7AFR4N-TF HP 752369-581](https://www.ebay.de/itm/147171804211?_skw=DDR4+RDIMM+32GB&hash=item22441f8433:g:p20AAeSw7z5pnsw6) | butz-it-service | ok |
-| **€99,99** | Gebraucht | [Micron MTA36ASF4G72LZ-2G3B1 32GB DDR4-2400 ECC RDIMM 2Rx4 PC4-19200 Server RAM](https://www.ebay.de/itm/137436211449?_skw=DDR4+RDIMM+32GB&hash=item1fffd628f9:g:kVQAAeSwBmRqNr9l) | bitract | ok |
 | **€100,00** | Gebraucht | [32GB (4x8GB) SK Hynix DDR4-2133 ECC RDIMM 2Rx8 HMA41GR7MFR8N-TF](https://www.ebay.de/itm/236701918659?_skw=DDR4+RDIMM+32GB&hash=item371c88a5c3:g:3wsAAeSwLO5poXLE) | mthalmei | ok |
 | **€100,00** | Gebraucht | [HP 32GB, 2400MHz, PC4-2400T-R, DDR4, dual-rank x4, 1.20V](https://www.ebay.de/itm/188609402551?_skw=DDR4+RDIMM+32GB&hash=item2be9ff16b7:g:tBsAAeSwWl5qTDqG) | joju_8542 | ok |
 | **€100,00** | Gebraucht | [SK hynix 32GB DDR4-2400 ECC Reg RDIMM HMA84GR7AFR4N-UH HP 809083-091](https://www.ebay.de/itm/198521125242?_skw=DDR4+RDIMM+32GB&hash=item2e38c7f97a:g:5vEAAeSwBGxqY28x) | sgtfps | ok |
 | **€100,00** | Gebraucht | [SK Hynix 32GB DDR4 \| 2Rx4 PC4-2666V-RB2-11 \| ECC  Server RAM](https://www.ebay.de/itm/206371581864?_skw=DDR4+RDIMM+32GB&hash=item300cb46fa8:g:qCMAAeSwnCNqPOoQ) | damirmanas | ok |
 | **€100,00** | Gebraucht | [Samsung M393A4K40BB0-CPB4Q 32GB DDR4-2133 Server ECC RAM](https://www.ebay.de/itm/178091864210?_skw=DDR4+RDIMM+32GB&hash=item29771a3092:g:3eEAAeSwpHBp81Zc) | kpsarras | ok |
 | **€100,00** | Gebraucht | [Samsung 32GB REG-ECC-DDR4 SDRAMM (M393A1G43DB0-CPB)](https://www.ebay.de/itm/389751663022?_skw=DDR4+RDIMM+32GB&hash=item5abf0269ae:g:ZEsAAeSwmrdptrmN) | k33nts | ok |
+| **€100,27** | Gebraucht | [32GB DDR4 RDIMM Registrierter RAM HMA84GR7MFR4N-TF SK hynix Server](https://www.ebay.de/itm/358648564512?_skw=DDR4+RDIMM+32GB&hash=item53811ecb20:g:TgIAAeSwM~Rp-euz) | alfa.reweee | ok |
 | **€105,00** | Gebraucht | [Samsung 16GB DDR4 PC4-2133P ECC RDIMM 1Rx4 M393A2K40BB0-CPB0Q NetApp 107-22175](https://www.ebay.de/itm/327076498579?_skw=DDR4+RDIMM+32GB&hash=item4c27474c93:g:YPkAAeSwMihpyrTS) | sk2015.dani | ok |
 | **€108,00** | Gebraucht | [2x Samsung 16GB DDR4 2666V \| PC4 1Rx4 \| RC2 ECC RDIMM Server RAM - M393A2K40CB2](https://www.ebay.de/itm/267758003833?_skw=DDR4+RDIMM+32GB&hash=item3e579ee679:g:KUMAAeSw8TRqgF7-) | sussus | ok |
 | **€108,00** | Gebraucht | [2x Samsung 16GB DDR4 2666V \| PC4 1Rx4 \| RC2 ECC RDIMM Server RAM - M393A2K40CB2](https://www.ebay.de/itm/267758013175?_skw=DDR4+RDIMM+32GB&hash=item3e579f0af7:g:gtcAAeSwli9qgGMN) | sussus | ok |
 
-## DDR4 RDIMM 64GB (16 items)
+## DDR4 RDIMM 64GB (17 items)
 
-_Window €80–200 · median **€179,50** · cheapest **€99,00** · 0 at/near buy-low_
+_Window €80–200 · median **€178,99** · cheapest **€99,00** · 0 at/near buy-low_
 
 | Price | Condition | Title | Seller | Note |
 |---|---|---|---|---|
@@ -89,6 +89,7 @@ _Window €80–200 · median **€179,50** · cheapest **€99,00** · 0 at/nea
 | **€145,00** | Gebraucht | [Server RAM DDR4 REG ECC PC4-19200R 2400 MHz RDIMM 4GB 8GB 16GB 32GB 64GB 128GB](https://www.ebay.de/itm/117014549219?_skw=DDR4+RDIMM+64GB&hash=item1b3e9c52e3:g:w5QAAeSwjs1pgIfP) | computer-store-berlin | ok |
 | **€149,00** | Gebraucht | [Samsung 64GB (2×32GB) DDR4-2400 ECC REG RDIMM PC4-2400T 2Rx4 – Server RAM](https://www.ebay.de/itm/366535067652?_skw=DDR4+RDIMM+64GB&hash=item5557314804:g:U3IAAeSwFVNpyNRo) | romedeiro_0 | ok |
 | **€158,00** | Gebraucht | [Server RAM DDR4 REG ECC PC4-17000R 2133 MHz RDIMM 4GB 8GB 16GB 32GB 64GB 128GB](https://www.ebay.de/itm/117007112857?_skw=DDR4+RDIMM+64GB&hash=item1b3e2ada99:g:MlcAAeSw1ytpeyI9) | computer-store-berlin | ok |
+| **€160,00** | Gebraucht | [Samsung DDR4 64GB (2x32GB) PC4-2133P M393A4K40B00-CPB0Q Server...](https://www.ebay.de/itm/168339075527?_skw=DDR4+RDIMM+64GB&hash=item2731ca71c7:g:6dIAAeSws4lqggf0) | logihanns | ok |
 | **€160,00** | Gebraucht | [Hynix DDR4 64GB (2x32GB) PC4-2133P HMA84GR7MFR4N-TF Server Arbeitsspeicher RAM](https://www.ebay.de/itm/168615919764?_skw=DDR4+RDIMM+64GB&hash=item27424ac094:g:OIsAAeSwTHhqgIT0) | logihanns | ok |
 | **€167,97** | Used | [64GB 4 x 16GB HP MICRON MTA36ASF2G72PZ 2Rx4 DDR4 PC4 2133P ECC RDIMM Server RAM](https://www.ebay.de/itm/267750423752?_skw=DDR4+RDIMM+64GB&hash=item3e572b3cc8:g:1yEAAeSwj-VqdeP6) | itrefresh | ok |
 | **€178,99** | Gebraucht | [64 GB (2x32GB) DDR4 2133 REG PC4-17000R RDIMM   #327665](https://www.ebay.de/itm/117337790416?_skw=DDR4+RDIMM+64GB&hash=item1b51e097d0:g:gsAAAeSwd3dqeW03) | computer-store-berlin | ok |
@@ -110,14 +111,13 @@ _Window €100–200 · median **€164,48** · cheapest **€147,46** · 0 at/n
 | **€147,46** | Gebraucht | [HP EliteDesk 800 G5 DM Core i5-9600 3,10 GHz 8 GB DDR4 Desktop Mini Ohne HDD](https://www.ebay.de/itm/188489722106?_skw=EliteDesk+800+G5+Mini&hash=item2be2dce8fa:g:2d0AAeSw5fZqgdHH) | harddrivesonly | ok |
 | **€181,50** | Gebraucht | [HP EliteDesk 800 G5 Desktop Mini Core i5 9500T 4-32GB RAM 120-2000GB SSD](https://www.ebay.de/itm/178168671666?_skw=EliteDesk+800+G5+Mini&hash=item297bae2db2:g:4U4AAeSwZl5qX27n) | nexchance_it | ok |
 
-## Gaming PC mit RTX 3080 (19 items)
+## Gaming PC mit RTX 3080 (18 items)
 
-_Window €600–1.100 · median **€999,00** · cheapest **€710,00** · 0 at/near buy-low_
+_Window €600–1.100 · median **€999,50** · cheapest **€710,00** · 0 at/near buy-low_
 
 | Price | Condition | Title | Seller | Note |
 |---|---|---|---|---|
 | **€710,00** | Gebraucht | [RTX 3080 FE \| Ryzen 5 3600 Gaming PC \| Windows 11 Pro](https://www.ebay.de/itm/188669397499?_skw=Gaming+PC+RTX+3080&hash=item2bed9289fb:g:ki4AAeSw17BqXeY6) | moth4nn4 | ok |
-| **€780,00** | Gebraucht | [Gaming PC 9900K/ 3080 Ti  ZOTAC OC/ Maximus XI Hero 960 Pro 512GB+1TB/32 GB DDR4](https://www.ebay.de/itm/307118125462?_skw=Gaming+PC+RTX+3080&hash=item4781aab196:g:lwwAAeSwg5hqee9e) | vkgames | ok |
 | **€800,00** | Gebraucht | [Corsair Gaming Desktop Tower PC NVIDIA GeForce RTX 3080 mit i9-10850K und WK](https://www.ebay.de/itm/168606037143?_skw=Gaming+PC+RTX+3080&hash=item2741b3f497:g:TCQAAeSwYVRqe1gm) | melschiffer_0 | ok |
 | **€800,00** | Gebraucht | [Gaming-PC \| RTX 3080 \| i7-9700KF \| 32 GB RAM \| 1 TB SSD \| TOP](https://www.ebay.de/itm/820008073536?_skw=Gaming+PC+RTX+3080&hash=itembeec4a3940:g:twUAAeSwtBlqgSvf) | xryzenx | ok |
 | **€899,00** | Gebraucht | [Mini-ITX Gaming-PC \| RTX 3080 10GB \| i5-12600K \| 32GB \| Samsung 980 PRO 1TB](https://www.ebay.de/itm/327266786090?_skw=Gaming+PC+RTX+3080&hash=item4c329edb2a:g:FQMAAeSwdJpqW1jW) | dauerkathetertraeger | ok |
@@ -149,9 +149,9 @@ _Window €1.200–2.200 · median **€1.875,00** · cheapest **€1.600,00** �
 | **€2.100,00** | Gebraucht | [gaming pc gebraucht rtx 3090](https://www.ebay.de/itm/394408529943?_skw=Gaming+PC+RTX+3090&hash=item5bd4949017:g:8yYAAOSwyhtjF--z) | mar_924335 | ok |
 | **€2.200,00** | Gebraucht | [Gaming PC High-End \| RTX 3090 SUPRIM X 24GB \| i9-10900K \| 64GB RAM \| 2TB NVMe \|](https://www.ebay.de/itm/158192283382?_skw=Gaming+PC+RTX+3090&hash=item24d4feaef6:g:e~cAAeSwA6tqgNCM) | store_lvkbs | ok |
 
-## Nvidia Quadro RTX (41 items)
+## Nvidia Quadro RTX (40 items)
 
-_Window €400–1.000 · median **€600,00** · cheapest **€404,77** · 8 at/near buy-low_
+_Window €400–1.000 · median **€593,17** · cheapest **€404,77** · 8 at/near buy-low_
 
 | Price | Condition | Title | Seller | Note |
 |---|---|---|---|---|
@@ -175,7 +175,6 @@ _Window €400–1.000 · median **€600,00** · cheapest **€404,77** · 8 at
 | **€543,11** | Gebraucht | [NVIDIA Quadro RTX 4000 Professional Grafikkarte 8GB GDDR6 PCIe x16 getestet](https://www.ebay.de/itm/206365991879?_skw=Quadro+RTX&hash=item300c5f23c7:g:ldQAAeSw1cZqOHWT) | risingsungaming | ok |
 | **€549,00** | Gebraucht | [NVIDIA Quadro RTX 5000 16GB GDDR6 PCIe CAD 3D Workstation GPU 4x DP](https://www.ebay.de/itm/168577018277?_skw=Quadro+RTX&hash=item273ff929a5:g:JroAAeSwRTtqbEnS) | media-handel | ok |
 | **€571,77** | Used | [HP Nvidia Quadro RTX 5000 16GB GDDR6 PCIe 3.0 X16 4x DP 1x USB-C GPU L44055-001](https://www.ebay.de/itm/127825756609?_skw=Quadro+RTX&hash=item1dc30241c1:g:HGcAAeSweFVp6gbo) | servershopping | ok |
-| **€600,00** | Gebraucht | [NVIDIA Quadro RTX 2000 ADA FH 16 GB GDDR6 PCIe 4.0](https://www.ebay.de/itm/198572420717?_skw=Quadro+RTX&hash=item2e3bd6ae6d:g:lk8AAeSwpAlqeJTu) | 999alex | ok |
 | **€614,57** | Gebraucht | [Dell NVIDIA QUADRO RTX 5000 16GB GDDR6 PCI-E Grafikkarte](https://www.ebay.de/itm/236985114810?_skw=Quadro+RTX&hash=item372d69e0ba:g:1zIAAOSwME5m21CG) | t-traderz | ok |
 | **€650,00** | Gebraucht | [NVIDIA QUADRO RTX 4000 8GB GDDR6 Graphic Card](https://www.ebay.de/itm/286690115998?_skw=Quadro+RTX&hash=item42c010019e:g:IxwAAOSwn2Nl6ozW) | ruixiu | ok |
 | **€650,00** | Gebraucht | [NVIDIA QUADRO RTX 4000 8GB GDDR6 Graphic Card](https://www.ebay.de/itm/127218727595?_skw=Quadro+RTX&hash=item1d9ed3baab:g:Z7wAAeSwScZoa6Fp) | newdisk | ok |
@@ -199,7 +198,7 @@ _Window €400–1.000 · median **€600,00** · cheapest **€404,77** · 8 at
 
 ## OptiPlex 3070 Micro (29 items)
 
-_Window €80–180 · median **€153,96** · cheapest **€89,00** · 1 at/near buy-low_
+_Window €80–180 · median **€153,65** · cheapest **€89,00** · 1 at/near buy-low_
 
 | Price | Condition | Title | Seller | Note |
 |---|---|---|---|---|
@@ -211,13 +210,13 @@ _Window €80–180 · median **€153,96** · cheapest **€89,00** · 1 at/nea
 | **€105,30** | Used | [Dell OptiPlex 3070 Micro i3-9100T 3,10GHz, 8GB RAM, 256GB SSD, WLAN + PSU (J494)](https://www.ebay.de/itm/128008526900?_skw=OptiPlex+3070+Micro&hash=item1dcde71c34:g:24MAAeSw9ZVqcI5f) | noo2yoo_uk | ok |
 | **€106,08** | Used | [Dell Optiplex 3070 Micro mit Netzteil](https://www.ebay.de/itm/168595644591?_skw=OptiPlex+3070+Micro&hash=item27411560af:g:HAEAAeSw2OBqb5FA) | saffy2005 | ok |
 | **€109,00** | Gebraucht | [Dell OptiPlex 3070 Micro Mini PC i3-9100T 8GB RAM 128GB M.2 SSD Ohne Netzteil](https://www.ebay.de/itm/800442540726?_skw=OptiPlex+3070+Micro&hash=itemba5e17e2b6:g:cAMAAeSwmA5qbY3Y) | media.shop | ok |
+| **€111,15** | Used | [Dell Optiplex 3070 Micro - Windows 11 WiFi bis i7 9. Gen 32GB RAM 2TB SSD 04](https://www.ebay.de/itm/188202859300?_skw=OptiPlex+3070+Micro&hash=item2bd1c3bb24:g:hm8AAeSwyc1pwZco) | refurbcomputingltd | ok |
 | **€111,71** | Used | [Dell Optiplex 3070 Micro i5 8. Gen Windows 11 8GB 256GB SSD Desktop MFF PC](https://www.ebay.de/itm/336592546969?_skw=OptiPlex+3070+Micro&hash=item4e5e7aac99:g:sXYAAeSwU0pqDXQD) | osmuha-22 | ok |
 | **€116,04** | Used | [Win 11 - Dell 7040 3040 Micro PC i7-6th 2TB SSD HDD 32GB RAM Bluetooth + WLAN + HDMI](https://www.ebay.de/itm/354881320166?_skw=OptiPlex+3070+Micro&hash=item52a09334e6:g:12UAAOSwkSVkncAg) | afritech | ok |
-| **€117,00** | Used | [Dell Optiplex 3070 Micro - Windows 11 WiFi bis i7 9. Gen 32GB RAM 2TB SSD 04](https://www.ebay.de/itm/188202859300?_skw=OptiPlex+3070+Micro&hash=item2bd1c3bb24:g:hm8AAeSwyc1pwZco) | refurbcomputingltd | ok |
 | **€122,85** | Used | [Dell OptiPlex 3070 Micro PC, Core i3 9. Gen, 8GB RAM, 256GB SSD, Windows 11](https://www.ebay.de/itm/235765957608?_skw=OptiPlex+3070+Micro&hash=item36e4bf03e8:g:ExgAAOSwoTlm9qoe) | blackmoreit | ok |
 | **€139,00** | Gebraucht | [Dell OptiPlex 3070 Micro PC Intel Pentium G5400T 8GB 256GB SSD 500GB HDD Win11](https://www.ebay.de/itm/147359452214?_skw=OptiPlex+3070+Micro&hash=item224f4ecc36:g:Vw8AAeSw7vNqLVMm) | the-components | ok |
 | **€140,40** | Used | [Dell OptiPlex 3070 Micro Core i3-9100T 8GB RAM 256GB NVMe SSD Windows 11](https://www.ebay.de/itm/198485187240?_skw=OptiPlex+3070+Micro&hash=item2e36a39aa8:g:7PEAAeSwP3hqTmMF) | renewit | ok |
-| **€153,96** | Gebraucht | [Dell OptiPlex 3070 Micro Core I5-9500T 2,20 GHz 8 GB DDR4 Keine HDD](https://www.ebay.de/itm/188476939380?_skw=OptiPlex+3070+Micro&hash=item2be219dc74:g:a9AAAeSwDO5qfjZd) | harddrivesonly | ok |
+| **€153,65** | Gebraucht | [Dell OptiPlex 3070 Micro Core I5-9500T 2,20 GHz 8 GB DDR4 Keine HDD](https://www.ebay.de/itm/188476939380?_skw=OptiPlex+3070+Micro&hash=item2be219dc74:g:EkIAAeSwn1JqgpzA) | harddrivesonly | ok |
 | **€155,00** | Gebraucht | [Dell OptiPlex 3070 Micro WLAN 128GB SSD 8-32GB RAM i3 9th Gen Windows 11 Pro](https://www.ebay.de/itm/318541547211?_skw=OptiPlex+3070+Micro&hash=item4a2a8e46cb:g:1UgAAeSwznxqSPoA) | jks-it | ok |
 | **€159,79** | Gebraucht | [Dell OptiPlex 3070 Micro Core i5-8500T 2.10 GHz 8 GB DDR4 Kein HDD](https://www.ebay.de/itm/188536874241?_skw=OptiPlex+3070+Micro&hash=item2be5ac6501:g:3fwAAeSwi-VqT-6J) | harddrivesonly | ok |
 | **€159,99** | Gebraucht | [Mini PC Dell OptiPlex 3070 Micro 8GB 128GB SSD Intel Quadcore I3-9100T Win11](https://www.ebay.de/itm/137474583170?_skw=OptiPlex+3070+Micro&hash=item20021faa82:g:Y50AAeSw7sJqRlBs) | berlin-shop | ok |
