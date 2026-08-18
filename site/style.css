@@ -25,6 +25,41 @@ body {
 h1, h2 { border-bottom: 1px solid var(--border-soft); padding-bottom: .3rem; }
 h2 { scroll-margin-top: 1rem; }
 
+/* --- header: title + language switch ------------------------------------- */
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.lang-switch {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.lang-switch button {
+  font: inherit;
+  font-size: .85rem;
+  padding: .3rem .7rem;
+  border: 0;
+  border-left: 1px solid var(--border-soft);
+  background: #fff;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.lang-switch button:first-child { border-left: 0; }
+.lang-switch button:hover { background: var(--bg-row); }
+.lang-switch button.active {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
@@ -94,6 +129,44 @@ p.summary em { color: var(--text-muted); }
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; }
   #toc-wrap { position: static; max-height: none; }
+}
+
+/* --- interactive filters -------------------------------------------------- */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem .75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-head);
+  padding: .6rem .8rem;
+  margin-bottom: 1.25rem;
+  font-size: .9rem;
+}
+.filters label { color: var(--text-muted); }
+.filters input,
+.filters select,
+.filters button {
+  font: inherit;
+  font-size: .9rem;
+  padding: .3rem .5rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--text);
+}
+.filters input[type='search'] { min-width: 190px; }
+.filters input[type='number'] { width: 110px; }
+.filters button { cursor: pointer; background: var(--bg-head); }
+.filters button:hover { background: var(--border-soft); }
+.f-count { margin-left: auto; color: var(--text-muted); }
+
+/* --- 30-day median trend sparkline --------------------------------------- */
+.sparkline {
+  vertical-align: middle;
+  margin-left: .5rem;
+  color: var(--accent);
 }
 
 /* --- loading / error states --------------------------------------------- */

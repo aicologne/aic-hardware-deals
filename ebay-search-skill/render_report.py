@@ -6,10 +6,11 @@ The report is the product: it combines the latest scan with the deal windows
 target, shows per-category medians, and ends with methodology + disclaimer.
 
 Usage:
-    python render_report.py [ebay_deals.csv] [LATEST.md]
+    python render_report.py [ebay_deals.csv] [LATEST.md] [site/data/history.csv]
 """
 import csv
 import datetime
+import os
 import statistics
 import sys
 
@@ -54,9 +55,37 @@ def flag_for(row):
     return "ok"
 
 
+def load_history(path):
+    """history.csv -> {query: [(date, median), ...]} sorted by date (last 30 days)."""
+    if not path or not os.path.exists(path):
+        return {}
+    by_query = {}
+    with open(path, encoding="utf-8-sig") as f:
+        for r in csv.DictReader(f):
+            median = num(r.get("median"))
+            if median is None:
+                continue
+            by_query.setdefault(r.get("query"), []).append((r.get("date"), median))
+    out = {}
+    for query, points in by_query.items():
+        points.sort(key=lambda p: p[0])
+        out[query] = points[-30:]
+    return out
+
+
+def trend_str(history, query):
+    """'€85→€120 (14 days)' for the last-30-day median series, or None."""
+    points = history.get(query) or []
+    if len(points) < 2:
+        return None
+    return f"{euro(points[0][1])}→{euro(points[-1][1])} ({len(points)}d)"
+
+
 def main():
     csv_path = sys.argv[1] if len(sys.argv) > 1 else "ebay_deals.csv"
     out_path = sys.argv[2] if len(sys.argv) > 2 else "LATEST.md"
+    history_path = sys.argv[3] if len(sys.argv) > 3 else None
+    history = load_history(history_path)
 
     rows = []
     with open(csv_path, encoding="utf-8-sig") as f:
@@ -114,8 +143,10 @@ def main():
         window = f"€{wmin:,.0f}–{wmax:,.0f}".replace(",", ".") if wmin is not None else "any"
         L.append(f"## {query} ({len(qrows)} items)")
         L.append("")
+        trend = trend_str(history, query)
+        trend_part = f" · 30d {trend}" if trend else ""
         L.append(f"_Window {window} · median **{euro(median)}** · cheapest "
-                 f"**{euro(cheapest['_price'])}** · {at_target} at/near buy-low_")
+                 f"**{euro(cheapest['_price'])}** · {at_target} at/near buy-low{trend_part}_")
         L.append("")
         L.append("| Price | Condition | Title | Seller | Note |")
         L.append("|---|---|---|---|---|")

@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { parseCSV, toRows, analyze, euro, num, median, flagFor } from '../site/csv.js';
+import { parseCSV, toRows, toHistoryRows, analyze, euro, num, median, flagFor, historySeries } from '../site/csv.js';
 
 const csvPath = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'site', 'data', 'ebay_deals.csv');
 const text = readFileSync(csvPath, 'utf8');
@@ -71,6 +71,31 @@ test('median and flagFor unit behaviour', () => {
   assert.equal(flagFor({ price: '46.01', win_min: '40', win_max: '120' }), 'ok');
   assert.equal(flagFor({ price: '130', win_min: '40', win_max: '120' }), '⚠️ above scan window');
   assert.equal(flagFor({ price: 'x' }), 'ok');
+});
+
+test('toHistoryRows parses history.csv rows without a title column', () => {
+  const text = 'date,query,median,cheapest,count,at_target\n2026-08-14,DDR4 RDIMM 32GB,85.00,40.00,46,2\n2026-08-15,Nvidia Quadro RTX,600.00,406.24,42,8\n';
+  const rows = toHistoryRows(text);
+  assert.equal(rows.length, 2);
+  assert.equal(rows[0].query, 'DDR4 RDIMM 32GB');
+  assert.equal(rows[1].median, '600.00');
+  assert.equal(toHistoryRows('date,query\n\n').length, 0);
+});
+
+test('historySeries sorts by date and keeps one point per date', () => {
+  const rows = [
+    { query: 'RAM', date: '2026-08-16', median: '90' },
+    { query: 'RAM', date: '2026-08-14', median: '85' },
+    { query: 'RAM', date: '2026-08-16', median: '95' }, // same date — later value wins
+    { query: 'GPU', date: '2026-08-15', median: '1200' },
+    { query: 'RAM', date: 'n/a', median: 'x' },         // unparsable — dropped
+  ];
+  assert.deepEqual(historySeries(rows, 'RAM'), [
+    { date: '2026-08-14', median: 85 },
+    { date: '2026-08-16', median: 95 },
+  ]);
+  assert.deepEqual(historySeries(rows, 'GPU'), [{ date: '2026-08-15', median: 1200 }]);
+  assert.deepEqual(historySeries(rows, 'MISSING'), []);
 });
 
 // --- human-readable sanity summary (node --test shows it in the report) ---

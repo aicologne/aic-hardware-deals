@@ -78,6 +78,31 @@ export function flagFor(r) {
   return 'ok';
 }
 
+/** Like toRows, but for schemas without a title column (e.g. data/history.csv). */
+export function toHistoryRows(text) {
+  const table = parseCSV(text);
+  if (!table.length) return [];
+  const headers = table[0].map(h => h.trim());
+  return table.slice(1)
+    .map(cells => {
+      const o = {};
+      headers.forEach((h, i) => { o[h] = (cells[i] ?? '').trim(); });
+      return o;
+    })
+    .filter(r => r.date && r.query);
+}
+
+/** Build a chronological, date-deduped median series for one query (history.csv rows). */
+export function historySeries(rows, query) {
+  const pts = rows
+    .filter(r => r.query === query && num(r.median) != null)
+    .map(r => ({ date: r.date, median: num(r.median) }))
+    .sort((a, b) => String(a.date).localeCompare(String(b.date)));
+  const byDate = new Map();
+  for (const p of pts) byDate.set(p.date, p.median);
+  return [...byDate].map(([date, median]) => ({ date, median }));
+}
+
 /** Group rows by query and compute per-category stats + the flagged shortlist. */
 export function analyze(rows) {
   const valid = rows.filter(r => num(r.price) != null);

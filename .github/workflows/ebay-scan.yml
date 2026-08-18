@@ -34,8 +34,19 @@ jobs:
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
         run: python ebay-search-skill/ebay_search.py
 
+      - name: Update the price history (site/data/history.csv)
+        # One median/cheapest row per category per scan date; idempotent for
+        # re-runs. Powers the 30-day trendline on the site and in LATEST.md.
+        run: python ebay-search-skill/render_history.py ebay_deals.csv site/data/history.csv --date $(date -u +%Y-%m-%d)
+
       - name: Render the price report (LATEST.md)
-        run: python ebay-search-skill/render_report.py ebay_deals.csv LATEST.md
+        run: python ebay-search-skill/render_report.py ebay_deals.csv LATEST.md site/data/history.csv
+
+      - name: Render the RSS feed (site/feed.xml)
+        # Deal highlights as RSS 2.0; regenerated every run so the feed stays
+        # fresh for subscribers (feed.xml lives under site/, so the git add and
+        # the Pages artifact below pick it up automatically).
+        run: python ebay-search-skill/render_feed.py ebay_deals.csv site/feed.xml
 
       - name: Publish the scan CSV into the site
         # site/ is the GitHub Pages artifact. index.html + app.js are committed
@@ -43,6 +54,17 @@ jobs:
         run: |
           mkdir -p site/data
           cp ebay_deals.csv site/data/ebay_deals.csv
+
+      - name: Send buy-low alerts (Telegram/Discord)
+        # Only runs when a channel is configured. Notifies about NEW flagged
+        # deals only (site/data/notified.json dedupes across runs) and commits
+        # the updated state below.
+        if: ${{ secrets.TELEGRAM_BOT_TOKEN != '' || secrets.DISCORD_WEBHOOK_URL != '' }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python ebay-search-skill/notify.py ebay_deals.csv --state site/data/notified.json
 
       - name: Commit results
         run: |

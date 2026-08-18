@@ -10,7 +10,7 @@ Alles in diesem Ordner (`publish/`) ist bereit zum Pushen — **außer deine ech
 **Web-UI** ([github.com/new](https://github.com/new)):
 - Repository-Name: **`aic-hardware-deals`** (dein Profil: `aicologne`)
 - Description: `Nightly eBay.de used-hardware price report + reseller playbook (Browse API)`
-- Topics (optional): `ebay-api`, `browse-api`, `used-hardware`, `reselling`, `ai-hardware`, `german`
+- Topics (optional): `ebay-api`, `browse-api`, `used-hardware`, `reselling`, `ai-hardware`, `homelab`, `local-ai`, `price-report`, `deals`, `europe`, `german`
 - **Nichts anklicken** (kein README/`.gitignore`/License generieren — alles liegt schon bereit)
 - → **Create repository**
 
@@ -36,7 +36,7 @@ git push -u origin main
 ## 3. Secrets hinzufügen (die Produktions-Keys)
 
 1. Repo → **Settings → Secrets and variables → Actions → New repository secret**
-2. Zwei Secrets anlegen:
+2. Zwei Secrets anlegen (Pflicht):
 
 | Name | Wert |
 |---|---|
@@ -44,6 +44,16 @@ git push -u origin main
 | `EBAY_CLIENT_SECRET` | deine **Production** Client Secret |
 
 > ⚠️ **Nur Production funktioniert.** Sandbox-Keys (`-SBX-` / `SBX-…`) liefern Testdaten und einen irreführenden Report. Die Werte findest du unter [developer.ebay.com](https://developer.ebay.com) → dein App → **Application Keys → Production**.
+
+3. **Optional — Buy-low-Alerts (Telegram/Discord):** Weitere Secrets, nur wenn du Benachrichtigungen willst. Der Alert-Schritt läuft nur, wenn mindestens ein Kanal konfiguriert ist:
+
+| Name | Wert |
+|---|---|
+| `TELEGRAM_BOT_TOKEN` | Bot-Token von [@BotFather](https://t.me/BotFather) |
+| `TELEGRAM_CHAT_ID` | deine Chat-ID (Bot einmal anschreiben, dann via `https://api.telegram.org/bot<TOKEN>/getUpdates` ablesen) |
+| `DISCORD_WEBHOOK_URL` | Discord-Webhook-URL des Kanals (alternativ zu Telegram) |
+
+Nur **neue** Treffer am Buy-Low-Ziel werden gemeldet — `site/data/notified.json` merkt sich, was schon gemeldet wurde.
 
 ## 4. GitHub Pages aktivieren (einmalig, 2 Klicks)
 
@@ -55,16 +65,18 @@ git push -u origin main
 
 1. Repo → **Actions** → **"eBay deal scan (nightly)"** (links)
 2. Rechts → **Run workflow** → grünen Button klicken
-3. Ablauf (≈2–3 Min.): Scan (21 Queries) → `LATEST.md` rendern → `ebay_deals.csv` in `site/data/` veröffentlichen → **Commit + Push** → **Pages-Deploy**
+3. Ablauf (≈2–3 Min.): Scan (21 Queries) → Preis-Historie aktualisieren → `LATEST.md` rendern → `site/feed.xml` rendern → `ebay_deals.csv` in `site/data/` veröffentlichen → optional Alerts senden → **Commit + Push** → **Pages-Deploy**
 4. Fertig: Der Report liegt als
    - **Datei:** `LATEST.md` im Repo
-   - **Webseite:** `https://<DEIN-USERNAME>.github.io/<REPO-NAME>/` (die Seite liest ihre Daten zur Laufzeit aus `data/ebay_deals.csv`)
+   - **Webseite:** `https://<DEIN-USERNAME>.github.io/<REPO-NAME>/` (die Seite liest ihre Daten zur Laufzeit aus `data/ebay_deals.csv`; Filter + EN/DE-Umschalter + 30-Tage-Trendlinie inklusive)
 
 ## 6. Verifizieren
 
 - [ ] `Actions` zeigt grüne Häkchen (scan + deploy)
 - [ ] Im Repo liegt ein frischer Commit `chore: refresh eBay price report (YYYY-MM-DD)`
 - [ ] `LATEST.md` enthält 🔥-Highlights
+- [ ] `site/data/history.csv` existiert und hat eine Zeile pro Kategorie für heute
+- [ ] `site/feed.xml` existiert — RSS-Abo unter `https://<DEIN-USERNAME>.github.io/<REPO-NAME>/feed.xml`
 - [ ] Die Pages-URL lädt (erstmal kann 1–2 Min. dauern, Cache leeren mit Strg+F5)
 
 ---

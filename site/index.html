@@ -5,24 +5,42 @@
   <meta charset='utf-8'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <title>eBay.de Used Hardware — Price Report</title>
+
+  <!-- Social sharing / SEO. Adjust og:url to your Pages URL if it differs.
+       Optional: drop a 1200×630 PNG at site/social-card.png and add
+       <meta property='og:image' content='.../social-card.png'> -->
+  <meta name='description' content='Nightly eBay.de used-hardware price report: deal highlights, per-category medians and buy-low targets for GPUs (≥16 GB VRAM), server RAM and mini PCs — collected via the official Browse API.'>
+  <meta property='og:type' content='website'>
+  <meta property='og:site_name' content='eBay.de Used Hardware — Price Report'>
+  <meta property='og:title' content='eBay.de Used Hardware — Price Report'>
+  <meta property='og:description' content='Nightly used-hardware price report: deal highlights, medians and buy-low targets for GPUs, server RAM and mini PCs (Browse API, eBay.de, used, EUR).'>
+  <meta property='og:url' content='https://aicologne.github.io/aic-hardware-deals/'>
+  <meta name='twitter:card' content='summary'>
   <link rel='stylesheet' href='style.css'>
+  <link rel='alternate' type='application/rss+xml' title='eBay.de Used Hardware — Daily Deals' href='feed.xml'>
 </head>
 
 <body id='top'>
   <header>
-    <h1>🛒 eBay.de Used Hardware — Price Report</h1>
+    <div class='header-top'>
+      <h1 data-i18n='title'>🛒 eBay.de Used Hardware — Price Report</h1>
+      <nav class='lang-switch' aria-label='Language / Sprache'>
+        <button type='button' id='lang-en' lang='en'>EN</button>
+        <button type='button' id='lang-de' lang='de'>DE</button>
+      </nav>
+    </div>
     <p class='meta'><em id='generated-line'>Loading latest scan…</em></p>
-    <p><strong>Market context (2026):</strong> the DRAM/GDDR shortage keeps used prices elevated. Used RTX 3090s ask
-      €1000–1500 on eBay.de; DDR5 German retail is ~4.2–4.5× its July-2025 level; DDR4 RDIMM shops ask €219–230 for 32
-      GB while private sellers still move pre-shortage stock at €60–120. Note the new-price anchors: a BOSGAME M5 (Strix
-      Halo, 128 GB) costs €1581–1700 new — used Strix Halo above that is not a deal. Verify everything live — prices
-      move weekly.</p>
+    <p><strong data-i18n='ctxLabel'>Market context (2026):</strong> <span data-i18n='ctxText'>the DRAM/GDDR
+        shortage keeps used prices elevated. Used RTX 3090s ask €1000–1500 on eBay.de; DDR5 German retail is ~4.2–4.5×
+        its July-2025 level; DDR4 RDIMM shops ask €219–230 for 32 GB while private sellers still move pre-shortage
+        stock at €60–120. Note the new-price anchors: a BOSGAME M5 (Strix Halo, 128 GB) costs €1581–1700 new — used
+        Strix Halo above that is not a deal. Verify everything live — prices move weekly.</span></p>
   </header>
 
   <div class='layout'>
     <aside id='toc-wrap'>
       <nav id='toc' aria-label='Table of contents'>
-        <h2 class='toc-title'>Contents</h2>
+        <h2 class='toc-title' data-i18n='tocTitle'>Contents</h2>
         <ul id='toc-list' class='toc-list'>
           <li>Loading…</li>
         </ul>
@@ -30,27 +48,37 @@
     </aside>
 
     <main id='report'>
-      <p id='status' class='status'>Loading deal data from <code>data/ebay_deals.csv</code>…</p>
+      <div id='filters' class='filters' hidden>
+        <label for='f-search' data-i18n='fSearch'>Search</label>
+        <input id='f-search' type='search' autocomplete='off'>
+        <label for='f-category' data-i18n='fCategory'>Category</label>
+        <select id='f-category'></select>
+        <label for='f-maxprice' data-i18n='fMaxPrice'>Max price (€)</label>
+        <input id='f-maxprice' type='number' min='0' step='10'>
+        <label for='f-sort' data-i18n='fSort'>Sort</label>
+        <select id='f-sort'>
+          <option value='price-asc' data-i18n='fPriceAsc'>Price ↑</option>
+          <option value='price-desc' data-i18n='fPriceDesc'>Price ↓</option>
+          <option value='deal' data-i18n='fBestDeal'>Best deal first</option>
+        </select>
+        <button type='button' id='f-reset' data-i18n='fReset'>Reset</button>
+        <span id='f-count' class='f-count' role='status'></span>
+      </div>
+      <p id='status' class='status'></p>
       <div id='error' class='error' hidden></div>
       <div id='content' hidden></div>
     </main>
   </div>
 
   <footer class='footer'>
-    <h2 id='methodology'>Methodology &amp; notes</h2>
-    <ul>
-      <li>Prices are asking prices from active eBay.de listings (used, EUR), collected by the Browse API.</li>
-      <li>Buy-low targets are the scan windows configured in <code>ebay_search.py</code>; a listing within 15 % of the
-        target is flagged 🔥.</li>
-      <li>eBay seller fees (~13 %) and shipping are NOT included — subtract them from any margin estimate.</li>
-      <li>Condition and warranty are the seller's; always verify photos, GPU-Z/memtest results, and seller feedback
-        before paying.</li>
-    </ul>
-    <p class='footer-line' id='footer-tools'><em>Tooling: <code>ebay-search-skill/</code> (Browse API scanner + local
-        relay) · Categories: 27386 GPUs · 171957 desktops · 170083 RAM · 11210 server RAM · Generated by the nightly
-        GitHub Actions workflow</em></p>
+    <h2 id='methodology' data-i18n='methodologyTitle'>Methodology &amp; notes</h2>
+    <ul id='methodology-list'></ul>
+    <p class='footer-line' id='footer-tools'></p>
     <p class='footer-line' id='footer-stats'></p>
-    <p class='footer-line'><a href='#top'>↑ Back to top</a></p>
+    <p class='footer-line'>
+      <a href='#top' data-i18n='backTop'>↑ Back to top</a>
+      · <a href='feed.xml' data-i18n='rss'>RSS feed</a>
+    </p>
   </footer>
 
   <script type='module' src='app.js'></script>
