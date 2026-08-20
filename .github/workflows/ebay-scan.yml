@@ -58,8 +58,8 @@ jobs:
       - name: Send buy-low alerts (Telegram/Discord)
         # Only runs when a channel is configured. Notifies about NEW flagged
         # deals only (site/data/notified.json dedupes across runs) and commits
-        # the updated state below.
-        if: ${{ secrets.TELEGRAM_BOT_TOKEN != '' || secrets.DISCORD_WEBHOOK_URL != '' }}
+        # the updated state below.        
+        if: ${{ secrets.TELEGRAM_BOT_TOKEN || secrets.DISCORD_WEBHOOK_URL }}
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
