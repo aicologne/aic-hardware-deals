@@ -55,7 +55,6 @@ jobs:
           mkdir -p site/data
           cp ebay_deals.csv site/data/ebay_deals.csv
 
-      - name: Send buy-low alerts (Telegram/Discord)
         # Only runs when a channel is configured. Notifies about NEW flagged
         # deals only (site/data/notified.json dedupes across runs) and commits
         # the updated state below.        
