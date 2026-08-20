@@ -59,11 +59,12 @@ jobs:
         # Only runs when a channel is configured. Notifies about NEW flagged
         # deals only (site/data/notified.json dedupes across runs) and commits
         # the updated state below.        
-        if: ${{ secrets.TELEGRAM_BOT_TOKEN || secrets.DISCORD_WEBHOOK_URL }}
+      - name: Send buy-low alerts (Telegram/Discord)
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        if: ${{ env.TELEGRAM_BOT_TOKEN || env.DISCORD_WEBHOOK_URL }}
         run: python ebay-search-skill/notify.py ebay_deals.csv --state site/data/notified.json
 
       - name: Commit results
