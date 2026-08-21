@@ -17,6 +17,7 @@ listings are skipped.
 Usage:
     python notify.py ebay_deals.csv [--state site/data/notified.json] [--dry-run]
 """
+
 import argparse
 import json
 import os
@@ -78,7 +79,9 @@ def save_state(path, state):
 def build_message(items, date):
     lines = [f"🔥 {len(items)} new buy-low deal(s) — {date}", ""]
     for i, r in enumerate(items[:MAX_ITEMS], start=1):
-        lines.append(f"{i}. [{r.get('query')}] {euro(num(r.get('price')))} — {r.get('title') or '(no title)'}")
+        lines.append(
+            f"{i}. [{r.get('query')}] {euro(num(r.get('price')))} — {r.get('title') or '(no title)'}"
+        )
         lines.append(f"   {r.get('url') or ''}")
         lines.append(
             f"   target {euro(num(r.get('win_min')))} · seller {r.get('seller') or '?'} · {r.get('condition') or '?'}"
@@ -91,10 +94,15 @@ def build_message(items, date):
 
 def http_post(url, payload, headers=None):
     data = json.dumps(payload).encode("utf-8")
-    req = urllib.request.Request(url, data=data, method="POST", headers={
-        "Content-Type": "application/json",
-        **(headers or {}),
-    })
+    req = urllib.request.Request(
+        url,
+        data=data,
+        method="POST",
+        headers={
+            "Content-Type": "application/json",
+            **(headers or {}),
+        },
+    )
     with urllib.request.urlopen(req, timeout=20) as resp:
         return resp.status
 
@@ -103,7 +111,9 @@ def send_telegram(token, chat_id, text):
     if len(text) > 4000:
         text = text[:3900] + "\n…(truncated)"
     url = f"https://api.telegram.org/bot{token}/sendMessage"
-    return http_post(url, {"chat_id": chat_id, "text": text, "disable_web_page_preview": True})
+    return http_post(
+        url, {"chat_id": chat_id, "text": text, "disable_web_page_preview": True}
+    )
 
 
 def send_discord(webhook, text):
@@ -113,15 +123,22 @@ def send_discord(webhook, text):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Buy-low alert notifier (Telegram/Discord)")
+    ap = argparse.ArgumentParser(
+        description="Buy-low alert notifier (Telegram/Discord)"
+    )
     ap.add_argument("csv", help="path to ebay_deals.csv")
-    ap.add_argument("--state", default="notified.json", help="state file with already-notified URLs")
-    ap.add_argument("--dry-run", action="store_true", help="print the message instead of sending")
+    ap.add_argument(
+        "--state", default="notified.json", help="state file with already-notified URLs"
+    )
+    ap.add_argument(
+        "--dry-run", action="store_true", help="print the message instead of sending"
+    )
     args = ap.parse_args()
 
     rows = []
     with open(args.csv, encoding="utf-8-sig") as f:
         import csv as _csv
+
         for r in _csv.DictReader(f):
             if num(r.get("price")) is not None:
                 rows.append(r)
@@ -133,7 +150,9 @@ def main():
     new_items = [r for r in flagged if r.get("url") not in state]
 
     if not new_items:
-        print(f"no new flagged deals (state has {len(state)} entries, {len(flagged)} currently flagged)")
+        print(
+            f"no new flagged deals (state has {len(state)} entries, {len(flagged)} currently flagged)"
+        )
         return 0
 
     date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
@@ -152,13 +171,16 @@ def main():
         sent = True
         print("sent via Telegram")
     webhook = os.environ.get("DISCORD_WEBHOOK_URL")
-    if webhook:
+    webhook = webhook.strip() if isinstance(webhook, str) else None
+    if webhook and webhook.startswith("http"):
         send_discord(webhook, text)
         sent = True
         print("sent via Discord")
 
     if not sent:
-        print("WARNING: no channel configured (set TELEGRAM_BOT_TOKEN+TELEGRAM_CHAT_ID or DISCORD_WEBHOOK_URL); nothing sent")
+        print(
+            "WARNING: no channel configured (set TELEGRAM_BOT_TOKEN+TELEGRAM_CHAT_ID or DISCORD_WEBHOOK_URL); nothing sent"
+        )
         return 1
 
     # Remember every currently-flagged URL (new + already known) so the next
