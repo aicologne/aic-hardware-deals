@@ -181,7 +181,6 @@ def main():
         print(
             "WARNING: no channel configured (set TELEGRAM_BOT_TOKEN+TELEGRAM_CHAT_ID or DISCORD_WEBHOOK_URL); nothing sent"
         )
-        return 1
 
     # Remember every currently-flagged URL (new + already known) so the next
     # run only reports deals that appear for the first time; drop stale ones.
