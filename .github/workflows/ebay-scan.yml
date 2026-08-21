@@ -32,21 +32,31 @@ jobs:
         env:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+          # Optional: set a repo Variable EBAY_MARKETPLACES (Settings ->
+          # Variables -> Actions), e.g. "EBAY_DE,EBAY_AT,EBAY_CH", to scan
+          # multiple marketplaces. Empty = EBAY_DE only.
+          EBAY_MARKETPLACES: ${{ vars.EBAY_MARKETPLACES }}
         run: python ebay-search-skill/ebay_search.py
 
       - name: Update the price history (site/data/history.csv)
-        # One median/cheapest row per category per scan date; idempotent for
-        # re-runs. Powers the 30-day trendline on the site and in LATEST.md.
+        # One median/cheapest row per (marketplace, category) per scan date;
+        # idempotent for re-runs. Powers the 30-day trendline, movers and the
+        # index on the site and in LATEST.md.
         run: python ebay-search-skill/render_history.py ebay_deals.csv site/data/history.csv --date $(date -u +%Y-%m-%d)
 
+      - name: Track per-listing prices (site/data/listing_history.csv)
+        # First-seen vs last-seen price per listing URL, for "was €X on DATE"
+        # repricing notes in the report, site and feed.
+        run: python ebay-search-skill/render_listing_history.py ebay_deals.csv site/data/listing_history.csv --date $(date -u +%Y-%m-%d)
+
       - name: Render the price report (LATEST.md)
-        run: python ebay-search-skill/render_report.py ebay_deals.csv LATEST.md site/data/history.csv
+        run: python ebay-search-skill/render_report.py ebay_deals.csv LATEST.md site/data/history.csv site/data/listing_history.csv
 
       - name: Render the RSS feed (site/feed.xml)
         # Deal highlights as RSS 2.0; regenerated every run so the feed stays
         # fresh for subscribers (feed.xml lives under site/, so the git add and
         # the Pages artifact below pick it up automatically).
-        run: python ebay-search-skill/render_feed.py ebay_deals.csv site/feed.xml
+        run: python ebay-search-skill/render_feed.py ebay_deals.csv site/feed.xml site/data/listing_history.csv
 
       - name: Publish the scan CSV into the site
         # site/ is the GitHub Pages artifact. index.html + app.js are committed

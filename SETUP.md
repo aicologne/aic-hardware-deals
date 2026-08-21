@@ -45,7 +45,9 @@ git push -u origin main
 
 > ⚠️ **Nur Production funktioniert.** Sandbox-Keys (`-SBX-` / `SBX-…`) liefern Testdaten und einen irreführenden Report. Die Werte findest du unter [developer.ebay.com](https://developer.ebay.com) → dein App → **Application Keys → Production**.
 
-3. **Optional — Buy-low-Alerts (Telegram/Discord):** Weitere Secrets, nur wenn du Benachrichtigungen willst. Der Alert-Schritt läuft nur, wenn mindestens ein Kanal konfiguriert ist:
+3. **Optional — mehrere Marktplätze:** Repo → **Settings → Variables → Actions → New repository variable** mit Namen `EBAY_MARKETPLACES` und z. B. dem Wert `EBAY_DE,EBAY_AT,EBAY_CH`. Jeder Marktplatz wird mit seiner Standardwährung gescannt (EUR für DE/AT/CH/NL/FR/IT/ES, GBP für GB, USD für US …). Leer/nicht gesetzt = nur `EBAY_DE`.
+
+4. **Optional — Buy-low-Alerts (Telegram/Discord):** Weitere Secrets, nur wenn du Benachrichtigungen willst. Der Alert-Schritt läuft nur, wenn mindestens ein Kanal konfiguriert ist:
 
 | Name | Wert |
 |---|---|
@@ -65,10 +67,10 @@ Nur **neue** Treffer am Buy-Low-Ziel werden gemeldet — `site/data/notified.jso
 
 1. Repo → **Actions** → **"eBay deal scan (nightly)"** (links)
 2. Rechts → **Run workflow** → grünen Button klicken
-3. Ablauf (≈2–3 Min.): Scan (21 Queries) → Preis-Historie aktualisieren → `LATEST.md` rendern → `site/feed.xml` rendern → `ebay_deals.csv` in `site/data/` veröffentlichen → optional Alerts senden → **Commit + Push** → **Pages-Deploy**
+3. Ablauf (≈2–3 Min.): Scan (21 Queries; bei `EBAY_MARKETPLACES` pro Marktplatz) → Preis-Historie aktualisieren → Listing-Preise tracken → `LATEST.md` rendern → `site/feed.xml` rendern → `ebay_deals.csv` in `site/data/` veröffentlichen → optional Alerts senden → **Commit + Push** → **Pages-Deploy**
 4. Fertig: Der Report liegt als
    - **Datei:** `LATEST.md` im Repo
-   - **Webseite:** `https://<DEIN-USERNAME>.github.io/<REPO-NAME>/` (die Seite liest ihre Daten zur Laufzeit aus `data/ebay_deals.csv`; Filter + EN/DE-Umschalter + 30-Tage-Trendlinie inklusive)
+   - **Webseite:** `https://<DEIN-USERNAME>.github.io/<REPO-NAME>/` (die Seite liest ihre Daten zur Laufzeit aus `data/ebay_deals.csv`; Filter + Marktplatz-Umschalter + EN/DE + Dunkelmodus + 30-Tage-Trendlinie inklusive)
 
 ## 6. Verifizieren
 
@@ -76,6 +78,7 @@ Nur **neue** Treffer am Buy-Low-Ziel werden gemeldet — `site/data/notified.jso
 - [ ] Im Repo liegt ein frischer Commit `chore: refresh eBay price report (YYYY-MM-DD)`
 - [ ] `LATEST.md` enthält 🔥-Highlights
 - [ ] `site/data/history.csv` existiert und hat eine Zeile pro Kategorie für heute
+- [ ] `site/data/listing_history.csv` existiert (Pro-Listing-Preise)
 - [ ] `site/feed.xml` existiert — RSS-Abo unter `https://<DEIN-USERNAME>.github.io/<REPO-NAME>/feed.xml`
 - [ ] Die Pages-URL lädt (erstmal kann 1–2 Min. dauern, Cache leeren mit Strg+F5)
 

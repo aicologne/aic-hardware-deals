@@ -19,7 +19,7 @@ Endpoints:
     GET /health
         -> {"ok": true, "realm": "production", "cred_source": "ebay.env"}
     GET /search?keyword=RTX 3090&min=450&max=750&condition=USED&category=27386
-                &marketplace=EBAY_DE&limit=50
+                &marketplace=EBAY_DE&currency=EUR&limit=50
         -> {"realm": "...", "total": N, "itemSummaries": [ ...raw Browse API items... ]}
     Errors -> JSON {"error": "..."} with a non-2xx status.
 
@@ -103,6 +103,7 @@ class RelayHandler(BaseHTTPRequestHandler):
         cond = arg("condition") or None
         category = int(arg("category", 0)) or None
         marketplace = arg("marketplace", "EBAY_DE")
+        currency = arg("currency", "EUR")
         limit = int(arg("limit", 50))
         sort = arg("sort", "price")
 
@@ -111,7 +112,7 @@ class RelayHandler(BaseHTTPRequestHandler):
         token = get_token_cached(realm)
         search_url = e.SANDBOX_SEARCH_URL if realm == "sandbox" else e.SEARCH_URL
 
-        filters = [f"price:[{pmin}..{pmax}]", "priceCurrency:EUR"]
+        filters = [f"price:[{pmin}..{pmax}]", f"priceCurrency:{currency}"]
         if cond:
             filters.append(f"conditions:{{{cond}}}")
         params = {"q": keyword, "limit": limit, "filter": ",".join(filters), "sort": sort}

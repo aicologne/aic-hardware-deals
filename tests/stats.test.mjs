@@ -5,7 +5,10 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { parseCSV, toRows, toHistoryRows, analyze, euro, num, median, flagFor, historySeries } from '../site/csv.js';
+import {
+  parseCSV, toRows, toHistoryRows, toAnyRows, analyze, euro, num, median, flagFor,
+  historySeries, movers, indexPct, euroPerGb, CAPACITY_GB, groupKey,
+} from '../site/csv.js';
 
 const csvPath = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'site', 'data', 'ebay_deals.csv');
 const text = readFileSync(csvPath, 'utf8');
@@ -22,7 +25,7 @@ test('parser handles quoted fields, commas and escaped quotes', () => {
 test('toRows maps the generated CSV to objects with the expected headers', () => {
   const rows = toRows(text);
   const headers = Object.keys(rows[0]).sort();
-  assert.deepEqual(headers, ['condition', 'currency', 'price', 'query', 'seller', 'title', 'url', 'win_max', 'win_min']);
+  assert.deepEqual(headers, ['condition', 'currency', 'marketplace', 'price', 'query', 'seller', 'title', 'url', 'win_max', 'win_min']);
   assert.equal(rows.length, parseCSV(text).length - 1, 'one data row per CSV record after the header');
   assert.ok(rows.length > 100, 'scan should contain a healthy number of listings');
   for (const r of rows) {
@@ -35,13 +38,21 @@ test('analyze groups every row exactly once and keeps totals consistent', () => 
   const { rows, groups, total } = analyze(toRows(text));
   assert.equal(total, rows.length);
   assert.equal(groups.reduce((n, g) => n + g.count, 0), total, 'sum of group counts == total rows');
-  assert.equal(new Set(groups.map(g => g.query)).size, groups.length, 'group names are unique');
+  assert.equal(new Set(groups.map(g => g.key)).size, groups.length, 'group keys are unique');
   for (const g of groups) {
     assert.ok(g.count > 0);
     assert.ok(g.median > 0, 'median is a positive number');
     assert.equal(num(g.cheapest.price), Math.min(...g.rows.map(r => num(r.price))), 'cheapest is the min price');
     assert.ok(g.atTargetCount <= g.count);
   }
+});
+
+test('composite group keys carry the marketplace', () => {
+  assert.equal(groupKey({ query: 'DDR4 RDIMM 32GB', marketplace: 'EBAY_AT' }), 'EBAY_AT · DDR4 RDIMM 32GB');
+  assert.equal(groupKey({ query: 'DDR4 RDIMM 32GB' }), 'EBAY_DE · DDR4 RDIMM 32GB', 'missing marketplace defaults to EBAY_DE');
+  const { marketplaces, single } = analyze(toRows(text));
+  assert.ok(marketplaces.includes('EBAY_DE'), 'committed scan is EBAY_DE');
+  assert.equal(single, true, 'single-marketplace scan displays bare query names');
 });
 
 test('flagged deals match the 15 % buy-low rule (price <= win_min * 1.15)', () => {
@@ -74,28 +85,81 @@ test('median and flagFor unit behaviour', () => {
 });
 
 test('toHistoryRows parses history.csv rows without a title column', () => {
-  const text = 'date,query,median,cheapest,count,at_target\n2026-08-14,DDR4 RDIMM 32GB,85.00,40.00,46,2\n2026-08-15,Nvidia Quadro RTX,600.00,406.24,42,8\n';
-  const rows = toHistoryRows(text);
+  const rows = toHistoryRows(
+    'date,marketplace,query,median,cheapest,count,at_target\n' +
+    '2026-08-14,EBAY_DE,DDR4 RDIMM 32GB,85.00,40.00,46,2\n' +
+    '2026-08-15,EBAY_DE,Nvidia Quadro RTX,600.00,406.24,42,8\n',
+  );
   assert.equal(rows.length, 2);
   assert.equal(rows[0].query, 'DDR4 RDIMM 32GB');
   assert.equal(rows[1].median, '600.00');
   assert.equal(toHistoryRows('date,query\n\n').length, 0);
 });
 
-test('historySeries sorts by date and keeps one point per date', () => {
+test('historySeries sorts by date and keeps one point per date (composite keys)', () => {
   const rows = [
-    { query: 'RAM', date: '2026-08-16', median: '90' },
-    { query: 'RAM', date: '2026-08-14', median: '85' },
-    { query: 'RAM', date: '2026-08-16', median: '95' }, // same date — later value wins
-    { query: 'GPU', date: '2026-08-15', median: '1200' },
-    { query: 'RAM', date: 'n/a', median: 'x' },         // unparsable — dropped
+    { query: 'RAM', marketplace: 'EBAY_DE', date: '2026-08-16', median: '90' },
+    { query: 'RAM', marketplace: 'EBAY_DE', date: '2026-08-14', median: '85' },
+    { query: 'RAM', marketplace: 'EBAY_DE', date: '2026-08-16', median: '95' }, // same date — later value wins
+    { query: 'GPU', marketplace: 'EBAY_DE', date: '2026-08-15', median: '1200' },
+    { query: 'RAM', marketplace: 'EBAY_AT', date: '2026-08-15', median: '88' }, // different marketplace
+    { query: 'RAM', marketplace: 'EBAY_DE', date: 'n/a', median: 'x' },         // unparsable — dropped
   ];
-  assert.deepEqual(historySeries(rows, 'RAM'), [
+  assert.deepEqual(historySeries(rows, 'EBAY_DE · RAM'), [
     { date: '2026-08-14', median: 85 },
     { date: '2026-08-16', median: 95 },
   ]);
-  assert.deepEqual(historySeries(rows, 'GPU'), [{ date: '2026-08-15', median: 1200 }]);
-  assert.deepEqual(historySeries(rows, 'MISSING'), []);
+  assert.deepEqual(historySeries(rows, 'EBAY_DE · GPU'), [{ date: '2026-08-15', median: 1200 }]);
+  assert.deepEqual(historySeries(rows, 'EBAY_AT · RAM'), [{ date: '2026-08-15', median: 88 }]);
+  assert.deepEqual(historySeries(rows, 'EBAY_DE · MISSING'), []);
+});
+
+test('movers compares the latest median against ~7 days ago and computes an index', () => {
+  const mk = (dates, medians) => dates.map((d, i) => ({ date: d, median: medians[i] }));
+  const history = {
+    'EBAY_DE · DDR4 RDIMM 32GB': mk(['2026-08-11', '2026-08-14', '2026-08-18'], [80, 85, 95]),
+    'EBAY_DE · Nvidia Quadro RTX': mk(['2026-08-10', '2026-08-17', '2026-08-18'], [600, 620, 580]),
+    'EBAY_DE · OptiPlex 3070 Micro': mk(['2026-08-17', '2026-08-18'], [140, 140]), // flat
+    'EBAY_DE · Single': mk(['2026-08-18'], [100]), // not enough history
+  };
+  const mv = movers(history);
+  assert.ok(mv.length >= 2, 'flat/single entries are excluded, risers/fallers included');
+  const byKey = Object.fromEntries(mv.map(m => [m.key, m]));
+  const ram = byKey['EBAY_DE · DDR4 RDIMM 32GB'];
+  assert.ok(ram, 'RAM is a mover');
+  assert.equal(ram.latest, 95);
+  assert.equal(ram.ref, 80, 'reference is the earliest point at-or-after 7 days before latest');
+  assert.equal(ram.refDate, '2026-08-11');
+  assert.ok(Math.abs(ram.delta - ((95 - 80) / 80) * 100) < 1e-9, 'delta computed');
+  const flat = byKey['EBAY_DE · OptiPlex 3070 Micro'];
+  assert.ok(flat && flat.delta === 0, 'flat series is a mover with delta 0 (consumers filter risers/fallers)');
+  assert.equal(byKey['EBAY_DE · Single'], undefined, 'single-point series is not a mover');
+  for (let i = 1; i < mv.length; i++) {
+    assert.ok(Math.abs(mv[i - 1].delta) >= Math.abs(mv[i].delta), 'sorted by |delta| desc');
+  }
+  const idx = indexPct(mv);
+  assert.ok(idx != null && Number.isFinite(idx), 'index is a finite number');
+  assert.equal(indexPct([]), null);
+  assert.equal(indexPct(null), null);
+});
+
+test('toAnyRows parses schemas with no required columns (listing_history.csv)', () => {
+  const rows = toAnyRows(
+    'url,query,marketplace,first_seen,first_price,last_seen,last_price\n' +
+    'https://x/1,DDR4 RDIMM 32GB,EBAY_DE,2026-08-14,42.00,2026-08-18,50.00\n',
+  );
+  assert.equal(rows.length, 1);
+  assert.equal(rows[0].first_price, '42.00');
+  assert.equal(rows[0].last_price, '50.00');
+  assert.equal(toAnyRows('a,b\n\n').length, 0);
+});
+
+test('euroPerGb uses the capacity map and returns null for unknown/mixed categories', () => {
+  assert.equal(euroPerGb('88', 'DDR4 RDIMM 32GB'), 2.75);
+  assert.equal(euroPerGb('1000', 'RTX 3090'), 1000 / 24);
+  assert.equal(euroPerGb('500', 'Nvidia Quadro RTX'), null, 'mixed-capacity category has no map entry');
+  assert.equal(euroPerGb('x', 'RTX 3090'), null, 'unparsable price -> null');
+  assert.ok(CAPACITY_GB['RTX 3090'] === 24 && CAPACITY_GB['DDR5 32GB'] === 32, 'map sanity');
 });
 
 // --- human-readable sanity summary (node --test shows it in the report) ---

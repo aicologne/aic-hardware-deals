@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Append today's per-category medians to site/data/history.csv (price history).
 
-One row per query per scan date, idempotent: re-running with the same date
-replaces that date's rows instead of duplicating them. The history powers the
-30-day median trendline on the site (sparkline) and the trend column in
-LATEST.md.
+One row per (marketplace, query) per scan date, idempotent: re-running with
+the same date replaces that date's rows instead of duplicating them. The
+history powers the 30-day median trendline on the site (sparkline) and the
+trend + movers sections in LATEST.md.
 
 Usage:
     python render_history.py [ebay_deals.csv] [site/data/history.csv] [--date YYYY-MM-DD]
@@ -15,6 +15,8 @@ import datetime
 import os
 import statistics
 import sys
+
+DEFAULT_MARKETPLACE = "EBAY_DE"
 
 
 def num(value):
@@ -41,10 +43,17 @@ def main():
             if r["_price"] is not None:
                 rows.append(r)
 
-    queries = sorted({r["query"] for r in rows})
+    # Composite key: marketplace · query (single-marketplace scans read as EBAY_DE).
+    groups = {}
+    for r in rows:
+        mp = (r.get("marketplace") or DEFAULT_MARKETPLACE).strip()
+        key = f"{mp} · {r['query']}"
+        groups.setdefault(key, []).append(r)
+
     new_rows = []
-    for query in queries:
-        qrows = [r for r in rows if r["query"] == query]
+    for key in sorted(groups):
+        qrows = groups[key]
+        mp, _, query = key.partition(" · ")
         prices = [r["_price"] for r in qrows]
         cheapest = min(prices)
         at_target = sum(
@@ -53,6 +62,7 @@ def main():
         )
         new_rows.append({
             "date": date,
+            "marketplace": mp,
             "query": query,
             "median": f"{statistics.median(prices):.2f}",
             "cheapest": f"{cheapest:.2f}",
@@ -69,10 +79,12 @@ def main():
                     continue
                 existing.append(r)
 
-    merged = sorted(existing + new_rows, key=lambda r: (r["date"], r["query"]))
+    merged = sorted(existing + new_rows, key=lambda r: (r["date"], r["marketplace"], r["query"]))
     os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
     with open(args.out, "w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=["date", "query", "median", "cheapest", "count", "at_target"])
+        writer = csv.DictWriter(
+            f, fieldnames=["date", "marketplace", "query", "median", "cheapest", "count", "at_target"]
+        )
         writer.writeheader()
         writer.writerows(merged)
 

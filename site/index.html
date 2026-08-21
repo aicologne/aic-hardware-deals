@@ -1,33 +1,65 @@
 <!doctype html>
-<html lang='en'>
+<html lang='en' data-theme='light'>
 
 <head>
   <meta charset='utf-8'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
-  <title>eBay.de Used Hardware — Price Report</title>
+  <title>eBay Used Hardware — Price Report</title>
 
   <!-- Social sharing / SEO. Adjust og:url to your Pages URL if it differs.
        Optional: drop a 1200×630 PNG at site/social-card.png and add
        <meta property='og:image' content='.../social-card.png'> -->
-  <meta name='description' content='Nightly eBay.de used-hardware price report: deal highlights, per-category medians and buy-low targets for GPUs (≥16 GB VRAM), server RAM and mini PCs — collected via the official Browse API.'>
+  <meta name='description' content='Nightly eBay used-hardware price report: deal highlights, per-category medians, €/GB value, 30-day trends and buy-low targets for GPUs (≥16 GB VRAM), server RAM and mini PCs — collected via the official Browse API.'>
   <meta property='og:type' content='website'>
-  <meta property='og:site_name' content='eBay.de Used Hardware — Price Report'>
-  <meta property='og:title' content='eBay.de Used Hardware — Price Report'>
-  <meta property='og:description' content='Nightly used-hardware price report: deal highlights, medians and buy-low targets for GPUs, server RAM and mini PCs (Browse API, eBay.de, used, EUR).'>
+  <meta property='og:site_name' content='eBay Used Hardware — Price Report'>
+  <meta property='og:title' content='eBay Used Hardware — Price Report'>
+  <meta property='og:description' content='Nightly used-hardware price report: deal highlights, medians, €/GB value, 30-day trends and buy-low targets for GPUs, server RAM and mini PCs (Browse API, used).'>
   <meta property='og:url' content='https://aicologne.github.io/aic-hardware-deals/'>
   <meta name='twitter:card' content='summary'>
+  <meta name='theme-color' content='#0969da'>
   <link rel='stylesheet' href='style.css'>
-  <link rel='alternate' type='application/rss+xml' title='eBay.de Used Hardware — Daily Deals' href='feed.xml'>
+  <link rel='manifest' href='manifest.webmanifest'>
+  <link rel='icon' href='icon.svg' type='image/svg+xml'>
+  <link rel='alternate' type='application/rss+xml' title='eBay Used Hardware — Daily Deals' href='feed.xml'>
+
+  <!-- Structured data (schema.org): helps search engines understand the report -->
+  <script type='application/ld+json'>
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "eBay Used Hardware — Price Report",
+    "url": "https://aicologne.github.io/aic-hardware-deals/",
+    "description": "Nightly used-hardware price report for GPUs, server RAM and mini PCs: deal highlights, medians, €/GB value, 30-day trends and buy-low targets.",
+    "publisher": { "@type": "Organization", "name": "aic-hardware-deals" }
+  }
+  </script>
+  <script type='application/ld+json'>
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "eBay used hardware price scan (nightly)",
+    "description": "Daily asking-price scans of used GPUs, server RAM and mini PCs collected via the eBay Browse API, with per-category medians and buy-low targets.",
+    "url": "https://aicologne.github.io/aic-hardware-deals/",
+    "license": "https://github.com/aicologne/aic-hardware-deals/blob/main/LICENSE",
+    "distribution": [
+      { "@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://aicologne.github.io/aic-hardware-deals/data/ebay_deals.csv" },
+      { "@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://aicologne.github.io/aic-hardware-deals/data/history.csv" }
+    ]
+  }
+  </script>
 </head>
 
 <body id='top'>
   <header>
     <div class='header-top'>
-      <h1 data-i18n='title'>🛒 eBay.de Used Hardware — Price Report</h1>
-      <nav class='lang-switch' aria-label='Language / Sprache'>
-        <button type='button' id='lang-en' lang='en'>EN</button>
-        <button type='button' id='lang-de' lang='de'>DE</button>
-      </nav>
+      <h1 data-i18n='title'>🛒 eBay Used Hardware — Price Report</h1>
+      <div class='header-controls'>
+        <button type='button' id='theme-toggle' title='Toggle dark mode' aria-label='Toggle dark mode'>🌙</button>
+        <nav class='lang-switch' aria-label='Language / Sprache'>
+          <button type='button' id='lang-en' lang='en'>EN</button>
+          <button type='button' id='lang-de' lang='de'>DE</button>
+        </nav>
+      </div>
     </div>
     <p class='meta'><em id='generated-line'>Loading latest scan…</em></p>
     <p><strong data-i18n='ctxLabel'>Market context (2026):</strong> <span data-i18n='ctxText'>the DRAM/GDDR
@@ -51,6 +83,10 @@
       <div id='filters' class='filters' hidden>
         <label for='f-search' data-i18n='fSearch'>Search</label>
         <input id='f-search' type='search' autocomplete='off'>
+        <span id='f-marketplace-wrap'>
+          <label for='f-marketplace' data-i18n='fMarketplace'>Marketplace</label>
+          <select id='f-marketplace'></select>
+        </span>
         <label for='f-category' data-i18n='fCategory'>Category</label>
         <select id='f-category'></select>
         <label for='f-maxprice' data-i18n='fMaxPrice'>Max price (€)</label>
@@ -60,6 +96,7 @@
           <option value='price-asc' data-i18n='fPriceAsc'>Price ↑</option>
           <option value='price-desc' data-i18n='fPriceDesc'>Price ↓</option>
           <option value='deal' data-i18n='fBestDeal'>Best deal first</option>
+          <option value='gb-asc' data-i18n='fBestGB'>Best €/GB</option>
         </select>
         <button type='button' id='f-reset' data-i18n='fReset'>Reset</button>
         <span id='f-count' class='f-count' role='status'></span>
@@ -75,6 +112,19 @@
     <ul id='methodology-list'></ul>
     <p class='footer-line' id='footer-tools'></p>
     <p class='footer-line' id='footer-stats'></p>
+
+    <details class='glossary'>
+      <summary data-i18n='glossaryTitle'>📖 Glossary (quick start)</summary>
+      <ul class='glossary-list'>
+        <li><strong>RDIMM</strong> — registered server RAM (ECC); cheap, abundant used, fits X99/EPYC boards, not normal desktops.</li>
+        <li><strong>ECC</strong> — error-correcting memory; server-grade reliability for long-running AI jobs.</li>
+        <li><strong>VRAM</strong> — GPU memory; the real bottleneck for local AI (16 GB+ recommended).</li>
+        <li><strong>X99 / LGA2011-3</strong> — cheap used platform (Xeon E5-v4) with lots of RAM slots; the budget AI-workstation path.</li>
+        <li><strong>Buy-low target</strong> — the price window a category is scanned for; 🔥 flags listings within 15 % of it.</li>
+        <li><strong>€/GB</strong> — price ÷ capacity, the value metric for GPUs and RAM (see the tables).</li>
+      </ul>
+    </details>
+
     <p class='footer-line'>
       <a href='#top' data-i18n='backTop'>↑ Back to top</a>
       · <a href='feed.xml' data-i18n='rss'>RSS feed</a>

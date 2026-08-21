@@ -49,6 +49,34 @@ export function toRows(text) {
     .filter(r => r.query && r.title);
 }
 
+/** Like toRows, but for schemas without a title column (e.g. data/history.csv). */
+export function toHistoryRows(text) {
+  const table = parseCSV(text);
+  if (!table.length) return [];
+  const headers = table[0].map(h => h.trim());
+  return table.slice(1)
+    .map(cells => {
+      const o = {};
+      headers.forEach((h, i) => { o[h] = (cells[i] ?? '').trim(); });
+      return o;
+    })
+    .filter(r => r.date && r.query);
+}
+
+/** Parse any CSV into objects with no required columns (e.g. listing_history.csv). */
+export function toAnyRows(text) {
+  const table = parseCSV(text);
+  if (!table.length) return [];
+  const headers = table[0].map(h => h.trim());
+  return table.slice(1)
+    .map(cells => {
+      const o = {};
+      headers.forEach((h, i) => { o[h] = (cells[i] ?? '').trim(); });
+      return o;
+    })
+    .filter(r => Object.values(r).some(v => v !== ''));
+}
+
 export function num(v) {
   const n = parseFloat(v);
   return Number.isFinite(n) ? n : null;
@@ -78,24 +106,54 @@ export function flagFor(r) {
   return 'ok';
 }
 
-/** Like toRows, but for schemas without a title column (e.g. data/history.csv). */
-export function toHistoryRows(text) {
-  const table = parseCSV(text);
-  if (!table.length) return [];
-  const headers = table[0].map(h => h.trim());
-  return table.slice(1)
-    .map(cells => {
-      const o = {};
-      headers.forEach((h, i) => { o[h] = (cells[i] ?? '').trim(); });
-      return o;
-    })
-    .filter(r => r.date && r.query);
+// --- marketplace + composite grouping --------------------------------------
+
+export const DEFAULT_MARKETPLACE = 'EBAY_DE';
+
+export function marketplaceOf(r) {
+  const mp = (r.marketplace || '').trim();
+  return mp || DEFAULT_MARKETPLACE;
 }
 
-/** Build a chronological, date-deduped median series for one query (history.csv rows). */
-export function historySeries(rows, query) {
+/** Composite group key: "EBAY_DE · DDR4 RDIMM 32GB" (marketplace · query). */
+export function groupKey(r) {
+  return `${marketplaceOf(r)} · ${r.query}`;
+}
+
+// --- €/GB value metric ------------------------------------------------------
+
+// Capacity in GB per scan category. Only unambiguous categories get a value;
+// mixed-capacity categories (e.g. Quadro RTX 8/16/24 GB) stay null.
+export const CAPACITY_GB = {
+  'RTX 3090': 24,
+  'RTX 3090 Ti': 24,
+  'RTX 4070 Ti Super': 16,
+  'RTX 4080 Super': 16,
+  'RTX 5070 16GB': 16,
+  'Tesla P40': 24,
+  'DDR4 RDIMM 32GB': 32,
+  'DDR4 RDIMM 64GB': 64,
+  'DDR5 32GB': 32,
+};
+
+export function euroPerGb(price, query) {
+  const cap = CAPACITY_GB[query];
+  if (cap == null) return null;
+  const n = num(price);
+  return n == null ? null : n / cap;
+}
+
+// --- history + movers -------------------------------------------------------
+
+function parseDate(s) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s || '');
+  return m ? new Date(+m[1], +m[2] - 1, +m[3]) : null;
+}
+
+/** Build a chronological, date-deduped median series for one composite key. */
+export function historySeries(rows, key) {
   const pts = rows
-    .filter(r => r.query === query && num(r.median) != null)
+    .filter(r => groupKey(r) === key && num(r.median) != null)
     .map(r => ({ date: r.date, median: num(r.median) }))
     .sort((a, b) => String(a.date).localeCompare(String(b.date)));
   const byDate = new Map();
@@ -103,22 +161,64 @@ export function historySeries(rows, query) {
   return [...byDate].map(([date, median]) => ({ date, median }));
 }
 
-/** Group rows by query and compute per-category stats + the flagged shortlist. */
+/**
+ * Recent median movers: [{key, latest, ref, refDate, delta}] sorted by
+ * |delta| desc. Reference = the earliest scan at-or-after 7 days before the
+ * latest scan (falls back to the previous scan for fresh history).
+ */
+export function movers(history) {
+  const out = [];
+  for (const key of Object.keys(history)) {
+    const pts = history[key];
+    if (!pts || pts.length < 2) continue;
+    const latest = pts[pts.length - 1].median;
+    const latestDate = parseDate(pts[pts.length - 1].date) || new Date();
+    const threshold = new Date(latestDate.getTime() - 7 * 86400000);
+    let ref = null;
+    let refDate = null;
+    for (let i = 0; i < pts.length - 1; i++) {
+      const d = parseDate(pts[i].date);
+      if (d && d >= threshold) { ref = pts[i].median; refDate = pts[i].date; break; }
+    }
+    if (ref == null) { ref = pts[pts.length - 2].median; refDate = pts[pts.length - 2].date; }
+    if (ref == null || ref <= 0) continue;
+    out.push({ key, latest, ref, refDate, delta: ((latest - ref) / ref) * 100 });
+  }
+  out.sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta));
+  return out;
+}
+
+/** Aggregate index: mean of per-key median deltas (null when no movers). */
+export function indexPct(moversArr) {
+  if (!moversArr || !moversArr.length) return null;
+  return moversArr.reduce((sum, m) => sum + m.delta, 0) / moversArr.length;
+}
+
+// --- grouping ---------------------------------------------------------------
+
+/** Group rows by composite key and compute per-category stats + the flagged shortlist. */
 export function analyze(rows) {
   const valid = rows.filter(r => num(r.price) != null);
-  const byQuery = new Map();
+  const marketplaces = [...new Set(valid.map(marketplaceOf))].sort();
+  const single = marketplaces.length <= 1;
+  const byKey = new Map();
   for (const r of valid) {
-    if (!byQuery.has(r.query)) byQuery.set(r.query, []);
-    byQuery.get(r.query).push(r);
+    const key = groupKey(r);
+    if (!byKey.has(key)) byKey.set(key, []);
+    byKey.get(key).push(r);
   }
-  const queries = [...byQuery.keys()].sort();
-  const groups = queries.map(q => {
-    const qrows = byQuery.get(q).slice().sort((a, b) => num(a.price) - num(b.price));
+  const keys = [...byKey.keys()].sort();
+  const groups = keys.map(key => {
+    const qrows = byKey.get(key).slice().sort((a, b) => num(a.price) - num(b.price));
     const prices = qrows.map(r => num(r.price));
     const wmin = num(qrows[0].win_min);
     const wmax = num(qrows[0].win_max);
+    const first = qrows[0] || {};
     return {
-      query: q,
+      key,
+      mp: marketplaceOf(first),
+      query: first.query || key,        // base query name (filter + single-marketplace display)
+      display: single ? (first.query || key) : key,
       rows: qrows,
       count: qrows.length,
       median: median(prices),
@@ -131,5 +231,5 @@ export function analyze(rows) {
   const flagged = valid
     .filter(r => flagFor(r) === '🔥 at/near buy-low target')
     .sort((a, b) => num(a.price) - num(b.price));
-  return { rows: valid, queries, groups, flagged, total: valid.length };
+  return { rows: valid, marketplaces, single, queries: keys, groups, flagged, total: valid.length };
 }

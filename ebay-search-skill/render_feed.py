@@ -6,13 +6,16 @@ buy-low target, cheapest first. If no listing currently qualifies, the feed
 still emits a single item so subscribers know the scan ran.
 
 Usage:
-    python render_feed.py [ebay_deals.csv] [site/feed.xml]
+    python render_feed.py [ebay_deals.csv] [site/feed.xml] [site/data/listing_history.csv]
 """
 import csv
 import datetime
 import html
+import os
 import sys
 from email.utils import format_datetime
+
+DEFAULT_MARKETPLACE = "EBAY_DE"
 
 CHANNEL_TITLE = "eBay.de Used Hardware — Daily Deals"
 # Point this at your Pages site if you prefer: https://<user>.github.io/<repo>/
@@ -42,9 +45,34 @@ def xmlesc(text):
     return html.escape(text or "", quote=True)
 
 
+def load_listing_history(path):
+    """listing_history.csv -> {url: row} for repricing notes."""
+    if not path or not os.path.exists(path):
+        return {}
+    out = {}
+    with open(path, encoding="utf-8-sig") as f:
+        for r in csv.DictReader(f):
+            out[r.get("url")] = r
+    return out
+
+
+def repriced_note(row, listing_history):
+    """'was €X on YYYY-MM-DD' when the listing was seen before at a different price."""
+    lh = listing_history.get(row.get("url"))
+    if not lh:
+        return ""
+    first_price = num(lh.get("first_price"))
+    last_price = num(lh.get("last_price"))
+    if first_price is None or last_price is None or first_price == last_price:
+        return ""
+    return f"was {euro(first_price)} on {lh.get('first_seen')}"
+
+
 def main():
     csv_path = sys.argv[1] if len(sys.argv) > 1 else "ebay_deals.csv"
     out_path = sys.argv[2] if len(sys.argv) > 2 else "site/feed.xml"
+    listing_path = sys.argv[3] if len(sys.argv) > 3 else "site/data/listing_history.csv"
+    listing_history = load_listing_history(listing_path)
 
     rows = []
     with open(csv_path, encoding="utf-8-sig") as f:
@@ -74,14 +102,19 @@ def main():
 
     if flagged:
         for i, r in enumerate(flagged, start=1):
-            title = f"[{r['query']}] {euro(r['_price'])} — {r.get('title') or '(no title)'} ({r.get('seller') or '? seller'})"
+            mp = r.get("marketplace") or "EBAY_DE"
+            title = f"[{mp}] [{r['query']}] {euro(r['_price'])} — {r.get('title') or '(no title)'} ({r.get('seller') or '? seller'})"
             desc = (
                 f"Category: {r.get('query') or ''}. "
+                f"Marketplace: {mp}. "
                 f"Price: {euro(r['_price'])}. "
                 f"Buy-low target: {euro(r['_win_min'])}. "
                 f"Condition: {r.get('condition') or ''}. "
                 f"Seller: {r.get('seller') or ''}."
             )
+            repriced = repriced_note(r, listing_history)
+            if repriced:
+                desc += f" {repriced.capitalize()}."
             url = r.get("url") or CHANNEL_LINK
             L.append("    <item>")
             L.append(f"      <title>{xmlesc(title)}</title>")

@@ -167,7 +167,71 @@ p.summary em { color: var(--text-muted); }
   vertical-align: middle;
   margin-left: .5rem;
   color: var(--accent);
+  cursor: pointer;
+  border-radius: 4px;
 }
+.sparkline:hover { outline: 1px solid var(--border); }
+
+.trend-detail { margin: .5rem 0 .75rem; }
+.trend-chart { display: block; max-width: 640px; }
+.chart-label { font-size: 11px; fill: var(--text-muted); }
+
+/* --- glossary -------------------------------------------------------------- */
+.glossary {
+  margin: 1rem 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: .5rem .9rem;
+}
+.glossary summary { cursor: pointer; font-weight: 600; }
+.glossary-list { margin: .6rem 0 .3rem; padding-left: 1.1rem; }
+.glossary-list li { margin: .25rem 0; }
+
+/* --- header controls: theme + language ------------------------------------ */
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+#theme-toggle {
+  font: inherit;
+  font-size: .95rem;
+  line-height: 1;
+  padding: .3rem .5rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+}
+#theme-toggle:hover { background: var(--bg-row); }
+
+/* --- dark mode ------------------------------------------------------------- */
+[data-theme='dark'] {
+  color-scheme: dark;
+  --border: #3d444d;
+  --border-soft: #31363d;
+  --bg-row: #1c2128;
+  --bg-head: #22272e;
+  --accent: #539bf5;
+  --text: #e6edf3;
+  --text-muted: #8b949e;
+  --fire: #e39c45;
+}
+[data-theme='dark'] body { background: #0d1117; }
+[data-theme='dark'] #toc-wrap,
+[data-theme='dark'] #theme-toggle,
+[data-theme='dark'] .lang-switch button,
+[data-theme='dark'] .filters input,
+[data-theme='dark'] .filters select,
+[data-theme='dark'] .filters button {
+  background: #161b22;
+}
+[data-theme='dark'] .filters button { color: var(--text); }
+[data-theme='dark'] .filters button:hover { background: var(--bg-head); }
+[data-theme='dark'] .toc-list a:hover { background: var(--bg-row); }
+[data-theme='dark'] .toc-list a.active { background: #12263a; color: var(--accent); }
+[data-theme='dark'] .error { background: #2d2417; border-color: #8a6d3b; color: #e3b341; }
+[data-theme='dark'] code { background: var(--bg-head); }
 
 /* --- loading / error states --------------------------------------------- */
 .status { color: var(--text-muted); }

@@ -25,7 +25,7 @@ A working deal-hunting kit for buying used/refurbished hardware (headless mini P
 | You want to… | Start here |
 |---|---|
 | 🔄 **Flip used hardware** — buy low (private sellers/shops), verify, sell tested at market | [`kleinanzeigen_playbook.md`](kleinanzeigen_playbook.md) + the 🔥 deal highlights in the [nightly report](LATEST.md) |
-| 🛠️ **Build a budget local-AI rig or homelab** — 2× RTX 3090 workstation, DDR4 vs. DDR5, what fits €1,000 / €2,000 / €3,000 | [`build_plan_2x3090.md`](build_plan_2x3090.md) + [`build_parts_matrix.md`](build_parts_matrix.md) |
+| 🛠️ **Build a budget local-AI rig or homelab** — 2× RTX 3090 workstation, DDR4 vs. DDR5, what fits €1,000 / €2,000 / €3,000 | [`build_plan_2x3090.md`](build_plan_2x3090.md) + [`build_parts_matrix.md`](build_parts_matrix.md) · new here? start with [`glossary.md`](glossary.md) |
 | 📊 **Track the DRAM-shortage market in numbers** — nightly medians, buy-low flags, price context | [nightly report](LATEST.md) · [live site](https://aicologne.github.io/aic-hardware-deals/) · [RSS feed](site/feed.xml) |
 
 ---
@@ -34,15 +34,17 @@ A working deal-hunting kit for buying used/refurbished hardware (headless mini P
 
 | File | What it is |
 |---|---|
-| [`LATEST.md`](LATEST.md) | **The final price report** — regenerated every night by the workflow (deal highlights, per-category medians, buy-low flags, 30-day median trend) |
-| [`ebay_deals.csv`](ebay_deals.csv) | Raw scan output (21 queries, EUR/used, client-side filtered) |
-| [`site/data/history.csv`](site/data/history.csv) | **Price history** — one median/cheapest row per category per scan date; powers the 30-day trendline on the site and in the report |
+| [`LATEST.md`](LATEST.md) | **The final price report** — regenerated every night by the workflow (deal highlights, per-category medians, €/GB value, 30-day trend, median movers, market index, buy-low flags) |
+| [`ebay_deals.csv`](ebay_deals.csv) | Raw scan output (21 queries, EUR/used, client-side filtered, with marketplace column) |
+| [`site/data/history.csv`](site/data/history.csv) | **Price history** — one median/cheapest row per (marketplace, category) per scan date; powers the 30-day trendline, movers and the index |
+| [`site/data/listing_history.csv`](site/data/listing_history.csv) | **Per-listing price history** — first-seen vs last-seen per listing URL, for "was €X on DATE" repricing notes |
 | [`site/feed.xml`](site/feed.xml) | **RSS feed of the daily deal highlights** — regenerated every night, served at `/feed.xml` on the Pages site |
+| [`glossary.md`](glossary.md) | **Bilingual glossary (EN/DE)** — plain-language explanations of RDIMM, ECC, VRAM, €/GB, buy-low targets, … |
 | [`build_plan_2x3090.md`](build_plan_2x3090.md) | Detailed build plan for the 2× RTX 3090 AI tower (DDR4/DDR5 paths, server question, sourcing matrix) |
 | [`build_parts_matrix.md`](build_parts_matrix.md) | **4 build configurations** — platform (DDR4/X99 vs DDR5/AM5) × GPU generation (newer RTX vs. older Quadro), all priced from live scans |
 | [`kleinanzeigen_playbook.md`](kleinanzeigen_playbook.md) | The full Kleinanzeigen strategy: 25+ search alerts, test protocols, negotiation script, scam flags |
-| `ebay-search-skill/` | Working tooling: Browse API scanner, local relay, report/history/feed renderers, alert notifier, skill docs |
-| `.github/workflows/ebay-scan.yml` | Nightly scan → report → GitHub Pages deployment |
+| `ebay-search-skill/` | Working tooling: Browse API scanner (multi-marketplace), local relay, report/history/listing/feed renderers, alert notifier, skill docs |
+| `.github/workflows/ebay-scan.yml` | Nightly scan → history → report → feed → alerts → GitHub Pages deployment |
 | [`ebay.env.example`](ebay.env.example) | Credentials template (never commit the real `ebay.env`) |
 | [`SETUP.md`](SETUP.md) | Step-by-step GitHub + Pages setup (this repo, ready to publish) |
 
@@ -111,11 +113,12 @@ Full details in [`kleinanzeigen_playbook.md`](kleinanzeigen_playbook.md) (21 rea
 
 | File | Purpose |
 |---|---|
-| `ebay_search.py` | CLI scanner: 21 default queries (GPUs ≥16 GB incl. Quadro RTX, 8th-gen mini PCs, DDR4/DDR5 RAM, AI hardware — DGX Spark / Strix Halo, whole gaming PCs, X99 build parts), realm auto-detection (sandbox vs production), correct filter syntax, client-side EUR/price/condition enforcement, `--demo`/`--debug`/`--relay` modes, CSV output |
+| `ebay_search.py` | CLI scanner: 21 default queries (GPUs ≥16 GB incl. Quadro RTX, 8th-gen mini PCs, DDR4/DDR5 RAM, AI hardware — DGX Spark / Strix Halo, whole gaming PCs, X99 build parts), realm auto-detection (sandbox vs production), correct filter syntax, client-side currency/price/condition enforcement, **multi-marketplace mode** (`--marketplaces EBAY_DE,EBAY_AT,…` or the `EBAY_MARKETPLACES` env var, per-marketplace currency), `--demo`/`--debug`/`--relay` modes, CSV output with marketplace column |
 | `ebay_relay.py` | Local HTTP relay (127.0.0.1 only) that forwards to eBay's HTTPS API — enables live scans from network-restricted environments (e.g., a DSH sandbox that blocks outbound HTTPS but allows loopback HTTP) |
-| `render_report.py` | Renders `ebay_deals.csv` → `LATEST.md` (the nightly price report: deal highlights, per-category medians, buy-low flags, 30-day median trend from `site/data/history.csv`) |
-| `render_history.py` | Appends one median/cheapest row per category per scan date to `site/data/history.csv` (idempotent — re-runs replace the same date's rows) |
-| `render_feed.py` | Renders `ebay_deals.csv` → `site/feed.xml` (RSS 2.0 feed of the daily deal highlights for the Pages site) |
+| `render_report.py` | Renders `ebay_deals.csv` → `LATEST.md` (deal highlights, per-category medians, **€/GB column**, buy-low flags, 30-day trend + **median movers** + **market index** from `site/data/history.csv`, **repricing notes** from `site/data/listing_history.csv`, marketplace columns in multi-marketplace mode) |
+| `render_history.py` | Appends one median/cheapest row per (marketplace, category) per scan date to `site/data/history.csv` (idempotent — re-runs replace the same date's rows) |
+| `render_listing_history.py` | Tracks first-seen vs last-seen price per listing URL in `site/data/listing_history.csv` (repricing detection; stale entries pruned after 60 days) |
+| `render_feed.py` | Renders `ebay_deals.csv` → `site/feed.xml` (RSS 2.0 feed of the daily deal highlights for the Pages site, incl. marketplace + repricing notes) |
 | `notify.py` | **Buy-low alerts** — sends NEW flagged deals to Telegram and/or Discord (state file dedupes across runs; `--dry-run` to preview) |
 | `SKILL.md` | The same knowledge packaged as a [DeepSeek Harness](https://github.com/deepseek-ai) skill — plain Markdown instructions, usable standalone too |
 
@@ -159,7 +162,8 @@ Output: console table + `ebay_deals.csv` (Excel-compatible).
 The repo ships `.github/workflows/ebay-scan.yml`:
 
 - **Runs daily at 05:00 UTC** (`schedule` cron — GitHub Actions cron is UTC) plus a manual **Run workflow** button (`workflow_dispatch`).
-- Executes `ebay_search.py` with credentials injected from **GitHub secrets** (never stored in the repo), then renders **`LATEST.md`** — a readable report grouped by query, price-sorted, with clickable listing links — and commits `ebay_deals.csv` + `LATEST.md` back to the repo.
+- Executes `ebay_search.py` with credentials injected from **GitHub secrets** (never stored in the repo), then updates the price history, per-listing price history, renders **`LATEST.md`** + **`site/feed.xml`**, optionally sends buy-low alerts, and commits everything back to the repo.
+- **Multi-marketplace (optional):** set a repo **Variable** `EBAY_MARKETPLACES` (e.g. `EBAY_DE,EBAY_AT,EBAY_CH`) under **Settings → Variables → Actions**; each marketplace is scanned with its default currency. Empty/unset = `EBAY_DE` only.
 - Skips the commit when nothing changed; `concurrency` prevents overlapping runs.
 
 ### Setup (2 minutes)
@@ -192,17 +196,18 @@ python ebay-search-skill/notify.py ebay_deals.csv --state site/data/notified.jso
 
 Every nightly run commits `ebay_deals.csv` and renders **`LATEST.md`** — a self-contained price report with:
 
-- 🔥 **Deal highlights** — listings currently at or within 15 % of the buy-low target (the shortlist to inspect first)
-- Per-category sections with the **deal window, median, cheapest item**, a **30-day median trend** once history has accumulated, and per-listing notes (`🔥 at/near buy-low` / `⚠️ above scan window`)
+- 🔥 **Deal highlights** — listings currently at or within 15 % of the buy-low target (the shortlist to inspect first), with **repricing notes** ("was €X on DATE")
+- Per-category sections with the **deal window, median, cheapest item**, a **€/GB value column**, a **30-day median trend** once history has accumulated, and per-listing notes (`🔥 at/near buy-low` / `⚠️ above scan window`)
+- **📈 Median movers** (risers/fallers vs. the previous scan) and a **market index** headline once history has accumulated
 - Market context, methodology, and a fees disclaimer
 
-The workflow also publishes `ebay_deals.csv` into `site/data/` and deploys `site/` to **GitHub Pages**. The page (`site/index.html`) is a thin shell: it **reads its listings from the generated CSV at runtime** (`app.js` fetches `data/ebay_deals.csv`), renders the same deal highlights, per-category tables and medians in the browser, and builds a table of contents with scroll-spy navigation. No listing data is baked into the HTML, so the nightly scan alone refreshes the site. The site has an **EN/DE language toggle**, **interactive filters** (search, category, max price, sort by price or best-deal-first), a **30-day median sparkline** per category (from `data/history.csv`), and the same run renders **`site/feed.xml`** — an RSS feed of the deal highlights you can subscribe to at `/feed.xml`.
+The workflow also publishes `ebay_deals.csv` into `site/data/` and deploys `site/` to **GitHub Pages**. The page (`site/index.html`) is a thin shell: it **reads its listings from the generated CSV at runtime** (`app.js` fetches `data/ebay_deals.csv`), renders the same deal highlights, per-category tables and medians in the browser, and builds a table of contents with scroll-spy navigation. No listing data is baked into the HTML, so the nightly scan alone refreshes the site. The site has an **EN/DE language toggle**, a **dark mode**, **interactive filters** (search, marketplace, category, max price, sort by price / best-deal / best-€/GB), **30-day median sparklines** that expand into full trend charts (from `data/history.csv`), **median movers** and a **market index**, **repricing notes** (from `data/listing_history.csv`), a quick-start **glossary**, and a **PWA manifest**. The same run renders **`site/feed.xml`** — an RSS feed of the deal highlights you can subscribe to at `/feed.xml`.
 
 ---
 
 ## Methodology & data quality (read before trusting any number)
 
-- **eBay.de prices**: live Browse API probes (production keyset), category-restricted, used + EUR enforced both server- and client-side.
+- **eBay prices**: live Browse API probes (production keyset), category-restricted, used + currency enforced both server- and client-side (EUR default; per-marketplace currency in multi-marketplace mode).
 - **Shop prices**: mostly **archived snapshots** (Wayback Machine) because the research sandbox cannot fetch HTTPS directly — every price carries its capture date, and several (e.g., servershop24 DDR5) are *pre-shortage* and almost certainly stale. **Verify live**.
 - **Kleinanzeigen**: no public API; prices come from real ads + market-tracker anchors, not systematic scraping.
 - **Absence ≠ absence**: serverschmiede/plusedv catalogs are barely indexable — "not found" means "verify manually", not "doesn't exist".
@@ -220,10 +225,16 @@ The workflow also publishes `ebay_deals.csv` into `site/data/` and deploys `site
 - [x] **Bilingual site (EN/DE)** — language toggle on the Pages site (listing titles stay German; UI and methodology text switch)
 - [x] **Buy-low alerts (Telegram/Discord)** — `notify.py` pings only *new* flagged deals (state file dedupes across runs)
 - [x] **Price history + 30-day median trend** — `site/data/history.csv` (one row per category per day) + sparkline on the site and a trend in `LATEST.md`
-- [x] **Interactive site filters** — search, category, max price, sort (price ↑/↓, best deal first)
+- [x] **Interactive site filters** — search, category, max price, sort (price ↑/↓, best deal first, best €/GB)
+- [x] **Multi-marketplace mode** — `--marketplaces` / `EBAY_MARKETPLACES` (EBAY_DE, EBAY_AT, EBAY_CH, …) with per-marketplace currency, marketplace column + filter on the site
+- [x] **€/GB value metrics** — capacity map (24 GB RTX 3090, 32 GB RDIMM, …) → €/GB column and a "Best €/GB" sort
+- [x] **Median movers + market index** — risers/fallers vs. the previous scan and an aggregate index in `LATEST.md` and on the site
+- [x] **Per-listing repricing notes** — `site/data/listing_history.csv` tracks first-seen vs last-seen prices ("was €X on DATE")
+- [x] **Glossary (EN/DE)** — [`glossary.md`](glossary.md) + a quick-start glossary on the site
+- [x] **Dark mode + PWA manifest + expandable trend charts + JSON-LD** — site polish
 - [ ] Margin column (subtract ~13 % eBay fees per hit)
 - [ ] Sold-price tracking via Terapeak / third-party data for true resale anchors
-- [ ] Multi-marketplace mode (EBAY_AT, EBAY_CH, EBAY_NL) via the header
+- [ ] Seller-feedback column (needs one extra Browse API call per item)
 
 ---
 

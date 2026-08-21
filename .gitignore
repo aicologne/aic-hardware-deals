@@ -6,6 +6,7 @@ ebay.env
 !ebay_deals.csv
 !site/data/ebay_deals.csv
 !site/data/history.csv
+!site/data/listing_history.csv
 
 # Python
 __pycache__/

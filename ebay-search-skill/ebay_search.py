@@ -41,6 +41,15 @@ SANDBOX_TOKEN_URL = "https://api.sandbox.ebay.com/identity/v1/oauth2/token"
 SANDBOX_SEARCH_URL = "https://api.sandbox.ebay.com/buy/browse/v1/item_summary/search"
 SCOPE = "https://api.ebay.com/oauth/api_scope"
 
+# Default currency per marketplace (used in multi-marketplace mode; the deal
+# windows in queries.py are then interpreted in that currency — adjust the
+# windows if you scan high-value non-EUR marketplaces).
+MARKETPLACE_CURRENCY = {
+    "EBAY_DE": "EUR", "EBAY_AT": "EUR", "EBAY_CH": "EUR", "EBAY_NL": "EUR",
+    "EBAY_FR": "EUR", "EBAY_IT": "EUR", "EBAY_ES": "EUR", "EBAY_GB": "GBP",
+    "EBAY_US": "USD", "EBAY_AU": "AUD", "EBAY_CA": "CAD",
+}
+
 
 def load_env_file(
     paths=(
@@ -118,6 +127,7 @@ def search(
     cond,
     category,
     marketplace,
+    currency,
     limit,
     search_url,
     retries=3,
@@ -128,7 +138,7 @@ def search(
     # an unknown param is silently ignored and the API falls back to EBAY_US).
     # The price filter REQUIRES priceCurrency (error 12012) and condition
     # values take {BRACES} (e.g. conditions:{USED}).
-    filters = [f"price:[{pmin}..{pmax}]", "priceCurrency:EUR"]
+    filters = [f"price:[{pmin}..{pmax}]", f"priceCurrency:{currency}"]
     if cond:
         filters.append(f"conditions:{{{cond}}}")
     params = {
@@ -169,14 +179,15 @@ def search(
     return []
 
 
-def parse_item(it, query_name, win_min=None, win_max=None):
+def parse_item(it, query_name, marketplace, win_min=None, win_max=None):
     """Normalize one Browse API item summary.
 
     Field types vary between sandbox and production (and between item
     categories): `condition` may be an object ({conditionGroup,
     conditionDescription}) or a plain string ("New", "Gebraucht"...);
     `price` and `seller` are objects but guard them too. `win_min`/`win_max`
-    carry the query's deal window into the CSV so the report can flag deals.
+    carry the query's deal window into the CSV so the report can flag deals;
+    `marketplace` records where the listing was found (multi-marketplace scans).
     """
     price = it.get("price")
     if not isinstance(price, dict):
@@ -202,6 +213,7 @@ def parse_item(it, query_name, win_min=None, win_max=None):
         "condition": cond,
         "seller": seller,
         "url": it.get("itemWebUrl", ""),
+        "marketplace": marketplace,
         "win_min": "" if win_min is None else win_min,
         "win_max": "" if win_max is None else win_max,
     }
@@ -210,12 +222,12 @@ def parse_item(it, query_name, win_min=None, win_max=None):
 USED_CONDITIONS = {"USED", "Used", "Gebraucht", "Open box", "For parts or not working"}
 
 
-def apply_local_filters(items, pmin, pmax, cond):
+def apply_local_filters(items, pmin, pmax, cond, currency="EUR"):
     """Belt-and-braces client-side enforcement of the deal window.
 
     The server-side filters (price/priceCurrency/conditions) are authoritative,
     but eBay has been observed to ignore malformed filters silently — so the
-    script double-checks EUR currency, the price range, and the condition, and
+    script double-checks the currency, the price range, and the condition, and
     reports how many items were dropped and why.
     """
     kept = []
@@ -224,8 +236,8 @@ def apply_local_filters(items, pmin, pmax, cond):
         price = it.get("price")
         if not isinstance(price, dict):
             price = {}
-        currency = price.get("currency", "")
-        if currency and currency != "EUR":
+        item_currency = price.get("currency", "")
+        if item_currency and item_currency != currency:
             dropped["currency"] += 1
             continue
         try:
@@ -249,7 +261,7 @@ def apply_local_filters(items, pmin, pmax, cond):
 
 
 def relay_search(
-    relay, keyword, pmin, pmax, cond, category, marketplace, limit, debug=False
+    relay, keyword, pmin, pmax, cond, category, marketplace, currency, limit, debug=False
 ):
     """Search through the local HTTP relay (ebay_relay.py) instead of direct HTTPS.
 
@@ -262,6 +274,7 @@ def relay_search(
         "min": pmin,
         "max": pmax,
         "marketplace": marketplace,
+        "currency": currency,
         "limit": limit,
     }
     if cond:
@@ -280,17 +293,32 @@ def relay_search(
     return data
 
 
-def run_queries(
+CSV_FIELDS = [
+    "query",
+    "title",
+    "price",
+    "currency",
+    "condition",
+    "seller",
+    "url",
+    "marketplace",
+    "win_min",
+    "win_max",
+]
+
+
+def scan_marketplace(
     queries,
     client_id,
     client_secret,
     marketplace,
-    out_path,
+    currency,
     realm,
     demo=False,
     debug=False,
     relay=None,
 ):
+    """Scan all queries on ONE marketplace; returns CSV row dicts."""
     print("=" * 70)
     if relay:
         print(f"REALM: RELAY — live listings via local relay {relay}")
@@ -312,13 +340,13 @@ def run_queries(
         print("DEMO MODE — no API calls; sample items exercise parsing/CSV only.\n")
     elif relay:
         token = None
-        print(f"Token: via relay — scanning {len(queries)} queries on {marketplace}\n")
+        print(f"Token: via relay — scanning {len(queries)} queries on {marketplace} ({currency})\n")
     else:
         token = get_token(client_id, client_secret, token_url)
-        print(f"Token OK — scanning {len(queries)} queries on {marketplace}\n")
+        print(f"Token OK — scanning {len(queries)} queries on {marketplace} ({currency})\n")
     rows = []
     for q in queries:
-        label = f"{q['name']}  ({q['min']}–{q['max']} €, {q.get('cond', 'ANY')})"
+        label = f"{q['name']}  ({q['min']}–{q['max']} {currency}, {q.get('cond', 'ANY')})"
         print(f"=== {label} ===")
         if demo:
             items = DEMO_ITEMS
@@ -333,6 +361,7 @@ def run_queries(
                         q.get("cond"),
                         q.get("category"),
                         marketplace,
+                        currency,
                         50,
                         debug=debug,
                     )
@@ -346,6 +375,7 @@ def run_queries(
                         q.get("cond"),
                         q.get("category"),
                         marketplace,
+                        currency,
                         50,
                         search_url,
                         debug=debug,
@@ -353,34 +383,29 @@ def run_queries(
             except Exception as e:  # noqa: BLE001 - surface and continue
                 print(f"  ERROR: {e}")
                 continue
-        items, dropped = apply_local_filters(items, q["min"], q["max"], q.get("cond"))
+        items, dropped = apply_local_filters(
+            items, q["min"], q["max"], q.get("cond"), currency=currency
+        )
         if any(dropped.values()):
             print(
-                f"  (local filter dropped {dropped['currency']} non-EUR, "
+                f"  (local filter dropped {dropped['currency']} wrong-currency, "
                 f"{dropped['price']} out-of-range, {dropped['condition']} wrong condition)"
             )
         for it in items:
-            row = parse_item(it, q["name"], q["min"], q["max"])
+            row = parse_item(it, q["name"], marketplace, q["min"], q["max"])
             rows.append(row)
             print(
                 f"  {row['price']:>8} {row['currency']}  [{row['condition'][:11]:11}] {row['title'][:70]}"
             )
             print(f"           {row['url']}")
         time.sleep(1)
+    return rows
+
+
+def write_csv(rows, out_path):
     if rows:
-        fields = [
-            "query",
-            "title",
-            "price",
-            "currency",
-            "condition",
-            "seller",
-            "url",
-            "win_min",
-            "win_max",
-        ]
         with open(out_path, "w", newline="", encoding="utf-8-sig") as f:
-            w = csv.DictWriter(f, fieldnames=fields)
+            w = csv.DictWriter(f, fieldnames=CSV_FIELDS)
             w.writeheader()
             w.writerows(rows)
         print(f"\nSaved {len(rows)} results to {out_path}")
@@ -408,6 +433,19 @@ def main():
         help="eBay category id (e.g. 27386 GPUs, 171957 desktops, 170083 RAM, 11210 server RAM)",
     )
     parser.add_argument("--marketplace", default="EBAY_DE")
+    parser.add_argument(
+        "--marketplaces",
+        default=None,
+        help="comma-separated list, e.g. EBAY_DE,EBAY_AT,EBAY_CH (overrides "
+        "--marketplace and the EBAY_MARKETPLACES env var; each marketplace is "
+        "scanned with its default currency)",
+    )
+    parser.add_argument(
+        "--currency",
+        default=None,
+        help="price filter currency (default: EUR for EBAY_DE, or the "
+        "marketplace's default in multi-marketplace mode)",
+    )
     parser.add_argument("--limit", type=int, default=50)
     parser.add_argument("--out", default="ebay_deals.csv")
     parser.add_argument(
@@ -470,17 +508,32 @@ def main():
         ]
     else:
         queries = DEFAULT_QUERIES
-    run_queries(
-        queries,
-        client_id,
-        client_secret,
-        args.marketplace,
-        args.out,
-        realm,
-        demo=args.demo,
-        debug=args.debug,
-        relay=args.relay,
-    )
+
+    # Determine which marketplaces to scan (flag > env > single --marketplace).
+    env_mps = os.environ.get("EBAY_MARKETPLACES", "").strip()
+    if args.marketplaces:
+        marketplaces = [m.strip() for m in args.marketplaces.split(",") if m.strip()]
+    elif env_mps:
+        marketplaces = [m.strip() for m in env_mps.split(",") if m.strip()]
+    else:
+        marketplaces = [args.marketplace]
+
+    all_rows = []
+    for mp in marketplaces:
+        currency = args.currency or MARKETPLACE_CURRENCY.get(mp, "EUR")
+        rows = scan_marketplace(
+            queries,
+            client_id,
+            client_secret,
+            mp,
+            currency,
+            realm,
+            demo=args.demo,
+            debug=args.debug,
+            relay=args.relay,
+        )
+        all_rows.extend(rows)
+    write_csv(all_rows, args.out)
 
 
 if __name__ == "__main__":
