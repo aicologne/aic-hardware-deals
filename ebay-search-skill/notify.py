@@ -24,6 +24,7 @@ import sys
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
+import logging
 
 # Console-safe output (Windows consoles default to cp1252; never crash on emoji).
 try:
@@ -166,7 +167,8 @@ def main():
     next_state = {}
     for r in flagged:
         url = r.get("url")
-        if url:
+        url = url.strip() if isinstance(url, str) else None
+        if url and url.startswith("http"):
             next_state[url] = state.get(url, now)
     save_state(args.state, next_state)
     print(f"state updated ({len(next_state)} tracked urls)")
