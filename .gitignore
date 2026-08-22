@@ -2,6 +2,7 @@
 ebay.env
 
 # Scanner outputs — but the canonical nightly scan result IS committed
+site/data/
 *.csv
 !ebay_deals.csv
 !site/data/ebay_deals.csv
