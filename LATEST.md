@@ -254,7 +254,7 @@ _Window €600–850 · median **€850,00** · cheapest **€782,99** · 0 at/n
 | **€850,00** | €739,50 | 53,12/GB | Gebraucht | [⭐ ASUS GeForce RTX 4070 Ti Super TUF O16G OC ⭐](https://www.ebay.de/itm/198006350702?_skw=RTX+4070+Ti+Super&hash=item2e1a19236e:g:-00AAeSwtiZpXkEf) | jordan557 | ok |
 | **€850,00** | €739,50 | 53,12/GB | Gebraucht | [Palit GeForce RTX 4070 Ti SUPER JetStream OC 16 GB GDDR6X HDMI DP PCI-E  #334592](https://www.ebay.de/itm/388820690122?_skw=RTX+4070+Ti+Super&hash=item5a8784e4ca:g:DqEAAeSwj3xomRsX) | survivalt_47 | ok |
 
-## RTX 4080 Super (1 items)
+## RTX 4080 Super (2 items)
 
 _Window €650–900 · median **€899,00** · cheapest **€899,00** · 0 at/near buy-low · median €56,19/GB_
 
@@ -287,7 +287,7 @@ _Window €80–180 · median **€165,75** · cheapest **€139,18** · 0 at/ne
 | **€175,44** | €152,63 | — | Used | [Lenovo ThinkCentre M720q Tiny PC Core i5-9400T 1,8GHz 8GB 256GB SSD WLAN WIN 11](https://www.ebay.de/itm/307108670252?_skw=ThinkCentre+M720q&hash=item47811a6b2c:g:wNEAAeSwYG9qczLj) | tecuk | ok |
 | **€175,44** | €152,63 | — | Used | [Lenovo ThinkCentre M720q Tiny Desktop - 256GB SSD - 10T7006NUK](https://www.ebay.de/itm/206427876995?_skw=ThinkCentre+M720q&hash=item30100f6e83:g:c0AAAeSwY89qXfs7) | dispose_of_it | ok |
 
-## ThinkCentre M920q (3 items)
+## ThinkCentre M920q (4 items)
 
 _Window €100–200 · median **€186,00** · cheapest **€179,00** · 0 at/near buy-low_
 
@@ -297,7 +297,7 @@ _Window €100–200 · median **€186,00** · cheapest **€179,00** · 0 at/n
 | **€186,00** | €161,82 | — | Gebraucht | [*3Jahre GEWL* Lenovo ThinkCentre M920q Tiny i3 8Gen 8GB 240GB SSD wi10 WIFI](https://www.ebay.de/itm/117253539980?_skw=ThinkCentre+M920q&hash=item1b4cdb088c:g:nPoAAeSwQl1qMnOd) | dealo24_de | ok |
 | **€189,99** | €165,29 | — | Gebraucht | [Mini PC Lenovo ThinkCentre M720q Tiny Intel i3-8100T 8GB 256GB SSD HDMI Seriell](https://www.ebay.de/itm/236997020719?_skw=ThinkCentre+M920q&hash=item372e1f8c2f:g:iYIAAeSwjJxqeYpa) | thinkstore24_de | ok |
 
-## X99 Mainboard (9 items)
+## X99 Mainboard (8 items)
 
 _Window €30–120 · median **€53,90** · cheapest **€31,57** · 1 at/near buy-low_
 
