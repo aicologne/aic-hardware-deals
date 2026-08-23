@@ -4,99 +4,85 @@
     <title>eBay.de Used Hardware — Daily Deals</title>
     <link>https://github.com/aicologne/aic-hardware-deals</link>
     <description>Nightly deal highlights from the eBay.de used-hardware price report (GPUs with &gt;=16 GB VRAM, server RAM, mini PCs): items at or within 15 % of the buy-low target. Collected via the official eBay Browse API; always verify condition and price before buying.</description>
-    <lastBuildDate>Sat, 22 Aug 2026 11:52:42 +0000</lastBuildDate>
-    <pubDate>Sat, 22 Aug 2026 11:52:42 +0000</pubDate>
+    <lastBuildDate>Sun, 23 Aug 2026 05:59:45 +0000</lastBuildDate>
+    <pubDate>Sun, 23 Aug 2026 05:59:45 +0000</pubDate>
     <generator>render_feed.py (aic-hardware-deals)</generator>
     <item>
       <title>[EBAY_DE] [DDR4 RDIMM 32GB] €42,00 — Server RAM DDR4 REG ECC PC4-17000R 2133 MHz RDIMM 4GB 8GB 16GB 32GB 64GB 128GB (computer-store-berlin)</title>
       <link>https://www.ebay.de/itm/117007112857?_skw=DDR4+RDIMM+32GB&amp;hash=item1b3e2ada99:g:MlcAAeSw1ytpeyI9</link>
-      <guid isPermaLink="false">deal-2026-08-22-1</guid>
+      <guid isPermaLink="false">deal-2026-08-23-1</guid>
       <description>Category: DDR4 RDIMM 32GB. Marketplace: EBAY_DE. Price: €42,00. Buy-low target: €40,00. Condition: Gebraucht. Seller: computer-store-berlin.</description>
-      <pubDate>Sat, 22 Aug 2026 11:52:42 +0000</pubDate>
+      <pubDate>Sun, 23 Aug 2026 05:59:45 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [ThinkCentre M720q] €84,58 — Lenovo ThinkCentre M720q i3-8100T 8GB 256GB SSD Windows 11 Pro - 66532 (asset-technology)</title>
       <link>https://www.ebay.de/itm/227485596890?_skw=ThinkCentre+M720q&amp;hash=item34f732bcda:g:GG4AAeSwy-ZqiFh0</link>
-      <guid isPermaLink="false">deal-2026-08-22-2</guid>
+      <guid isPermaLink="false">deal-2026-08-23-2</guid>
       <description>Category: ThinkCentre M720q. Marketplace: EBAY_DE. Price: €84,58. Buy-low target: €80,00. Condition: Used. Seller: asset-technology.</description>
-      <pubDate>Sat, 22 Aug 2026 11:52:42 +0000</pubDate>
+      <pubDate>Sun, 23 Aug 2026 05:59:45 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [OptiPlex 3070 Micro] €89,00 — Dell OptiPlex 3070 Micro Mini PC Intel Core i3-9100T ohne RAM SSD Netzteil (media.shop)</title>
       <link>https://www.ebay.de/itm/800458423559?_skw=OptiPlex+3070+Micro&amp;hash=itemba5f0a3d07:g:vQgAAeSw8QJqcZWA</link>
-      <guid isPermaLink="false">deal-2026-08-22-3</guid>
+      <guid isPermaLink="false">deal-2026-08-23-3</guid>
       <description>Category: OptiPlex 3070 Micro. Marketplace: EBAY_DE. Price: €89,00. Buy-low target: €80,00. Condition: Gebraucht. Seller: media.shop.</description>
-      <pubDate>Sat, 22 Aug 2026 11:52:42 +0000</pubDate>
-    </item>
-    <item>
-      <title>[EBAY_DE] [Nvidia Quadro RTX] €400,00 — NVIDIA Quadro RTX 5000 PCIe Grafikkarte DisplayPort USB-C 16GB (domkn1273)</title>
-      <link>https://www.ebay.de/itm/820034030711?_skw=Quadro+RTX&amp;hash=itembeedd64c77:g:ggAAAeSw2o5qiWkV</link>
-      <guid isPermaLink="false">deal-2026-08-22-4</guid>
-      <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €400,00. Buy-low target: €400,00. Condition: Gebraucht. Seller: domkn1273.</description>
-      <pubDate>Sat, 22 Aug 2026 11:52:42 +0000</pubDate>
+      <pubDate>Sun, 23 Aug 2026 05:59:45 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [Nvidia Quadro RTX] €400,99 — NVIDIA Quadro RTX 4000 8GB PCIe Grafikkarte Professional GPU getestet (risingsungaming)</title>
       <link>https://www.ebay.de/itm/206448705677?_skw=Quadro+RTX&amp;hash=item30114d408d:g:3QMAAeSw65BqaQ4x</link>
-      <guid isPermaLink="false">deal-2026-08-22-5</guid>
+      <guid isPermaLink="false">deal-2026-08-23-4</guid>
       <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €400,99. Buy-low target: €400,00. Condition: Gebraucht. Seller: risingsungaming. Was €505,95 on 2026-08-18.</description>
-      <pubDate>Sat, 22 Aug 2026 11:52:42 +0000</pubDate>
+      <pubDate>Sun, 23 Aug 2026 05:59:45 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [Nvidia Quadro RTX] €401,96 — NVIDIA Quadro RTX4000 6GB Professional Grafikkarte Turing Architektur getestet (risingsungaming)</title>
       <link>https://www.ebay.de/itm/206491446076?_skw=Quadro+RTX&amp;hash=item3013d96b3c:g:QNwAAeSw7-lqf3Pv</link>
-      <guid isPermaLink="false">deal-2026-08-22-6</guid>
+      <guid isPermaLink="false">deal-2026-08-23-5</guid>
       <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €401,96. Buy-low target: €400,00. Condition: Gebraucht. Seller: risingsungaming. Was €507,19 on 2026-08-18.</description>
-      <pubDate>Sat, 22 Aug 2026 11:52:42 +0000</pubDate>
+      <pubDate>Sun, 23 Aug 2026 05:59:45 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [Nvidia Quadro RTX] €430,00 — HP NVIDIA RTX5000 QUADRO | 16 GB GDDR6 | 4x DP PCIE 3.0 (kikibaby2009)</title>
       <link>https://www.ebay.de/itm/327249867718?_skw=Quadro+RTX&amp;hash=item4c319cb3c6:g:MIoAAeSw23FqS-MX</link>
-      <guid isPermaLink="false">deal-2026-08-22-7</guid>
+      <guid isPermaLink="false">deal-2026-08-23-6</guid>
       <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €430,00. Buy-low target: €400,00. Condition: Gebraucht. Seller: kikibaby2009. Was €450,00 on 2026-08-18.</description>
-      <pubDate>Sat, 22 Aug 2026 11:52:42 +0000</pubDate>
+      <pubDate>Sun, 23 Aug 2026 05:59:45 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [Nvidia Quadro RTX] €443,64 — NVIDIA QUADRO RTX 5000 16GB GDDR6 Grafikkarte HP L40548-002 L44055-001 (cloud_storage_corp)</title>
       <link>https://www.ebay.de/itm/178200049882?_skw=Quadro+RTX&amp;hash=item297d8cf8da:g:~CMAAeSwWi9p2Ijo</link>
-      <guid isPermaLink="false">deal-2026-08-22-8</guid>
+      <guid isPermaLink="false">deal-2026-08-23-7</guid>
       <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €443,64. Buy-low target: €400,00. Condition: Gebraucht. Seller: cloud_storage_corp. Was €454,07 on 2026-08-18.</description>
-      <pubDate>Sat, 22 Aug 2026 11:52:42 +0000</pubDate>
+      <pubDate>Sun, 23 Aug 2026 05:59:45 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [Nvidia Quadro RTX] €445,00 — PNY NVIDIA Quadro RTX 4000 8GB GDDR6 Grafikkarte PCIe 3.0 x16, 3 x DP, 1 x USB-C (eg-com-bo)</title>
       <link>https://www.ebay.de/itm/178328626863?_skw=Quadro+RTX&amp;hash=item298536e6af:g:EYwAAeSwJr1pYDpU</link>
-      <guid isPermaLink="false">deal-2026-08-22-9</guid>
+      <guid isPermaLink="false">deal-2026-08-23-8</guid>
       <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €445,00. Buy-low target: €400,00. Condition: Gebraucht. Seller: eg-com-bo.</description>
-      <pubDate>Sat, 22 Aug 2026 11:52:42 +0000</pubDate>
+      <pubDate>Sun, 23 Aug 2026 05:59:45 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [Nvidia Quadro RTX] €446,15 — NVIDIA Quadro RTX 4000 6GB Professional Grafikkarte Gebraucht (dr_nine)</title>
       <link>https://www.ebay.de/itm/117364777568?_skw=Quadro+RTX&amp;hash=item1b537c6260:g:vJIAAeSwgwRqg1AE</link>
-      <guid isPermaLink="false">deal-2026-08-22-10</guid>
+      <guid isPermaLink="false">deal-2026-08-23-9</guid>
       <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €446,15. Buy-low target: €400,00. Condition: Gebraucht. Seller: dr_nine. Was €446,21 on 2026-08-18.</description>
-      <pubDate>Sat, 22 Aug 2026 11:52:42 +0000</pubDate>
+      <pubDate>Sun, 23 Aug 2026 05:59:45 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [Nvidia Quadro RTX] €450,00 — NVIDIA Quadro RTX 5000 Grafikkarte NVIDIA GPU mit Lüfter &amp; Kühlkörper (niotech*)</title>
       <link>https://www.ebay.de/itm/147431873901?_skw=Quadro+RTX&amp;hash=item22539fdd6d:g:wyQAAeSw2AFqU2a5</link>
-      <guid isPermaLink="false">deal-2026-08-22-11</guid>
+      <guid isPermaLink="false">deal-2026-08-23-10</guid>
       <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €450,00. Buy-low target: €400,00. Condition: Gebraucht. Seller: niotech*.</description>
-      <pubDate>Sat, 22 Aug 2026 11:52:42 +0000</pubDate>
+      <pubDate>Sun, 23 Aug 2026 05:59:45 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [Nvidia Quadro RTX] €459,00 — NVIDIA QUADRO RTX 4000 8GB GDDR6 Grafikkarte GPU (quark32)</title>
       <link>https://www.ebay.de/itm/365655083314?_skw=Quadro+RTX&amp;hash=item5522bdc932:g:MqAAAOSw6GZmVvDa</link>
-      <guid isPermaLink="false">deal-2026-08-22-12</guid>
+      <guid isPermaLink="false">deal-2026-08-23-11</guid>
       <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €459,00. Buy-low target: €400,00. Condition: Gebraucht. Seller: quark32.</description>
-      <pubDate>Sat, 22 Aug 2026 11:52:42 +0000</pubDate>
-    </item>
-    <item>
-      <title>[EBAY_DE] [RTX 5070 16GB] €700,00 — XFX Grafikkarte 16 GB RADEON RX 9070 XT Weiss OC Gaming 3xDP/1xHDMI wie RTX 5070 (mc_ayo)</title>
-      <link>https://www.ebay.de/itm/398307591467?_skw=RTX+5070+16GB&amp;hash=item5cbcfb852b:g:nH0AAeSwcXFqhvXJ</link>
-      <guid isPermaLink="false">deal-2026-08-22-13</guid>
-      <description>Category: RTX 5070 16GB. Marketplace: EBAY_DE. Price: €700,00. Buy-low target: €700,00. Condition: Gebraucht. Seller: mc_ayo.</description>
-      <pubDate>Sat, 22 Aug 2026 11:52:42 +0000</pubDate>
+      <pubDate>Sun, 23 Aug 2026 05:59:45 +0000</pubDate>
     </item>
   </channel>
 </rss>
