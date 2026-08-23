@@ -84,17 +84,18 @@ jobs:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         if: ${{ env.TELEGRAM_BOT_TOKEN || env.DISCORD_WEBHOOK_URL }}
         run: python ebay-search-skill/notify.py ebay_deals.csv --state site/data/notified.json
-
       - name: Commit results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ebay_deals.csv LATEST.md site/ sold_anchors.csv
+          git add ebay_deals.csv LATEST.md site/
+          [ -f sold_anchors.csv ] && git add sold_anchors.csv
           if git diff --cached --quiet; then
             echo "No changes — nothing to commit"
             exit 0
           fi
           git commit -m "chore: refresh eBay price report ($(date -u +%Y-%m-%d))"
+          # ... rest of the script
           # The nightly cron can race other runs (manual dispatch, retries): the
           # remote main may have advanced past this checkout, so a plain push gets
           # rejected as non-fast-forward. Fetch, rebase onto the latest remote and
