@@ -34,6 +34,7 @@ import time
 import requests
 
 from queries import DEFAULT_QUERIES
+from windows import DEFAULT_HISTORY_PATH, load_recent_medians, window_for_query
 
 TOKEN_URL = "https://api.ebay.com/identity/v1/oauth2/token"
 SEARCH_URL = "https://api.ebay.com/buy/browse/v1/item_summary/search"
@@ -317,8 +318,15 @@ def scan_marketplace(
     demo=False,
     debug=False,
     relay=None,
+    history_by_key=None,
 ):
-    """Scan all queries on ONE marketplace; returns CSV row dicts."""
+    """Scan all queries on ONE marketplace; returns CSV row dicts.
+
+    Deal windows are ADAPTIVE: the static min/max from queries.py are refined
+    from the recent price history (windows.py) so the scan follows the market.
+    """
+    if history_by_key is None:
+        history_by_key = {}
     print("=" * 70)
     if relay:
         print(f"REALM: RELAY — live listings via local relay {relay}")
@@ -346,7 +354,11 @@ def scan_marketplace(
         print(f"Token OK — scanning {len(queries)} queries on {marketplace} ({currency})\n")
     rows = []
     for q in queries:
-        label = f"{q['name']}  ({q['min']}–{q['max']} {currency}, {q.get('cond', 'ANY')})"
+        wmin, wmax = window_for_query(q, history_by_key, marketplace=marketplace)
+        adaptive = (wmin, wmax) != (q.get("min"), q.get("max"))
+        label = f"{q['name']}  ({wmin:,.0f}–{wmax:,.0f} {currency}, {q.get('cond', 'ANY')})"
+        if adaptive:
+            label += f"  [adaptive vs static {q.get('min')}–{q.get('max')}]"
         print(f"=== {label} ===")
         if demo:
             items = DEMO_ITEMS
@@ -356,8 +368,8 @@ def scan_marketplace(
                     data = relay_search(
                         relay,
                         q["q"],
-                        q["min"],
-                        q["max"],
+                        wmin,
+                        wmax,
                         q.get("cond"),
                         q.get("category"),
                         marketplace,
@@ -370,8 +382,8 @@ def scan_marketplace(
                     items = search(
                         token,
                         q["q"],
-                        q["min"],
-                        q["max"],
+                        wmin,
+                        wmax,
                         q.get("cond"),
                         q.get("category"),
                         marketplace,
@@ -384,7 +396,7 @@ def scan_marketplace(
                 print(f"  ERROR: {e}")
                 continue
         items, dropped = apply_local_filters(
-            items, q["min"], q["max"], q.get("cond"), currency=currency
+            items, wmin, wmax, q.get("cond"), currency=currency
         )
         if any(dropped.values()):
             print(
@@ -392,7 +404,7 @@ def scan_marketplace(
                 f"{dropped['price']} out-of-range, {dropped['condition']} wrong condition)"
             )
         for it in items:
-            row = parse_item(it, q["name"], marketplace, q["min"], q["max"])
+            row = parse_item(it, q["name"], marketplace, wmin, wmax)
             rows.append(row)
             print(
                 f"  {row['price']:>8} {row['currency']}  [{row['condition'][:11]:11}] {row['title'][:70]}"
@@ -448,6 +460,11 @@ def main():
     )
     parser.add_argument("--limit", type=int, default=50)
     parser.add_argument("--out", default="ebay_deals.csv")
+    parser.add_argument(
+        "--history",
+        default=None,
+        help=f"price history CSV for adaptive deal windows (default: {DEFAULT_HISTORY_PATH})",
+    )
     parser.add_argument(
         "--demo",
         action="store_true",
@@ -519,6 +536,12 @@ def main():
         marketplaces = [args.marketplace]
 
     all_rows = []
+    history_by_key = load_recent_medians(args.history)
+    if history_by_key:
+        print(
+            f"(adaptive deal windows: {sum(len(v) for v in history_by_key.values())} "
+            f"history points across {len(history_by_key)} categories)"
+        )
     for mp in marketplaces:
         currency = args.currency or MARKETPLACE_CURRENCY.get(mp, "EUR")
         rows = scan_marketplace(
@@ -531,6 +554,7 @@ def main():
             demo=args.demo,
             debug=args.debug,
             relay=args.relay,
+            history_by_key=history_by_key,
         )
         all_rows.extend(rows)
     write_csv(all_rows, args.out)

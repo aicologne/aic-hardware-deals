@@ -35,9 +35,10 @@ A working deal-hunting kit for buying used/refurbished hardware (headless mini P
 | File | What it is |
 |---|---|
 | [`LATEST.md`](LATEST.md) | **The final price report** — regenerated every night by the workflow (deal highlights, per-category medians, €/GB value, 30-day trend, median movers, market index, buy-low flags) |
-| [`ebay_deals.csv`](ebay_deals.csv) | Raw scan output (21 queries, EUR/used, client-side filtered, with marketplace column) |
+| [`ebay_deals.csv`](ebay_deals.csv) | Raw scan output (30 queries, EUR/used, client-side filtered, with marketplace column) |
 | [`site/data/history.csv`](site/data/history.csv) | **Price history** — one median/cheapest row per (marketplace, category) per scan date; powers the 30-day trendline, movers and the index |
-| [`site/data/listing_history.csv`](site/data/listing_history.csv) | **Per-listing price history** — first-seen vs last-seen per listing URL, for "was €X on DATE" repricing notes |
+| [`site/data/listing_history.csv`](site/data/listing_history.csv) | **Per-listing price history** — first-seen vs last-seen per listing URL, for "was €X on DATE" repricing notes and **price-drop alerts** |
+| [`sold_anchors.csv`](sold_anchors.csv) | **Sold-price anchors (opt-in)** — median sold price per category from eBay's "Verkauft" search, merged into the report as resale context (generated only when `EBAY_SOLD_ANCHORS=1` is set) |
 | [`site/feed.xml`](site/feed.xml) | **RSS feed of the daily deal highlights** — regenerated every night, served at `/feed.xml` on the Pages site |
 | [`glossary.md`](glossary.md) | **Bilingual glossary (EN/DE)** — plain-language explanations of RDIMM, ECC, VRAM, €/GB, buy-low targets, … |
 | [`build_plan_2x3090.md`](build_plan_2x3090.md) | Detailed build plan for the 2× RTX 3090 AI tower (DDR4/DDR5 paths, server question, sourcing matrix) |
@@ -113,13 +114,15 @@ Full details in [`kleinanzeigen_playbook.md`](kleinanzeigen_playbook.md) (21 rea
 
 | File | Purpose |
 |---|---|
-| `ebay_search.py` | CLI scanner: 21 default queries (GPUs ≥16 GB incl. Quadro RTX, 8th-gen mini PCs, DDR4/DDR5 RAM, AI hardware — DGX Spark / Strix Halo, whole gaming PCs, X99 build parts), realm auto-detection (sandbox vs production), correct filter syntax, client-side currency/price/condition enforcement, **multi-marketplace mode** (`--marketplaces EBAY_DE,EBAY_AT,…` or the `EBAY_MARKETPLACES` env var, per-marketplace currency), `--demo`/`--debug`/`--relay` modes, CSV output with marketplace column |
+| `ebay_search.py` | CLI scanner: 30 default queries (GPUs ≥16 GB incl. Quadro RTX, Radeon PRO W7800/W7900, Tesla T4/P100, RTX 4060 Ti 16 GB, 8th-gen mini PCs, DDR4/DDR5 RAM incl. RDIMM, NVMe 2 TB, Macs with big unified memory, AI hardware — DGX Spark / Strix Halo, whole gaming PCs, X99 build parts), realm auto-detection (sandbox vs production), correct filter syntax, client-side currency/price/condition enforcement, **adaptive deal windows** from the price history, **multi-marketplace mode** (`--marketplaces EBAY_DE,EBAY_AT,…` or the `EBAY_MARKETPLACES` env var, per-marketplace currency), `--demo`/`--debug`/`--relay` modes, CSV output with marketplace column |
 | `ebay_relay.py` | Local HTTP relay (127.0.0.1 only) that forwards to eBay's HTTPS API — enables live scans from network-restricted environments (e.g., a DSH sandbox that blocks outbound HTTPS but allows loopback HTTP) |
-| `render_report.py` | Renders `ebay_deals.csv` → `LATEST.md` (deal highlights, per-category medians, **€/GB column**, buy-low flags, 30-day trend + **median movers** + **market index** from `site/data/history.csv`, **repricing notes** from `site/data/listing_history.csv`, marketplace columns in multi-marketplace mode) |
+| `render_report.py` | Renders `ebay_deals.csv` → `LATEST.md` (deal highlights, per-category medians, **€/GB column**, **Net column after ~13 % eBay fees**, buy-low flags, 30-day trend + **median movers** + **market index** from `site/data/history.csv`, **repricing notes** from `site/data/listing_history.csv`, **sold medians** from `sold_anchors.csv`, marketplace columns in multi-marketplace mode) |
+| `windows.py` | **Adaptive deal windows** — refines each query's static min/max from the last 30 days of medians (`site/data/history.csv`): the buy-low target tracks the market's lower quartile and the window ceiling widens as prices rise, so the scan and the 🔥 flags never go stale |
+| `sold_anchors.py` | **Sold-price anchors (opt-in)** — best-effort median sold prices per category from eBay's public "Verkauft" search → `sold_anchors.csv`, shown in the report as "sold median €X (n=Y)"; set the repo Variable `EBAY_SOLD_ANCHORS=1` to enable |
 | `render_history.py` | Appends one median/cheapest row per (marketplace, category) per scan date to `site/data/history.csv` (idempotent — re-runs replace the same date's rows) |
 | `render_listing_history.py` | Tracks first-seen vs last-seen price per listing URL in `site/data/listing_history.csv` (repricing detection; stale entries pruned after 60 days) |
 | `render_feed.py` | Renders `ebay_deals.csv` → `site/feed.xml` (RSS 2.0 feed of the daily deal highlights for the Pages site, incl. marketplace + repricing notes) |
-| `notify.py` | **Buy-low alerts** — sends NEW flagged deals to Telegram and/or Discord (state file dedupes across runs; `--dry-run` to preview) |
+| `notify.py` | **Buy-low + price-drop alerts** — sends NEW flagged deals **and** listings that dropped ≥5 % below their first-seen price to Telegram and/or Discord (state file dedupes across runs; `--dry-run` to preview) |
 | `SKILL.md` | The same knowledge packaged as a [DeepSeek Harness](https://github.com/deepseek-ai) skill — plain Markdown instructions, usable standalone too |
 
 ### What the scanner knows (hard-won lessons, all verified against the [Browse API spec](https://developer.ebay.com/api-docs/master/buy/browse/openapi/3/buy_browse_v1_oas3.yaml))
@@ -129,6 +132,7 @@ Full details in [`kleinanzeigen_playbook.md`](kleinanzeigen_playbook.md) (21 rea
 - **Condition values take curly braces**: `conditions:{USED}`.
 - **Use category IDs to kill keyword noise** ("RTX 3090" otherwise matches an iPhone *A3090*): `27386` Grafik-/Videokarten, `171957` Desktops & All-in-One-PCs, `170083` Arbeitsspeicher (RAM), `11210` Server-Speicher (RAM) — fetched live from the eBay.de Taxonomy API.
 - eBay **silently ignores malformed params** — so the scanner also enforces the deal window client-side and reports dropped items.
+- **Deal windows are adaptive**: the static min/max in `queries.py` are the fallback; once `site/data/history.csv` has a few days of medians per category, `windows.py` derives the scan window from the market (lower-quartile buy-low target, ceiling that widens as prices rise). Categories the shortage pushed above their old windows (RTX 3090, DDR5, …) are no longer invisible.
 
 ### Quick start
 
@@ -179,9 +183,11 @@ The repo ships `.github/workflows/ebay-scan.yml`:
 
 > ⚠️ The workflow needs the **production** keyset — a sandbox (`SBX`) keyset produces only test data and a misleading report.
 
-### Buy-low alerts (optional, Telegram / Discord)
+**Optional: sold-price anchors** — set a repo **Variable** `EBAY_SOLD_ANCHORS=1` under **Settings → Variables → Actions** to make the nightly run fetch median sold prices from eBay's "Verkauft" search (`sold_anchors.py`, best-effort — see Methodology). Unset = skipped.
 
-The nightly run also notifies you when **new** listings hit the buy-low window. Only deals that have not been reported before are sent (a state file dedupes across runs), so you get a ping when something new shows up — not every night.
+### Buy-low + price-drop alerts (optional, Telegram / Discord)
+
+The nightly run also notifies you when **new** listings hit the buy-low window **and** when a watched listing drops ≥5 % below its first-seen price. Only deals and drops that have not been reported before are sent (a state file dedupes across runs), so you get a ping when something new shows up — not every night.
 
 1. **Telegram**: create a bot with [@BotFather](https://t.me/BotFather) → get `TELEGRAM_BOT_TOKEN`; message your bot once, then get your `TELEGRAM_CHAT_ID` (e.g. via `https://api.telegram.org/bot<TOKEN>/getUpdates`).
 2. **Discord** (alternative or in addition): create a webhook in your server channel → copy `DISCORD_WEBHOOK_URL`.
@@ -189,7 +195,8 @@ The nightly run also notifies you when **new** listings hit the buy-low window. 
 
 ```bash
 # preview locally without sending (state file is only written on real sends)
-python ebay-search-skill/notify.py ebay_deals.csv --state site/data/notified.json --dry-run
+python ebay-search-skill/notify.py ebay_deals.csv --state site/data/notified.json \
+    --listing-history site/data/listing_history.csv --dry-run
 ```
 
 ## The report (`LATEST.md`) — the final product
@@ -197,8 +204,8 @@ python ebay-search-skill/notify.py ebay_deals.csv --state site/data/notified.jso
 Every nightly run commits `ebay_deals.csv` and renders **`LATEST.md`** — a self-contained price report with:
 
 - 🔥 **Deal highlights** — listings currently at or within 15 % of the buy-low target (the shortlist to inspect first), with **repricing notes** ("was €X on DATE")
-- Per-category sections with the **deal window, median, cheapest item**, a **€/GB value column**, a **30-day median trend** once history has accumulated, and per-listing notes (`🔥 at/near buy-low` / `⚠️ above scan window`)
-- **📈 Median movers** (risers/fallers vs. the previous scan) and a **market index** headline once history has accumulated
+- Per-category sections with the **deal window, median, cheapest item**, a **€/GB value column**, a **Net column (asking price after ~13 % eBay fees)**, a **sold median** when sold anchors are enabled, a **30-day median trend** once history has accumulated, and per-listing notes (`🔥 at/near buy-low` / `⚠️ above scan window`)
+- **📊 Used-market index + median movers** — an aggregate "market index" headline (mean of category median changes vs. ~7 days back) plus risers/fallers vs. the previous scan, once history has accumulated
 - Market context, methodology, and a fees disclaimer
 
 The workflow also publishes `ebay_deals.csv` into `site/data/` and deploys `site/` to **GitHub Pages**. The page (`site/index.html`) is a thin shell: it **reads its listings from the generated CSV at runtime** (`app.js` fetches `data/ebay_deals.csv`), renders the same deal highlights, per-category tables and medians in the browser, and builds a table of contents with scroll-spy navigation. No listing data is baked into the HTML, so the nightly scan alone refreshes the site. The site has an **EN/DE language toggle**, a **dark mode**, **interactive filters** (search, marketplace, category, max price, sort by price / best-deal / best-€/GB), **30-day median sparklines** that expand into full trend charts (from `data/history.csv`), **median movers** and a **market index**, **repricing notes** (from `data/listing_history.csv`), a quick-start **glossary**, and a **PWA manifest**. The same run renders **`site/feed.xml`** — an RSS feed of the deal highlights you can subscribe to at `/feed.xml`.
@@ -207,7 +214,9 @@ The workflow also publishes `ebay_deals.csv` into `site/data/` and deploys `site
 
 ## Methodology & data quality (read before trusting any number)
 
-- **eBay prices**: live Browse API probes (production keyset), category-restricted, used + currency enforced both server- and client-side (EUR default; per-marketplace currency in multi-marketplace mode).
+- **eBay prices**: live Browse API probes (production keyset), category-restricted, used + currency enforced both server- and client-side (EUR default; per-marketplace currency in multi-marketplace mode). **Deal windows adapt to the last 30 days of history** (`windows.py`), so flags stay relative to the current market.
+- **Net column**: asking price minus the ~13 % eBay seller fee (configurable via the `EBAY_FEE_RATE` env var) — shipping and your own costs still apply.
+- **Sold anchors**: `sold_anchors.csv` comes from eBay's public "Verkauft" search (opt-in, `EBAY_SOLD_ANCHORS=1`) — best-effort HTML parsing, sample size shown, no Browse-API guarantee. Absence of an anchor = not fetched, not "no sales".
 - **Shop prices**: mostly **archived snapshots** (Wayback Machine) because the research sandbox cannot fetch HTTPS directly — every price carries its capture date, and several (e.g., servershop24 DDR5) are *pre-shortage* and almost certainly stale. **Verify live**.
 - **Kleinanzeigen**: no public API; prices come from real ads + market-tracker anchors, not systematic scraping.
 - **Absence ≠ absence**: serverschmiede/plusedv catalogs are barely indexable — "not found" means "verify manually", not "doesn't exist".
@@ -228,13 +237,18 @@ The workflow also publishes `ebay_deals.csv` into `site/data/` and deploys `site
 - [x] **Interactive site filters** — search, category, max price, sort (price ↑/↓, best deal first, best €/GB)
 - [x] **Multi-marketplace mode** — `--marketplaces` / `EBAY_MARKETPLACES` (EBAY_DE, EBAY_AT, EBAY_CH, …) with per-marketplace currency, marketplace column + filter on the site
 - [x] **€/GB value metrics** — capacity map (24 GB RTX 3090, 32 GB RDIMM, …) → €/GB column and a "Best €/GB" sort
-- [x] **Median movers + market index** — risers/fallers vs. the previous scan and an aggregate index in `LATEST.md` and on the site
+- [x] **Median movers + market index** — risers/fallers vs. the previous scan and an aggregate **"Used-market index" headline** in `LATEST.md` and on the site
 - [x] **Per-listing repricing notes** — `site/data/listing_history.csv` tracks first-seen vs last-seen prices ("was €X on DATE")
 - [x] **Glossary (EN/DE)** — [`glossary.md`](glossary.md) + a quick-start glossary on the site
 - [x] **Dark mode + PWA manifest + expandable trend charts + JSON-LD** — site polish
-- [ ] Margin column (subtract ~13 % eBay fees per hit)
-- [ ] Sold-price tracking via Terapeak / third-party data for true resale anchors
-- [ ] Seller-feedback column (needs one extra Browse API call per item)
+- [x] **Adaptive buy-low targets** — `windows.py` derives each category's window from the last 30 days of history, so scan windows and 🔥 flags follow the market (static windows in `queries.py` are only the fallback)
+- [x] **Net-price column** — every report table shows the asking price net of the ~13 % eBay fee (override with `EBAY_FEE_RATE`)
+- [x] **Price-drop alerts** — `notify.py` pings listings that dropped ≥5 % below their first-seen price
+- [x] **Sold-price anchors (opt-in)** — `sold_anchors.py` fetches median sold prices from eBay's "Verkauft" search → "sold median €X (n=Y)" in the report
+- [x] **More scan categories** — MacBook Pro Max / Mac Studio Ultra (big unified memory), RTX 4060 Ti 16 GB, Radeon PRO W7800/W7900, Tesla T4/P100, DDR5 RDIMM, NVMe 2 TB — and current-market static windows for the shortage-era prices
+- [ ] **Kleinanzeigen auto-digest** — automate the private-market channel (nightly search of saved alerts, below-target filtering, same alerting)
+- [ ] **Dynamic build configurator** — budget → cheapest current parts assembled from the live CSV
+- [ ] **Seller-feedback column** (needs one extra Browse API call per item)
 
 ---
 

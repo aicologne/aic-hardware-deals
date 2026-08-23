@@ -26,11 +26,21 @@ CAPACITY_GB = {
     "RTX 4070 Ti Super": 16,
     "RTX 4080 Super": 16,
     "RTX 5070 16GB": 16,
+    "RTX 5060": 16,
+    "RTX 4060 Ti 16GB": 16,
     "Tesla P40": 24,
+    "Tesla T4": 16,
+    "Radeon PRO W7800": 32,
+    "Radeon PRO W7900": 48,
     "DDR4 RDIMM 32GB": 32,
     "DDR4 RDIMM 64GB": 64,
     "DDR5 32GB": 32,
+    "DDR5 RDIMM": 32,
 }
+
+# eBay seller fee rate (of the gross price), used for the Net column. Override
+# via EBAY_FEE_RATE (e.g. "0.13"); set to "0" to hide the column.
+FEE_RATE = float(os.environ.get("EBAY_FEE_RATE", "0.13"))
 
 MARKET_CONTEXT = (
     "**Market context (2026):** the DRAM/GDDR shortage keeps used prices elevated. "
@@ -43,10 +53,11 @@ MARKET_CONTEXT = (
 
 FOOTNOTES = [
     "Prices are asking prices from active listings (used), collected by the Browse API.",
-    "Buy-low targets are the scan windows configured in `ebay_search.py`; a listing within 15 % of the target is flagged 🔥.",
-    "eBay seller fees (~13 %) and shipping are NOT included — subtract them from any margin estimate.",
+    "Buy-low targets are the scan windows (static fallback, refined adaptively from the last 30 days of price history); a listing within 15 % of the target is flagged 🔥.",
+    "Net = asking price minus the ~13 % eBay seller fee — subtract shipping and your own costs too.",
     "Condition and warranty are the seller's; always verify photos, GPU-Z/memtest results, and seller feedback before paying.",
     "€/GB is price ÷ capacity of the scan category (e.g. 32 GB RDIMM, 24 GB RTX 3090); mixed-capacity categories show —.",
+    "Sold median (when present) comes from eBay's public 'Verkauft' search — a best-effort resale anchor, not the Browse API; sample size matters.",
     "In multi-marketplace mode, scan windows are interpreted in each marketplace's currency.",
 ]
 
@@ -62,6 +73,31 @@ def euro(value):
     if value is None:
         return "—"
     return f"€{value:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+
+
+def net_euro(price):
+    """Net asking price after the eBay seller fee (None -> "—")."""
+    if price is None or FEE_RATE <= 0:
+        return "—"
+    return euro(price * (1 - FEE_RATE))
+
+
+def load_sold_anchors(path):
+    """sold_anchors.csv -> {query: {"median_sold": float, "sample_size": int}}."""
+    if not path or not os.path.exists(path):
+        return {}
+    out = {}
+    with open(path, encoding="utf-8-sig") as f:
+        for r in csv.DictReader(f):
+            median = num(r.get("median_sold"))
+            if median is None:
+                continue
+            try:
+                n = int(float(r.get("sample_size") or 0))
+            except (TypeError, ValueError):
+                n = 0
+            out[r.get("query")] = {"median_sold": median, "sample_size": n}
+    return out
 
 
 def pct(value):
@@ -192,8 +228,10 @@ def main():
     out_path = sys.argv[2] if len(sys.argv) > 2 else "LATEST.md"
     history_path = sys.argv[3] if len(sys.argv) > 3 else None
     listing_path = sys.argv[4] if len(sys.argv) > 4 else "site/data/listing_history.csv"
+    sold_path = sys.argv[5] if len(sys.argv) > 5 else "sold_anchors.csv"
     history = load_history(history_path)
     listing_history = load_listing_history(listing_path)
+    sold_anchors = load_sold_anchors(sold_path)
 
     rows = []
     with open(csv_path, encoding="utf-8-sig") as f:
@@ -230,6 +268,8 @@ def main():
     if mv:
         index_pct = sum(t[4] for t in mv) / len(mv)
 
+    net_label = f"Net (−{FEE_RATE * 100:.0f} %)" if FEE_RATE > 0 else None
+
     L = []  # output lines
     L.append("# 🛒 eBay.de Used Hardware — Price Report")
     L.append("")
@@ -250,6 +290,8 @@ def main():
                  "shortlist to inspect first:")
         L.append("")
         headers = ["Category", "Price", "Buy-low target", "Title", "Seller", "Note"]
+        if net_label:
+            headers.insert(2, net_label)
         if multi:
             headers.insert(0, "Mkt")
         L.append("| " + " | ".join(headers) + " |")
@@ -260,8 +302,10 @@ def main():
             note = repriced_note(r, listing_history)
             if not note:
                 note = "🔥 at/near buy-low target"
-            cells = [r["query"], f"**{euro(r['_price'])}**", target,
-                     f"[{title}]({r.get('url') or ''})", r["seller"], note]
+            cells = [r["query"], f"**{euro(r['_price'])}**"]
+            if net_label:
+                cells.append(net_euro(r["_price"]))
+            cells += [target, f"[{title}]({r.get('url') or ''})", r["seller"], note]
             if multi:
                 cells.insert(0, r["_mp"])
             L.append("| " + " | ".join(cells) + " |")
@@ -271,13 +315,17 @@ def main():
                  "next nightly scan, or widen the windows in `ebay_search.py`.")
         L.append("")
 
-    # --- median movers ---------------------------------------------------
+    # --- median movers + market index ------------------------------------
     if mv:
+        L.append("## 📊 Used-market index & movers")
+        L.append("")
+        L.append(f"**Market index: {pct(index_pct)}** — mean change of {len(mv)} "
+                 f"category medians vs. their reference scan (~7 days back). "
+                 f"Positive = market heating up (shortage pressure); negative = cooling.")
+        L.append("")
         risers = [t for t in mv if t[4] > 0][:5]
         fallers = [t for t in mv if t[4] < 0][:5]
         if risers or fallers:
-            L.append("## 📈 Median movers (vs previous scan)")
-            L.append("")
             for label, items in (("Risers", risers), ("Fallers", fallers)):
                 if not items:
                     continue
@@ -310,12 +358,18 @@ def main():
         trend_part = f" · 30d {trend}" if trend else ""
         cap = capacity_gb(base_query)
         gb_part = f" · median {euro(median / cap)}/GB" if cap else ""
+        anchor = sold_anchors.get(base_query)
+        sold_part = (f" · sold median **{euro(anchor['median_sold'])}** "
+                     f"(n={anchor['sample_size']})") if anchor else ""
         L.append(f"_Window {window} · median **{euro(median)}** · cheapest "
-                 f"**{euro(cheapest['_price'])}** · {at_target} at/near buy-low{trend_part}{gb_part}_")
+                 f"**{euro(cheapest['_price'])}** · {at_target} at/near buy-low"
+                 f"{trend_part}{gb_part}{sold_part}_")
         L.append("")
         headers = ["Price", "Condition", "Title", "Seller", "Note"]
+        if net_label:
+            headers.insert(1, net_label)
         if has_capacity:
-            headers.insert(1, "€/GB")
+            headers.insert(2, "€/GB")
         if multi:
             headers.insert(0, "Mkt")
         L.append("| " + " | ".join(headers) + " |")
@@ -327,6 +381,8 @@ def main():
             if repriced:
                 note = f"{note} · {repriced}"
             cells = [f"**{euro(r['_price'])}**"]
+            if net_label:
+                cells.append(net_euro(r["_price"]))
             if has_capacity:
                 cells.append(euro_per_gb_str(r["_price"], base_query))
             cells += [r["condition"], f"[{title}]({r.get('url') or ''})", r["seller"], note]

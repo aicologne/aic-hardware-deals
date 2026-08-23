@@ -46,11 +46,20 @@ jobs:
 
       - name: Track per-listing prices (site/data/listing_history.csv)
         # First-seen vs last-seen price per listing URL, for "was €X on DATE"
-        # repricing notes in the report, site and feed.
+        # repricing notes in the report, site, feed and price-drop alerts.
         run: python ebay-search-skill/render_listing_history.py ebay_deals.csv site/data/listing_history.csv --date $(date -u +%Y-%m-%d)
 
+      - name: Fetch sold-price anchors (optional — EBAY_SOLD_ANCHORS=1)
+        # Best-effort resale anchors from eBay's public "Verkauft" search.
+        # Opt-in because it scrapes public HTML (see sold_anchors.py). Set the
+        # repo Variable EBAY_SOLD_ANCHORS=1 under Settings -> Variables.
+        env:
+          EBAY_SOLD_ANCHORS: ${{ vars.EBAY_SOLD_ANCHORS }}
+        if: ${{ env.EBAY_SOLD_ANCHORS == '1' }}
+        run: python ebay-search-skill/sold_anchors.py ebay_deals.csv sold_anchors.csv
+
       - name: Render the price report (LATEST.md)
-        run: python ebay-search-skill/render_report.py ebay_deals.csv LATEST.md site/data/history.csv site/data/listing_history.csv
+        run: python ebay-search-skill/render_report.py ebay_deals.csv LATEST.md site/data/history.csv site/data/listing_history.csv sold_anchors.csv
 
       - name: Render the RSS feed (site/feed.xml)
         # Deal highlights as RSS 2.0; regenerated every run so the feed stays
@@ -80,7 +89,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ebay_deals.csv LATEST.md site/
+          git add ebay_deals.csv LATEST.md site/ sold_anchors.csv
           if git diff --cached --quiet; then
             echo "No changes — nothing to commit"
             exit 0
