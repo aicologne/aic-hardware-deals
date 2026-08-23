@@ -42,6 +42,12 @@ function el(tag, attrs = {}, ...children) {
 const I18N = {
   en: {
     title: '🛒 eBay Used Hardware — Price Report',
+    tagline: 'Nightly price intelligence for used AI hardware — GPUs ≥16 GB, server RAM, mini PCs and complete systems. Browse API · used · EUR.',
+    heroBadge: 'Nightly scan · eBay.de · Used · EUR',
+    navRss: 'RSS',
+    navData: 'Data (CSV)',
+    navGlossary: 'Glossary',
+    navMethodology: 'Methodology',
     ctxLabel: 'Market context (2026):',
     ctxText: 'the DRAM/GDDR shortage keeps used prices elevated. Used RTX 3090s ask €1000–1500 on eBay.de; DDR5 German retail is ~4.2–4.5× its July-2025 level; DDR4 RDIMM shops ask €219–230 for 32 GB while private sellers still move pre-shortage stock at €60–120. Note the new-price anchors: a BOSGAME M5 (Strix Halo, 128 GB) costs €1581–1700 new — used Strix Halo above that is not a deal. Verify everything live — prices move weekly.',
     tocTitle: 'Contents',
@@ -110,6 +116,12 @@ const I18N = {
   },
   de: {
     title: '🛒 eBay Gebraucht-Hardware — Preisreport',
+    tagline: 'Nächtliche Preisübersicht für gebrauchte KI-Hardware — GPUs ≥16 GB, Server-RAM, Mini-PCs und Komplettsysteme. Browse API · gebraucht · EUR.',
+    heroBadge: 'Nächtlicher Scan · eBay.de · Gebraucht · EUR',
+    navRss: 'RSS',
+    navData: 'Daten (CSV)',
+    navGlossary: 'Glossar',
+    navMethodology: 'Methodik',
     ctxLabel: 'Marktkontext (2026):',
     ctxText: 'Die DRAM/GDDR-Knappheit hält die Gebrauchtpreise hoch: Gebrauchte RTX-3090-Karten kosten auf eBay.de €1.000–1.500; DDR5 im deutschen Handel liegt bei ~4,2–4,5× des Niveaus vom Juli 2025; DDR4-RDIMM-Shops verlangen €219–230 für 32 GB, während private Verkäufer Altbestand noch für €60–120 anbieten. Achtung Preisanker: Ein BOSGAME M5 (Strix Halo, 128 GB) kostet neu €1.581–1.700 — gebrauchtes Strix Halo darüber ist kein Deal. Alles live prüfen — die Preise bewegen sich wöchentlich.',
     tocTitle: 'Inhalt',
@@ -225,27 +237,38 @@ function windowStr(wmin, wmax) {
   return `${fmt(wmin)}–${fmt(wmax)}`;
 }
 
-function buildTable(headers, rows, cellFns) {
+function buildTable(headers, rows, cellFns, cls) {
   const t = el('table');
   const thead = el('thead', {}, el('tr', {}, ...headers.map(h => el('th', { text: h }))));
   const tbody = el('tbody');
   for (const r of rows) tbody.appendChild(el('tr', {}, ...cellFns.map(fn => fn(r))));
   t.append(thead, tbody);
-  return el('div', { class: 'table-wrap' }, t);
+  return el('div', { class: 'table-wrap' + (cls ? ' ' + cls : '') }, t);
 }
 
 function titleCell(r) {
-  return el('td', {}, el('a', { href: r.url || '#', target: '_blank', rel: 'noopener' }, r.title || '(no title)'));
+  return el('td', { class: 'cell-title' }, el('a', { href: r.url || '#', target: '_blank', rel: 'noopener' }, r.title || '(no title)'));
 }
 
 function priceCell(r) {
-  return el('td', {}, el('strong', { text: euro(r.price) }));
+  return el('td', { class: 'cell-price' }, el('strong', { text: euro(r.price) }));
 }
 
 function eurPerGbCell(r) {
   const v = euroPerGb(r.price, r.query);
-  if (v == null) return el('td', { text: '—' });
-  return el('td', { text: v.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '/GB' });
+  if (v == null) return el('td', { class: 'cell-gb', text: '—' });
+  return el('td', { class: 'cell-gb', text: v.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '/GB' });
+}
+
+function noteChips(r) {
+  // Flag chips for notable listings; plain "ok" rows stay clean.
+  const chips = [];
+  const flag = flagFor(r);
+  if (flag.includes('🔥')) chips.push(el('span', { class: 'chip chip-deal', text: flag }));
+  else if (flag.includes('⚠️')) chips.push(el('span', { class: 'chip chip-above', text: flag }));
+  const rp = repricedNote(r);
+  if (rp) chips.push(el('span', { class: 'note-reprice', text: rp }));
+  return el('td', { class: 'cell-note' }, ...chips);
 }
 
 function repricedNote(r) {
@@ -375,21 +398,21 @@ function renderHighlights(flagged, container, single) {
   }
   const headers = [t('thCategory'), t('thPrice'), t('thTarget'), t('thTitle'), t('thSeller'), t('thNote')];
   const cells = [
-    r => el('td', { text: r.query }),
+    r => el('td', { class: 'cell-cat', text: r.query }),
     priceCell,
-    r => el('td', { text: euro(r.win_min) }),
+    r => el('td', { class: 'cell-target', text: euro(r.win_min) }),
     titleCell,
-    r => el('td', { text: r.seller }),
-    r => el('td', { text: [flagFor(r), repricedNote(r)].filter(Boolean).join(' · ') }),
+    r => el('td', { class: 'cell-seller', text: r.seller }),
+    noteChips,
   ];
   if (!single) {
     headers.unshift(t('thMkt'));
-    cells.unshift(r => el('td', { text: marketplaceOf(r) }));
+    cells.unshift(r => el('td', { class: 'cell-mkt', text: marketplaceOf(r) }));
   }
   container.append(
     h2,
-    el('p', {}, t('dealHighlightsIntro')),
-    buildTable(headers, flagged, cells),
+    el('p', { class: 'section-intro' }, t('dealHighlightsIntro')),
+    buildTable(headers, flagged, cells, 'table-highlights'),
   );
 }
 
@@ -405,13 +428,14 @@ function renderMovers(mv, container, single) {
     items,
     [
       m => el('td', { text: display(m) }),
-      m => el('td', {}, el('strong', { text: euro(m.latest) })),
+      m => el('td', { class: 'cell-price' }, el('strong', { text: euro(m.latest) })),
       m => el('td', { text: `${euro(m.ref)} (${m.refDate})` }),
-      m => el('td', {}, el('strong', { text: pctStr(m.delta) })),
+      m => el('td', { class: 'cell-change' }, el('strong', { text: pctStr(m.delta) })),
     ],
+    'table-movers',
   );
-  if (risers.length) container.append(el('h3', { text: `▲ ${t('moversRisers')}` }), tableFor(risers));
-  if (fallers.length) container.append(el('h3', { text: `▼ ${t('moversFallers')}` }), tableFor(fallers));
+  if (risers.length) container.append(el('h3', { class: 'movers-risers', text: `▲ ${t('moversRisers')}` }), tableFor(risers));
+  if (fallers.length) container.append(el('h3', { class: 'movers-fallers', text: `▼ ${t('moversFallers')}` }), tableFor(fallers));
 }
 
 function renderGroup(group, container, usedIds, single, hasCapacity) {
@@ -446,10 +470,10 @@ function renderGroup(group, container, usedIds, single, hasCapacity) {
   const headers = [t('thPrice'), t('thCondition'), t('thTitle'), t('thSeller'), t('thNote')];
   const cells = [
     priceCell,
-    r => el('td', { text: r.condition }),
+    r => el('td', { class: 'cell-condition', text: r.condition }),
     titleCell,
-    r => el('td', { text: r.seller }),
-    r => el('td', { text: [flagFor(r), repricedNote(r)].filter(Boolean).join(' · ') }),
+    r => el('td', { class: 'cell-seller', text: r.seller }),
+    noteChips,
   ];
   if (hasCapacity) {
     headers.splice(1, 0, t('thEperGB'));
@@ -457,9 +481,9 @@ function renderGroup(group, container, usedIds, single, hasCapacity) {
   }
   if (!single) {
     headers.unshift(t('thMkt'));
-    cells.unshift(r => el('td', { text: marketplaceOf(r) }));
+    cells.unshift(r => el('td', { class: 'cell-mkt', text: marketplaceOf(r) }));
   }
-  sec.append(buildTable(headers, group.rows, cells));
+  sec.append(buildTable(headers, group.rows, cells, 'table-category'));
   container.appendChild(sec);
 }
 
