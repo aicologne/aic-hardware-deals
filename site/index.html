@@ -22,9 +22,10 @@
        dependency, nothing external can stall first paint. font-display: swap
        still shows fallback text until the woff2 files arrive. -->
   <link rel='stylesheet' href='fonts.css'>
-  <!-- Start the critical data fetch during HTML parsing (the report renders
-       from data/ebay_deals.csv alone; history/listing-history load later). -->
-  <link rel='preload' as='fetch' href='data/ebay_deals.csv' crossorigin>
+  <!-- Note: no <link rel=preload> for the CSV on purpose — app.js fetches it
+       with cache:'no-cache' (nightly data), which does not reuse a preloaded
+       entry and triggers a "preload was not used" warning. The report renders
+       from this single fetch as soon as it arrives. -->
   <link rel='stylesheet' href='style.css'>
   <link rel='manifest' href='manifest.webmanifest'>
   <link rel='icon' href='icon.svg' type='image/svg+xml'>

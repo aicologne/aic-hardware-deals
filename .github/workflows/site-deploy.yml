@@ -1,0 +1,40 @@
+name: Deploy site (on push)
+
+# Deploys the GitHub Pages site immediately whenever the site changes, so
+# front-end fixes (like the marketplace.js bug) go live on push instead of
+# waiting for the 05:00 UTC nightly scan (which also deploys). This workflow
+# only uploads site/ — it never runs a scan and never commits.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - '.github/workflows/site-deploy.yml'
+  workflow_dispatch: {}  # allow manual "deploy now" runs from the Actions tab
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
