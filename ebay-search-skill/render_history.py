@@ -17,6 +17,7 @@ import statistics
 import sys
 
 DEFAULT_MARKETPLACE = "EBAY_DE"
+MAX_DAYS = 180  # keep at most this many days of history (the site renders a 30-day trend)
 
 
 def num(value):
@@ -80,6 +81,19 @@ def main():
                 existing.append(r)
 
     merged = sorted(existing + new_rows, key=lambda r: (r["date"], r["marketplace"], r["query"]))
+
+    # Bound the file: drop anything older than MAX_DAYS so the CSV (and the
+    # site's trend data) stays small forever instead of growing one row per
+    # (marketplace, category) per day.
+    try:
+        cutoff = (
+            datetime.date.fromisoformat(date) - datetime.timedelta(days=MAX_DAYS)
+        ).isoformat()
+    except ValueError:
+        cutoff = "1970-01-01"
+    merged = [r for r in merged if r.get("date", "") >= cutoff]
+    pruned_days = len(existing + new_rows) - len(merged)
+
     os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
     with open(args.out, "w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(
@@ -88,7 +102,7 @@ def main():
         writer.writeheader()
         writer.writerows(merged)
 
-    print(f"wrote {args.out} with {len(merged)} rows ({len(new_rows)} for {date})")
+    print(f"wrote {args.out} with {len(merged)} rows ({len(new_rows)} for {date}, {pruned_days} older than {MAX_DAYS} days dropped)")
 
 
 if __name__ == "__main__":

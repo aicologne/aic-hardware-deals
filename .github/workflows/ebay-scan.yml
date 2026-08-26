@@ -74,6 +74,50 @@ jobs:
           mkdir -p site/data
           cp ebay_deals.csv site/data/ebay_deals.csv
 
+      - name: Generate Facebook Marketplace link sheets (deep links only)
+        # Marketplace has NO public API, and scraping it violates Facebook's
+        # ToS (same stance as Kleinanzeigen — see facebook-marketplace-skill/
+        # SKILL.md §7). This step therefore only regenerates per-country/city
+        # search DEEP LINKS for the key niches: fully offline, no credentials,
+        # no ToS risk. Listing DATA is not fetched — the sheets are the entry
+        # points to open in a logged-in browser. Countries come from the repo
+        # Variable FB_MARKETPLACES (Settings -> Variables -> Actions);
+        # empty = DE,AT,CH,GB.
+        env:
+          FB_MARKETPLACES: ${{ vars.FB_MARKETPLACES }}
+        run: |
+          MP="${FB_MARKETPLACES:-DE,AT,CH,GB}"
+          mkdir -p site/data/marketplace
+          python facebook-marketplace-skill/fb_marketplace.py --countries "$MP" \
+            --query "RTX 3090" --max 1100 --report site/data/marketplace/rtx3090.md \
+            --csv site/data/marketplace/searches.csv
+          python facebook-marketplace-skill/fb_marketplace.py --countries "$MP" \
+            --query "RTX 5070" --max 900 --report site/data/marketplace/rtx5070.md \
+            --csv site/data/marketplace/searches.csv
+          python facebook-marketplace-skill/fb_marketplace.py --country DE --city all \
+            --query "EliteDesk 800 G4" --max 200 --report site/data/marketplace/minipcs.md \
+            --csv site/data/marketplace/searches.csv
+          python facebook-marketplace-skill/fb_marketplace.py --countries DE,AT \
+            --query "DDR4 RDIMM 32GB" --min 40 --max 120 --report site/data/marketplace/ram.md \
+            --csv site/data/marketplace/searches.csv
+
+      - name: Build the Marketplace watchlist (user-pasted links only)
+        # The user maintains site/data/marketplace/collected_links.txt by
+        # pasting links they found while browsing Marketplace in their OWN
+        # browser (normal use). This step parses them OFFLINE — no automated
+        # access to facebook.com — into a deduped watchlist with first/last
+        # seen dates (state persists in watchlist_state.json). No file = no-op.
+        run: |
+          if [ -s site/data/marketplace/collected_links.txt ]; then
+            python facebook-marketplace-skill/fb_marketplace.py --collect \
+              site/data/marketplace/collected_links.txt \
+              --state site/data/marketplace/watchlist_state.json \
+              --out site/data/marketplace/watchlist.csv \
+              --report site/data/marketplace/watchlist.md
+          else
+            echo "No site/data/marketplace/collected_links.txt yet — skipping the watchlist step"
+          fi
+
         # Only runs when a channel is configured. Notifies about NEW flagged
         # deals only (site/data/notified.json dedupes across runs) and commits
         # the updated state below.        
@@ -94,7 +138,7 @@ jobs:
             echo "No changes — nothing to commit"
             exit 0
           fi
-          git commit -m "chore: refresh eBay price report ($(date -u +%Y-%m-%d))"
+          git commit -m "chore: refresh nightly eBay report + Marketplace link sheets ($(date -u +%Y-%m-%d))"
           # The nightly cron can race other runs (manual dispatch, retries): the
           # remote main may have advanced past this checkout, so a plain push gets
           # rejected as non-fast-forward. Fetch, rebase onto the latest remote and

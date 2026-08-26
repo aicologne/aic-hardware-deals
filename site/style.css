@@ -587,6 +587,39 @@ td a { font-weight: 500; }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
 
+/* --- Facebook Marketplace board -------------------------------------------- */
+.marketplace {
+  margin-top: 3.25rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+.marketplace .mkt-note {
+  background: var(--primary-soft);
+  border-left: 3px solid var(--primary);
+  color: var(--text-muted);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 0.8rem 1rem;
+  margin: 0 0 1.25rem;
+  font-size: 0.9rem;
+}
+.marketplace .mkt-empty {
+  color: var(--text-muted);
+  font-style: italic;
+}
+.marketplace .mkt-sub {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 1.1rem 0 0.45rem;
+  letter-spacing: 0;
+}
+.marketplace .table-wrap { margin-bottom: 1rem; }
+.marketplace td a { font-weight: 500; }
+
+@media print {
+  .marketplace { break-before: page; }
+}
+
 @media print {
   .app-bar, #toc-wrap, .filters, .glossary { display: none; }
   .layout { display: block; padding: 0; }

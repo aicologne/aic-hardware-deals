@@ -18,6 +18,7 @@ import sys
 
 DEFAULT_MARKETPLACE = "EBAY_DE"
 PRUNE_AFTER_DAYS = 60
+MAX_ROWS = 3000  # hard cap on tracked listings so the CSV stays small forever
 
 
 def num(value):
@@ -84,6 +85,14 @@ def main():
             pruned += 1
 
     rows = sorted(state.values(), key=lambda r: (r.get("marketplace", ""), r.get("query", ""), r.get("url", "")))
+
+    # Hard cap: if turnover outpaces the 60-day prune, keep only the most
+    # recently seen listings (the site only needs repricing notes for live ones).
+    if len(rows) > MAX_ROWS:
+        rows.sort(key=lambda r: r.get("last_seen", ""), reverse=True)
+        rows = rows[:MAX_ROWS]
+        rows.sort(key=lambda r: (r.get("marketplace", ""), r.get("query", ""), r.get("url", "")))
+
     os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
     fields = ["url", "query", "marketplace", "first_seen", "first_price", "last_seen", "last_price"]
     with open(args.out, "w", encoding="utf-8", newline="") as f:
@@ -93,7 +102,8 @@ def main():
             w.writerow({k: r.get(k, "") for k in fields})
 
     repriced = sum(1 for r in rows if num(r.get("first_price")) != num(r.get("last_price")))
-    print(f"wrote {args.out} with {len(rows)} listings ({repriced} repriced, {pruned} pruned)")
+    capped = max(0, len(state) - len(rows))
+    print(f"wrote {args.out} with {len(rows)} listings ({repriced} repriced, {pruned} pruned, {capped} capped at {MAX_ROWS})")
 
 
 if __name__ == "__main__":

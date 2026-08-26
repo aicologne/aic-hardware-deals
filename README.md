@@ -14,7 +14,8 @@ A working deal-hunting kit for buying used/refurbished hardware (headless mini P
 - **A five-shop review** of German used-hardware dealers (serverando, servershop24, serverschmiede, servermall, plusedv),
 - **A Kleinanzeigen playbook** (alerts, testing, negotiation, scam flags) tuned to the current 2026 DRAM-shortage market,
 - **A 2× RTX 3090 AI-workstation build plan** with two priced paths (DDR4/X99 vs. DDR5/AM5) and a full parts matrix,
-- **Working Python tooling** (`ebay-search-skill/`) that you can run in two minutes.
+- **Working Python tooling** (`ebay-search-skill/`) that you can run in two minutes,
+- **Facebook Marketplace deep links** (`facebook-marketplace-skill/`) — per-country/city search URLs for the same niches, since Marketplace has no public API (no scraping — see below).
 
 > ⚠️ Prices are **snapshots** (probed 2026-08-14 and via archived captures). The market is moving fast — treat this as a methodology and a starting point, not a price list. Always verify live before buying.
 
@@ -40,14 +41,17 @@ A working deal-hunting kit for buying used/refurbished hardware (headless mini P
 | [`site/data/listing_history.csv`](site/data/listing_history.csv) | **Per-listing price history** — first-seen vs last-seen per listing URL, for "was €X on DATE" repricing notes and **price-drop alerts** |
 | [`sold_anchors.csv`](sold_anchors.csv) | **Sold-price anchors (opt-in)** — median sold price per category from eBay's "Verkauft" search, merged into the report as resale context (generated only when `EBAY_SOLD_ANCHORS=1` is set) |
 | [`site/feed.xml`](site/feed.xml) | **RSS feed of the daily deal highlights** — regenerated every night, served at `/feed.xml` on the Pages site |
+| `site/data/marketplace/` | **Facebook Marketplace board data (nightly)** — `searches.csv` + `*.md` (per-country/city deep links for the key niches), `collected_links.txt` (paste links from your own browsing), `watchlist.csv`/`watchlist.md` (deduped, first/last-seen). Links only, no listings — Marketplace has no public API (see `facebook-marketplace-skill/`) |
 | [`glossary.md`](glossary.md) | **Bilingual glossary (EN/DE)** — plain-language explanations of RDIMM, ECC, VRAM, €/GB, buy-low targets, … |
 | [`build_plan_2x3090.md`](build_plan_2x3090.md) | Detailed build plan for the 2× RTX 3090 AI tower (DDR4/DDR5 paths, server question, sourcing matrix) |
 | [`build_parts_matrix.md`](build_parts_matrix.md) | **4 build configurations** — platform (DDR4/X99 vs DDR5/AM5) × GPU generation (newer RTX vs. older Quadro), all priced from live scans |
 | [`kleinanzeigen_playbook.md`](kleinanzeigen_playbook.md) | The full Kleinanzeigen strategy: 25+ search alerts, test protocols, negotiation script, scam flags |
 | `ebay-search-skill/` | Working tooling: Browse API scanner (multi-marketplace), local relay, report/history/listing/feed renderers, alert notifier, skill docs |
+| `facebook-marketplace-skill/` | **Country/city search-link generator** for Facebook Marketplace (19 countries): builds the exact deep links Marketplace understands (keyword, exact phrase, radius, min/max price, sort, days listed, delivery) and can print, open, or save them as a markdown report — **deep links only, no scraping** (Marketplace has no public API) |
 | `.github/workflows/ebay-scan.yml` | Nightly scan → history → report → feed → alerts → GitHub Pages deployment |
 | [`ebay.env.example`](ebay.env.example) | Credentials template (never commit the real `ebay.env`) |
 | [`SETUP.md`](SETUP.md) | Step-by-step GitHub + Pages setup (this repo, ready to publish) |
+| [`selfhost_fonts.py`](selfhost_fonts.py) | One-time font self-hosting: downloads the Inter variable-font woff2 files (latin/latin-ext, OFL-licensed) into `site/fonts/` and generates `site/fonts.css` — removes the Google Fonts dependency from the site (re-run after changing weights) |
 
 ---
 
@@ -161,6 +165,52 @@ Output: console table + `ebay_deals.csv` (Excel-compatible).
 
 ---
 
+## Tooling — Facebook Marketplace search links (no API, no scraping)
+
+Facebook Marketplace has **no official public API** (unlike eBay's Browse API),
+and scraping it violates Facebook's ToS — so this repo integrates Marketplace
+the only supported way: **deep links**. `facebook-marketplace-skill/` generates
+the exact search URLs Marketplace itself produces, for **19 countries**
+(DE AT CH NL BE FR IT ES PT GB IE DK SE NO FI PL CZ US CA) and any city:
+
+| File | Purpose |
+|---|---|
+| `fb_marketplace.py` | CLI: keyword + country/city → clickable Marketplace search links. Flags: `--city all` (every registered city), `--countries DE,AT,CH,GB` (multi-country), `--no-location` (uses the account's saved location), `--exact`, `--radius`, `--min/--max` (local currency), `--sort newest/price-asc/price-desc/ranking`, `--days 1/7/30`, `--delivery local/meetup/pickup`, `--open` (launch browser), `--report out.md` (markdown sheet), `--csv out.csv` (append rows to a combined CSV), `--list`, `--parse URL` (**glean info from an existing link offline** — keyword, location, radius, prices, sort, days, delivery, item ID), and `--collect file` (**watchlist**: parse links you pasted from your own browsing into a deduped first/last-seen watchlist, offline) |
+| `cities.py` | Per-country registry: marketplace currency + default city + city list (English-exonym slugs, e.g. `cologne`, `vienna`, `rome`) |
+| `SKILL.md` | The same knowledge as a [DeepSeek Harness](https://github.com/deepseek-ai) skill, incl. the honest API/ToS picture |
+
+```bash
+# one market (the exact pattern of the URL in the repo, plus a price window)
+python facebook-marketplace-skill/fb_marketplace.py --country DE --city cologne \
+    --query "RTX 5070" --exact --radius 65 --min 500 --max 900
+
+# every registered German city, newest first, last 7 days
+python facebook-marketplace-skill/fb_marketplace.py --country DE --city all \
+    --query "RTX 3090" --max 1100 --sort newest --days 7
+
+# multi-country scan (default cities) → clickable markdown sheet
+python facebook-marketplace-skill/fb_marketplace.py --countries DE,AT,CH,GB \
+    --query "RTX 5070" --report fb_marketplace_links.md
+```
+
+Fully offline — no credentials, no network, no approvals needed. Prices are
+shown in each market's local currency (EUR/GBP/CHF/PLN/CZK/DKK/SEK/NOK/USD/CAD);
+results depend on the logged-in account's region. If a city slug ever stops
+resolving, drop it (`--no-location`) — the account's saved location takes over.
+Third-party "Marketplace API" scraper services (Apify, Social Fetch, …) exist
+but violate Facebook's ToS and break constantly — out of scope here, same
+stance as Kleinanzeigen.
+
+**In the nightly workflow:** `ebay-scan.yml` regenerates the four link sheets
+into `site/data/marketplace/*.md` plus one combined `searches.csv` every run
+(niches: RTX 3090, RTX 5070, mini PCs, RAM), builds the watchlist from
+`collected_links.txt` if present, commits everything with the rest of the
+scan, and the Pages site serves it all as the **Marketplace board** (watchlist
+table + per-query search tables). Change the countries via the
+`FB_MARKETPLACES` repo Variable (default `DE,AT,CH,GB`).
+
+---
+
 ## Automated nightly scans (GitHub Actions)
 
 The repo ships `.github/workflows/ebay-scan.yml`:
@@ -168,6 +218,8 @@ The repo ships `.github/workflows/ebay-scan.yml`:
 - **Runs daily at 05:00 UTC** (`schedule` cron — GitHub Actions cron is UTC) plus a manual **Run workflow** button (`workflow_dispatch`).
 - Executes `ebay_search.py` with credentials injected from **GitHub secrets** (never stored in the repo), then updates the price history, per-listing price history, renders **`LATEST.md`** + **`site/feed.xml`**, optionally sends buy-low alerts, and commits everything back to the repo.
 - **Multi-marketplace (optional):** set a repo **Variable** `EBAY_MARKETPLACES` (e.g. `EBAY_DE,EBAY_AT,EBAY_CH`) under **Settings → Variables → Actions**; each marketplace is scanned with its default currency. Empty/unset = `EBAY_DE` only.
+- **Facebook Marketplace link sheets + board:** the same nightly run regenerates `site/data/marketplace/*.md` **and** one combined `searches.csv` — deep-link search sheets per country/city for the key niches (RTX 3090, RTX 5070, mini PCs, RAM) using `facebook-marketplace-skill/fb_marketplace.py` (offline, no credentials). The Pages site renders them as the **Marketplace board** (`marketplace.js`). Countries come from a repo **Variable** `FB_MARKETPLACES` (e.g. `DE,AT,CH,GB`); empty/unset = `DE,AT,CH,GB`.
+- **Marketplace watchlist (user-driven):** commit Marketplace links you found while browsing (your own browser, normal use) into `site/data/marketplace/collected_links.txt`; the nightly job runs `fb_marketplace.py --collect` on it (offline parsing) and tracks them in `watchlist.csv` with first/last-seen dates. **These are links, not listings** — Marketplace has no public API and scraping violates its ToS, so the sheets are entry points to open in a logged-in browser, not a data feed.
 - Skips the commit when nothing changed; `concurrency` prevents overlapping runs.
 
 ### Setup (2 minutes)
@@ -208,7 +260,7 @@ Every nightly run commits `ebay_deals.csv` and renders **`LATEST.md`** — a sel
 - **📊 Used-market index + median movers** — an aggregate "market index" headline (mean of category median changes vs. ~7 days back) plus risers/fallers vs. the previous scan, once history has accumulated
 - Market context, methodology, and a fees disclaimer
 
-The workflow also publishes `ebay_deals.csv` into `site/data/` and deploys `site/` to **GitHub Pages**. The page (`site/index.html`) is a thin shell: it **reads its listings from the generated CSV at runtime** (`app.js` fetches `data/ebay_deals.csv`), renders the same deal highlights, per-category tables and medians in the browser, and builds a table of contents with scroll-spy navigation. No listing data is baked into the HTML, so the nightly scan alone refreshes the site. The site has a modern responsive design with a sticky app bar, a **light/dark theme** (auto-detects the OS preference), an **EN/DE language toggle**, **interactive filters** (search, marketplace, category, max price, sort by price / best-deal / best-€/GB), **flag chips** for deal/above-window listings, **30-day median sparklines** that expand into full trend charts (from `data/history.csv`), **median movers** and a **market index**, **repricing notes** (from `data/listing_history.csv`), a quick-start **glossary**, and a **PWA manifest**. The same run renders **`site/feed.xml`** — an RSS feed of the deal highlights you can subscribe to at `/feed.xml`.
+The workflow also publishes `ebay_deals.csv` into `site/data/` and deploys `site/` to **GitHub Pages**. The page (`site/index.html`) is a thin shell: it **reads its listings from the generated CSV at runtime** (`app.js` fetches `data/ebay_deals.csv`), renders the same deal highlights, per-category tables and medians in the browser, and builds a table of contents with scroll-spy navigation. The load path is optimized for slow connections: the report renders from a **single fetch** (history/repricing data upgrades the page in the background), the Inter font is **self-hosted** (`site/fonts.css` + woff2, OFL-licensed — zero third-party font hosts), and `history.csv`/`listing_history.csv` are **capped** (180 days / 3000 listings) so the site stays fast as the repo ages. No listing data is baked into the HTML, so the nightly scan alone refreshes the site. The site has a modern responsive design with a sticky app bar, a **light/dark theme** (auto-detects the OS preference), an **EN/DE language toggle**, **interactive filters** (search, marketplace, category, max price, sort by price / best-deal / best-€/GB), **flag chips** for deal/above-window listings, **30-day median sparklines** that expand into full trend charts (from `data/history.csv`), **median movers** and a **market index**, **repricing notes** (from `data/listing_history.csv`), a quick-start **glossary**, and a **PWA manifest**. The same run renders **`site/feed.xml`** — an RSS feed of the deal highlights you can subscribe to at `/feed.xml`.
 
 ---
 

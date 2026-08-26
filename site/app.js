@@ -488,7 +488,7 @@ function renderGroup(group, container, usedIds, single, hasCapacity) {
 }
 
 function buildToc() {
-  const h2s = [...document.querySelectorAll('#content h2, #methodology')];
+  const h2s = [...document.querySelectorAll('#content h2, #marketplace, #methodology')];
   const list = $('#toc-list');
   list.textContent = '';
   for (const h of h2s) {
@@ -636,6 +636,31 @@ function setLang(next) {
   if (cachedText || lastError) renderReport();
 }
 
+async function loadSecondaryData() {
+  // History + per-listing history only power sparklines/trends and repricing
+  // notes — never gate the report on them. Load in the background and upgrade
+  // the page when they arrive.
+  const [histRes, listingRes] = await Promise.all([
+    fetch(HISTORY_URL, { cache: 'no-cache' }).catch(() => null),
+    fetch(LISTING_URL, { cache: 'no-cache' }).catch(() => null),
+  ]);
+  let upgraded = false;
+  if (histRes && histRes.ok) {
+    const hrows = toHistoryRows(await histRes.text());
+    const keys = new Set(hrows.map(r => `${marketplaceOf(r)} · ${r.query}`));
+    history = {};
+    for (const key of keys) history[key] = historySeries(hrows, key);
+    upgraded = true;
+  }
+  if (listingRes && listingRes.ok) {
+    const lrows = toAnyRows(await listingRes.text());
+    listingHistory = {};
+    for (const r of lrows) if (r.url) listingHistory[r.url] = r;
+    upgraded = true;
+  }
+  if (upgraded) renderReport();
+}
+
 async function main() {
   const status = $('#status');
   applyStaticText();
@@ -665,30 +690,19 @@ async function main() {
     renderReport();
   });
 
-  let res;
   try {
-    const [dealsRes, histRes, listingRes] = await Promise.all([
-      fetch(CSV_URL, { cache: 'no-cache' }),
-      fetch(HISTORY_URL, { cache: 'no-cache' }).catch(() => null),
-      fetch(LISTING_URL, { cache: 'no-cache' }).catch(() => null),
-    ]);
+    // Critical path: ONE fetch (the deal CSV) renders the report. History and
+    // per-listing history load afterwards and upgrade the page — the report
+    // never waits for them, so a slow connection shows content immediately.
+    const dealsRes = await fetch(CSV_URL, { cache: 'no-cache' });
     if (!dealsRes.ok) throw new Error(`HTTP ${dealsRes.status} for ${CSV_URL}`);
     const text = await dealsRes.text();
     lastGenerated = formatGenerated(dealsRes);
     cachedText = text;
-    if (histRes && histRes.ok) {
-      const hrows = toHistoryRows(await histRes.text());
-      const keys = new Set(hrows.map(r => `${marketplaceOf(r)} · ${r.query}`));
-      history = {};
-      for (const key of keys) history[key] = historySeries(hrows, key);
-    }
-    if (listingRes && listingRes.ok) {
-      const lrows = toAnyRows(await listingRes.text());
-      listingHistory = {};
-      for (const r of lrows) if (r.url) listingHistory[r.url] = r;
-    }
     $('#filters').hidden = false;
     renderReport();
+
+    loadSecondaryData();
   } catch (err) {
     console.error('Report failed to load:', err);
     lastError = err;
