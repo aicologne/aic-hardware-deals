@@ -118,7 +118,7 @@ function renderWatchlist(body, rows) {
           r => el('td', { text: r.note || '—' }),
           r => el('td', { text: r.first_seen }),
           r => el('td', { text: r.last_seen }),
-          openCell(r.url),
+          r => openCell(r.url),
         ],
         'table-watchlist',
       ),
@@ -136,7 +136,7 @@ function renderWatchlist(body, rows) {
           r => el('td', { text: r.note || '—' }),
           r => el('td', { text: r.first_seen }),
           r => el('td', { text: r.last_seen }),
-          openCell(r.url),
+          r => openCell(r.url),
         ],
         'table-watchlist',
       ),
@@ -167,7 +167,7 @@ function renderSearches(body, rows) {
           r => el('td', { text: `${r.country_name || r.country || '—'} (${r.country || ''})` }),
           r => el('td', { text: r.city }),
           r => el('td', { text: r.currency || '—' }),
-          openCell(r.url),
+          r => openCell(r.url),
         ],
         'table-searches',
       ),
@@ -207,3 +207,8 @@ async function main() {
 }
 
 main();
+
+// Exported for tests (publish/tests/marketplace_smoke.mjs) — the render
+// functions execute against a stub DOM so runtime ReferenceErrors like the
+// openCell(r.url) bug are caught, not just syntax.
+export { renderWatchlist, renderSearches };
