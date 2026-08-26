@@ -1,6 +1,6 @@
 # 🛒 eBay.de Used Hardware — Price Report
 
-_Generated 2026-08-26 19:46 UTC · 635 items across 26 categories · marketplace EBAY_DE · used · EUR · index **+20,3 %**_
+_Generated 2026-08-26 19:54 UTC · 635 items across 26 categories · marketplace EBAY_DE · used · EUR · index **+20,3 %**_
 
 **Market context (2026):** the DRAM/GDDR shortage keeps used prices elevated. Used RTX 3090s ask €1000–1500 on eBay.de; DDR5 German retail is ~4.2–4.5× its July-2025 level; DDR4 RDIMM shops ask €219–230 for 32 GB while private sellers still move pre-shortage stock at €60–120. Note the new-price anchors: a BOSGAME M5 (Strix Halo, 128 GB) costs €1581–1700 new — used Strix Halo above that is not a deal. Verify everything live — prices move weekly.
 
@@ -201,7 +201,7 @@ _Window €158–332 · median **€222,00** · cheapest **€169,00** · 3 at/n
 
 ## DDR5 32GB (49 items)
 
-_Window €218–429 · median **€300,00** · cheapest **€224,00** · 6 at/near buy-low · 30d €273,86→€300,00 (4d) · median €9,38/GB_
+_Window €218–432 · median **€300,00** · cheapest **€224,00** · 6 at/near buy-low · 30d €273,86→€300,00 (4d) · median €9,38/GB_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
@@ -265,7 +265,7 @@ _Window €196–480 · median **€320,00** · cheapest **€320,00** · 0 at/n
 
 ## EliteDesk 800 G4 Mini (5 items)
 
-_Window €160–314 · median **€199,95** · cheapest **€179,90** · 2 at/near buy-low · 30d €109,00→€199,95 (5d)_
+_Window €160–300 · median **€199,95** · cheapest **€179,90** · 2 at/near buy-low · 30d €109,00→€199,95 (5d)_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
@@ -277,7 +277,7 @@ _Window €160–314 · median **€199,95** · cheapest **€179,90** · 2 at/n
 
 ## EliteDesk 800 G5 Mini (25 items)
 
-_Window €153–337 · median **€229,95** · cheapest **€181,50** · 0 at/near buy-low · 30d €164,38→€229,95 (6d)_
+_Window €153–343 · median **€229,95** · cheapest **€181,50** · 0 at/near buy-low · 30d €164,38→€229,95 (6d)_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
@@ -580,7 +580,7 @@ _Window €1.111–2.250 · median **€1.500,00** · cheapest **€1.190,00** �
 
 ## RTX 3090 Ti (12 items)
 
-_Window €1.319–2.643 · median **€1.774,50** · cheapest **€1.399,90** · 2 at/near buy-low · 30d €1.649,00→€1.774,50 (4d) · median €73,94/GB_
+_Window €1.319–2.671 · median **€1.774,50** · cheapest **€1.399,90** · 2 at/near buy-low · 30d €1.649,00→€1.774,50 (4d) · median €73,94/GB_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
@@ -599,7 +599,7 @@ _Window €1.319–2.643 · median **€1.774,50** · cheapest **€1.399,90** �
 
 ## RTX 4060 Ti 16GB (5 items)
 
-_Window €375–825 · median **€549,00** · cheapest **€499,00** · 0 at/near buy-low · 30d €469,00→€549,00 (4d) · median €34,31/GB_
+_Window €375–824 · median **€549,00** · cheapest **€499,00** · 0 at/near buy-low · 30d €469,00→€549,00 (4d) · median €34,31/GB_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
@@ -611,7 +611,7 @@ _Window €375–825 · median **€549,00** · cheapest **€499,00** · 0 at/n
 
 ## RTX 4070 Ti Super (15 items)
 
-_Window €706–1.580 · median **€1.069,00** · cheapest **€840,00** · 0 at/near buy-low · 30d €850,00→€1.069,00 (6d) · median €66,81/GB_
+_Window €706–1.591 · median **€1.069,00** · cheapest **€840,00** · 0 at/near buy-low · 30d €850,00→€1.069,00 (6d) · median €66,81/GB_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
@@ -699,7 +699,7 @@ _Window €836–1.609 · median **€1.149,50** · cheapest **€989,99** · 0 
 
 ## Tesla P40 (36 items)
 
-_Window €231–435 · median **€289,44** · cheapest **€233,82** · 6 at/near buy-low · 30d €289,00→€289,44 (4d) · median €12,06/GB_
+_Window €231–434 · median **€289,44** · cheapest **€233,82** · 6 at/near buy-low · 30d €289,00→€289,44 (4d) · median €12,06/GB_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
