@@ -28,6 +28,15 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
+      - name: Run unit tests (Python + JS)
+        # Guard the whole pipeline: window math, price parsing, chunk splitting,
+        # CSV/board rendering. A regression here would silently break the
+        # nightly scan or the deployed site.
+        run: |
+          python -m unittest discover -s ebay-search-skill/tests -v
+          node --test tests/stats.test.mjs tests/marketplace.test.mjs
+          node tests/marketplace_smoke.mjs
+
       - name: Run the eBay scan
         env:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
@@ -57,6 +66,16 @@ jobs:
           EBAY_SOLD_ANCHORS: ${{ vars.EBAY_SOLD_ANCHORS }}
         if: ${{ env.EBAY_SOLD_ANCHORS == '1' }}
         run: python ebay-search-skill/sold_anchors.py ebay_deals.csv sold_anchors.csv
+
+      - name: Publish sold anchors into the site (site/data/sold_anchors.csv)
+        # The site's category tables show a "Sold ≈" resale anchor when this
+        # file is present (app.js fetches it at runtime). Missing file = the
+        # anchors were not fetched (opt-in), so publish only when it exists.
+        run: |
+          if [ -f sold_anchors.csv ]; then
+            mkdir -p site/data
+            cp sold_anchors.csv site/data/sold_anchors.csv
+          fi
 
       - name: Render the price report (LATEST.md)
         run: python ebay-search-skill/render_report.py ebay_deals.csv LATEST.md site/data/history.csv site/data/listing_history.csv sold_anchors.csv

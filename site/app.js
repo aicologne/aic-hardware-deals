@@ -19,6 +19,7 @@ const DEALS_INDEX_URL = window.DEALS_INDEX || 'data/deals/index.json';
 const DEALS_DIR = 'data/deals/';
 const HISTORY_URL = window.DEALS_HISTORY || 'data/history.csv';
 const LISTING_URL = window.DEALS_LISTING_HISTORY || 'data/listing_history.csv';
+const SOLD_URL = window.DEALS_SOLD || 'data/sold_anchors.csv';
 const LOAD_TIMEOUT_MS = 20000; // hard cap: spinner can never spin longer than this
 
 const $ = (sel, root = document) => root.querySelector(sel);
@@ -143,6 +144,7 @@ const I18N = {
     thCondition: 'Condition',
     thNote: 'Note',
     thEperGB: '€/GB',
+    thSold: 'Sold ≈',
     thMkt: 'Mkt',
     window: 'Window',
     median: 'median',
@@ -219,6 +221,7 @@ const I18N = {
     thCondition: 'Zustand',
     thNote: 'Hinweis',
     thEperGB: '€/GB',
+    thSold: 'Verkauft ≈',
     thMkt: 'MP',
     window: 'Fenster',
     median: 'Median',
@@ -279,6 +282,7 @@ let lastError = null;
 let tocObserver = null;  // one scrollspy observer at a time
 let history = null;      // { compositeKey: [{date, median}] } from data/history.csv (null = unavailable)
 let listingHistory = null; // { url: {first_price, first_seen, last_price} } (null = unavailable)
+let soldAnchors = null;  // { query: {median_sold, sample_size} } from data/sold_anchors.csv (null = unavailable)
 const filters = { search: '', marketplace: 'all', category: 'all', maxPrice: null, sort: 'price-asc' };
 
 function t(key) {
@@ -338,6 +342,19 @@ function eurPerGbCell(r) {
   const v = euroPerGb(r.price, r.query);
   if (v == null) return el('td', { class: 'cell-gb', text: '—' });
   return el('td', { class: 'cell-gb', text: v.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '/GB' });
+}
+
+/** "Sold ≈" resale-anchor cell (per category), or an em dash when no anchor. */
+function soldCell(r) {
+  const a = soldAnchors && soldAnchors[r.query];
+  if (!a || a.median_sold == null) return el('td', { class: 'cell-sold', text: '—' });
+  const title = `${r.query}: sold median of ${a.sample_size} completed listings`;
+  return el('td', { class: 'cell-sold' },
+    el('span', { text: euro(a.median_sold) }),
+    a.sample_size > 0 ? el('small', { class: 'sold-n', text: ` (n=${a.sample_size})` }) : null,
+    // invisible title for a11y/tooltip without adding a real tooltip dependency
+    el('span', { class: 'visually-hidden', text: title }),
+  );
 }
 
 function noteChips(r) {
@@ -555,6 +572,10 @@ function renderGroup(group, container, usedIds, single, hasCapacity) {
     r => el('td', { class: 'cell-seller', text: r.seller }),
     noteChips,
   ];
+  if (soldAnchors && soldAnchors[group.query]) {
+    headers.push(t('thSold'));
+    cells.push(soldCell);
+  }
   if (hasCapacity) {
     headers.splice(1, 0, t('thEperGB'));
     cells.splice(1, 0, eurPerGbCell);
@@ -717,12 +738,13 @@ function setLang(next) {
 }
 
 async function loadSecondaryData() {
-  // History + per-listing history only power sparklines/trends and repricing
-  // notes — never gate the report on them. Load in the background and upgrade
-  // the page when they arrive.
-  const [histRes, listingRes] = await Promise.all([
+  // History + per-listing history + sold anchors only power extra columns,
+  // sparklines/trends and repricing notes — never gate the report on them.
+  // Load in the background and upgrade the page when they arrive.
+  const [histRes, listingRes, soldRes] = await Promise.all([
     fetchWithTimeout(HISTORY_URL).catch(() => null),
     fetchWithTimeout(LISTING_URL).catch(() => null),
+    fetchWithTimeout(SOLD_URL).catch(() => null),
   ]);
   let upgraded = false;
   if (histRes && histRes.res.ok) {
@@ -736,6 +758,20 @@ async function loadSecondaryData() {
     const lrows = toAnyRows(listingRes.text);
     listingHistory = {};
     for (const r of lrows) if (r.url) listingHistory[r.url] = r;
+    upgraded = true;
+  }
+  if (soldRes && soldRes.res.ok) {
+    // sold_anchors.csv -> { query: { median_sold, sample_size } }
+    soldAnchors = {};
+    for (const r of toAnyRows(soldRes.text)) {
+      const medianSold = num(r.median_sold);
+      if (medianSold != null) {
+        soldAnchors[r.query] = {
+          median_sold: medianSold,
+          sample_size: num(r.sample_size) ?? 0,
+        };
+      }
+    }
     upgraded = true;
   }
   if (upgraded) renderReport();

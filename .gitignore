@@ -17,6 +17,9 @@ site/data/*
 # instead of one big CSV, so a stalled request can't blank the report).
 !site/data/deals/
 !site/data/deals/*
+# Sold-price anchors (optional, EBAY_SOLD_ANCHORS=1) — the site shows a
+# "Sold ≈" resale anchor column when this file is present.
+!site/data/sold_anchors.csv
 
 # Python
 __pycache__/

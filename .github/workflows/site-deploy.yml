@@ -30,6 +30,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Run front-end unit tests
+        # The site JS (csv.js / app.js / marketplace.js) has node:test suites —
+        # fail the deploy before a broken bundle ships.
+        run: |
+          node --test tests/stats.test.mjs tests/marketplace.test.mjs
+          node tests/marketplace_smoke.mjs
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
