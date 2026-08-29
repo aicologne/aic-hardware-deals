@@ -20,16 +20,16 @@ const LISTING_URL = window.DEALS_LISTING_HISTORY || 'data/listing_history.csv';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 
-/** Fetch with a hard timeout so a hung request cannot leave the page stuck
- *  on the "Loading deal data…" status forever (throws on timeout). */
+/** Fetch + read the full body under one hard timeout, so a stalled request
+ *  (headers OR body stream) can never leave the page stuck on the loading
+ *  spinner forever. Throws on timeout; aborts the underlying request. */
 async function fetchWithTimeout(url, ms = 10000) {
-  let timerId;
-  const timer = new Promise((_, reject) => { timerId = setTimeout(() => reject(new Error(`timeout: ${url}`)), ms); });
+  const ctrl = new AbortController();
+  const timerId = setTimeout(() => ctrl.abort(), ms);
   try {
-    return await Promise.race([
-      fetch(url, { cache: 'no-cache' }),
-      timer,
-    ]);
+    const res = await fetch(url, { cache: 'no-cache', signal: ctrl.signal });
+    const text = await res.text(); // body read is inside the timeout too
+    return { res, text };
   } finally {
     clearTimeout(timerId);
   }
@@ -660,15 +660,15 @@ async function loadSecondaryData() {
     fetchWithTimeout(LISTING_URL).catch(() => null),
   ]);
   let upgraded = false;
-  if (histRes && histRes.ok) {
-    const hrows = toHistoryRows(await histRes.text());
+  if (histRes && histRes.res.ok) {
+    const hrows = toHistoryRows(histRes.text);
     const keys = new Set(hrows.map(r => `${marketplaceOf(r)} · ${r.query}`));
     history = {};
     for (const key of keys) history[key] = historySeries(hrows, key);
     upgraded = true;
   }
-  if (listingRes && listingRes.ok) {
-    const lrows = toAnyRows(await listingRes.text());
+  if (listingRes && listingRes.res.ok) {
+    const lrows = toAnyRows(listingRes.text);
     listingHistory = {};
     for (const r of lrows) if (r.url) listingHistory[r.url] = r;
     upgraded = true;
@@ -709,11 +709,10 @@ async function main() {
     // Critical path: ONE fetch (the deal CSV) renders the report. History and
     // per-listing history load afterwards and upgrade the page — the report
     // never waits for them, so a slow connection shows content immediately.
-    const dealsRes = await fetchWithTimeout(CSV_URL);
-    if (!dealsRes.ok) throw new Error(`HTTP ${dealsRes.status} for ${CSV_URL}`);
-    const text = await dealsRes.text();
-    lastGenerated = formatGenerated(dealsRes);
-    cachedText = text;
+    const deals = await fetchWithTimeout(CSV_URL);
+    if (!deals.res.ok) throw new Error(`HTTP ${deals.res.status} for ${CSV_URL}`);
+    lastGenerated = formatGenerated(deals.res);
+    cachedText = deals.text;
     $('#filters').hidden = false;
     renderReport();
 
