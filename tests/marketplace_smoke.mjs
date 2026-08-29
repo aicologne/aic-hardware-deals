@@ -14,6 +14,7 @@ function makeEl() {
       if (k === 'appendChild') return c => { t.children.push(c); return c; };
       if (k === 'append') return (...cs) => { t.children.push(...cs); };
       if (k === 'setAttribute') return (name, val) => { t._attrs[name] = val; };
+      if (k === 'addEventListener') return () => {}; // main() wires lang toggles
       if (k === 'textContent') return t._text;
       if (k === 'innerHTML') return t._html;
       return t[k];

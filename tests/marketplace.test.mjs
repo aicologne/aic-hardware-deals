@@ -28,6 +28,7 @@ class FakeNode {
   appendChild(c) { this.children.push(c); return c; }
   append(...cs) { this.children.push(...cs); }
   setAttribute(name, val) { this._attrs[name] = String(val); }
+  addEventListener() {} // main() wires the lang toggles after rendering
   get textContent() { return this._text; }
   set textContent(v) { this._text = String(v); }
   get innerHTML() { return this._html; }

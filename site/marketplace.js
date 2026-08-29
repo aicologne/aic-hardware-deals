@@ -190,14 +190,24 @@ function renderAll() {
   section.hidden = false;
 }
 
+function fetchWithTimeout(url, ms = 8000) {
+  // A hung fetch must not leave the board stuck in "loading" forever — after
+  // the timeout the request is treated as "no data" and the board renders its
+  // empty state instead of hanging silently.
+  let timerId;
+  const timer = new Promise((_, reject) => { timerId = setTimeout(() => reject(new Error(`timeout fetching ${url}`)), ms); });
+  return Promise.race([fetch(url, { cache: 'no-cache' }), timer]).finally(() => clearTimeout(timerId));
+}
+
 async function main() {
   const [wlRes, seRes] = await Promise.all([
-    fetch(WATCHLIST_URL, { cache: 'no-cache' }).catch(() => null),
-    fetch(SEARCHES_URL, { cache: 'no-cache' }).catch(() => null),
+    fetchWithTimeout(WATCHLIST_URL).catch(() => null),
+    fetchWithTimeout(SEARCHES_URL).catch(() => null),
   ]);
   const watchlist = wlRes && wlRes.ok ? toAnyRows(await wlRes.text()) : [];
   const searches = seRes && seRes.ok ? toAnyRows(await seRes.text()) : [];
-  if (!watchlist.length && !searches.length) return; // no data yet — keep the board hidden
+  // Always render the board: with data it shows the tables, without data it
+  // shows the empty-state guidance (never a silent "nothing happened").
   window.__MP_DATA = { watchlist, searches };
   renderAll();
 
