@@ -12,6 +12,7 @@ site/data/
 # Python
 __pycache__/
 *.pyc
+tests/.tmp/
 
 # Large research artifacts
 buy_browse_oas3.yaml
