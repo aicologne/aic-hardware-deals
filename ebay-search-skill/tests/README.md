@@ -31,6 +31,7 @@ are imported with no credentials required.
 | `test_render_history.py` | `main()` end-to-end: medians, idempotent same-date reruns, MAX_DAYS prune |
 | `test_render_listing_history.py` | `main()` end-to-end: first/last price tracking, repricing count, stale prune, MAX_ROWS cap |
 | `test_ebay_relay.py` | env candidate discovery, token cache fetch/reuse/expiry, sandbox URL selection |
+| `test_split_deals.py` | per-category chunking: grouping, manifest, empty-row skipping, filename slugs |
 
 ## CI
 

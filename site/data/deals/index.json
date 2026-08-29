@@ -1,0 +1,132 @@
+[
+  {
+    "query": "AMD Ryzen AI Max 395 (Strix Halo)",
+    "file": "AMD-Ryzen-AI-Max-395-Strix-Halo.csv",
+    "rows": 3
+  },
+  {
+    "query": "DDR4 RDIMM 32GB",
+    "file": "DDR4-RDIMM-32GB.csv",
+    "rows": 45
+  },
+  {
+    "query": "DDR4 RDIMM 64GB",
+    "file": "DDR4-RDIMM-64GB.csv",
+    "rows": 35
+  },
+  {
+    "query": "DDR5 32GB",
+    "file": "DDR5-32GB.csv",
+    "rows": 49
+  },
+  {
+    "query": "DDR5 RDIMM",
+    "file": "DDR5-RDIMM.csv",
+    "rows": 1
+  },
+  {
+    "query": "EliteDesk 800 G4 Mini",
+    "file": "EliteDesk-800-G4-Mini.csv",
+    "rows": 8
+  },
+  {
+    "query": "EliteDesk 800 G5 Mini",
+    "file": "EliteDesk-800-G5-Mini.csv",
+    "rows": 24
+  },
+  {
+    "query": "Gaming PC mit RTX 3080",
+    "file": "Gaming-PC-mit-RTX-3080.csv",
+    "rows": 50
+  },
+  {
+    "query": "Gaming PC mit RTX 3090",
+    "file": "Gaming-PC-mit-RTX-3090.csv",
+    "rows": 5
+  },
+  {
+    "query": "Mac Studio Ultra",
+    "file": "Mac-Studio-Ultra.csv",
+    "rows": 4
+  },
+  {
+    "query": "NVMe SSD 2TB",
+    "file": "NVMe-SSD-2TB.csv",
+    "rows": 50
+  },
+  {
+    "query": "Nvidia Quadro RTX",
+    "file": "Nvidia-Quadro-RTX.csv",
+    "rows": 35
+  },
+  {
+    "query": "OptiPlex 3070 Micro",
+    "file": "OptiPlex-3070-Micro.csv",
+    "rows": 38
+  },
+  {
+    "query": "RTX 3090",
+    "file": "RTX-3090.csv",
+    "rows": 47
+  },
+  {
+    "query": "RTX 3090 Ti",
+    "file": "RTX-3090-Ti.csv",
+    "rows": 10
+  },
+  {
+    "query": "RTX 4060 Ti 16GB",
+    "file": "RTX-4060-Ti-16GB.csv",
+    "rows": 4
+  },
+  {
+    "query": "RTX 4070 Ti Super",
+    "file": "RTX-4070-Ti-Super.csv",
+    "rows": 17
+  },
+  {
+    "query": "RTX 4080 Super",
+    "file": "RTX-4080-Super.csv",
+    "rows": 25
+  },
+  {
+    "query": "RTX 5060",
+    "file": "RTX-5060.csv",
+    "rows": 11
+  },
+  {
+    "query": "RTX 5070 16GB",
+    "file": "RTX-5070-16GB.csv",
+    "rows": 13
+  },
+  {
+    "query": "Tesla P40",
+    "file": "Tesla-P40.csv",
+    "rows": 34
+  },
+  {
+    "query": "Tesla T4",
+    "file": "Tesla-T4.csv",
+    "rows": 13
+  },
+  {
+    "query": "ThinkCentre M720q",
+    "file": "ThinkCentre-M720q.csv",
+    "rows": 50
+  },
+  {
+    "query": "ThinkCentre M920q",
+    "file": "ThinkCentre-M920q.csv",
+    "rows": 50
+  },
+  {
+    "query": "X99 Mainboard",
+    "file": "X99-Mainboard.csv",
+    "rows": 8
+  },
+  {
+    "query": "Xeon E5-2690v4",
+    "file": "Xeon-E5-2690v4.csv",
+    "rows": 15
+  }
+]

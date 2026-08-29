@@ -15,6 +15,8 @@ import {
 } from './csv.js';
 
 const CSV_URL = window.DEALS_CSV || 'data/ebay_deals.csv';
+const DEALS_INDEX_URL = window.DEALS_INDEX || 'data/deals/index.json';
+const DEALS_DIR = 'data/deals/';
 const HISTORY_URL = window.DEALS_HISTORY || 'data/history.csv';
 const LISTING_URL = window.DEALS_LISTING_HISTORY || 'data/listing_history.csv';
 
@@ -33,6 +35,55 @@ async function fetchWithTimeout(url, ms = 10000) {
   } finally {
     clearTimeout(timerId);
   }
+}
+
+/** Load the deal rows. Preferred path: per-category chunks (data/deals/
+ *  index.json + one small CSV per category) fetched IN PARALLEL, each with
+ *  its own timeout, rendered as each chunk lands — a single stalled request
+ *  can no longer blank the whole report. Falls back to one big CSV when the
+ *  split files don't exist yet (older artifact, or ?csv= override). */
+async function loadDeals() {
+  // If the caller pinned a specific CSV, use it and nothing else.
+  if (window.DEALS_CSV) {
+    const { res, text } = await fetchWithTimeout(CSV_URL);
+    if (!res.ok) throw new Error(`HTTP ${res.status} for ${CSV_URL}`);
+    return { rows: toRows(text), generated: formatGenerated(res) };
+  }
+
+  // Preferred: try the split manifest first.
+  try {
+    const idx = await fetchWithTimeout(DEALS_INDEX_URL, 5000);
+    if (idx.res.ok) {
+      const manifest = JSON.parse(idx.text);
+      if (Array.isArray(manifest) && manifest.length) {
+        const rows = [];
+        let first = true;
+        const chunks = manifest.map(entry =>
+          fetchWithTimeout(DEALS_DIR + entry.file, 8000)
+            .then(({ res, text }) => {
+              if (!res.ok) return;
+              const chunkRows = toRows(text);
+              rows.push(...chunkRows);
+              // progressive: render as soon as the first chunk lands
+              if (first) { first = false; cachedRows = rows; renderReport(); }
+            })
+            .catch(() => {}) // one stuck chunk must not kill the report
+        );
+        await Promise.all(chunks); // all chunks are individually time-boxed
+        if (rows.length) {
+          cachedRows = rows;
+          return { rows, generated: formatGenerated(idx.res) };
+        }
+      }
+    }
+  } catch (err) {
+    // manifest missing/unreadable -> fall back to the single CSV
+    console.warn('Per-category split not available, using single CSV:', err && err.message);
+  }
+
+  const { res, text } = await fetchWithTimeout(CSV_URL);
+  if (!res.ok) throw new Error(`HTTP ${res.status} for ${CSV_URL}`);
+  return { rows: toRows(text), generated: formatGenerated(res) };
 }
 
 function el(tag, attrs = {}, ...children) {
@@ -208,7 +259,7 @@ const I18N = {
 let lang = localStorage.getItem('lang') || (navigator.language && navigator.language.toLowerCase().startsWith('de') ? 'de' : 'en');
 let theme = localStorage.getItem('theme') ||
   (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-let cachedText = null;   // last fetched CSV text, so the toggle can re-render
+let cachedRows = null;   // last loaded deal rows, so the toggle can re-render
 let lastGenerated = 'latest scan';
 let lastError = null;
 let tocObserver = null;  // one scrollspy observer at a time
@@ -597,7 +648,7 @@ function renderReport() {
     return;
   }
   error.hidden = true;
-  const { groups, flagged, total, queries, marketplaces, single } = analyze(toRows(cachedText));
+  const { groups, flagged, total, queries, marketplaces, single } = analyze(cachedRows || []);
   const idx = history ? indexPct(movers(history)) : null;
   const idxPart = idx != null ? ` · ${t('indexLabel')} ${pctStr(idx)}` : '';
   $('#generated-line').textContent = t('generated')(lastGenerated, total, queries.length) + idxPart;
@@ -648,7 +699,7 @@ function setLang(next) {
   lang = next;
   localStorage.setItem('lang', lang);
   applyStaticText();
-  if (cachedText || lastError) renderReport();
+  if (cachedRows || lastError) renderReport();
 }
 
 async function loadSecondaryData() {
@@ -706,13 +757,12 @@ async function main() {
   });
 
   try {
-    // Critical path: ONE fetch (the deal CSV) renders the report. History and
-    // per-listing history load afterwards and upgrade the page — the report
-    // never waits for them, so a slow connection shows content immediately.
-    const deals = await fetchWithTimeout(CSV_URL);
-    if (!deals.res.ok) throw new Error(`HTTP ${deals.res.status} for ${CSV_URL}`);
-    lastGenerated = formatGenerated(deals.res);
-    cachedText = deals.text;
+    // Critical path: load deal rows (per-category chunks, or one CSV as a
+    // fallback). History and per-listing history load afterwards and upgrade
+    // the page — the report never waits for them.
+    const deals = await loadDeals();
+    lastGenerated = deals.generated;
+    cachedRows = deals.rows;
     $('#filters').hidden = false;
     renderReport();
 

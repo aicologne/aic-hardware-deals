@@ -74,6 +74,13 @@ jobs:
           mkdir -p site/data
           cp ebay_deals.csv site/data/ebay_deals.csv
 
+      - name: Split the deal data per category (site/data/deals/)
+        # The site fetches one small file per category in parallel (with
+        # individual timeouts) instead of one big CSV — a stalled request can
+        # no longer blank the whole report. index.json lists the chunks.
+        run: |
+          python ebay-search-skill/split_deals.py ebay_deals.csv site/data/deals
+
       - name: Generate Facebook Marketplace link sheets (deep links only)
         # Marketplace has NO public API, and scraping it violates Facebook's
         # ToS (same stance as Kleinanzeigen — see facebook-marketplace-skill/

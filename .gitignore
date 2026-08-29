@@ -13,6 +13,10 @@ site/data/*
 # not committed 404s on the live site (marketplace.js fetches these CSVs).
 !site/data/marketplace/
 !site/data/marketplace/*
+# Per-category deal chunks ARE committed (the site fetches them in parallel
+# instead of one big CSV, so a stalled request can't blank the report).
+!site/data/deals/
+!site/data/deals/*
 
 # Python
 __pycache__/
