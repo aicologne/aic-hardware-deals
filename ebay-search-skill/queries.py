@@ -279,4 +279,20 @@ DEFAULT_QUERIES = [
         "cond": "USED",
         "category": 164,
     },
+    {
+        "name": "Asus DGX Spark",
+        "q": "ASUS Ascent GX10 (DGX Spark)",
+        "min": 1000,
+        "max": 3000,
+        "cond": "USED",
+        "category": 164,
+    },
+    {
+        "name": "Dell DGX Spark",
+        "q": "Dell Pro Max GB10 (DGX Spark)",
+        "min": 1000,
+        "max": 3000,
+        "cond": "USED",
+        "category": 164,
+    }
 ]
