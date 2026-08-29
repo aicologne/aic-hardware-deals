@@ -1,1 +1,104 @@
-{}
+{
+  "search:cologne:RTX 3090": {
+    "first_seen": "2026-08-29",
+    "last_seen": "2026-08-29",
+    "url": "https://www.facebook.com/marketplace/cologne/search/?query=RTX+3090&exact=false&radius=65&maxPrice=1100",
+    "type": "search",
+    "location": "cologne",
+    "keyword": "RTX 3090",
+    "max_price": "1100",
+    "radius_km": "65"
+  },
+  "search:vienna:RTX 3090": {
+    "first_seen": "2026-08-29",
+    "last_seen": "2026-08-29",
+    "url": "https://www.facebook.com/marketplace/vienna/search/?query=RTX+3090&exact=false&radius=65&maxPrice=1100",
+    "type": "search",
+    "location": "vienna",
+    "keyword": "RTX 3090",
+    "max_price": "1100",
+    "radius_km": "65"
+  },
+  "search:zurich:RTX 3090": {
+    "first_seen": "2026-08-29",
+    "last_seen": "2026-08-29",
+    "url": "https://www.facebook.com/marketplace/zurich/search/?query=RTX+3090&exact=false&radius=65&maxPrice=1100",
+    "type": "search",
+    "location": "zurich",
+    "keyword": "RTX 3090",
+    "max_price": "1100",
+    "radius_km": "65"
+  },
+  "search:london:RTX 3090": {
+    "first_seen": "2026-08-29",
+    "last_seen": "2026-08-29",
+    "url": "https://www.facebook.com/marketplace/london/search/?query=RTX+3090&exact=false&radius=65&maxPrice=1100",
+    "type": "search",
+    "location": "london",
+    "keyword": "RTX 3090",
+    "max_price": "1100",
+    "radius_km": "65"
+  },
+  "search:cologne:RTX 5070": {
+    "first_seen": "2026-08-29",
+    "last_seen": "2026-08-29",
+    "url": "https://www.facebook.com/marketplace/cologne/search/?query=RTX+5070&exact=false&radius=65&maxPrice=900",
+    "type": "search",
+    "location": "cologne",
+    "keyword": "RTX 5070",
+    "max_price": "900",
+    "radius_km": "65"
+  },
+  "search:vienna:RTX 5070": {
+    "first_seen": "2026-08-29",
+    "last_seen": "2026-08-29",
+    "url": "https://www.facebook.com/marketplace/vienna/search/?query=RTX+5070&exact=false&radius=65&maxPrice=900",
+    "type": "search",
+    "location": "vienna",
+    "keyword": "RTX 5070",
+    "max_price": "900",
+    "radius_km": "65"
+  },
+  "search:cologne:EliteDesk 800 G4": {
+    "first_seen": "2026-08-29",
+    "last_seen": "2026-08-29",
+    "url": "https://www.facebook.com/marketplace/cologne/search/?query=EliteDesk+800+G4&exact=false&radius=65&maxPrice=200",
+    "type": "search",
+    "location": "cologne",
+    "keyword": "EliteDesk 800 G4",
+    "max_price": "200",
+    "radius_km": "65"
+  },
+  "search:berlin:EliteDesk 800 G4": {
+    "first_seen": "2026-08-29",
+    "last_seen": "2026-08-29",
+    "url": "https://www.facebook.com/marketplace/berlin/search/?query=EliteDesk+800+G4&exact=false&radius=65&maxPrice=200",
+    "type": "search",
+    "location": "berlin",
+    "keyword": "EliteDesk 800 G4",
+    "max_price": "200",
+    "radius_km": "65"
+  },
+  "search:cologne:DDR4 RDIMM 32GB": {
+    "first_seen": "2026-08-29",
+    "last_seen": "2026-08-29",
+    "url": "https://www.facebook.com/marketplace/cologne/search/?query=DDR4+RDIMM+32GB&exact=false&radius=65&minPrice=40&maxPrice=120",
+    "type": "search",
+    "location": "cologne",
+    "keyword": "DDR4 RDIMM 32GB",
+    "min_price": "40",
+    "max_price": "120",
+    "radius_km": "65"
+  },
+  "search:vienna:DDR4 RDIMM 32GB": {
+    "first_seen": "2026-08-29",
+    "last_seen": "2026-08-29",
+    "url": "https://www.facebook.com/marketplace/vienna/search/?query=DDR4+RDIMM+32GB&exact=false&radius=65&minPrice=40&maxPrice=120",
+    "type": "search",
+    "location": "vienna",
+    "keyword": "DDR4 RDIMM 32GB",
+    "min_price": "40",
+    "max_price": "120",
+    "radius_km": "65"
+  }
+}

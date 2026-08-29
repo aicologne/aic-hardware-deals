@@ -6,6 +6,25 @@
 # into site/data/marketplace/watchlist.csv with first/last-seen dates, which
 # the site board and watchlist.md render.
 #
-# Examples (uncomment to try):
-# https://www.facebook.com/marketplace/item/1234567890/
-# https://www.facebook.com/marketplace/cologne/search/?query=RTX+3090&max=1100
+# The links below are the same deep links the nightly job generates in
+# site/data/marketplace/searches.csv — pre-configured searches for the niches
+# this report tracks. Item links (…/marketplace/item/<id>/) work the same way;
+# paste those when you spot a specific listing while browsing.
+#
+# --- GPU: RTX 3090 (16+ GB VRAM, shortage market) ---
+https://www.facebook.com/marketplace/cologne/search/?query=RTX+3090&exact=false&radius=65&maxPrice=1100 # RTX 3090 ≤ €1100 Köln
+https://www.facebook.com/marketplace/vienna/search/?query=RTX+3090&exact=false&radius=65&maxPrice=1100 # RTX 3090 ≤ €1100 Wien
+https://www.facebook.com/marketplace/zurich/search/?query=RTX+3090&exact=false&radius=65&maxPrice=1100 # RTX 3090 ≤ CHF 1100 Zürich
+https://www.facebook.com/marketplace/london/search/?query=RTX+3090&exact=false&radius=65&maxPrice=1100 # RTX 3090 ≤ £1100 London
+
+# --- GPU: RTX 5070 (16 GB, current-gen budget) ---
+https://www.facebook.com/marketplace/cologne/search/?query=RTX+5070&exact=false&radius=65&maxPrice=900 # RTX 5070 ≤ €900 Köln
+https://www.facebook.com/marketplace/vienna/search/?query=RTX+5070&exact=false&radius=65&maxPrice=900 # RTX 5070 ≤ €900 Wien
+
+# --- Mini PC: EliteDesk 800 G4 (budget AI workstation base) ---
+https://www.facebook.com/marketplace/cologne/search/?query=EliteDesk+800+G4&exact=false&radius=65&maxPrice=200 # EliteDesk 800 G4 ≤ €200 Köln
+https://www.facebook.com/marketplace/berlin/search/?query=EliteDesk+800+G4&exact=false&radius=65&maxPrice=200 # EliteDesk 800 G4 ≤ €200 Berlin
+
+# --- RAM: DDR4 RDIMM 32 GB (the arbitrage niche) ---
+https://www.facebook.com/marketplace/cologne/search/?query=DDR4+RDIMM+32GB&exact=false&radius=65&minPrice=40&maxPrice=120 # DDR4 RDIMM 32GB €40–120 Köln
+https://www.facebook.com/marketplace/vienna/search/?query=DDR4+RDIMM+32GB&exact=false&radius=65&minPrice=40&maxPrice=120 # DDR4 RDIMM 32GB €40–120 Wien

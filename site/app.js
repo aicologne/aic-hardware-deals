@@ -24,16 +24,35 @@ const LOAD_TIMEOUT_MS = 20000; // hard cap: spinner can never spin longer than t
 
 const $ = (sel, root = document) => root.querySelector(sel);
 
+// --- diagnostics (?debug=1) -------------------------------------------------
+// Append ?debug=1 (or ?debug) to the URL to get a load report in the console:
+// which data path ran (chunked vs single CSV), per-request status/timing,
+// parse results and rendered row counts. Also exposed as window.__APP_DEBUG__
+// so you can poke at it from the DevTools console.
+const DEBUG = new URLSearchParams(location.search).has('debug');
+const APP_START_MS = performance.now();
+const debugLog = [];
+function dbg(label, ...rest) {
+  if (!DEBUG) return;
+  debugLog.push([label, ...rest]);
+  console.debug('[app]', label, ...rest);
+}
+
 /** Fetch + read the full body under one hard timeout, so a stalled request
  *  (headers OR body stream) can never leave the page stuck on the loading
  *  spinner forever. Throws on timeout; aborts the underlying request. */
 async function fetchWithTimeout(url, ms = 10000) {
   const ctrl = new AbortController();
   const timerId = setTimeout(() => ctrl.abort(), ms);
+  const t0 = performance.now();
   try {
     const res = await fetch(url, { cache: 'no-cache', signal: ctrl.signal });
     const text = await res.text(); // body read is inside the timeout too
+    dbg('fetch ok', url, `${Math.round(performance.now() - t0)}ms`, res.status);
     return { res, text };
+  } catch (err) {
+    dbg('fetch FAILED', url, `${Math.round(performance.now() - t0)}ms`, err.name, err.message);
+    throw err;
   } finally {
     clearTimeout(timerId);
   }
@@ -45,11 +64,13 @@ async function fetchWithTimeout(url, ms = 10000) {
  *  can no longer blank the whole report. Falls back to one big CSV when the
  *  split files don't exist yet (older artifact, or ?csv= override). */
 async function loadDeals() {
+  const t0 = performance.now();
   // If the caller pinned a specific CSV, use it and nothing else.
   if (window.DEALS_CSV) {
+    dbg('mode', 'single CSV (window.DEALS_CSV override)');
     const { res, text } = await fetchWithTimeout(CSV_URL);
     if (!res.ok) throw new Error(`HTTP ${res.status} for ${CSV_URL}`);
-    return { rows: toRows(text), generated: formatGenerated(res) };
+    return { rows: toRows(text), generated: formatGenerated(res), ms: performance.now() - t0 };
   }
 
   // Preferred: try the split manifest first.
@@ -58,17 +79,21 @@ async function loadDeals() {
     if (idx.res.ok) {
       const manifest = JSON.parse(idx.text);
       if (Array.isArray(manifest) && manifest.length) {
+        dbg('mode', 'per-category chunks', manifest.length, 'categories');
         const rows = [];
         let first = true;
         let done = 0;
+        let failed = 0;
         const status = $('#status');
-        const chunks = manifest.map(entry =>
-          fetchWithTimeout(DEALS_DIR + entry.file, 8000)
+        const chunks = manifest.map(entry => {
+          const c0 = performance.now();
+          return fetchWithTimeout(DEALS_DIR + entry.file, 8000)
             .then(({ res, text }) => {
-              if (!res.ok) return;
+              if (!res.ok) { failed++; dbg('chunk', entry.file, 'HTTP', res.status); return; }
               const chunkRows = toRows(text);
               rows.push(...chunkRows);
               done++;
+              dbg('chunk', entry.file, `${Math.round(performance.now() - c0)}ms`, chunkRows.length, 'rows');
               if (status) {
                 status.textContent = '';
                 status.append(t('statusProgress')(done));
@@ -76,25 +101,30 @@ async function loadDeals() {
               // progressive: render as soon as the first chunk lands
               if (first) { first = false; cachedRows = rows; renderReport(); }
             })
-            .catch(() => {}) // one stuck chunk must not kill the report
-        );
+            .catch(err => { failed++; dbg('chunk FAILED', entry.file, err.name, err.message); }); // one stuck chunk must not kill the report
+        });
         await Promise.all(chunks); // all chunks are individually time-boxed
+        dbg('chunks done', { ok: done, failed, rows: rows.length, totalMs: Math.round(performance.now() - t0) });
         if (rows.length) {
           cachedRows = rows;
-          return { rows, generated: formatGenerated(idx.res) };
+          return { rows, generated: formatGenerated(idx.res), ms: performance.now() - t0 };
         }
       }
+    } else {
+      dbg('index.json', 'HTTP', idx.res.status, '(falling back to single CSV)');
     }
   } catch (err) {
     // manifest missing/unreadable -> fall back to the single CSV
+    dbg('index.json FAILED', err.name, err.message, '(falling back to single CSV)');
     console.warn('Per-category split not available, using single CSV:', err && err.message);
   }
 
   const status = $('#status');
   if (status) { status.textContent = ''; status.append(...partsNodes('statusFallback')); }
+  dbg('mode', 'single CSV fallback');
   const { res, text } = await fetchWithTimeout(CSV_URL);
   if (!res.ok) throw new Error(`HTTP ${res.status} for ${CSV_URL}`);
-  return { rows: toRows(text), generated: formatGenerated(res) };
+  return { rows: toRows(text), generated: formatGenerated(res), ms: performance.now() - t0 };
 }
 
 function el(tag, attrs = {}, ...children) {
@@ -684,6 +714,7 @@ function renderReport() {
   }
   error.hidden = true;
   const { groups, flagged, total, queries, marketplaces, single } = analyze(cachedRows || []);
+  dbg('render', { total, groups: groups.length, flagged: flagged.length, marketplaces: marketplaces.length, single });
   const idx = history ? indexPct(movers(history)) : null;
   const idxPart = idx != null ? ` · ${t('indexLabel')} ${pctStr(idx)}` : '';
   $('#generated-line').textContent = t('generated')(lastGenerated, total, queries.length) + idxPart;
@@ -836,6 +867,20 @@ async function main() {
     lastError = err;
     status.hidden = true;
     renderReport();
+  }
+  if (DEBUG) {
+    // final summary — one glance at the console tells you what happened
+    dbg('=== load summary ===', {
+      totalMs: Math.round(performance.now() - APP_START_MS),
+      rows: cachedRows ? cachedRows.length : 0,
+      error: lastError ? lastError.message : null,
+    });
+    window.__APP_DEBUG__ = {
+      log: debugLog,
+      rows: cachedRows ? cachedRows.length : 0,
+      error: lastError ? lastError.message : null,
+    };
+    console.debug('[app] window.__APP_DEBUG__ set — inspect it or copy this log', debugLog);
   }
   setupStatsLink();
 }

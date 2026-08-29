@@ -1,1 +1,11 @@
 ﻿first_seen,last_seen,type,item_id,location,keyword,min_price,max_price,radius_km,url,note
+2026-08-29,2026-08-29,search,,cologne,RTX 3090,,1100,65,https://www.facebook.com/marketplace/cologne/search/?query=RTX+3090&exact=false&radius=65&maxPrice=1100,
+2026-08-29,2026-08-29,search,,vienna,RTX 3090,,1100,65,https://www.facebook.com/marketplace/vienna/search/?query=RTX+3090&exact=false&radius=65&maxPrice=1100,
+2026-08-29,2026-08-29,search,,zurich,RTX 3090,,1100,65,https://www.facebook.com/marketplace/zurich/search/?query=RTX+3090&exact=false&radius=65&maxPrice=1100,
+2026-08-29,2026-08-29,search,,london,RTX 3090,,1100,65,https://www.facebook.com/marketplace/london/search/?query=RTX+3090&exact=false&radius=65&maxPrice=1100,
+2026-08-29,2026-08-29,search,,cologne,RTX 5070,,900,65,https://www.facebook.com/marketplace/cologne/search/?query=RTX+5070&exact=false&radius=65&maxPrice=900,
+2026-08-29,2026-08-29,search,,vienna,RTX 5070,,900,65,https://www.facebook.com/marketplace/vienna/search/?query=RTX+5070&exact=false&radius=65&maxPrice=900,
+2026-08-29,2026-08-29,search,,cologne,EliteDesk 800 G4,,200,65,https://www.facebook.com/marketplace/cologne/search/?query=EliteDesk+800+G4&exact=false&radius=65&maxPrice=200,
+2026-08-29,2026-08-29,search,,berlin,EliteDesk 800 G4,,200,65,https://www.facebook.com/marketplace/berlin/search/?query=EliteDesk+800+G4&exact=false&radius=65&maxPrice=200,
+2026-08-29,2026-08-29,search,,cologne,DDR4 RDIMM 32GB,40,120,65,https://www.facebook.com/marketplace/cologne/search/?query=DDR4+RDIMM+32GB&exact=false&radius=65&minPrice=40&maxPrice=120,
+2026-08-29,2026-08-29,search,,vienna,DDR4 RDIMM 32GB,40,120,65,https://www.facebook.com/marketplace/vienna/search/?query=DDR4+RDIMM+32GB&exact=false&radius=65&minPrice=40&maxPrice=120,
