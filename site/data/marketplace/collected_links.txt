@@ -1,0 +1,11 @@
+# Facebook Marketplace watchlist — paste links here (one per line; '#' = comment).
+#
+# How it works: browse Marketplace in your own browser (normal use), copy the
+# URL of any listing or search you care about, paste it below, commit. The
+# nightly job parses this file OFFLINE — no automated access to Facebook —
+# into site/data/marketplace/watchlist.csv with first/last-seen dates, which
+# the site board and watchlist.md render.
+#
+# Examples (uncomment to try):
+# https://www.facebook.com/marketplace/item/1234567890/
+# https://www.facebook.com/marketplace/cologne/search/?query=RTX+3090&max=1100

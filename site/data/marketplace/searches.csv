@@ -1,0 +1,23 @@
+﻿query,country,country_name,currency,city,url
+RTX 3090,DE,Germany,EUR,cologne,https://www.facebook.com/marketplace/cologne/search/?query=RTX+3090&exact=false&radius=65&maxPrice=1100
+RTX 3090,AT,Austria,EUR,vienna,https://www.facebook.com/marketplace/vienna/search/?query=RTX+3090&exact=false&radius=65&maxPrice=1100
+RTX 3090,CH,Switzerland,CHF,zurich,https://www.facebook.com/marketplace/zurich/search/?query=RTX+3090&exact=false&radius=65&maxPrice=1100
+RTX 3090,GB,United Kingdom,GBP,london,https://www.facebook.com/marketplace/london/search/?query=RTX+3090&exact=false&radius=65&maxPrice=1100
+RTX 5070,DE,Germany,EUR,cologne,https://www.facebook.com/marketplace/cologne/search/?query=RTX+5070&exact=false&radius=65&maxPrice=900
+RTX 5070,AT,Austria,EUR,vienna,https://www.facebook.com/marketplace/vienna/search/?query=RTX+5070&exact=false&radius=65&maxPrice=900
+RTX 5070,CH,Switzerland,CHF,zurich,https://www.facebook.com/marketplace/zurich/search/?query=RTX+5070&exact=false&radius=65&maxPrice=900
+RTX 5070,GB,United Kingdom,GBP,london,https://www.facebook.com/marketplace/london/search/?query=RTX+5070&exact=false&radius=65&maxPrice=900
+EliteDesk 800 G4,DE,Germany,EUR,cologne,https://www.facebook.com/marketplace/cologne/search/?query=EliteDesk+800+G4&exact=false&radius=65&maxPrice=200
+EliteDesk 800 G4,DE,Germany,EUR,berlin,https://www.facebook.com/marketplace/berlin/search/?query=EliteDesk+800+G4&exact=false&radius=65&maxPrice=200
+EliteDesk 800 G4,DE,Germany,EUR,hamburg,https://www.facebook.com/marketplace/hamburg/search/?query=EliteDesk+800+G4&exact=false&radius=65&maxPrice=200
+EliteDesk 800 G4,DE,Germany,EUR,munich,https://www.facebook.com/marketplace/munich/search/?query=EliteDesk+800+G4&exact=false&radius=65&maxPrice=200
+EliteDesk 800 G4,DE,Germany,EUR,frankfurt,https://www.facebook.com/marketplace/frankfurt/search/?query=EliteDesk+800+G4&exact=false&radius=65&maxPrice=200
+EliteDesk 800 G4,DE,Germany,EUR,stuttgart,https://www.facebook.com/marketplace/stuttgart/search/?query=EliteDesk+800+G4&exact=false&radius=65&maxPrice=200
+EliteDesk 800 G4,DE,Germany,EUR,duesseldorf,https://www.facebook.com/marketplace/duesseldorf/search/?query=EliteDesk+800+G4&exact=false&radius=65&maxPrice=200
+EliteDesk 800 G4,DE,Germany,EUR,leipzig,https://www.facebook.com/marketplace/leipzig/search/?query=EliteDesk+800+G4&exact=false&radius=65&maxPrice=200
+EliteDesk 800 G4,DE,Germany,EUR,dortmund,https://www.facebook.com/marketplace/dortmund/search/?query=EliteDesk+800+G4&exact=false&radius=65&maxPrice=200
+EliteDesk 800 G4,DE,Germany,EUR,essen,https://www.facebook.com/marketplace/essen/search/?query=EliteDesk+800+G4&exact=false&radius=65&maxPrice=200
+EliteDesk 800 G4,DE,Germany,EUR,bremen,https://www.facebook.com/marketplace/bremen/search/?query=EliteDesk+800+G4&exact=false&radius=65&maxPrice=200
+EliteDesk 800 G4,DE,Germany,EUR,hannover,https://www.facebook.com/marketplace/hannover/search/?query=EliteDesk+800+G4&exact=false&radius=65&maxPrice=200
+DDR4 RDIMM 32GB,DE,Germany,EUR,cologne,https://www.facebook.com/marketplace/cologne/search/?query=DDR4+RDIMM+32GB&exact=false&radius=65&minPrice=40&maxPrice=120
+DDR4 RDIMM 32GB,AT,Austria,EUR,vienna,https://www.facebook.com/marketplace/vienna/search/?query=DDR4+RDIMM+32GB&exact=false&radius=65&minPrice=40&maxPrice=120

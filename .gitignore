@@ -2,12 +2,17 @@
 ebay.env
 
 # Scanner outputs — but the canonical nightly scan result IS committed
-site/data/
+site/data/*
 *.csv
 !ebay_deals.csv
 !site/data/ebay_deals.csv
 !site/data/history.csv
 !site/data/listing_history.csv
+# Marketplace board data IS committed (search deep links + watchlist): the
+# push-triggered site-deploy.yml ships site/ from the checkout, so anything
+# not committed 404s on the live site (marketplace.js fetches these CSVs).
+!site/data/marketplace/
+!site/data/marketplace/*
 
 # Python
 __pycache__/
