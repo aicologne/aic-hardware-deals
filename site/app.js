@@ -19,6 +19,7 @@ const DEALS_INDEX_URL = window.DEALS_INDEX || 'data/deals/index.json';
 const DEALS_DIR = 'data/deals/';
 const HISTORY_URL = window.DEALS_HISTORY || 'data/history.csv';
 const LISTING_URL = window.DEALS_LISTING_HISTORY || 'data/listing_history.csv';
+const LOAD_TIMEOUT_MS = 20000; // hard cap: spinner can never spin longer than this
 
 const $ = (sel, root = document) => root.querySelector(sel);
 
@@ -58,12 +59,19 @@ async function loadDeals() {
       if (Array.isArray(manifest) && manifest.length) {
         const rows = [];
         let first = true;
+        let done = 0;
+        const status = $('#status');
         const chunks = manifest.map(entry =>
           fetchWithTimeout(DEALS_DIR + entry.file, 8000)
             .then(({ res, text }) => {
               if (!res.ok) return;
               const chunkRows = toRows(text);
               rows.push(...chunkRows);
+              done++;
+              if (status) {
+                status.textContent = '';
+                status.append(t('statusProgress')(done));
+              }
               // progressive: render as soon as the first chunk lands
               if (first) { first = false; cachedRows = rows; renderReport(); }
             })
@@ -81,6 +89,8 @@ async function loadDeals() {
     console.warn('Per-category split not available, using single CSV:', err && err.message);
   }
 
+  const status = $('#status');
+  if (status) { status.textContent = ''; status.append(...partsNodes('statusFallback')); }
   const { res, text } = await fetchWithTimeout(CSV_URL);
   if (!res.ok) throw new Error(`HTTP ${res.status} for ${CSV_URL}`);
   return { rows: toRows(text), generated: formatGenerated(res) };
@@ -117,7 +127,9 @@ const I18N = {
     ctxLabel: 'Market context (2026):',
     ctxText: 'the DRAM/GDDR shortage keeps used prices elevated. Used RTX 3090s ask €1000–1500 on eBay.de; DDR5 German retail is ~4.2–4.5× its July-2025 level; DDR4 RDIMM shops ask €219–230 for 32 GB while private sellers still move pre-shortage stock at €60–120. Note the new-price anchors: a BOSGAME M5 (Strix Halo, 128 GB) costs €1581–1700 new — used Strix Halo above that is not a deal. Verify everything live — prices move weekly.',
     tocTitle: 'Contents',
-    statusLoading: ['Loading deal data from ', { code: CSV_URL }, '…'],
+    statusLoading: ['Loading deal data…'],
+    statusProgress: done => `Loading deal data… ${done} categories loaded`,
+    statusFallback: 'Loading deal data… (single CSV fallback)',
     generated: (date, total, cats) => `Generated ${date} · ${total} items across ${cats} categories`,
     noDeals: 'No listings found in the latest scan.',
     dealHighlights: '🔥 Deal highlights',
@@ -191,7 +203,9 @@ const I18N = {
     ctxLabel: 'Marktkontext (2026):',
     ctxText: 'Die DRAM/GDDR-Knappheit hält die Gebrauchtpreise hoch: Gebrauchte RTX-3090-Karten kosten auf eBay.de €1.000–1.500; DDR5 im deutschen Handel liegt bei ~4,2–4,5× des Niveaus vom Juli 2025; DDR4-RDIMM-Shops verlangen €219–230 für 32 GB, während private Verkäufer Altbestand noch für €60–120 anbieten. Achtung Preisanker: Ein BOSGAME M5 (Strix Halo, 128 GB) kostet neu €1.581–1.700 — gebrauchtes Strix Halo darüber ist kein Deal. Alles live prüfen — die Preise bewegen sich wöchentlich.',
     tocTitle: 'Inhalt',
-    statusLoading: ['Lade Angebotsdaten aus ', { code: CSV_URL }, '…'],
+    statusLoading: ['Lade Angebotsdaten…'],
+    statusProgress: done => `Lade Angebotsdaten… ${done} Kategorien geladen`,
+    statusFallback: 'Lade Angebotsdaten… (Einzel-CSV-Fallback)',
     generated: (date, total, cats) => `Erstellt ${date} · ${total} Artikel in ${cats} Kategorien`,
     noDeals: 'Im letzten Scan wurden keine Angebote gefunden.',
     dealHighlights: '🔥 Deal-Highlights',
@@ -731,6 +745,18 @@ async function main() {
   const status = $('#status');
   applyStaticText();
 
+  // Watchdog: the loading spinner must never persist. Whatever happens to the
+  // fetches (stalled CDN, proxy, killed connection), after LOAD_TIMEOUT_MS we
+  // force the error state so the page always ends in a visible outcome.
+  const watchdog = setTimeout(() => {
+    if (status && !status.hidden && !lastError) {
+      console.error('Report data load timed out after', LOAD_TIMEOUT_MS, 'ms');
+      lastError = new Error(`Timed out after ${LOAD_TIMEOUT_MS / 1000}s waiting for ${CSV_URL}`);
+      status.hidden = true;
+      renderReport();
+    }
+  }, LOAD_TIMEOUT_MS);
+
   // language switcher + theme
   $('#lang-en').addEventListener('click', () => setLang('en'));
   $('#lang-de').addEventListener('click', () => setLang('de'));
@@ -761,6 +787,7 @@ async function main() {
     // fallback). History and per-listing history load afterwards and upgrade
     // the page — the report never waits for them.
     const deals = await loadDeals();
+    clearTimeout(watchdog);
     lastGenerated = deals.generated;
     cachedRows = deals.rows;
     $('#filters').hidden = false;
@@ -768,6 +795,7 @@ async function main() {
 
     loadSecondaryData();
   } catch (err) {
+    clearTimeout(watchdog);
     console.error('Report failed to load:', err);
     lastError = err;
     status.hidden = true;
