@@ -448,6 +448,11 @@ td a { font-weight: 500; }
 .f-count { margin-left: auto; color: var(--text-muted); font-variant-numeric: tabular-nums; }
 
 /* --- loading / error states ------------------------------------------------ */
+/* The hidden attribute must ALWAYS win over any display rule (e.g. .status
+   uses display:flex, which would otherwise override the UA [hidden] style and
+   leave the spinner spinning forever). */
+[hidden] { display: none !important; }
+
 .status {
   display: flex;
   align-items: center;

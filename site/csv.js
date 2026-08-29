@@ -197,8 +197,7 @@ export function indexPct(moversArr) {
 // --- grouping ---------------------------------------------------------------
 
 /** Group rows by composite key and compute per-category stats + the flagged shortlist. */
-export function analyze(rows) {
-  const valid = rows.filter(r => num(r.price) != null);
+export function analyze(rows) {  const valid = rows.filter(r => num(r.price) != null);
   const marketplaces = [...new Set(valid.map(marketplaceOf))].sort();
   const single = marketplaces.length <= 1;
   const byKey = new Map();
@@ -232,4 +231,26 @@ export function analyze(rows) {
     .filter(r => flagFor(r) === '🔥 at/near buy-low target')
     .sort((a, b) => num(a.price) - num(b.price));
   return { rows: valid, marketplaces, single, queries: keys, groups, flagged, total: valid.length };
+}
+
+/**
+ * Cap the deal-highlights shortlist: at most `max` rows total, but always
+ * at least ONE row per category (the cheapest flagged deal of each category
+ * is guaranteed a slot; the remaining slots are the next cheapest flagged
+ * deals overall).
+ */
+export function topDeals(flagged, max = 20) {
+  const byQuery = new Map();
+  for (const r of flagged) {
+    if (!byQuery.has(r.query)) byQuery.set(r.query, []);
+    byQuery.get(r.query).push(r);
+  }
+  const picks = [];
+  for (const rows of byQuery.values()) picks.push(rows[0]); // one per category (cheapest, since flagged is price-sorted)
+  const seen = new Set(picks);
+  for (const r of flagged) {
+    if (picks.length >= max) break;
+    if (!seen.has(r)) { seen.add(r); picks.push(r); }
+  }
+  return picks;
 }

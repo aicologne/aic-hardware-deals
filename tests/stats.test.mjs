@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import {
   parseCSV, toRows, toHistoryRows, toAnyRows, analyze, euro, num, median, flagFor,
-  historySeries, movers, indexPct, euroPerGb, CAPACITY_GB, groupKey,
+  historySeries, movers, indexPct, euroPerGb, CAPACITY_GB, groupKey, topDeals,
 } from '../site/csv.js';
 
 const csvPath = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'site', 'data', 'ebay_deals.csv');
@@ -160,6 +160,31 @@ test('euroPerGb uses the capacity map and returns null for unknown/mixed categor
   assert.equal(euroPerGb('500', 'Nvidia Quadro RTX'), null, 'mixed-capacity category has no map entry');
   assert.equal(euroPerGb('x', 'RTX 3090'), null, 'unparsable price -> null');
   assert.ok(CAPACITY_GB['RTX 3090'] === 24 && CAPACITY_GB['DDR5 32GB'] === 32, 'map sanity');
+});
+
+test('topDeals caps the shortlist at 20 while keeping at least one row per category', () => {
+  const mk = (query, price) => ({ query, price: String(price), url: `${query}-${price}` });
+  // 3 categories × 10 flagged deals each = 30 flagged
+  const flagged = [
+    ...Array.from({ length: 10 }, (_, i) => mk('RTX 3090', 500 + i * 10)),
+    ...Array.from({ length: 10 }, (_, i) => mk('DDR4 RDIMM 32GB', 40 + i * 2)),
+    ...Array.from({ length: 10 }, (_, i) => mk('Tesla P40', 300 + i * 5)),
+  ].sort((a, b) => num(a.price) - num(b.price));
+
+  const top = topDeals(flagged);
+  assert.equal(top.length, 20, 'capped at 20');
+  assert.equal(new Set(top.map(r => r.query)).size, 3, 'every category is represented');
+
+  // with fewer than 20 rows nothing is dropped
+  const few = flagged.slice(0, 5);
+  assert.deepEqual(topDeals(few), few);
+
+  // one-per-category comes first (the cheapest of each category)
+  const first = topDeals(flagged, 3);
+  assert.deepEqual(new Set(first.map(r => r.query)), new Set(['RTX 3090', 'DDR4 RDIMM 32GB', 'Tesla P40']));
+  assert.deepEqual(first.map(r => num(r.price)), [40, 300, 500], 'cheapest per category, price order');
+
+  assert.deepEqual(topDeals([]), []);
 });
 
 // --- human-readable sanity summary (node --test shows it in the report) ---

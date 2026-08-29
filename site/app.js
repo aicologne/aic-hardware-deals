@@ -11,7 +11,7 @@
 //   ?csv=../ebay_deals.csv   -> app.js reads window.DEALS_CSV
 import {
   toRows, toHistoryRows, toAnyRows, analyze, euro, flagFor, num, median, marketplaceOf,
-  euroPerGb, historySeries, movers, indexPct, CAPACITY_GB,
+  euroPerGb, historySeries, movers, indexPct, topDeals, CAPACITY_GB,
 } from './csv.js';
 
 const CSV_URL = window.DEALS_CSV || 'data/ebay_deals.csv';
@@ -693,7 +693,7 @@ function renderReport() {
   const shownTotal = shown.reduce((n, g) => n + g.count, 0);
   $('#f-count').textContent = t('fCount')(shownTotal, total);
 
-  if (!active) renderHighlights(flagged, content, single);
+  if (!active) renderHighlights(topDeals(flagged), content, single);
   const mv = history ? movers(history) : [];
   if (!active && mv.length) renderMovers(mv, content, single);
   if (!shown.length) {
