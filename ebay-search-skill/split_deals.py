@@ -41,8 +41,15 @@ def slugify(query):
 
 
 def split_deals(csv_path, out_dir, min_rows=2):
-    """Read the scan CSV, group by query, write per-category files + index."""
+    """Read the scan CSV, group by query, write per-category files + index.
+
+    The manifest also carries `capacity_gb` per category (from queries.py) so
+    the site can render the €/GB column without duplicating the mapping.
+    """
     os.makedirs(out_dir, exist_ok=True)
+    from queries import capacity_map  # local import: split_deals is standalone
+
+    capacity = capacity_map()
     groups = {}
     with open(csv_path, encoding="utf-8-sig", newline="") as f:
         for r in csv.DictReader(f):
@@ -60,7 +67,12 @@ def split_deals(csv_path, out_dir, min_rows=2):
             w = csv.DictWriter(f, fieldnames=FIELDS, extrasaction="ignore")
             w.writeheader()
             w.writerows(rows)
-        manifest.append({"query": q, "file": f"{slug}.csv", "rows": len(rows)})
+        manifest.append({
+            "query": q,
+            "file": f"{slug}.csv",
+            "rows": len(rows),
+            "capacity_gb": capacity.get(q),
+        })
 
     with open(os.path.join(out_dir, "index.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)

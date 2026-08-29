@@ -122,8 +122,12 @@ export function groupKey(r) {
 
 // --- €/GB value metric ------------------------------------------------------
 
-// Capacity in GB per scan category. Only unambiguous categories get a value;
-// mixed-capacity categories (e.g. Quadro RTX 8/16/24 GB) stay null.
+// Capacity in GB per scan category. Single source of truth: queries.py
+// (`capacity_gb` field) -> split_deals.py writes it into data/deals/index.json,
+// and app.js hydrates this map at runtime. The entries below are only a
+// FALLBACK for the single-CSV mode and unit tests; new products need no
+// front-end edit. Mixed-capacity categories (e.g. Quadro RTX 8/16/24 GB)
+// stay absent and render "—".
 export const CAPACITY_GB = {
   'RTX 3090': 24,
   'RTX 3090 Ti': 24,

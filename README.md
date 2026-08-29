@@ -138,6 +138,38 @@ Full details in [`kleinanzeigen_playbook.md`](kleinanzeigen_playbook.md) (21 rea
 - eBay **silently ignores malformed params** — so the scanner also enforces the deal window client-side and reports dropped items.
 - **Deal windows are adaptive**: the static min/max in `queries.py` are the fallback; once `site/data/history.csv` has a few days of medians per category, `windows.py` derives the scan window from the market (lower-quartile buy-low target, ceiling that widens as prices rise). Categories the shortage pushed above their old windows (RTX 3090, DDR5, …) are no longer invisible.
 
+### Adding a new product — one place, everything follows
+
+`ebay-search-skill/queries.py` is the **single source of truth** for products. Add **one dict** to `DEFAULT_QUERIES` and every downstream piece derives from it automatically:
+
+```python
+{
+    "name": "RTX 5080",       # display name (category in report + site)
+    "q": "RTX 5080",          # eBay search keyword
+    "min": 1200,              # static fallback window in EUR (adaptive later)
+    "max": 2200,
+    "cond": "USED",           # USED / NEW / REFURBISHED / "" = any
+    "category": 27386,        # 27386 GPUs · 171957 Desktops · 170083 RAM · 11210 Server-RAM · None = keyword-only
+    "capacity_gb": 16,        # OPTIONAL: unambiguous capacity → €/GB column appears
+    "mp": {"max": 2200},      # OPTIONAL: Facebook Marketplace deep links for the board
+                              #   {"max": 1100}                        → all FB_MARKETPLACES countries, default city
+                              #   {"max": 200, "city": "all"}          → every city of those countries
+                              #   {"max": 120, "min": 40, "countries": "DE,AT"}
+                              #   {"q": "RTX 5070"}                    → override the marketplace keyword
+},
+```
+
+Derived automatically — **no other file needs editing**:
+
+| Where | Derives from |
+|---|---|
+| eBay scan (nightly) | `DEFAULT_QUERIES` (scanner iterates the list) |
+| €/GB column (site + `LATEST.md`) | `capacity_gb` → `render_report.py` + `site/data/deals/index.json` → site hydrates at runtime |
+| Marketplace board links | `mp` block → `fb_marketplace.py --from-queries` regenerates all sheets + `searches.csv` in one call |
+| Per-category site chunks | `split_deals.py` (re-splits the CSV per query automatically) |
+
+Unit tests (`tests/test_queries.py`) guard the derived views, so a new product with a typo (missing field, duplicate name, `min >= max`) fails the pipeline instead of silently breaking the report.
+
 ### Quick start
 
 ```bash

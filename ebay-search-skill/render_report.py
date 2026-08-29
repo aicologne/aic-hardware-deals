@@ -18,25 +18,13 @@ import sys
 
 DEFAULT_MARKETPLACE = "EBAY_DE"
 
-# Capacity used for the €/GB column. Only categories with an unambiguous
-# capacity get a value; mixed categories (e.g. Quadro RTX 8/16/24 GB) are "—".
-CAPACITY_GB = {
-    "RTX 3090": 24,
-    "RTX 3090 Ti": 24,
-    "RTX 4070 Ti Super": 16,
-    "RTX 4080 Super": 16,
-    "RTX 5070 16GB": 16,
-    "RTX 5060": 16,
-    "RTX 4060 Ti 16GB": 16,
-    "Tesla P40": 24,
-    "Tesla T4": 16,
-    "Radeon PRO W7800": 32,
-    "Radeon PRO W7900": 48,
-    "DDR4 RDIMM 32GB": 32,
-    "DDR4 RDIMM 64GB": 64,
-    "DDR5 32GB": 32,
-    "DDR5 RDIMM": 32,
-}
+# Capacity used for the €/GB column. Single source of truth: queries.py —
+# add `capacity_gb` to a product there and it shows up here automatically.
+# Only categories with an unambiguous capacity get a value; mixed categories
+# (e.g. Quadro RTX 8/16/24 GB) stay without and render "—".
+from queries import DEFAULT_QUERIES  # noqa: E402
+
+CAPACITY_GB = {q["name"]: q["capacity_gb"] for q in DEFAULT_QUERIES if q.get("capacity_gb")}
 
 # eBay seller fee rate (of the gross price), used for the Net column. Override
 # via EBAY_FEE_RATE (e.g. "0.13"); set to "0" to hide the column.

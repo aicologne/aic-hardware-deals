@@ -79,6 +79,13 @@ async function loadDeals() {
     if (idx.res.ok) {
       const manifest = JSON.parse(idx.text);
       if (Array.isArray(manifest) && manifest.length) {
+        // Hydrate the €/GB capacity map from the manifest — the single source
+        // of truth is queries.py (via split_deals.py -> index.json), so a new
+        // product needs NO front-end edit. The static CAPACITY_GB in csv.js
+        // only remains as a fallback for the single-CSV mode and tests.
+        for (const entry of manifest) {
+          if (entry.capacity_gb != null) CAPACITY_GB[entry.query] = entry.capacity_gb;
+        }
         dbg('mode', 'per-category chunks', manifest.length, 'categories');
         const rows = [];
         let first = true;

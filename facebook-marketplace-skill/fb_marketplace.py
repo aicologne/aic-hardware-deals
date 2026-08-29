@@ -454,6 +454,58 @@ def render_markdown(targets, args):
     return "\n".join(lines)
 
 
+def generate_from_queries(countries, csv_path, out_dir, min_rows=2):
+    """Generate deep links for every product in queries.py that has an `mp`
+    block — the single source of truth for the Marketplace board.
+
+    Reads ebay-search-skill/queries.py (sibling of this skill), so adding
+    `mp` to a product there is ALL it takes to get its Marketplace links.
+    """
+    import sys as _sys
+    import os as _os
+
+    skill = _os.path.normpath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)),
+                                            "..", "ebay-search-skill"))
+    if skill not in _sys.path:
+        _sys.path.insert(0, skill)
+    from queries import marketplace_products  # noqa: E402
+
+    _os.makedirs(out_dir, exist_ok=True)
+    products = marketplace_products()
+    total_rows = 0
+    for name, keyword, mp in products:
+        codes = mp.get("countries") or countries
+        targets = resolve_targets(argparse.Namespace(
+            countries=codes,
+            city=mp.get("city"),  # None -> default city, "all" -> every city, else specific
+            no_location=None,
+        ))
+        if not targets:
+            print(f"  {name}: no valid countries ({codes}) — skipped")
+            continue
+        args = argparse.Namespace(
+            query=keyword,
+            min=mp.get("min"),
+            max=mp.get("max"),
+            exact=False,
+            radius=mp.get("radius", 65),
+            sort=None,
+            days=None,
+            delivery=None,
+        )
+        report = _os.path.join(out_dir, slugify(name) + ".md")
+        with open(report, "w", encoding="utf-8") as f:
+            f.write(render_markdown(targets, args))
+        for code, city in targets:
+            url = build_url(keyword, location=city, exact=False, radius=args.radius,
+                            min_price=args.min, max_price=args.max)
+            append_search_csv(csv_path, keyword, code, city, url)
+            total_rows += 1
+        print(f"  {name}: {len(targets)} link(s) -> {report}")
+    print(f"\nGenerated {len(products)} product sheet(s), {total_rows} rows total in {csv_path}")
+    return products
+
+
 def main():
     for stream in (sys.stdout, sys.stderr):
         if hasattr(stream, "reconfigure"):
@@ -513,6 +565,17 @@ def main():
         help="print the supported countries/cities and exit",
     )
     parser.add_argument(
+        "--from-queries", action="store_true",
+        help="generate deep links for EVERY product that has an 'mp' block in "
+             "ebay-search-skill/queries.py (single source of truth) instead of "
+             "passing --query manually; --countries/--csv/--report-dir apply",
+    )
+    parser.add_argument(
+        "--report-dir", default="site/data/marketplace",
+        help="directory for per-product .md reports (default "
+             "site/data/marketplace)",
+    )
+    parser.add_argument(
         "--parse", nargs="+", metavar="URL",
         help="parse one or more existing Marketplace URLs into structured "
              "info (keyword, location, radius, prices, sort, days, delivery, "
@@ -552,6 +615,10 @@ def main():
 
     if args.collect:
         collect_links(args.collect, args.state, args.out, args.report)
+        return
+
+    if args.from_queries:
+        generate_from_queries(args.countries or args.country, args.csv, args.report_dir)
         return
 
     if args.parse:

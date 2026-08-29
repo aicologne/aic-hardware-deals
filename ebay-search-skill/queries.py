@@ -1,9 +1,22 @@
-# Deal scan queries. `min`/`max` are the static fallback windows; once
-# site/data/history.csv has a few days of medians per category, the scanner
-# derives ADAPTIVE windows from the market (see windows.py) — these numbers are
-# only the starting point. Updated 2026-08 to current-market ranges so
-# categories the shortage pushed above their old windows (RTX 3090, DDR5, …)
-# start accumulating history again.
+# Deal scan queries — THE single source of truth for every product the
+# pipeline tracks. Adding a product = adding ONE dict here; everything else
+# (eBay scan, €/GB column, Facebook Marketplace deep links, the report) is
+# derived from this list automatically. Do NOT hardcode products anywhere else.
+#
+# Fields:
+#   name       display name (category label in the report + site)
+#   q          eBay search keyword
+#   min/max    static fallback price window in EUR; adaptive windows in
+#              windows.py refine these from history once a few days exist
+#   cond       condition filter (USED/NEW/REFURBISHED, "" = any)
+#   category   eBay category id, or None for keyword-only scans
+#   capacity_gb  OPTIONAL: unambiguous capacity for the €/GB column
+#              (omit for mixed-capacity categories like "Nvidia Quadro RTX")
+#   mp         OPTIONAL: Facebook Marketplace deep-link config for the board:
+#              { "max": 1100 }                       -> all FB_MARKETPLACES countries, default city
+#              { "max": 200, "city": "all" }         -> every city of the countries
+#              { "max": 120, "min": 40, "countries": "DE,AT" }  -> specific countries
+#              Omit `mp` entirely if you don't want Marketplace links.
 
 DEFAULT_QUERIES = [
     # --- GPUs >= 16 GB VRAM (category 27386 = Grafik-/Videokarten) ---
@@ -16,6 +29,8 @@ DEFAULT_QUERIES = [
         "max": 1600,
         "cond": "USED",
         "category": 27386,
+        "capacity_gb": 24,
+        "mp": {"max": 1100},
     },
     {
         "name": "RTX 3090 Ti",
@@ -24,6 +39,7 @@ DEFAULT_QUERIES = [
         "max": 1800,
         "cond": "USED",
         "category": 27386,
+        "capacity_gb": 24,
     },
     {
         "name": "RTX 4070 Ti Super",
@@ -32,6 +48,7 @@ DEFAULT_QUERIES = [
         "max": 850,
         "cond": "USED",
         "category": 27386,
+        "capacity_gb": 16,
     },
     {
         "name": "RTX 4080 Super",
@@ -40,6 +57,7 @@ DEFAULT_QUERIES = [
         "max": 900,
         "cond": "USED",
         "category": 27386,
+        "capacity_gb": 16,
     },
     {
         "name": "RTX 5070 16GB",
@@ -48,6 +66,8 @@ DEFAULT_QUERIES = [
         "max": 1400,
         "cond": "USED",
         "category": 27386,
+        "capacity_gb": 16,
+        "mp": {"q": "RTX 5070", "max": 900},
     },
     {
         "name": "RTX 5060",
@@ -56,6 +76,7 @@ DEFAULT_QUERIES = [
         "max": 750,
         "cond": "USED",
         "category": 27386,
+        "capacity_gb": 16,
     },
     # Budget 16-GB-class cards the local-AI crowd actually buys.
     {
@@ -65,6 +86,7 @@ DEFAULT_QUERIES = [
         "max": 500,
         "cond": "USED",
         "category": 27386,
+        "capacity_gb": 16,
     },
     {
         "name": "Tesla P40",
@@ -73,6 +95,7 @@ DEFAULT_QUERIES = [
         "max": 300,
         "cond": "USED",
         "category": 27386,
+        "capacity_gb": 24,
     },
     {
         "name": "Tesla T4",
@@ -81,6 +104,7 @@ DEFAULT_QUERIES = [
         "max": 800,
         "cond": "USED",
         "category": 27386,
+        "capacity_gb": 16,
     },
     # Radeon PRO (CDNA/RDNA workstation): W7800 32 GB, W7900 48 GB — the AMD
     # route to big VRAM for AI.
@@ -91,6 +115,7 @@ DEFAULT_QUERIES = [
         "max": 2500,
         "cond": "USED",
         "category": 27386,
+        "capacity_gb": 32,
     },
     {
         "name": "Radeon PRO W7900",
@@ -99,6 +124,7 @@ DEFAULT_QUERIES = [
         "max": 3500,
         "cond": "USED",
         "category": 27386,
+        "capacity_gb": 48,
     },
     # Quadro RTX (Turing pro cards): RTX 5000 16GB €450–500, RTX 6000 24GB €799–840 (live 2026-08).
     # 24GB cheaper than a used 3090 — strong AI value pick.
@@ -118,6 +144,7 @@ DEFAULT_QUERIES = [
         "max": 180,
         "cond": "USED",
         "category": 171957,
+        "mp": {"q": "EliteDesk 800 G4", "max": 200, "city": "all", "countries": "DE"},
     },
     {
         "name": "EliteDesk 800 G5 Mini",
@@ -159,6 +186,8 @@ DEFAULT_QUERIES = [
         "max": 120,
         "cond": "USED",
         "category": 11210,
+        "capacity_gb": 32,
+        "mp": {"max": 120, "min": 40, "countries": "DE,AT"},
     },
     {
         "name": "DDR4 RDIMM 64GB",
@@ -167,6 +196,7 @@ DEFAULT_QUERIES = [
         "max": 200,
         "cond": "USED",
         "category": 11210,
+        "capacity_gb": 64,
     },
     # DDR5 retail is ~4.2–4.5× its July-2025 level; used 32 GB kits now sit
     # far above the old window.
@@ -177,6 +207,7 @@ DEFAULT_QUERIES = [
         "max": 300,
         "cond": "USED",
         "category": 170083,
+        "capacity_gb": 32,
     },
     {
         "name": "DDR5 RDIMM",
@@ -185,6 +216,7 @@ DEFAULT_QUERIES = [
         "max": 400,
         "cond": "USED",
         "category": 11210,
+        "capacity_gb": 32,
     },
     # --- NVMe storage (no reliable single category id -> keyword-only scan) ---
     # SSD prices are rising with the DRAM crisis; 2 TB is the sweet spot for
@@ -296,3 +328,26 @@ DEFAULT_QUERIES = [
         "category": 164,
     }
 ]
+
+
+# --- derived views (consumers import these; never hardcode products elsewhere) ---
+
+def capacity_map():
+    """{query name: capacity_gb} for categories with an unambiguous capacity.
+
+    Feeds the €/GB column in the report and the site. Categories without a
+    `capacity_gb` field (mixed capacities, e.g. Quadro RTX) are left out.
+    """
+    return {q["name"]: q["capacity_gb"] for q in DEFAULT_QUERIES if q.get("capacity_gb")}
+
+
+def marketplace_products():
+    """[(query_name, keyword, mp_config), ...] for every product with an `mp`
+    block — the Facebook Marketplace board's search entry points are generated
+    from this, so adding `mp` to a product automatically adds its deep links.
+    """
+    return [
+        (q["name"], mp.get("q") or q["name"], mp)
+        for q in DEFAULT_QUERIES
+        if (mp := q.get("mp"))
+    ]
