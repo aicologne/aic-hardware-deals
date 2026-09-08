@@ -104,6 +104,8 @@ def window_for_query(query, history_by_key=None, marketplace=DEFAULT_MARKETPLACE
     """
     if history_by_key is None:
         history_by_key = load_recent_medians(history_path)
+    if not history_by_key:
+        return query.get("min"), query.get("max")
     medians = history_by_key.get(f"{marketplace} · {query['name']}") or []
     return adaptive_window(query.get("min"), query.get("max"), medians)
 
