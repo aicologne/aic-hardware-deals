@@ -7,22 +7,17 @@
   {
     "query": "DDR4 RDIMM 32GB",
     "file": "DDR4-RDIMM-32GB.csv",
-    "rows": 45
+    "rows": 40
   },
   {
     "query": "DDR4 RDIMM 64GB",
     "file": "DDR4-RDIMM-64GB.csv",
-    "rows": 35
+    "rows": 26
   },
   {
     "query": "DDR5 32GB",
     "file": "DDR5-32GB.csv",
     "rows": 49
-  },
-  {
-    "query": "DDR5 RDIMM",
-    "file": "DDR5-RDIMM.csv",
-    "rows": 1
   },
   {
     "query": "EliteDesk 800 G4 Mini",
@@ -32,7 +27,7 @@
   {
     "query": "EliteDesk 800 G5 Mini",
     "file": "EliteDesk-800-G5-Mini.csv",
-    "rows": 24
+    "rows": 17
   },
   {
     "query": "Gaming PC mit RTX 3080",
@@ -47,7 +42,7 @@
   {
     "query": "Mac Studio Ultra",
     "file": "Mac-Studio-Ultra.csv",
-    "rows": 4
+    "rows": 5
   },
   {
     "query": "NVMe SSD 2TB",
@@ -57,7 +52,7 @@
   {
     "query": "Nvidia Quadro RTX",
     "file": "Nvidia-Quadro-RTX.csv",
-    "rows": 35
+    "rows": 33
   },
   {
     "query": "OptiPlex 3070 Micro",
@@ -67,27 +62,27 @@
   {
     "query": "RTX 3090",
     "file": "RTX-3090.csv",
-    "rows": 47
+    "rows": 32
   },
   {
     "query": "RTX 3090 Ti",
     "file": "RTX-3090-Ti.csv",
-    "rows": 10
+    "rows": 9
   },
   {
     "query": "RTX 4060 Ti 16GB",
     "file": "RTX-4060-Ti-16GB.csv",
-    "rows": 4
+    "rows": 3
   },
   {
     "query": "RTX 4070 Ti Super",
     "file": "RTX-4070-Ti-Super.csv",
-    "rows": 17
+    "rows": 14
   },
   {
     "query": "RTX 4080 Super",
     "file": "RTX-4080-Super.csv",
-    "rows": 25
+    "rows": 23
   },
   {
     "query": "RTX 5060",
@@ -97,17 +92,17 @@
   {
     "query": "RTX 5070 16GB",
     "file": "RTX-5070-16GB.csv",
-    "rows": 13
+    "rows": 10
   },
   {
     "query": "Tesla P40",
     "file": "Tesla-P40.csv",
-    "rows": 34
+    "rows": 45
   },
   {
     "query": "Tesla T4",
     "file": "Tesla-T4.csv",
-    "rows": 13
+    "rows": 15
   },
   {
     "query": "ThinkCentre M720q",
@@ -122,11 +117,11 @@
   {
     "query": "X99 Mainboard",
     "file": "X99-Mainboard.csv",
-    "rows": 8
+    "rows": 9
   },
   {
     "query": "Xeon E5-2690v4",
     "file": "Xeon-E5-2690v4.csv",
-    "rows": 15
+    "rows": 14
   }
 ]
