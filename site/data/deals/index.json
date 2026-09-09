@@ -7,7 +7,7 @@
   {
     "query": "DDR4 RDIMM 32GB",
     "file": "DDR4-RDIMM-32GB.csv",
-    "rows": 40
+    "rows": 41
   },
   {
     "query": "DDR4 RDIMM 64GB",
@@ -22,12 +22,12 @@
   {
     "query": "EliteDesk 800 G4 Mini",
     "file": "EliteDesk-800-G4-Mini.csv",
-    "rows": 8
+    "rows": 9
   },
   {
     "query": "EliteDesk 800 G5 Mini",
     "file": "EliteDesk-800-G5-Mini.csv",
-    "rows": 17
+    "rows": 16
   },
   {
     "query": "Gaming PC mit RTX 3080",
@@ -42,7 +42,7 @@
   {
     "query": "Mac Studio Ultra",
     "file": "Mac-Studio-Ultra.csv",
-    "rows": 5
+    "rows": 6
   },
   {
     "query": "NVMe SSD 2TB",
@@ -52,7 +52,7 @@
   {
     "query": "Nvidia Quadro RTX",
     "file": "Nvidia-Quadro-RTX.csv",
-    "rows": 33
+    "rows": 30
   },
   {
     "query": "OptiPlex 3070 Micro",
@@ -62,7 +62,7 @@
   {
     "query": "RTX 3090",
     "file": "RTX-3090.csv",
-    "rows": 32
+    "rows": 31
   },
   {
     "query": "RTX 3090 Ti",
@@ -87,12 +87,12 @@
   {
     "query": "RTX 5060",
     "file": "RTX-5060.csv",
-    "rows": 11
+    "rows": 10
   },
   {
     "query": "RTX 5070 16GB",
     "file": "RTX-5070-16GB.csv",
-    "rows": 10
+    "rows": 7
   },
   {
     "query": "Tesla P40",
@@ -102,7 +102,7 @@
   {
     "query": "Tesla T4",
     "file": "Tesla-T4.csv",
-    "rows": 15
+    "rows": 14
   },
   {
     "query": "ThinkCentre M720q",
