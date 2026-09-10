@@ -2,7 +2,7 @@
   {
     "query": "AMD Ryzen AI Max 395 (Strix Halo)",
     "file": "AMD-Ryzen-AI-Max-395-Strix-Halo.csv",
-    "rows": 3
+    "rows": 2
   },
   {
     "query": "DDR4 RDIMM 32GB",
@@ -12,7 +12,7 @@
   {
     "query": "DDR4 RDIMM 64GB",
     "file": "DDR4-RDIMM-64GB.csv",
-    "rows": 26
+    "rows": 24
   },
   {
     "query": "DDR5 32GB",
@@ -22,7 +22,7 @@
   {
     "query": "EliteDesk 800 G4 Mini",
     "file": "EliteDesk-800-G4-Mini.csv",
-    "rows": 9
+    "rows": 8
   },
   {
     "query": "EliteDesk 800 G5 Mini",
@@ -52,27 +52,27 @@
   {
     "query": "Nvidia Quadro RTX",
     "file": "Nvidia-Quadro-RTX.csv",
-    "rows": 30
+    "rows": 31
   },
   {
     "query": "OptiPlex 3070 Micro",
     "file": "OptiPlex-3070-Micro.csv",
-    "rows": 38
+    "rows": 36
   },
   {
     "query": "RTX 3090",
     "file": "RTX-3090.csv",
-    "rows": 31
+    "rows": 32
   },
   {
     "query": "RTX 3090 Ti",
     "file": "RTX-3090-Ti.csv",
-    "rows": 9
+    "rows": 10
   },
   {
     "query": "RTX 4060 Ti 16GB",
     "file": "RTX-4060-Ti-16GB.csv",
-    "rows": 3
+    "rows": 4
   },
   {
     "query": "RTX 4070 Ti Super",
@@ -87,12 +87,12 @@
   {
     "query": "RTX 5060",
     "file": "RTX-5060.csv",
-    "rows": 10
+    "rows": 12
   },
   {
     "query": "RTX 5070 16GB",
     "file": "RTX-5070-16GB.csv",
-    "rows": 7
+    "rows": 9
   },
   {
     "query": "Tesla P40",
@@ -102,7 +102,7 @@
   {
     "query": "Tesla T4",
     "file": "Tesla-T4.csv",
-    "rows": 14
+    "rows": 13
   },
   {
     "query": "ThinkCentre M720q",
