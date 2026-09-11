@@ -7,12 +7,12 @@
   {
     "query": "DDR4 RDIMM 32GB",
     "file": "DDR4-RDIMM-32GB.csv",
-    "rows": 41
+    "rows": 40
   },
   {
     "query": "DDR4 RDIMM 64GB",
     "file": "DDR4-RDIMM-64GB.csv",
-    "rows": 24
+    "rows": 26
   },
   {
     "query": "DDR5 32GB",
@@ -22,7 +22,7 @@
   {
     "query": "EliteDesk 800 G4 Mini",
     "file": "EliteDesk-800-G4-Mini.csv",
-    "rows": 8
+    "rows": 7
   },
   {
     "query": "EliteDesk 800 G5 Mini",
@@ -47,22 +47,22 @@
   {
     "query": "NVMe SSD 2TB",
     "file": "NVMe-SSD-2TB.csv",
-    "rows": 50
+    "rows": 49
   },
   {
     "query": "Nvidia Quadro RTX",
     "file": "Nvidia-Quadro-RTX.csv",
-    "rows": 31
+    "rows": 27
   },
   {
     "query": "OptiPlex 3070 Micro",
     "file": "OptiPlex-3070-Micro.csv",
-    "rows": 36
+    "rows": 39
   },
   {
     "query": "RTX 3090",
     "file": "RTX-3090.csv",
-    "rows": 32
+    "rows": 36
   },
   {
     "query": "RTX 3090 Ti",
@@ -72,22 +72,22 @@
   {
     "query": "RTX 4060 Ti 16GB",
     "file": "RTX-4060-Ti-16GB.csv",
-    "rows": 4
+    "rows": 5
   },
   {
     "query": "RTX 4070 Ti Super",
     "file": "RTX-4070-Ti-Super.csv",
-    "rows": 14
+    "rows": 15
   },
   {
     "query": "RTX 4080 Super",
     "file": "RTX-4080-Super.csv",
-    "rows": 23
+    "rows": 22
   },
   {
     "query": "RTX 5060",
     "file": "RTX-5060.csv",
-    "rows": 12
+    "rows": 10
   },
   {
     "query": "RTX 5070 16GB",
@@ -122,6 +122,6 @@
   {
     "query": "Xeon E5-2690v4",
     "file": "Xeon-E5-2690v4.csv",
-    "rows": 14
+    "rows": 13
   }
 ]
