@@ -57,6 +57,8 @@ git push -u origin main
 
 Nur **neue** Treffer am Buy-Low-Ziel werden gemeldet — `site/data/notified.json` merkt sich, was schon gemeldet wurde.
 
+Dieselben Kanäle nutzt auch der **Staleness-Guard** (`.github/workflows/freshness-check.yml`, täglich 09:00 UTC): Er schlägt Alarm, sobald die neueste Zeile in `site/data/history.csv` älter als 36 h ist — also sobald ein Nacht-Scan ausgefallen ist. Zusätzliche Secrets sind dafür nicht nötig; ohne konfigurierten Kanal wird der Workflow trotzdem rot (und GitHub benachrichtigt dich über fehlgeschlagene Scheduled Runs).
+
 ## 4. GitHub Pages aktivieren (einmalig, 2 Klicks)
 
 1. Repo → **Settings → Pages**
@@ -81,6 +83,7 @@ Nur **neue** Treffer am Buy-Low-Ziel werden gemeldet — `site/data/notified.jso
 - [ ] `site/data/listing_history.csv` existiert (Pro-Listing-Preise)
 - [ ] `site/feed.xml` existiert — RSS-Abo unter `https://<DEIN-USERNAME>.github.io/<REPO-NAME>/feed.xml`
 - [ ] Die Pages-URL lädt (erstmal kann 1–2 Min. dauern, Cache leeren mit Strg+F5)
+- [ ] Der Workflow **"Data freshness check"** ist grün (täglich 09:00 UTC) — er schlägt fehl, sobald die Scandaten älter als 36 h sind
 
 ---
 

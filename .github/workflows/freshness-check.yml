@@ -1,0 +1,59 @@
+name: Data freshness check
+
+# Why this workflow exists
+# ------------------------
+# The nightly scan runs its unit tests BEFORE the scan itself. On 2026-08-29 a
+# test became environment-dependent (`window_for_query(q, None)` read
+# site/data/history.csv from the working directory), so every scheduled run from
+# 2026-08-30 to 2026-09-08 failed at that step: the scan never ran, the site
+# kept serving 11-day-old prices, and nothing said a word.
+#
+# This guard runs a few hours after the scan and fails — plus pings Telegram/
+# Discord when configured — as soon as the newest row in site/data/history.csv
+# is older than MAX_AGE_HOURS. It needs no eBay credentials: it only reads the
+# committed data file, so it keeps working when the scan itself is what broke.
+#
+# It uses the same optional secrets as the buy-low alerts:
+#   TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID, or DISCORD_WEBHOOK_URL
+# With no channel configured it still fails the run (GitHub notifies the repo
+# owner about failed scheduled runs), so the guard is never silent.
+
+on:
+  schedule:
+    # 09:00 UTC — 4 h after the nightly scan, so a missed run is caught the same
+    # morning rather than ten days later.
+    - cron: '0 9 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: freshness-check
+  cancel-in-progress: false
+
+jobs:
+  freshness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Check that the scan data is fresh
+        # 36 h: a single missed nightly (~28 h) still passes, two missed nights
+        # (~52 h) fail. The date column is anchored to the 05:00 UTC cron hour,
+        # so the age is not understated by up to a day (see check_freshness.py).
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          python ebay-search-skill/check_freshness.py \
+            --history site/data/history.csv \
+            --max-age-hours 36 \
+            --notify

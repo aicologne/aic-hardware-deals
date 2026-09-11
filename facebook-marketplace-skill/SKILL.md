@@ -4,6 +4,13 @@ description: Build Facebook Marketplace search deep links for any country/city (
 whenToUse: The user asks to search or compare Facebook Marketplace across countries/cities, wants per-country Marketplace search links for a keyword/price window, or asks whether Marketplace can be integrated like the eBay skill.
 ---
 
+> **Mirror note.** The canonical copy of this skill is the repo folder
+> `facebook-marketplace-skill/`. This file is mirrored into the harness skill directory
+> (`.dsh/skills/facebook-marketplace/`) by `python sync_skills.py` — **edit the repo copy,
+> then re-run the sync**; `python sync_skills.py --check` reports drift (exit 1).
+> Never hand-edit the mirror: it once kept a pre-fix `windows.py` whose bug
+> silently froze the nightly dataset for ten nights.
+
 # Facebook Marketplace — country/city search links
 
 Facebook Marketplace has **no official public API** — unlike eBay's Browse API

@@ -53,6 +53,13 @@ jobs:
         # index on the site and in LATEST.md.
         run: python ebay-search-skill/render_history.py ebay_deals.csv site/data/history.csv --date $(date -u +%Y-%m-%d)
 
+      - name: Assert this run actually produced data
+        # A scan that returns nothing, or a history step that silently fails,
+        # used to leave the site serving yesterday's prices with a green check.
+        # Today's row is ~0 h old here; if only yesterday's row exists the age
+        # jumps past 20 h and the run goes red (check_freshness.py, unit-tested).
+        run: python ebay-search-skill/check_freshness.py --history site/data/history.csv --max-age-hours 20
+
       - name: Track per-listing prices (site/data/listing_history.csv)
         # First-seen vs last-seen price per listing URL, for "was €X on DATE"
         # repricing notes in the report, site, feed and price-drop alerts.
@@ -172,6 +179,19 @@ jobs:
           done
           echo "Could not push after 5 attempts" >&2
           exit 1
+
+      - name: Alert on failure (Telegram/Discord)
+        # From 2026-08-30 to 2026-09-08 every scheduled run died at the unit
+        # tests and nobody was told: ten nights of frozen prices. Say it out
+        # loud instead. Runs even when an earlier step failed (if: failure()),
+        # and is a no-op when no channel is configured.
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          python ebay-search-skill/alert.py "❌ eBay nightly scan failed (run $GITHUB_RUN_ID, $GITHUB_REF_NAME) — the site may be serving stale data: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

@@ -11,7 +11,7 @@
 //   ?csv=../ebay_deals.csv   -> app.js reads window.DEALS_CSV
 import {
   toRows, toHistoryRows, toAnyRows, analyze, euro, flagFor, num, median, marketplaceOf,
-  euroPerGb, historySeries, movers, indexPct, topDeals, CAPACITY_GB,
+  euroPerGb, historySeries, movers, indexPct, topDeals, CAPACITY_GB, staleness,
 } from './csv.js';
 
 const CSV_URL = window.DEALS_CSV || 'data/ebay_deals.csv';
@@ -169,6 +169,7 @@ const I18N = {
     statusProgress: done => `Loading deal data… ${done} categories loaded`,
     statusFallback: 'Loading deal data… (single CSV fallback)',
     generated: (date, total, cats) => `Generated ${date} · ${total} items across ${cats} categories`,
+    staleWarning: days => `⚠️ prices are ${days} day${days === 1 ? '' : 's'} old — the nightly scan has not committed fresh data`,
     noDeals: 'No listings found in the latest scan.',
     dealHighlights: '🔥 Deal highlights',
     dealHighlightsIntro: 'Listings currently at or within 15 % of the buy-low target — the shortlist to inspect first:',
@@ -246,6 +247,7 @@ const I18N = {
     statusProgress: done => `Lade Angebotsdaten… ${done} Kategorien geladen`,
     statusFallback: 'Lade Angebotsdaten… (Einzel-CSV-Fallback)',
     generated: (date, total, cats) => `Erstellt ${date} · ${total} Artikel in ${cats} Kategorien`,
+    staleWarning: days => `⚠️ Preise sind ${days} Tag${days === 1 ? '' : 'e'} alt — der Nacht-Scan hat keine frischen Daten geliefert`,
     noDeals: 'Im letzten Scan wurden keine Angebote gefunden.',
     dealHighlights: '🔥 Deal-Highlights',
     dealHighlightsIntro: 'Angebote, die aktuell am oder innerhalb von 15 % des Buy-Low-Ziels liegen — die Shortlist für den ersten Blick:',
@@ -318,6 +320,7 @@ let lastGenerated = 'latest scan';
 let lastError = null;
 let tocObserver = null;  // one scrollspy observer at a time
 let history = null;      // { compositeKey: [{date, median}] } from data/history.csv (null = unavailable)
+let historyRows = null;  // raw rows from data/history.csv — drives the freshness warning
 let listingHistory = null; // { url: {first_price, first_seen, last_price} } (null = unavailable)
 let soldAnchors = null;  // { query: {median_sold, sample_size} } from data/sold_anchors.csv (null = unavailable)
 const filters = { search: '', marketplace: 'all', category: 'all', maxPrice: null, sort: 'price-asc' };
@@ -724,7 +727,20 @@ function renderReport() {
   dbg('render', { total, groups: groups.length, flagged: flagged.length, marketplaces: marketplaces.length, single });
   const idx = history ? indexPct(movers(history)) : null;
   const idxPart = idx != null ? ` · ${t('indexLabel')} ${pctStr(idx)}` : '';
-  $('#generated-line').textContent = t('generated')(lastGenerated, total, queries.length) + idxPart;
+  const generatedLine = $('#generated-line');
+  generatedLine.textContent = t('generated')(lastGenerated, total, queries.length) + idxPart;
+  // Freshness warning: a nightly run can die silently — it did for ten nights in
+  // Aug/Sep 2026 while the page kept presenting old prices as current. Same
+  // 05:00-UTC anchor and 36 h limit as check_freshness.py / the CI guard.
+  const fresh = staleness(historyRows || []);
+  dbg('freshness', fresh);
+  generatedLine.classList.toggle('stale', fresh.stale);
+  if (fresh.stale) {
+    generatedLine.append(el('span', {
+      class: 'stale-flag',
+      text: ' ' + t('staleWarning')(Math.floor(fresh.ageHours / 24)),
+    }));
+  }
 
   const baseQueries = [...new Set(groups.map(g => g.query))].sort();
   populateSelect($('#f-category'), baseQueries, t('fAll'));
@@ -788,6 +804,7 @@ async function loadSecondaryData() {
   if (histRes && histRes.res.ok) {
     const hrows = toHistoryRows(histRes.text);
     const keys = new Set(hrows.map(r => `${marketplaceOf(r)} · ${r.query}`));
+    historyRows = hrows;
     history = {};
     for (const key of keys) history[key] = historySeries(hrows, key);
     upgraded = true;

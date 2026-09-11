@@ -4,6 +4,13 @@ description: Search eBay for products — used/refurbished hardware, GPUs, mini 
 whenToUse: The user asks to search or scan eBay for products, find current listings/deals/prices, check what an item goes for, or wants a repeatable deal scanner for a hardware niche.
 ---
 
+> **Mirror note.** The canonical copy of this skill is the repo folder
+> `ebay-search-skill/`. This file is mirrored into the harness skill directory
+> (`.dsh/skills/ebay-search/`) by `python sync_skills.py` — **edit the repo copy,
+> then re-run the sync**; `python sync_skills.py --check` reports drift (exit 1).
+> Never hand-edit the mirror: it once kept a pre-fix `windows.py` whose bug
+> silently froze the nightly dataset for ten nights.
+
 # eBay Search via the Browse API
 
 Search eBay's catalog with the official **Browse API** (`Buy` API family). Active listings only — there is no public sold-price history (see Limitations).

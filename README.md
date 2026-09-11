@@ -49,6 +49,9 @@ A working deal-hunting kit for buying used/refurbished hardware (headless mini P
 | `ebay-search-skill/` | Working tooling: Browse API scanner (multi-marketplace), local relay, report/history/listing/feed renderers, alert notifier, skill docs |
 | `facebook-marketplace-skill/` | **Country/city search-link generator** for Facebook Marketplace (19 countries): builds the exact deep links Marketplace understands (keyword, exact phrase, radius, min/max price, sort, days listed, delivery) and can print, open, or save them as a markdown report — **deep links only, no scraping** (Marketplace has no public API) |
 | `.github/workflows/ebay-scan.yml` | Nightly scan → history → report → feed → alerts → GitHub Pages deployment |
+| `ebay-search-skill/check_freshness.py` | **Staleness guard** — fails when the newest row in `site/data/history.csv` is older than `--max-age-hours` (default 36 h); `--notify` pings Telegram/Discord. Unit-tested, CWD-independent |
+| `ebay-search-skill/alert.py` | One-line Telegram/Discord sender shared by the guards (also used by the nightly's `if: failure()` step); a no-op when no channel is configured |
+| `sync_skills.py` | Regenerates the local DSH skill mirror (`.dsh/skills/`) from the two skill folders here, and reports drift with `--check` |
 | [`ebay.env.example`](ebay.env.example) | Credentials template (never commit the real `ebay.env`) |
 | [`SETUP.md`](SETUP.md) | Step-by-step GitHub + Pages setup (this repo, ready to publish) |
 | [`selfhost_fonts.py`](selfhost_fonts.py) | One-time font self-hosting: downloads the Inter variable-font woff2 files (latin/latin-ext, OFL-licensed) into `site/fonts/` and generates `site/fonts.css` — removes the Google Fonts dependency from the site (re-run after changing weights) |
@@ -243,6 +246,28 @@ table + per-query search tables). Change the countries via the
 
 ---
 
+## Keeping the DSH skills in sync
+
+Both skill folders are mirrored into the local DeepSeek Harness skill directory
+(`.dsh/skills/ebay-search/`, `.dsh/skills/facebook-marketplace/`) so an agent
+session loads them **by name**. The mirror is **generated, never hand-edited**:
+
+```powershell
+python sync_skills.py           # copy repo -> ../.dsh/skills
+python sync_skills.py --check   # 0 = in sync, 1 = drift (use in a pre-commit hook)
+python sync_skills.py --prune   # also delete orphans + __pycache__ in the mirror
+```
+
+This exists because the mirror drifted: `.dsh/skills/ebay-search/windows.py`
+kept the **pre-fix** copy of the file whose bug froze the dataset for ten nights
+(`queries.py`, `render_report.py` and `fb_marketplace.py` were stale too, and
+`split_deals.py` was missing entirely) — the next agent session would have
+re-introduced the outage from a "working" copy. Drift is detected with content
+hashes; `filecmp`'s size+mtime cache can miss a same-size rewrite, which is
+exactly the drift that matters.
+
+---
+
 ## Automated nightly scans (GitHub Actions)
 
 The repo ships `.github/workflows/ebay-scan.yml`:
@@ -282,6 +307,22 @@ The nightly run also notifies you when **new** listings hit the buy-low window *
 python ebay-search-skill/notify.py ebay_deals.csv --state site/data/notified.json \
     --listing-history site/data/listing_history.csv --dry-run
 ```
+
+### Watching the watcher: the staleness guard + failure alerts
+
+The nightly job runs its **unit tests before the scan**, so a single broken test stops the whole pipeline. It did: every scheduled run from **2026-08-30 to 2026-09-08** died at `Run unit tests (Python + JS)`, the scan never executed, and the site kept serving ten-day-old prices — with a green checkmark on the *testing* commit and nothing else to look at. A human noticed ten days later, not a monitor. That failure mode is now loud:
+
+| Guard | What it does |
+|---|---|
+| `check_freshness.py` | Newest `date` in `site/data/history.csv`, anchored to the 05:00 UTC scan hour, compared against `--max-age-hours` (36 h = one missed night still passes, two fail). Exits 1 (stale) / 2 (no usable data), and `--notify` pings the same channels as the buy-low alerts. |
+| `.github/workflows/freshness-check.yml` | Daily at 09:00 UTC (4 h after the scan). Needs **no eBay credentials** — it only reads the committed data file, so it still works when the scan is precisely what broke. With no alert channel configured it fails the run, and GitHub notifies the repo owner about failed scheduled runs. |
+| `ebay-scan.yml` → *Assert this run actually produced data* | Inside the nightly: if today's row never lands (a scan that returned nothing, a history step that failed), the run goes red instead of quietly committing nothing. |
+| `ebay-scan.yml` → *Alert on failure* | `if: failure()` — pings Telegram/Discord with the run link whenever **any** nightly step fails. |
+| The site — `csv.js` `staleness()` | A ⚠️ badge next to "Generated …" once the data is older than 36 h (EN/DE), so a visitor never mistakes stale prices for today's. |
+
+Every piece is unit-tested: `python -m unittest discover -s ebay-search-skill/tests` (168 tests) and `node --test tests/`.
+
+---
 
 ## The report (`LATEST.md`) — the final product
 
@@ -330,6 +371,8 @@ The workflow also publishes `ebay_deals.csv` into `site/data/` and deploys `site
 - [x] **Price-drop alerts** — `notify.py` pings listings that dropped ≥5 % below their first-seen price
 - [x] **Sold-price anchors (opt-in)** — `sold_anchors.py` fetches median sold prices from eBay's "Verkauft" search → "sold median €X (n=Y)" in the report
 - [x] **More scan categories** — MacBook Pro Max / Mac Studio Ultra (big unified memory), RTX 4060 Ti 16 GB, Radeon PRO W7800/W7900, Tesla T4/P100, DDR5 RDIMM, NVMe 2 TB — and current-market static windows for the shortage-era prices
+- [x] **Staleness guard + failure alerts** — `check_freshness.py` (unit-tested), a daily `freshness-check.yml`, an `if: failure()` ping in the nightly, and a ⚠️ freshness badge on the site — closing the failure mode that let a 10-night outage pass unnoticed
+- [x] **Generated DSH skill mirror** — `sync_skills.py --check` keeps `.dsh/skills/` identical to the repo skills (the mirror had silently kept the pre-fix `windows.py`)
 - [ ] **Kleinanzeigen auto-digest** — automate the private-market channel (nightly search of saved alerts, below-target filtering, same alerting)
 - [ ] **Dynamic build configurator** — budget → cheapest current parts assembled from the live CSV
 - [ ] **Seller-feedback column** (needs one extra Browse API call per item)

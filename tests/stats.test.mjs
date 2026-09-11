@@ -8,10 +8,13 @@ import path from 'node:path';
 import {
   parseCSV, toRows, toHistoryRows, toAnyRows, analyze, euro, num, median, flagFor,
   historySeries, movers, indexPct, euroPerGb, CAPACITY_GB, groupKey, topDeals,
+  newestScanDate, staleness, SCAN_HOUR_UTC, STALE_AFTER_HOURS,
 } from '../site/csv.js';
 
-const csvPath = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'site', 'data', 'ebay_deals.csv');
+const dataDir = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'site', 'data');
+const csvPath = path.join(dataDir, 'ebay_deals.csv');
 const text = readFileSync(csvPath, 'utf8');
+const historyText = readFileSync(path.join(dataDir, 'history.csv'), 'utf8');
 
 test('parser handles quoted fields, commas and escaped quotes', () => {
   const t = 'a,b,c\r\n"x, y","q ""z""",3\nplain,field,9\n';
@@ -185,6 +188,53 @@ test('topDeals caps the shortlist at 20 while keeping at least one row per categ
   assert.deepEqual(first.map(r => num(r.price)), [40, 300, 500], 'cheapest per category, price order');
 
   assert.deepEqual(topDeals([]), []);
+});
+
+// --- data freshness (mirror of ebay-search-skill/check_freshness.py) -------
+// The nightly job can die silently: every scheduled run from 2026-08-30 to
+// 2026-09-08 failed at its unit-test step, the scan never ran, and the site
+// served ten-day-old prices with no warning. staleness() drives the page's
+// warning banner; the same maths runs server-side in check_freshness.py.
+
+test('newestScanDate picks the maximum date and ignores unusable cells', () => {
+  assert.equal(newestScanDate([{ date: '2026-09-10' }, { date: '2026-09-08' }, { date: '2026-09-11' }]), '2026-09-11');
+  assert.equal(newestScanDate([{ date: '' }, { date: 'n/a' }, { date: '2026-09-09' }]), '2026-09-09');
+  assert.equal(newestScanDate([]), null);
+  assert.equal(newestScanDate(null), null);
+});
+
+test('staleness anchors the scan date to the 05:00 UTC cron hour', () => {
+  // 2026-09-11 05:00 UTC -> 2026-09-12 09:00 UTC is 28 h old, not 33 h
+  const now = Date.parse('2026-09-12T09:00:00Z');
+  const s = staleness([{ date: '2026-09-11' }], now);
+  assert.equal(s.newest, '2026-09-11');
+  assert.equal(s.ageHours, 28);
+  assert.equal(s.stale, false, 'one night of data is still acceptable');
+  assert.equal(SCAN_HOUR_UTC, 5);
+  assert.equal(STALE_AFTER_HOURS, 36);
+});
+
+test('staleness flags the missed-night case that froze the dataset for 10 days', () => {
+  // the previous nightly died -> the newest row is two days old at check time
+  const s = staleness([{ date: '2026-09-10' }], Date.parse('2026-09-12T09:00:00Z'));
+  assert.equal(s.ageHours, 52);
+  assert.equal(s.stale, true);
+});
+
+test('staleness boundary is exclusive and empty history is not "stale"', () => {
+  const now = Date.parse('2026-09-12T09:00:00Z');
+  assert.equal(staleness([{ date: '2026-09-11' }], now, 28).stale, false, 'exactly at the limit is fresh');
+  assert.equal(staleness([{ date: '2026-09-11' }], now, 27.9).stale, true);
+  const empty = staleness([], now);
+  assert.deepEqual(empty, { newest: null, ageHours: null, stale: false });
+});
+
+test('the committed history.csv parses and yields a usable scan date', () => {
+  const rows = toHistoryRows(historyText);
+  assert.ok(rows.length > 100, 'history has rows');
+  const newest = newestScanDate(rows);
+  assert.match(newest, /^\d{4}-\d{2}-\d{2}$/);
+  assert.equal(newest, rows.map(r => r.date).sort().at(-1), 'newest is the max scan date');
 });
 
 // --- human-readable sanity summary (node --test shows it in the report) ---

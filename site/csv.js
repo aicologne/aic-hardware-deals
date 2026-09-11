@@ -147,6 +147,36 @@ export function euroPerGb(price, query) {
   return n == null ? null : n / cap;
 }
 
+// --- data freshness ---------------------------------------------------------
+// Mirror of ebay-search-skill/check_freshness.py. The newest scan date in
+// data/history.csv is anchored to the hour the nightly cron runs (05:00 UTC)
+// before its age is computed, so a date-only column cannot look up to a day
+// fresher than it actually is. The workflow guard fails the build past its own
+// limit; the page shows a warning past STALE_AFTER_HOURS.
+
+export const SCAN_HOUR_UTC = 5;
+export const STALE_AFTER_HOURS = 36;
+
+/** Newest "YYYY-MM-DD" among history rows (null when there is none). */
+export function newestScanDate(rows) {
+  let newest = null;
+  for (const r of rows || []) {
+    const d = String((r && r.date) || '').trim();
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) continue;   // ISO dates sort lexicographically
+    if (newest === null || d > newest) newest = d;
+  }
+  return newest;
+}
+
+/** { newest, ageHours, stale } for the newest scan date (ageHours null if none). */
+export function staleness(rows, nowMs = Date.now(), maxAgeHours = STALE_AFTER_HOURS) {
+  const newest = newestScanDate(rows);
+  if (!newest) return { newest: null, ageHours: null, stale: false };
+  const [y, m, d] = newest.split('-').map(Number);
+  const ageHours = (nowMs - Date.UTC(y, m - 1, d, SCAN_HOUR_UTC)) / 3600000;
+  return { newest, ageHours, stale: ageHours > maxAgeHours };
+}
+
 // --- history + movers -------------------------------------------------------
 
 function parseDate(s) {

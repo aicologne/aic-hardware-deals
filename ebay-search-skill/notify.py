@@ -166,19 +166,22 @@ def http_post(url, payload, headers=None):
         return resp.status
 
 
-def send_telegram(token, chat_id, text):
+def send_telegram(token, chat_id, text, post=None):
+    """Send via Telegram. `post` is injectable (defaults to http_post) so the
+    alert guards can be unit-tested without touching the network."""
     if len(text) > 4000:
         text = text[:3900] + "\n…(truncated)"
     url = f"https://api.telegram.org/bot{token}/sendMessage"
-    return http_post(
+    return (post or http_post)(
         url, {"chat_id": chat_id, "text": text, "disable_web_page_preview": True}
     )
 
 
-def send_discord(webhook, text):
+def send_discord(webhook, text, post=None):
+    """Send via a Discord webhook (same injectable `post` as send_telegram)."""
     if len(text) > 1900:
         text = text[:1850] + "\n…(truncated)"
-    return http_post(webhook, {"content": text})
+    return (post or http_post)(webhook, {"content": text})
 
 
 def main():
