@@ -102,8 +102,13 @@ def window_for_query(query, history_by_key=None, marketplace=DEFAULT_MARKETPLACE
     The history key uses the query NAME (the same label render_history.py
     records), so windows refine per category as the history accumulates.
     """
+    # When history_by_key is explicitly None, fall back to static window
     if history_by_key is None:
+        if history_path is None:
+            return query.get("min"), query.get("max")
         history_by_key = load_recent_medians(history_path)
+    if not history_by_key:
+        return query.get("min"), query.get("max")
     medians = history_by_key.get(f"{marketplace} · {query['name']}") or []
     return adaptive_window(query.get("min"), query.get("max"), medians)
 

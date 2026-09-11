@@ -4,589 +4,603 @@
     <title>eBay.de Used Hardware — Daily Deals</title>
     <link>https://github.com/aicologne/aic-hardware-deals</link>
     <description>Nightly deal highlights from the eBay.de used-hardware price report (GPUs with &gt;=16 GB VRAM, server RAM, mini PCs): items at or within 15 % of the buy-low target. Collected via the official eBay Browse API; always verify condition and price before buying.</description>
-    <lastBuildDate>Sat, 29 Aug 2026 05:05:40 +0000</lastBuildDate>
-    <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+    <lastBuildDate>Fri, 11 Sep 2026 05:09:57 +0000</lastBuildDate>
+    <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     <generator>render_feed.py (aic-hardware-deals)</generator>
-    <item>
-      <title>[EBAY_DE] [Xeon E5-2690v4] €28,42 — Intel Xeon E5-2690 V4 LGA 2011-3 Server CPU Processor 2.60 GHz 14C 28T SR2N2 (sunyang920)</title>
-      <link>https://www.ebay.de/itm/406203967742?_skw=Xeon+E5-2690v4&amp;hash=item5e93a4a8fe:g:kvEAAeSwRtNowlkV</link>
-      <guid isPermaLink="false">deal-2026-08-29-1</guid>
-      <description>Category: Xeon E5-2690v4. Marketplace: EBAY_DE. Price: €28,42. Buy-low target: €26,58. Condition: Gebraucht. Seller: sunyang920.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
-    </item>
     <item>
       <title>[EBAY_DE] [Xeon E5-2690v4] €28,55 — Intel Xeon E5-2690 v4 CPU processor 2.60 GHz 14-Core sr2n2 lga2011-v3 x99 server (wyl1201)</title>
       <link>https://www.ebay.de/itm/316673313972?_skw=Xeon+E5-2690v4&amp;hash=item49bb334cb4:g:-bQAAOSw~1VnveX6</link>
-      <guid isPermaLink="false">deal-2026-08-29-2</guid>
-      <description>Category: Xeon E5-2690v4. Marketplace: EBAY_DE. Price: €28,55. Buy-low target: €26,58. Condition: Gebraucht. Seller: wyl1201.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <guid isPermaLink="false">deal-2026-09-11-1</guid>
+      <description>Category: Xeon E5-2690v4. Marketplace: EBAY_DE. Price: €28,55. Buy-low target: €27,51. Condition: Gebraucht. Seller: wyl1201.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [Xeon E5-2690v4] €29,99 — INTEL XEON E5-2690v4 SR2N2 SOCKEL 2011-3 (m-comp)</title>
       <link>https://www.ebay.de/itm/287206510898?_skw=Xeon+E5-2690v4&amp;hash=item42ded79132:g:J9IAAeSwv6xpS~-D</link>
-      <guid isPermaLink="false">deal-2026-08-29-3</guid>
-      <description>Category: Xeon E5-2690v4. Marketplace: EBAY_DE. Price: €29,99. Buy-low target: €26,58. Condition: Gebraucht. Seller: m-comp.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <guid isPermaLink="false">deal-2026-09-11-2</guid>
+      <description>Category: Xeon E5-2690v4. Marketplace: EBAY_DE. Price: €29,99. Buy-low target: €27,51. Condition: Gebraucht. Seller: m-comp.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [Xeon E5-2690v4] €30,33 — Intel Xeon E5-2690 V4 SR2N2 2.60GHz 14-Core LGA2011-3 X99 CPU Processor 135W (exos100)</title>
       <link>https://www.ebay.de/itm/336408459380?_skw=Xeon+E5-2690v4&amp;hash=item4e5381b874:g:1NwAAeSwDCxpeH1p</link>
-      <guid isPermaLink="false">deal-2026-08-29-4</guid>
-      <description>Category: Xeon E5-2690v4. Marketplace: EBAY_DE. Price: €30,33. Buy-low target: €26,58. Condition: Gebraucht. Seller: exos100.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>[EBAY_DE] [DDR4 RDIMM 32GB] €75,00 — Samsung DDR4 16GB PC4 2933Y M393A2K40CB2-CVFBY Server... (heppo88)</title>
-      <link>https://www.ebay.de/itm/257512166314?_skw=DDR4+RDIMM+32GB&amp;hash=item3bf4ebd3aa:g:GtgAAeSwH5FqCtxq</link>
-      <guid isPermaLink="false">deal-2026-08-29-5</guid>
-      <description>Category: DDR4 RDIMM 32GB. Marketplace: EBAY_DE. Price: €75,00. Buy-low target: €74,94. Condition: Gebraucht. Seller: heppo88.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>[EBAY_DE] [DDR4 RDIMM 32GB] €75,00 — Samsung DDR4 RAM 32GB (2x16GB) PC4-2666V RDIMM M393A2K40CB2 (embrn0)</title>
-      <link>https://www.ebay.de/itm/227495435908?_skw=DDR4+RDIMM+32GB&amp;hash=item34f7c8de84:g:3ZQAAeSw9zVqRVB~</link>
-      <guid isPermaLink="false">deal-2026-08-29-6</guid>
-      <description>Category: DDR4 RDIMM 32GB. Marketplace: EBAY_DE. Price: €75,00. Buy-low target: €74,94. Condition: Gebraucht. Seller: embrn0.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>[EBAY_DE] [DDR4 RDIMM 32GB] €77,86 — Samsung 32GB DDR4 RDIMM RAM - 2Rx4, PC4-2400T (M393A4K0BB1-CRC0Q) (dragoon2097)</title>
-      <link>https://www.ebay.de/itm/267642420387?_skw=DDR4+RDIMM+32GB&amp;hash=item3e50bb3ca3:g:xvUAAeSw0Qpp4ksQ</link>
-      <guid isPermaLink="false">deal-2026-08-29-7</guid>
-      <description>Category: DDR4 RDIMM 32GB. Marketplace: EBAY_DE. Price: €77,86. Buy-low target: €74,94. Condition: Used. Seller: dragoon2097. Was €77,72 on 2026-08-28.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <guid isPermaLink="false">deal-2026-09-11-3</guid>
+      <description>Category: Xeon E5-2690v4. Marketplace: EBAY_DE. Price: €30,33. Buy-low target: €27,51. Condition: Gebraucht. Seller: exos100.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [DDR4 RDIMM 32GB] €79,00 — 8GB 16GB 32GB 64GB DDR4 Server RAM 2133 2400 2666 2933 3200 MHz RDIMM 19% MwSt. (fibich.onlinehandel)</title>
       <link>https://www.ebay.de/itm/406907044017?_skw=DDR4+RDIMM+32GB&amp;hash=item5ebd8cc0b1:g:eCcAAeSw9yVp5p6l</link>
-      <guid isPermaLink="false">deal-2026-08-29-8</guid>
-      <description>Category: DDR4 RDIMM 32GB. Marketplace: EBAY_DE. Price: €79,00. Buy-low target: €74,94. Condition: Gebraucht. Seller: fibich.onlinehandel.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <guid isPermaLink="false">deal-2026-09-11-4</guid>
+      <description>Category: DDR4 RDIMM 32GB. Marketplace: EBAY_DE. Price: €79,00. Buy-low target: €77,87. Condition: Gebraucht. Seller: fibich.onlinehandel.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [DDR4 RDIMM 32GB] €79,00 — SK Hynix 32GB DDR4 ECC RAM 2133 CL15 (juliusschall)</title>
-      <link>https://www.ebay.de/itm/298266357739?_skw=DDR4+RDIMM+32GB&amp;hash=item45720f6feb:g:NyMAAeSw1URp7zM8</link>
-      <guid isPermaLink="false">deal-2026-08-29-9</guid>
-      <description>Category: DDR4 RDIMM 32GB. Marketplace: EBAY_DE. Price: €79,00. Buy-low target: €74,94. Condition: Gebraucht. Seller: juliusschall.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [DDR4 RDIMM 32GB] €88,73 — HP Samsung 32GB DDR4 PC4-2133P-LD0 ECC RDIMM Server RAM (supermari000)</title>
+      <link>https://www.ebay.de/itm/267609048314?_skw=DDR4+RDIMM+32GB&amp;hash=item3e4ebe04fa:g:HqwAAeSwv6Jpt8UB</link>
+      <guid isPermaLink="false">deal-2026-09-11-5</guid>
+      <description>Category: DDR4 RDIMM 32GB. Marketplace: EBAY_DE. Price: €88,73. Buy-low target: €77,87. Condition: Used. Seller: supermari000. Was €89,18 on 2026-08-18.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [DDR4 RDIMM 32GB] €80,00 — Hynix DDR4 32GB (1x32GB) PC4-2133P HMA84GR7MFR4N-TF Server Arbeitsspeicher RAM (logihanns)</title>
-      <link>https://www.ebay.de/itm/168615920220?_skw=DDR4+RDIMM+32GB&amp;hash=item27424ac25c:g:jtQAAeSwkNxqgIVZ</link>
-      <guid isPermaLink="false">deal-2026-08-29-10</guid>
-      <description>Category: DDR4 RDIMM 32GB. Marketplace: EBAY_DE. Price: €80,00. Buy-low target: €74,94. Condition: Gebraucht. Seller: logihanns.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [DDR4 RDIMM 32GB] €89,00 — HPE 32GB DDR4-2400 ECC RDIMM SK Hynix HMA84GR7AFR4N-UH (mar-960606)</title>
+      <link>https://www.ebay.de/itm/820035205020?_skw=DDR4+RDIMM+32GB&amp;hash=itembeede8379c:g:hKsAAeSw3h9qid-I</link>
+      <guid isPermaLink="false">deal-2026-09-11-6</guid>
+      <description>Category: DDR4 RDIMM 32GB. Marketplace: EBAY_DE. Price: €89,00. Buy-low target: €77,87. Condition: Gebraucht. Seller: mar-960606. Was €110,00 on 2026-08-23.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [DDR4 RDIMM 32GB] €80,00 — Samsung DDR4 32GB (1x32GB) PC4-2133P M393A4K40B00-CPB0Q Server Arbeitsspeiche... (logihanns)</title>
-      <link>https://www.ebay.de/itm/168338867142?_skw=DDR4+RDIMM+32GB&amp;hash=item2731c743c6:g:sDsAAeSwBXRp8SGG</link>
-      <guid isPermaLink="false">deal-2026-08-29-11</guid>
-      <description>Category: DDR4 RDIMM 32GB. Marketplace: EBAY_DE. Price: €80,00. Buy-low target: €74,94. Condition: Gebraucht. Seller: logihanns.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [DDR4 RDIMM 32GB] €89,00 — 1x 32GB DDR4 ECC Server RAM 2133MHz Samsung M386A4G40DM0-CPB2Q HP (techvnet)</title>
+      <link>https://www.ebay.de/itm/287191011682?_skw=DDR4+RDIMM+32GB&amp;hash=item42ddeb1162:g:hAUAAeSw7vtprvzQ</link>
+      <guid isPermaLink="false">deal-2026-09-11-7</guid>
+      <description>Category: DDR4 RDIMM 32GB. Marketplace: EBAY_DE. Price: €89,00. Buy-low target: €77,87. Condition: Gebraucht. Seller: techvnet. Was €109,00 on 2026-08-23.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [DDR4 RDIMM 32GB] €81,79 — SK Hynix 32GB (4x 8GB) ECC RAM 2Rx8 DDR4 HMA41GR7AFR8N-TF PC4-2133P-RE0-11 (janh007)</title>
-      <link>https://www.ebay.de/itm/377303754078?_skw=DDR4+RDIMM+32GB&amp;hash=item57d90e655e:g:AZ8AAeSwxiZqKxbf</link>
-      <guid isPermaLink="false">deal-2026-08-29-12</guid>
-      <description>Category: DDR4 RDIMM 32GB. Marketplace: EBAY_DE. Price: €81,79. Buy-low target: €74,94. Condition: Used. Seller: janh007. Was €81,86 on 2026-08-18.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>[EBAY_DE] [DDR4 RDIMM 32GB] €85,00 — 32GB DDR4 RDIMM 2400Mhz | MTA36ASF4G72PZ-2G3B1 2Rx4 (marviwend3)</title>
-      <link>https://www.ebay.de/itm/178175417774?_skw=DDR4+RDIMM+32GB&amp;hash=item297c151dae:g:WlQAAeSwj1JqGc41</link>
-      <guid isPermaLink="false">deal-2026-08-29-13</guid>
-      <description>Category: DDR4 RDIMM 32GB. Marketplace: EBAY_DE. Price: €85,00. Buy-low target: €74,94. Condition: Gebraucht. Seller: marviwend3.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>[EBAY_DE] [DDR4 RDIMM 32GB] €85,00 — Samsung 32GB DDR4 2400 ECC RDIMM (drproto)</title>
-      <link>https://www.ebay.de/itm/117116717496?_skw=DDR4+RDIMM+32GB&amp;hash=item1b44b349b8:g:LHEAAeSwEhNpyqhM</link>
-      <guid isPermaLink="false">deal-2026-08-29-14</guid>
-      <description>Category: DDR4 RDIMM 32GB. Marketplace: EBAY_DE. Price: €85,00. Buy-low target: €74,94. Condition: Gebraucht. Seller: drproto. Was €105,00 on 2026-08-22.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>[EBAY_DE] [OptiPlex 3070 Micro] €122,00 — Dell Optiplex 3070 micro I3-9100t 16GB RAM 256GB M.2 SATA W11 Pro incl. Netzteil (ocram.77)</title>
-      <link>https://www.ebay.de/itm/257684249379?_skw=OptiPlex+3070+Micro&amp;hash=item3bff2d9b23:g:Z34AAeSwLxRqgeX3</link>
-      <guid isPermaLink="false">deal-2026-08-29-15</guid>
-      <description>Category: OptiPlex 3070 Micro. Marketplace: EBAY_DE. Price: €122,00. Buy-low target: €121,24. Condition: Gebraucht. Seller: ocram.77. Was €166,00 on 2026-08-18.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>[EBAY_DE] [NVMe SSD 2TB] €134,39 — Lenovo M900 Tiny PC Core i7 6700 6. Gen 32GB DDR4 RAM 1TB SSD NVMe WLAN Win 11 (york_tech)</title>
-      <link>https://www.ebay.de/itm/185474581010?_skw=NVMe+2TB&amp;hash=item2b2f258212:g:7l8AAOSw7MVnQcLg</link>
-      <guid isPermaLink="false">deal-2026-08-29-16</guid>
-      <description>Category: NVMe SSD 2TB. Marketplace: EBAY_DE. Price: €134,39. Buy-low target: €127,71. Condition: Used. Seller: york_tech. Was €116,81 on 2026-08-23.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>[EBAY_DE] [NVMe SSD 2TB] €134,39 — Lenovo M900 Tiny PC Core i7 6700 6. Gen 32GB DDR4 RAM 1TB SSD NVMe WiFi fähig (discount_it)</title>
+      <title>[EBAY_DE] [NVMe SSD 2TB] €133,82 — Lenovo M900 Tiny PC Core i7 6700 6. Gen 32GB DDR4 RAM 1TB SSD NVMe WiFi fähig (discount_it)</title>
       <link>https://www.ebay.de/itm/267080936161?_skw=NVMe+2TB&amp;hash=item3e2f43aae1:g:AvYAAOSwGAJnSdhH</link>
-      <guid isPermaLink="false">deal-2026-08-29-17</guid>
-      <description>Category: NVMe SSD 2TB. Marketplace: EBAY_DE. Price: €134,39. Buy-low target: €127,71. Condition: Used. Seller: discount_it. Was €116,81 on 2026-08-23.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <guid isPermaLink="false">deal-2026-09-11-8</guid>
+      <description>Category: NVMe SSD 2TB. Marketplace: EBAY_DE. Price: €133,82. Buy-low target: €131,67. Condition: Used. Seller: discount_it. Was €116,81 on 2026-08-23.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [NVMe SSD 2TB] €134,82 — 1TB 1024GB SSD NVMe M.2 2280 Samsung PM981 einzeln versiegelt in ESD-Beuteln (valley-technologies-uk-limited)</title>
-      <link>https://www.ebay.de/itm/800277796038?_skw=NVMe+2TB&amp;hash=itemba544614c6:g:l-wAAeSw~5tqThLV</link>
-      <guid isPermaLink="false">deal-2026-08-29-18</guid>
-      <description>Category: NVMe SSD 2TB. Marketplace: EBAY_DE. Price: €134,82. Buy-low target: €127,71. Condition: Used. Seller: valley-technologies-uk-limited. Was €134,78 on 2026-08-23.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>[EBAY_DE] [NVMe SSD 2TB] €138,99 — 1TB 1024GB SSD NVMe M.2 2280 Gen4 x 4 Samsung einzeln versiegelt in ESD-Beuteln (valley-technologies-uk-limited)</title>
-      <link>https://www.ebay.de/itm/227201076709?_skw=NVMe+2TB&amp;hash=item34e63d4de5:g:aD8AAeSwG7dqS7ZL</link>
-      <guid isPermaLink="false">deal-2026-08-29-19</guid>
-      <description>Category: NVMe SSD 2TB. Marketplace: EBAY_DE. Price: €138,99. Buy-low target: €127,71. Condition: Used. Seller: valley-technologies-uk-limited. Was €138,95 on 2026-08-23.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [OptiPlex 3070 Micro] €134,00 — Dell Optiplex 3070 Micro i5-9500T 8GB DDR4 RAM 256 GB M.2 SSD W11 (greenmarine_4)</title>
+      <link>https://www.ebay.de/itm/178461720715?_skw=OptiPlex+3070+Micro&amp;hash=item298d25c08b:g:L9QAAeSwJmtpRVfG</link>
+      <guid isPermaLink="false">deal-2026-09-11-9</guid>
+      <description>Category: OptiPlex 3070 Micro. Marketplace: EBAY_DE. Price: €134,00. Buy-low target: €132,24. Condition: Gebraucht. Seller: greenmarine_4. Was €152,00 on 2026-09-08.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [OptiPlex 3070 Micro] €139,00 — Dell OptiPlex 3070 Micro PC Intel Pentium G5400T 8GB 256GB SSD 500GB HDD Win11 (the-components)</title>
       <link>https://www.ebay.de/itm/147359452214?_skw=OptiPlex+3070+Micro&amp;hash=item224f4ecc36:g:Vw8AAeSw7vNqLVMm</link>
-      <guid isPermaLink="false">deal-2026-08-29-20</guid>
-      <description>Category: OptiPlex 3070 Micro. Marketplace: EBAY_DE. Price: €139,00. Buy-low target: €121,24. Condition: Gebraucht. Seller: the-components.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <guid isPermaLink="false">deal-2026-09-11-10</guid>
+      <description>Category: OptiPlex 3070 Micro. Marketplace: EBAY_DE. Price: €139,00. Buy-low target: €132,24. Condition: Gebraucht. Seller: the-components.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[EBAY_DE] [OptiPlex 3070 Micro] €139,62 — Dell OptiPlex 3070 Micro PC, Core i5 9. Gen, 8GB RAM, 256GB SSD, Windows 11 (blackmoreit)</title>
+      <link>https://www.ebay.de/itm/365119229294?_skw=OptiPlex+3070+Micro&amp;hash=item5502cd4d6e:g:~lgAAOSw4RJm5BT8</link>
+      <guid isPermaLink="false">deal-2026-09-11-11</guid>
+      <description>Category: OptiPlex 3070 Micro. Marketplace: EBAY_DE. Price: €139,62. Buy-low target: €132,24. Condition: Used. Seller: blackmoreit. Was €140,18 on 2026-08-22.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [NVMe SSD 2TB] €144,95 — Office-PC | 2,8 GHz | bis 32GB RAM | bis 2 TB SSD | Win 11 Pro | Office 2024 Pro (secondlife_it-solution)</title>
       <link>https://www.ebay.de/itm/198071390916?_skw=NVMe+2TB&amp;hash=item2e1df992c4:g:W98AAeSw3Hxp77FJ</link>
-      <guid isPermaLink="false">deal-2026-08-29-21</guid>
-      <description>Category: NVMe SSD 2TB. Marketplace: EBAY_DE. Price: €144,95. Buy-low target: €127,71. Condition: Gebraucht. Seller: secondlife_it-solution. Was €79,95 on 2026-08-23.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <guid isPermaLink="false">deal-2026-09-11-12</guid>
+      <description>Category: NVMe SSD 2TB. Marketplace: EBAY_DE. Price: €144,95. Buy-low target: €131,67. Condition: Gebraucht. Seller: secondlife_it-solution. Was €79,95 on 2026-08-23.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [ThinkCentre M720q] €146,00 — Lenovo Thinkcenter M720q (idefix236)</title>
-      <link>https://www.ebay.de/itm/235670768696?_skw=ThinkCentre+M720q&amp;hash=item36df128c38:g:IFEAAOSwVhBmpSwA</link>
-      <guid isPermaLink="false">deal-2026-08-29-22</guid>
-      <description>Category: ThinkCentre M720q. Marketplace: EBAY_DE. Price: €146,00. Buy-low target: €141,68. Condition: Gebraucht. Seller: idefix236.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [OptiPlex 3070 Micro] €145,45 — Dell OptiPlex 3070 Micro Core i3-8100T 8GB RAM 256 NVMe + 500GB HDD Windows 11 Pro (iangel-uk)</title>
+      <link>https://www.ebay.de/itm/158109742478?_skw=OptiPlex+3070+Micro&amp;hash=item24d013358e:g:jkkAAeSw9ZVqYQp9</link>
+      <guid isPermaLink="false">deal-2026-09-11-13</guid>
+      <description>Category: OptiPlex 3070 Micro. Marketplace: EBAY_DE. Price: €145,45. Buy-low target: €132,24. Condition: Used. Seller: iangel-uk. Was €146,03 on 2026-08-22.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [ThinkCentre M720q] €149,99 — Lenovo ThinkCentre M720q Intel® Core™ i3-8100T 8 GB DDR4-SDRAM 120 GB SSD Win 11 (techport-shop)</title>
-      <link>https://www.ebay.de/itm/406903120573?_skw=ThinkCentre+M720q&amp;hash=item5ebd50e2bd:g:ta4AAeSw6z9p-GSE</link>
-      <guid isPermaLink="false">deal-2026-08-29-23</guid>
-      <description>Category: ThinkCentre M720q. Marketplace: EBAY_DE. Price: €149,99. Buy-low target: €141,68. Condition: Gebraucht. Seller: techport-shop.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [OptiPlex 3070 Micro] €150,00 — Dell Optiplex 3070 Micro - Intel Core i5-9500, 256GB SSD, 8 GB-RAM WIN 11 Pro (hasik9488)</title>
+      <link>https://www.ebay.de/itm/137702779302?_skw=OptiPlex+3070+Micro&amp;hash=item200fb9a9a6:g:7CoAAeSwa3tqcNFf</link>
+      <guid isPermaLink="false">deal-2026-09-11-14</guid>
+      <description>Category: OptiPlex 3070 Micro. Marketplace: EBAY_DE. Price: €150,00. Buy-low target: €132,24. Condition: Gebraucht. Seller: hasik9488. Was €160,00 on 2026-09-08.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [ThinkCentre M720q] €150,00 — Lenovo ThinkCentre M720q (jan-4252)</title>
-      <link>https://www.ebay.de/itm/198201922544?_skw=ThinkCentre+M720q&amp;hash=item2e25c153f0:g:tGoAAeSwUNhpuo0o</link>
-      <guid isPermaLink="false">deal-2026-08-29-24</guid>
-      <description>Category: ThinkCentre M720q. Marketplace: EBAY_DE. Price: €150,00. Buy-low target: €141,68. Condition: Gebraucht. Seller: jan-4252.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [ThinkCentre M720q] €157,90 — Lenovo ThinkCentre M720q 8-9th.Gen i3/i5/i7 8-32GB RAM 128-2TB SSD Win11 BUDGET (greendot_it)</title>
+      <link>https://www.ebay.de/itm/237046541495?_skw=ThinkCentre+M720q&amp;hash=item3731132cb7:g:G34AAeSwp05qmWHW</link>
+      <guid isPermaLink="false">deal-2026-09-11-15</guid>
+      <description>Category: ThinkCentre M720q. Marketplace: EBAY_DE. Price: €157,90. Buy-low target: €154,98. Condition: Gebraucht. Seller: greendot_it. Was €148,00 on 2026-09-08.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [ThinkCentre M720q] €151,86 — Lenovo ThinkCentre M720q, Intel i5-9400T, 8GB DDR4, 256GB SSD, Win 11, Mini PC (pcs4u-uk)</title>
-      <link>https://www.ebay.de/itm/366615782149?_skw=ThinkCentre+M720q&amp;hash=item555c00e305:g:Z20AAeSwMk1qiAgT</link>
-      <guid isPermaLink="false">deal-2026-08-29-25</guid>
-      <description>Category: ThinkCentre M720q. Marketplace: EBAY_DE. Price: €151,86. Buy-low target: €141,68. Condition: Used. Seller: pcs4u-uk. Was €151,81 on 2026-08-22.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [ThinkCentre M720q] €160,00 — Lenovo ThinkCentre M720q Tiny, wlan,windows11 pro (tamenaleroka)</title>
+      <link>https://www.ebay.de/itm/117405431408?_skw=ThinkCentre+M720q&amp;hash=item1b55e8b670:g:A9AAAeSwk2hqoktu</link>
+      <guid isPermaLink="false">deal-2026-09-11-16</guid>
+      <description>Category: ThinkCentre M720q. Marketplace: EBAY_DE. Price: €160,00. Buy-low target: €154,98. Condition: Gebraucht. Seller: tamenaleroka.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [DDR4 RDIMM 64GB] €167,75 — 64GB 4 x 16GB HP MICRON MTA36ASF2G72PZ 2Rx4 DDR4 PC4 2133P ECC RDIMM Server RAM (itrefresh)</title>
-      <link>https://www.ebay.de/itm/267768742417?_skw=DDR4+RDIMM+64GB&amp;hash=item3e5842c211:g:1yEAAeSwj-VqdeP6</link>
-      <guid isPermaLink="false">deal-2026-08-29-26</guid>
-      <description>Category: DDR4 RDIMM 64GB. Marketplace: EBAY_DE. Price: €167,75. Buy-low target: €164,07. Condition: Used. Seller: itrefresh. Was €167,45 on 2026-08-28.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [ThinkCentre M720q] €160,55 — Mini PC Lenovo ThinkCentre M720q Tiny i5-8400T @ 1,7Ghz 8GB M720 ohne SSD. (computerteile-shop)</title>
+      <link>https://www.ebay.de/itm/357387122087?_skw=ThinkCentre+M720q&amp;hash=item5335eeb5a7:g:u3kAAOSwnj5oN1Xf</link>
+      <guid isPermaLink="false">deal-2026-09-11-17</guid>
+      <description>Category: ThinkCentre M720q. Marketplace: EBAY_DE. Price: €160,55. Buy-low target: €154,98. Condition: Gebraucht. Seller: computerteile-shop. Was €169,00 on 2026-08-18.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [DDR4 RDIMM 64GB] €169,00 — 8GB 16GB 32GB 64GB DDR4 Server RAM 2133 2400 2666 2933 3200 MHz RDIMM (fibich.onlinehandel)</title>
-      <link>https://www.ebay.de/itm/406873510814?_skw=DDR4+RDIMM+64GB&amp;hash=item5ebb8d139e:g:eCcAAeSw9yVp5p6l</link>
-      <guid isPermaLink="false">deal-2026-08-29-27</guid>
-      <description>Category: DDR4 RDIMM 64GB. Marketplace: EBAY_DE. Price: €169,00. Buy-low target: €164,07. Condition: Gebraucht. Seller: fibich.onlinehandel. Was €99,00 on 2026-08-18.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [ThinkCentre M720q] €160,55 — Lenovo ThinkCentre M720q Tiny – i5-8400T, 8GB RAM, ohne SSD, Mini-PC, Office (darya-international)</title>
+      <link>https://www.ebay.de/itm/267722458632?_skw=ThinkCentre+M720q&amp;hash=item3e55808608:g:7mcAAeSwmrdpvFAu</link>
+      <guid isPermaLink="false">deal-2026-09-11-18</guid>
+      <description>Category: ThinkCentre M720q. Marketplace: EBAY_DE. Price: €160,55. Buy-low target: €154,98. Condition: Gebraucht. Seller: darya-international. Was €169,00 on 2026-08-18.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[EBAY_DE] [ThinkCentre M720q] €160,55 — Mini PC Lenovo ThinkCentre M720q Tiny i5-8400T @ 1,7Ghz 8 GB M720 ohne SSD. (darya-international)</title>
+      <link>https://www.ebay.de/itm/267695537367?_skw=ThinkCentre+M720q&amp;hash=item3e53e5bcd7:g:7mcAAeSwmrdpvFAu</link>
+      <guid isPermaLink="false">deal-2026-09-11-19</guid>
+      <description>Category: ThinkCentre M720q. Marketplace: EBAY_DE. Price: €160,55. Buy-low target: €154,98. Condition: Gebraucht. Seller: darya-international. Was €169,00 on 2026-08-18.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[EBAY_DE] [ThinkCentre M720q] €163,87 — Lenovo i7-8700 2TB SSD 64GB RAM HDMI DP M720q 920q Mini Desktop PC Win10 11 MwSt (afritech)</title>
+      <link>https://www.ebay.de/itm/357165084725?_skw=ThinkCentre+M720q&amp;hash=item5328b2b035:g:rcIAAOSwrdFoWWlX</link>
+      <guid isPermaLink="false">deal-2026-09-11-20</guid>
+      <description>Category: ThinkCentre M720q. Marketplace: EBAY_DE. Price: €163,87. Buy-low target: €154,98. Condition: Used. Seller: afritech. Was €150,88 on 2026-08-18.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[EBAY_DE] [ThinkCentre M720q] €165,00 — 🔥🔥 Lenovo ThinkCentre M720q Tiny PC - i5-8400T - 8GB DDR4 RAM M.2  inkl PSU (steffi.graf)</title>
+      <link>https://www.ebay.de/itm/257681293371?_skw=ThinkCentre+M720q&amp;hash=item3bff00803b:g:5tAAAeSwTpVp3Lon</link>
+      <guid isPermaLink="false">deal-2026-09-11-21</guid>
+      <description>Category: ThinkCentre M720q. Marketplace: EBAY_DE. Price: €165,00. Buy-low target: €154,98. Condition: Gebraucht. Seller: steffi.graf.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[EBAY_DE] [ThinkCentre M720q] €166,99 — Lenovo ThinkCentre M720q PC - i5-8600T - 500 SSD - 8GB DDR4 - Windows 11 Pro (second-hand-solutions)</title>
+      <link>https://www.ebay.de/itm/278302075897?_skw=ThinkCentre+M720q&amp;hash=item40cc18abf9:g:IiIAAeSwbLhqiFIZ</link>
+      <guid isPermaLink="false">deal-2026-09-11-22</guid>
+      <description>Category: ThinkCentre M720q. Marketplace: EBAY_DE. Price: €166,99. Buy-low target: €154,98. Condition: Used. Seller: second-hand-solutions. Was €167,66 on 2026-08-22.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[EBAY_DE] [ThinkCentre M720q] €169,00 — Lenovo Thinkcentre M720q i5 8400T 1,7GHz 8GB 256GB Tiny PC WLAN (Antenne fehlt) (www.pcline24)</title>
+      <link>https://www.ebay.de/itm/307157088078?_skw=ThinkCentre+M720q&amp;hash=item4783fd374e:g:o28AAeSwtFxqltw3</link>
+      <guid isPermaLink="false">deal-2026-09-11-23</guid>
+      <description>Category: ThinkCentre M720q. Marketplace: EBAY_DE. Price: €169,00. Buy-low target: €154,98. Condition: Gebraucht. Seller: www.pcline24.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[EBAY_DE] [ThinkCentre M720q] €169,99 — Lenovo ThinkCentre M720q Mini PC Office Win11P i3 8th 240GB SSD 8GB USB-C Wi-Fi (an-und-verkauf-edik.irina)</title>
+      <link>https://www.ebay.de/itm/188643755463?_skw=ThinkCentre+M720q&amp;hash=item2bec0b45c7:g:3nQAAeSwR-dqV2WG</link>
+      <guid isPermaLink="false">deal-2026-09-11-24</guid>
+      <description>Category: ThinkCentre M720q. Marketplace: EBAY_DE. Price: €169,99. Buy-low target: €154,98. Condition: Gebraucht. Seller: an-und-verkauf-edik.irina.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[EBAY_DE] [ThinkCentre M720q] €169,99 — Lenovo ThinkCentre M720q  i3-9100T 8GB 250GB SSD Win 11 Pro HDMI DEFEKT (bodymatrix_eu)</title>
+      <link>https://www.ebay.de/itm/307007740004?_skw=ThinkCentre+M720q&amp;hash=item477b165864:g:gSgAAeSwzqVqMqXX</link>
+      <guid isPermaLink="false">deal-2026-09-11-25</guid>
+      <description>Category: ThinkCentre M720q. Marketplace: EBAY_DE. Price: €169,99. Buy-low target: €154,98. Condition: Gebraucht. Seller: bodymatrix_eu.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[EBAY_DE] [ThinkCentre M720q] €174,54 — Lenovo ThinkCentre M720q Tiny Desktop - 256GB SSD - 10T7006NUK (dispose_of_it)</title>
+      <link>https://www.ebay.de/itm/318814531806?_skw=ThinkCentre+M720q&amp;hash=item4a3ad3b0de:g:c0AAAeSwY89qXfs7</link>
+      <guid isPermaLink="false">deal-2026-09-11-26</guid>
+      <description>Category: ThinkCentre M720q. Marketplace: EBAY_DE. Price: €174,54. Buy-low target: €154,98. Condition: Used. Seller: dispose_of_it. Was €174,75 on 2026-09-08.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[EBAY_DE] [ThinkCentre M720q] €175,00 — Mini PC Lenovo ThinkCentre M720q Tiny i5-8400T @ 1,7Ghz 8GB W-LAN # 3 (computerteile-shop)</title>
+      <link>https://www.ebay.de/itm/357041130995?_skw=ThinkCentre+M720q&amp;hash=item53214f4df3:g:y~EAAOSwi3RoQdQU</link>
+      <guid isPermaLink="false">deal-2026-09-11-27</guid>
+      <description>Category: ThinkCentre M720q. Marketplace: EBAY_DE. Price: €175,00. Buy-low target: €154,98. Condition: Gebraucht. Seller: computerteile-shop. Was €166,50 on 2026-08-18.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [EliteDesk 800 G4 Mini] €179,90 — HP EliteDesk 800 G4 Mini i5-8500 8GB 250GB SSD WIFI,BT,W11Pro,Mini-PC (homepc_de)</title>
       <link>https://www.ebay.de/itm/147473411429?_skw=EliteDesk+800+G4+Mini&amp;hash=item225619ad65:g:1UwAAeSwFuJqbFHL</link>
-      <guid isPermaLink="false">deal-2026-08-29-28</guid>
+      <guid isPermaLink="false">deal-2026-09-11-28</guid>
       <description>Category: EliteDesk 800 G4 Mini. Marketplace: EBAY_DE. Price: €179,90. Buy-low target: €159,96. Condition: Gebraucht. Seller: homepc_de.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [DDR4 RDIMM 64GB] €180,00 — Hynix DDR4 64GB (2x32GB) PC4-2133P HMA84GR7MFR4N-TF Server Arbeitsspeicher RAM (logihanns)</title>
       <link>https://www.ebay.de/itm/168615919764?_skw=DDR4+RDIMM+64GB&amp;hash=item27424ac094:g:DyUAAeSw~8JqgIAw</link>
-      <guid isPermaLink="false">deal-2026-08-29-29</guid>
-      <description>Category: DDR4 RDIMM 64GB. Marketplace: EBAY_DE. Price: €180,00. Buy-low target: €164,07. Condition: Gebraucht. Seller: logihanns.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <guid isPermaLink="false">deal-2026-09-11-29</guid>
+      <description>Category: DDR4 RDIMM 64GB. Marketplace: EBAY_DE. Price: €180,00. Buy-low target: €176,00. Condition: Gebraucht. Seller: logihanns.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [DDR4 RDIMM 64GB] €180,00 — Samsung DDR4 64GB (2x32GB) PC4-2133P M393A4K40B00-CPB0Q Server Arbeitsspeiche... (logihanns)</title>
       <link>https://www.ebay.de/itm/168339075527?_skw=DDR4+RDIMM+64GB&amp;hash=item2731ca71c7:g:pc4AAeSwEPFp8SNS</link>
-      <guid isPermaLink="false">deal-2026-08-29-30</guid>
-      <description>Category: DDR4 RDIMM 64GB. Marketplace: EBAY_DE. Price: €180,00. Buy-low target: €164,07. Condition: Gebraucht. Seller: logihanns.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <guid isPermaLink="false">deal-2026-09-11-30</guid>
+      <description>Category: DDR4 RDIMM 64GB. Marketplace: EBAY_DE. Price: €180,00. Buy-low target: €176,00. Condition: Gebraucht. Seller: logihanns.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [EliteDesk 800 G4 Mini] €181,50 — HP EliteDesk 800 G4 Desktop Mini Core i5 8500T 4-32GB RAM 120-2000GB SSD (nexchance_it)</title>
-      <link>https://www.ebay.de/itm/178168671623?_skw=EliteDesk+800+G4+Mini&amp;hash=item297bae2d87:g:rCcAAeSwMttqX27m</link>
-      <guid isPermaLink="false">deal-2026-08-29-31</guid>
-      <description>Category: EliteDesk 800 G4 Mini. Marketplace: EBAY_DE. Price: €181,50. Buy-low target: €159,96. Condition: Gebraucht. Seller: nexchance_it.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [DDR4 RDIMM 64GB] €195,00 — 64GB (4x 16GB) SK Hynix DDR4 2133MHz PC4-17000P ECC Registered Server RAM Kit (benctrading)</title>
+      <link>https://www.ebay.de/itm/198595660682?_skw=DDR4+RDIMM+64GB&amp;hash=item2e3d394b8a:g:hboAAeSwrd5qhrUm</link>
+      <guid isPermaLink="false">deal-2026-09-11-31</guid>
+      <description>Category: DDR4 RDIMM 64GB. Marketplace: EBAY_DE. Price: €195,00. Buy-low target: €176,00. Condition: Gebraucht. Seller: benctrading.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [EliteDesk 800 G5 Mini] €181,50 — HP EliteDesk 800 G5 Desktop Mini Core i5 9500T 4-32GB RAM 120-2000GB SSD (nexchance_it)</title>
-      <link>https://www.ebay.de/itm/178168671666?_skw=EliteDesk+800+G5+Mini&amp;hash=item297bae2db2:g:4U4AAeSwZl5qX27n</link>
-      <guid isPermaLink="false">deal-2026-08-29-32</guid>
-      <description>Category: EliteDesk 800 G5 Mini. Marketplace: EBAY_DE. Price: €181,50. Buy-low target: €160,60. Condition: Gebraucht. Seller: nexchance_it.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [DDR4 RDIMM 64GB] €199,00 — SK Hynix  64GB 4x16GB DDR4 2133 P RDIMM HMA42GR7MFR4N-TF &quot; MwST ausweisbar&quot; (flohmarkt-chris)</title>
+      <link>https://www.ebay.de/itm/277908365457?_skw=DDR4+RDIMM+64GB&amp;hash=item40b4a12091:g:8BMAAeSwK4lp5Kko</link>
+      <guid isPermaLink="false">deal-2026-09-11-32</guid>
+      <description>Category: DDR4 RDIMM 64GB. Marketplace: EBAY_DE. Price: €199,00. Buy-low target: €176,00. Condition: Gebraucht. Seller: flohmarkt-chris.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [DDR4 RDIMM 64GB] €183,81 — Micron 64GB (4x16GB) PC4 DDR4-2400 ECC Reg DIMM MTA18ASF2G72PZ-2G3B1 für SERVER (level0fzer0s)</title>
-      <link>https://www.ebay.de/itm/198593377294?_skw=DDR4+RDIMM+64GB&amp;hash=item2e3d16740e:g:qAEAAeSwwS5qjTWM</link>
-      <guid isPermaLink="false">deal-2026-08-29-33</guid>
-      <description>Category: DDR4 RDIMM 64GB. Marketplace: EBAY_DE. Price: €183,81. Buy-low target: €164,07. Condition: Gebraucht. Seller: level0fzer0s.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [DDR4 RDIMM 64GB] €199,00 — HPE 64GB (4x16GB) PC4-2133P DDR4-RAM ECC RDIMM 2R 752369-081 (benctrading)</title>
+      <link>https://www.ebay.de/itm/198583854876?_skw=DDR4+RDIMM+64GB&amp;hash=item2e3c85271c:g:hboAAeSwrd5qhrUm</link>
+      <guid isPermaLink="false">deal-2026-09-11-33</guid>
+      <description>Category: DDR4 RDIMM 64GB. Marketplace: EBAY_DE. Price: €199,00. Buy-low target: €176,00. Condition: Gebraucht. Seller: benctrading.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [ThinkCentre M920q] €186,00 — *3Jahre GEWL* Lenovo ThinkCentre M920q Tiny i3 8Gen 8GB 240GB SSD wi10 WIFI (dealo24_de)</title>
-      <link>https://www.ebay.de/itm/117253539980?_skw=ThinkCentre+M920q&amp;hash=item1b4cdb088c:g:nPoAAeSwQl1qMnOd</link>
-      <guid isPermaLink="false">deal-2026-08-29-34</guid>
-      <description>Category: ThinkCentre M920q. Marketplace: EBAY_DE. Price: €186,00. Buy-low target: €179,58. Condition: Gebraucht. Seller: dealo24_de.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [DDR4 RDIMM 64GB] €199,00 — 64GB (4x 16GB) SK Hynix DDR4 2133MHz ECC Reg Server RAM Kit Dell SNP1R8CRC/16G (benctrading)</title>
+      <link>https://www.ebay.de/itm/198583889905?_skw=DDR4+RDIMM+64GB&amp;hash=item2e3c85aff1:g:DxUAAeSwwS5qhrq-</link>
+      <guid isPermaLink="false">deal-2026-09-11-34</guid>
+      <description>Category: DDR4 RDIMM 64GB. Marketplace: EBAY_DE. Price: €199,00. Buy-low target: €176,00. Condition: Gebraucht. Seller: benctrading.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [ThinkCentre M920q] €189,99 — Mini PC Lenovo ThinkCentre M720q Tiny Intel i3-8100T 8GB 256GB SSD HDMI Seriell (thinkstore24_de)</title>
-      <link>https://www.ebay.de/itm/236997020719?_skw=ThinkCentre+M920q&amp;hash=item372e1f8c2f:g:iYIAAeSwjJxqeYpa</link>
-      <guid isPermaLink="false">deal-2026-08-29-35</guid>
-      <description>Category: ThinkCentre M920q. Marketplace: EBAY_DE. Price: €189,99. Buy-low target: €179,58. Condition: Gebraucht. Seller: thinkstore24_de.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [ThinkCentre M920q] €214,00 — *3Jahre GEWL* Lenovo ThinkCentre M920q Tiny i3 8Gen 8GB 240GB SSD W11P WIFI (dealo24_de)</title>
+      <link>https://www.ebay.de/itm/117253538269?_skw=ThinkCentre+M920q&amp;hash=item1b4cdb01dd:g:8gYAAeSwArRqMnN0</link>
+      <guid isPermaLink="false">deal-2026-09-11-35</guid>
+      <description>Category: ThinkCentre M920q. Marketplace: EBAY_DE. Price: €214,00. Buy-low target: €208,78. Condition: Gebraucht. Seller: dealo24_de.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [ThinkCentre M920q] €199,00 — LENOVO PC ThinkCentre M920q Tiny Intel Core i5-8500T ab 8 GB ab 256 GB SSD (it-square)</title>
-      <link>https://www.ebay.de/itm/257397590269?_skw=ThinkCentre+M920q&amp;hash=item3bee1788fd:g:jHwAAeSwIwpp17lf</link>
-      <guid isPermaLink="false">deal-2026-08-29-36</guid>
-      <description>Category: ThinkCentre M920q. Marketplace: EBAY_DE. Price: €199,00. Buy-low target: €179,58. Condition: Gebraucht. Seller: it-square. Was €179,00 on 2026-08-18.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [ThinkCentre M920q] €219,00 — *3Jahre GEWL* Lenovo ThinkCentre M920q Tiny i3 9Gen 8GB 240GB SSD W11H WIFI (dealo24_de)</title>
+      <link>https://www.ebay.de/itm/127926964282?_skw=ThinkCentre+M920q&amp;hash=item1dc90a903a:g:GUEAAeSwag5qMnaV</link>
+      <guid isPermaLink="false">deal-2026-09-11-36</guid>
+      <description>Category: ThinkCentre M920q. Marketplace: EBAY_DE. Price: €219,00. Buy-low target: €208,78. Condition: Gebraucht. Seller: dealo24_de.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [ThinkCentre M920q] €202,00 — *3Jahre GEWL* Lenovo ThinkCentre M920q Tiny i3 8Gen 8GB 240GB SSD W11H WIFI (dealo24_de)</title>
-      <link>https://www.ebay.de/itm/127926954659?_skw=ThinkCentre+M920q&amp;hash=item1dc90a6aa3:g:az0AAeSwY3xqMnOM</link>
-      <guid isPermaLink="false">deal-2026-08-29-37</guid>
-      <description>Category: ThinkCentre M920q. Marketplace: EBAY_DE. Price: €202,00. Buy-low target: €179,58. Condition: Gebraucht. Seller: dealo24_de.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [ThinkCentre M920q] €221,00 — *3Jahre GEWL* Lenovo ThinkCentre M920q Tiny i5 8Gen 8GB 240GB SSD wi10 WIFI (dealo24_de)</title>
+      <link>https://www.ebay.de/itm/117363946183?_skw=ThinkCentre+M920q&amp;hash=item1b536fb2c7:g:k10AAeSw7RNqgsev</link>
+      <guid isPermaLink="false">deal-2026-09-11-37</guid>
+      <description>Category: ThinkCentre M920q. Marketplace: EBAY_DE. Price: €221,00. Buy-low target: €208,78. Condition: Gebraucht. Seller: dealo24_de.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [ThinkCentre M920q] €204,00 — *3Jahre GEWL* Lenovo ThinkCentre M920q Tiny i3 9Gen 8GB 240GB SSD wi10 WIFI (dealo24_de)</title>
-      <link>https://www.ebay.de/itm/127926964833?_skw=ThinkCentre+M920q&amp;hash=item1dc90a9261:g:EdYAAeSwpfdqMnaf</link>
-      <guid isPermaLink="false">deal-2026-08-29-38</guid>
-      <description>Category: ThinkCentre M920q. Marketplace: EBAY_DE. Price: €204,00. Buy-low target: €179,58. Condition: Gebraucht. Seller: dealo24_de.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [ThinkCentre M920q] €230,00 — *3Jahre GEWL* Lenovo ThinkCentre M920q Tiny i3 8Gen 16GB 240GB SSD wi10 WIFI (dealo24_de)</title>
+      <link>https://www.ebay.de/itm/127926952084?_skw=ThinkCentre+M920q&amp;hash=item1dc90a6094:g:mMIAAeSwQl1qMnMS</link>
+      <guid isPermaLink="false">deal-2026-09-11-38</guid>
+      <description>Category: ThinkCentre M920q. Marketplace: EBAY_DE. Price: €230,00. Buy-low target: €208,78. Condition: Gebraucht. Seller: dealo24_de.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [DDR5 32GB] €222,00 — Corsair Vengeance RGB DDR5 6000Mhz 16GB UDIMM (q-linked)</title>
-      <link>https://www.ebay.de/itm/128048796558?_skw=DDR5+32GB&amp;hash=item1dd04d938e:g:AkQAAeSw7zhqiG0U</link>
-      <guid isPermaLink="false">deal-2026-08-29-39</guid>
-      <description>Category: DDR5 32GB. Marketplace: EBAY_DE. Price: €222,00. Buy-low target: €219,09. Condition: Gebraucht. Seller: q-linked.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [ThinkCentre M920q] €231,00 — *3Jahre GEWL* Lenovo ThinkCentre M920q Tiny i3 9Gen 8GB 240GB SSD W11P WIFI (dealo24_de)</title>
+      <link>https://www.ebay.de/itm/127926963866?_skw=ThinkCentre+M920q&amp;hash=item1dc90a8e9a:g:1a8AAeSwQERqMnaL</link>
+      <guid isPermaLink="false">deal-2026-09-11-39</guid>
+      <description>Category: ThinkCentre M920q. Marketplace: EBAY_DE. Price: €231,00. Buy-low target: €208,78. Condition: Gebraucht. Seller: dealo24_de.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [DDR5 32GB] €224,00 — Kingston FURY DIMM 16 GB DDR5-6000, Arbeitsspeicher, weiß (alternate.gmbh)</title>
-      <link>https://www.ebay.de/itm/257613404389?_skw=DDR5+32GB&amp;hash=item3bfaf498e5:g:GWcAAeSw88dp6plr</link>
-      <guid isPermaLink="false">deal-2026-08-29-40</guid>
-      <description>Category: DDR5 32GB. Marketplace: EBAY_DE. Price: €224,00. Buy-low target: €219,09. Condition: Gebraucht. Seller: alternate.gmbh.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [ThinkCentre M920q] €237,00 — *3Jahre GEWL* Lenovo ThinkCentre M920q Tiny i5 8Gen 8GB 240GB SSD W11H WIFI (dealo24_de)</title>
+      <link>https://www.ebay.de/itm/128030839973?_skw=ThinkCentre+M920q&amp;hash=item1dcf3b94a5:g:Cf0AAeSwj6Bqgsd4</link>
+      <guid isPermaLink="false">deal-2026-09-11-40</guid>
+      <description>Category: ThinkCentre M920q. Marketplace: EBAY_DE. Price: €237,00. Buy-low target: €208,78. Condition: Gebraucht. Seller: dealo24_de.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [DDR5 32GB] €229,90 — 32GB Samsung DDR5 4800MHz SO-DIMM PC5 2Rx8 - M425R4GA3BB0-CQK0D - Laptop RAM (*technicx*)</title>
-      <link>https://www.ebay.de/itm/227466446162?_skw=DDR5+32GB&amp;hash=item34f60e8552:g:MjoAAeSwWQxqdjRk</link>
-      <guid isPermaLink="false">deal-2026-08-29-41</guid>
-      <description>Category: DDR5 32GB. Marketplace: EBAY_DE. Price: €229,90. Buy-low target: €219,09. Condition: Gebraucht. Seller: *technicx*.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [ThinkCentre M920q] €238,00 — *3Jahre GEWL* Lenovo ThinkCentre M920q Tiny i3 9Gen 4GB 250GB HDD 2.5&#x27; wi10 (dealo24_de)</title>
+      <link>https://www.ebay.de/itm/127432558776?_skw=ThinkCentre+M920q&amp;hash=item1dab9288b8:g:Yv8AAeSwsPdo70mh</link>
+      <guid isPermaLink="false">deal-2026-09-11-41</guid>
+      <description>Category: ThinkCentre M920q. Marketplace: EBAY_DE. Price: €238,00. Buy-low target: €208,78. Condition: Gebraucht. Seller: dealo24_de.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [DDR5 32GB] €244,00 — SK HYNIX 32GB RAM (2x 16GB) DDR5 Arbeitsspeicher - 5600MHz SODIMM (gaujones)</title>
-      <link>https://www.ebay.de/itm/287551311115?_skw=DDR5+32GB&amp;hash=item42f364cd0b:g:tgQAAeSwN0tqkcrw</link>
-      <guid isPermaLink="false">deal-2026-08-29-42</guid>
-      <description>Category: DDR5 32GB. Marketplace: EBAY_DE. Price: €244,00. Buy-low target: €219,09. Condition: Gebraucht. Seller: gaujones.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [ThinkCentre M920q] €238,00 — *3Jahre GEWL* Lenovo ThinkCentre M920q Tiny i5 9Gen 8GB 240GB SSD wi10 WIFI (dealo24_de)</title>
+      <link>https://www.ebay.de/itm/128030852594?_skw=ThinkCentre+M920q&amp;hash=item1dcf3bc5f2:g:t2YAAeSw5rdqgspf</link>
+      <guid isPermaLink="false">deal-2026-09-11-42</guid>
+      <description>Category: ThinkCentre M920q. Marketplace: EBAY_DE. Price: €238,00. Buy-low target: €208,78. Condition: Gebraucht. Seller: dealo24_de.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[EBAY_DE] [ThinkCentre M920q] €240,00 — Lenovo ThinkCentre M920Q TINY i5-8500T 16 GB 256 GB SSD Win11 Pro (kompre)</title>
+      <link>https://www.ebay.de/itm/307157057612?_skw=ThinkCentre+M920q&amp;hash=item4783fcc04c:g:hdYAAeSwTclqlte1</link>
+      <guid isPermaLink="false">deal-2026-09-11-43</guid>
+      <description>Category: ThinkCentre M920q. Marketplace: EBAY_DE. Price: €240,00. Buy-low target: €208,78. Condition: Gebraucht. Seller: kompre.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[EBAY_DE] [Tesla P40] €241,00 — Nvidia Tesla P40 24GB GDDR5 PCI-E 3.0 x16 GPU Accelerator  Graphics Card (duehu82)</title>
+      <link>https://www.ebay.de/itm/358770597920?_skw=Tesla+P40&amp;hash=item538864e020:g:Lv8AAeSwad1qTg0v</link>
+      <guid isPermaLink="false">deal-2026-09-11-44</guid>
+      <description>Category: Tesla P40. Marketplace: EBAY_DE. Price: €241,00. Buy-low target: €223,20. Condition: Gebraucht. Seller: duehu82.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [Tesla P40] €245,00 — Free shipping NVIDIA Tesla P40 24GB GDDR5 PCI-E 3.0 x16 GPU Accelerator Card (duehu82)</title>
       <link>https://www.ebay.de/itm/358644649716?_skw=Tesla+P40&amp;hash=item5380e30ef4:g:5ykAAOSwFExkZvOk</link>
-      <guid isPermaLink="false">deal-2026-08-29-43</guid>
-      <description>Category: Tesla P40. Marketplace: EBAY_DE. Price: €245,00. Buy-low target: €231,20. Condition: Gebraucht. Seller: duehu82.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <guid isPermaLink="false">deal-2026-09-11-45</guid>
+      <description>Category: Tesla P40. Marketplace: EBAY_DE. Price: €245,00. Buy-low target: €223,20. Condition: Gebraucht. Seller: duehu82.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [DDR5 32GB] €249,00 — 32GB (2x16GB) SO-DIMM DDR5 RAM 4800MT/s CL40 Arbeitsspeicher GOFATOO | TESTED (emotdmg88)</title>
-      <link>https://www.ebay.de/itm/377440203230?_skw=DDR5+32GB&amp;hash=item57e13071de:g:kiQAAeSw94NqiVOV</link>
-      <guid isPermaLink="false">deal-2026-08-29-44</guid>
-      <description>Category: DDR5 32GB. Marketplace: EBAY_DE. Price: €249,00. Buy-low target: €219,09. Condition: Gebraucht. Seller: emotdmg88. Was €299,00 on 2026-08-23.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [Tesla P40] €249,00 — Genuine original NVIDIA Tesla P40 24GB DDR5 Accelerator Card PCI-E FOR SERVERS (xgjhf1866)</title>
+      <link>https://www.ebay.de/itm/358641961423?_skw=Tesla+P40&amp;hash=item5380ba09cf:g:cQIAAeSw1MxqIucw</link>
+      <guid isPermaLink="false">deal-2026-09-11-46</guid>
+      <description>Category: Tesla P40. Marketplace: EBAY_DE. Price: €249,00. Buy-low target: €223,20. Condition: Gebraucht. Seller: xgjhf1866. Was €255,00 on 2026-08-23.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [DDR5 32GB] €250,00 — Dell 32GB 16Gx8 CAMM DDR5-5600 RAM (xunil99)</title>
       <link>https://www.ebay.de/itm/137595556000?_skw=DDR5+32GB&amp;hash=item20095590a0:g:Qw4AAeSw9jhqdZcy</link>
-      <guid isPermaLink="false">deal-2026-08-29-45</guid>
-      <description>Category: DDR5 32GB. Marketplace: EBAY_DE. Price: €250,00. Buy-low target: €219,09. Condition: Gebraucht. Seller: xunil99.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <guid isPermaLink="false">deal-2026-09-11-47</guid>
+      <description>Category: DDR5 32GB. Marketplace: EBAY_DE. Price: €250,00. Buy-low target: €227,16. Condition: Gebraucht. Seller: xunil99.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [DDR5 32GB] €250,00 — Kingston 32gb DDR5 UDIMM 4800MT/s KVR48U40BD8 (trambounet)</title>
       <link>https://www.ebay.de/itm/158067128946?_skw=DDR5+32GB&amp;hash=item24cd88fa72:g:MRwAAeSwKwBqToZk</link>
-      <guid isPermaLink="false">deal-2026-08-29-46</guid>
-      <description>Category: DDR5 32GB. Marketplace: EBAY_DE. Price: €250,00. Buy-low target: €219,09. Condition: Gebraucht. Seller: trambounet.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <guid isPermaLink="false">deal-2026-09-11-48</guid>
+      <description>Category: DDR5 32GB. Marketplace: EBAY_DE. Price: €250,00. Buy-low target: €227,16. Condition: Gebraucht. Seller: trambounet.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [DDR5 32GB] €250,00 — 32 GB DDR5-5600 SO-DIMM RAM – 2×16 GB Wodposit – PC5-5600 (benj109474)</title>
-      <link>https://www.ebay.de/itm/147533270224?_skw=DDR5+32GB&amp;hash=item2259ab0cd0:g:uO0AAeSwe9ZqjVI3</link>
-      <guid isPermaLink="false">deal-2026-08-29-47</guid>
-      <description>Category: DDR5 32GB. Marketplace: EBAY_DE. Price: €250,00. Buy-low target: €219,09. Condition: Gebraucht. Seller: benj109474.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>[EBAY_DE] [Tesla P40] €255,00 — Genuine original NVIDIA Tesla P40 24GB DDR5 Accelerator Card PCI-E FOR SERVERS (xgjhf1866)</title>
-      <link>https://www.ebay.de/itm/358641961423?_skw=Tesla+P40&amp;hash=item5380ba09cf:g:cQIAAeSw1MxqIucw</link>
-      <guid isPermaLink="false">deal-2026-08-29-48</guid>
-      <description>Category: Tesla P40. Marketplace: EBAY_DE. Price: €255,00. Buy-low target: €231,20. Condition: Gebraucht. Seller: xgjhf1866.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>[EBAY_DE] [Tesla P40] €260,00 — NVIDIA Tesla P40 24GB GDDR5 PCI-E 3.0 x16 GPU Accelerator Card (duehu82)</title>
-      <link>https://www.ebay.de/itm/358644659156?_skw=Tesla+P40&amp;hash=item5380e333d4:g:jkEAAOSwfXZmclD1</link>
-      <guid isPermaLink="false">deal-2026-08-29-49</guid>
-      <description>Category: Tesla P40. Marketplace: EBAY_DE. Price: €260,00. Buy-low target: €231,20. Condition: Gebraucht. Seller: duehu82.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>[EBAY_DE] [Nvidia Quadro RTX] €490,00 — NVIDIA Quadro RTX 5000 – 3072 CUDA / 16GB GDDR6 / RT‑ &amp; Tensor‑Cores / DP 1.4 (burc-3871)</title>
-      <link>https://www.ebay.de/itm/377333317958?_skw=Quadro+RTX&amp;hash=item57dad18146:g:HMcAAeSwzZZqUKhl</link>
-      <guid isPermaLink="false">deal-2026-08-29-50</guid>
-      <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €490,00. Buy-low target: €481,13. Condition: Gebraucht. Seller: burc-3871.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>[EBAY_DE] [Nvidia Quadro RTX] €490,66 — NVIDIA Quadro RTX 4000 Grafikkarte gebraucht für Teile nicht getestet Müll (dr_nine)</title>
-      <link>https://www.ebay.de/itm/117364731250?_skw=Quadro+RTX&amp;hash=item1b537bad72:g:hakAAeSwN0tqg0jb</link>
-      <guid isPermaLink="false">deal-2026-08-29-51</guid>
-      <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €490,66. Buy-low target: €481,13. Condition: Gebraucht. Seller: dr_nine. Was €494,15 on 2026-08-18.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>[EBAY_DE] [Nvidia Quadro RTX] €499,00 — NVIDIA Quadro RTX 5000 16GB GDDR6 Raytracing Workstation GPU – Top Zustand (b4b35)</title>
-      <link>https://www.ebay.de/itm/257540421357?_skw=Quadro+RTX&amp;hash=item3bf69af6ed:g:Qr8AAeSwp2JqHdjd</link>
-      <guid isPermaLink="false">deal-2026-08-29-52</guid>
-      <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €499,00. Buy-low target: €481,13. Condition: Gebraucht. Seller: b4b35.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>[EBAY_DE] [Nvidia Quadro RTX] €499,00 — NVIDIA Quadro RTX 5000 Workstation Grafikkarte N19E-Q5-A1 Mobile GPU 16GB GDDR6 (fruicy-juit)</title>
-      <link>https://www.ebay.de/itm/128015306080?_skw=Quadro+RTX&amp;hash=item1dce4e8d60:g:mGUAAeSwYEVqdbTX</link>
-      <guid isPermaLink="false">deal-2026-08-29-53</guid>
-      <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €499,00. Buy-low target: €481,13. Condition: Gebraucht. Seller: fruicy-juit.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>[EBAY_DE] [Nvidia Quadro RTX] €500,00 — NVIDIA Quadro RTX 5000 16GB GDDR6 Workstation Grafikkarte (nextserv-01)</title>
-      <link>https://www.ebay.de/itm/137485762354?_skw=Quadro+RTX&amp;hash=item2002ca3f32:g:hgkAAeSwFH9qSsZG</link>
-      <guid isPermaLink="false">deal-2026-08-29-54</guid>
-      <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €500,00. Buy-low target: €481,13. Condition: Gebraucht. Seller: nextserv-01.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>[EBAY_DE] [Nvidia Quadro RTX] €516,61 — NVIDIA Quadro RTX 4000 und M4000 Grafikkarten Set gebraucht für Workstation (dr_nine)</title>
-      <link>https://www.ebay.de/itm/117364620159?_skw=Quadro+RTX&amp;hash=item1b5379fb7f:g:8VIAAeSwjspqgzUA</link>
-      <guid isPermaLink="false">deal-2026-08-29-55</guid>
-      <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €516,61. Buy-low target: €481,13. Condition: Gebraucht. Seller: dr_nine. Was €520,04 on 2026-08-18.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>[EBAY_DE] [Nvidia Quadro RTX] €516,80 — NVIDIA QUADRO RTX 5000 16GB GDDR6 PCI-E Grafikkarte (t-traderz)</title>
+      <title>[EBAY_DE] [Nvidia Quadro RTX] €517,70 — NVIDIA QUADRO RTX 5000 16GB GDDR6 PCI-E Grafikkarte (t-traderz)</title>
       <link>https://www.ebay.de/itm/327331595016?_skw=Quadro+RTX&amp;hash=item4c367bc308:g:1zIAAOSwME5m21CG</link>
-      <guid isPermaLink="false">deal-2026-08-29-56</guid>
-      <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €516,80. Buy-low target: €481,13. Condition: Gebraucht. Seller: t-traderz.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <guid isPermaLink="false">deal-2026-09-11-49</guid>
+      <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €517,70. Buy-low target: €511,72. Condition: Gebraucht. Seller: t-traderz. Was €516,80 on 2026-08-29.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [Nvidia Quadro RTX] €519,23 — NVIDIA Quadro RTX 4000 8GB GDDR6 256-bit Grafikkarte Gebraucht (dr_nine)</title>
-      <link>https://www.ebay.de/itm/117364758596?_skw=Quadro+RTX&amp;hash=item1b537c1844:g:390AAeSwgqhqg02b</link>
-      <guid isPermaLink="false">deal-2026-08-29-57</guid>
-      <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €519,23. Buy-low target: €481,13. Condition: Gebraucht. Seller: dr_nine. Was €522,93 on 2026-08-18.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [Nvidia Quadro RTX] €542,99 — Nvidia Quadro RTX 5000 Workstation-GPU 16 GB GDDR6 4x DP, USB-C PCI-E   #330025 (computer-store-berlin)</title>
+      <link>https://www.ebay.de/itm/117367830423?_skw=Quadro+RTX&amp;hash=item1b53aaf797:g:oTMAAeSwG9Fqi-Nx</link>
+      <guid isPermaLink="false">deal-2026-09-11-50</guid>
+      <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €542,99. Buy-low target: €511,72. Condition: Gebraucht. Seller: computer-store-berlin. Was €548,90 on 2026-09-10.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [Nvidia Quadro RTX] €529,00 — NVIDIA Quadro RTX 5000 FH PCIe-x16 16GB GDDR6 FH Workstation Ray Tracing GPU (bargain*hardware)</title>
-      <link>https://www.ebay.de/itm/146401583707?_skw=Quadro+RTX&amp;hash=item221636e25b:g:ZzUAAeSwS4pqfshM</link>
-      <guid isPermaLink="false">deal-2026-08-29-58</guid>
-      <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €529,00. Buy-low target: €481,13. Condition: Gebraucht. Seller: bargain*hardware.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>[EBAY_DE] [Nvidia Quadro RTX] €529,00 — HP (L44055-001) NVIDIA Quadro RTX-5000 - FH PCIe-x16 16GB GDDR6 GPU (L40548-001) (bargain*hardware)</title>
-      <link>https://www.ebay.de/itm/126950863290?_skw=Quadro+RTX&amp;hash=item1d8edc71ba:g:dLoAAeSwHWVqSftg</link>
-      <guid isPermaLink="false">deal-2026-08-29-59</guid>
-      <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €529,00. Buy-low target: €481,13. Condition: Gebraucht. Seller: bargain*hardware.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>[EBAY_DE] [Nvidia Quadro RTX] €531,08 — NVIDIA Quadro RTX 4000 Professional Grafikkarte 8GB GDDR6 GPU getestet (risingsungaming)</title>
+      <title>[EBAY_DE] [Nvidia Quadro RTX] €545,72 — NVIDIA Quadro RTX 4000 Professional Grafikkarte 8GB GDDR6 GPU getestet (risingsungaming)</title>
       <link>https://www.ebay.de/itm/206491453056?_skw=Quadro+RTX&amp;hash=item3013d98680:g:WYgAAeSw7Ddqf3Pp</link>
-      <guid isPermaLink="false">deal-2026-08-29-60</guid>
-      <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €531,08. Buy-low target: €481,13. Condition: Gebraucht. Seller: risingsungaming. Was €668,61 on 2026-08-18.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <guid isPermaLink="false">deal-2026-09-11-51</guid>
+      <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €545,72. Buy-low target: €511,72. Condition: Gebraucht. Seller: risingsungaming. Was €668,61 on 2026-08-18.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [Nvidia Quadro RTX] €539,23 — NVIDIA Quadro RTX 4000 Professional Grafikkarte 8GB GDDR6 PCIe x16 getestet (risingsungaming)</title>
+      <title>[EBAY_DE] [Nvidia Quadro RTX] €549,99 — PNY Quadro RTX 5000, 16GB GDDR6 GPU Grafikkarte - Top Zustand (power-builds)</title>
+      <link>https://www.ebay.de/itm/318800324792?_skw=Quadro+RTX&amp;hash=item4a39fae8b8:g:fC0AAeSw0jpqlDfW</link>
+      <guid isPermaLink="false">deal-2026-09-11-52</guid>
+      <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €549,99. Buy-low target: €511,72. Condition: Gebraucht. Seller: power-builds.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[EBAY_DE] [Nvidia Quadro RTX] €554,10 — NVIDIA Quadro RTX 4000 Professional Grafikkarte 8GB GDDR6 PCIe x16 getestet (risingsungaming)</title>
       <link>https://www.ebay.de/itm/206365991879?_skw=Quadro+RTX&amp;hash=item300c5f23c7:g:ldQAAeSw1cZqOHWT</link>
-      <guid isPermaLink="false">deal-2026-08-29-61</guid>
-      <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €539,23. Buy-low target: €481,13. Condition: Gebraucht. Seller: risingsungaming. Was €543,11 on 2026-08-18.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <guid isPermaLink="false">deal-2026-09-11-53</guid>
+      <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €554,10. Buy-low target: €511,72. Condition: Gebraucht. Seller: risingsungaming. Was €543,11 on 2026-08-18.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [RTX 5060] €556,00 — INNO3D GeForce RTX 5060 Ti X3 OC 16GB – gebraucht, getestet (hennkhodi_0)</title>
-      <link>https://www.ebay.de/itm/366632817694?_skw=RTX+5060+16GB&amp;hash=item555d04d41e:g:zywAAeSwe-pqkJnc</link>
-      <guid isPermaLink="false">deal-2026-08-29-62</guid>
-      <description>Category: RTX 5060. Marketplace: EBAY_DE. Price: €556,00. Buy-low target: €519,20. Condition: Gebraucht. Seller: hennkhodi_0.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [Nvidia Quadro RTX] €555,55 — NVIDIA Quadro RTX 5000 16GB GDDR6 PCIe CAD 3D Workstation GPU 4x DP LENOVO (it-remarketing-siegen)</title>
+      <link>https://www.ebay.de/itm/158220952108?_skw=Quadro+RTX&amp;hash=item24d6b4222c:g:PNYAAeSwdy9qjSkL</link>
+      <guid isPermaLink="false">deal-2026-09-11-54</guid>
+      <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €555,55. Buy-low target: €511,72. Condition: Gebraucht. Seller: it-remarketing-siegen.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [Tesla T4] €557,24 — HP NVIDIA Tesla T4 16GB GDDR6 GPU Grafikkarte P17819-B21 R0W29A (cloud_storage_corp)</title>
-      <link>https://www.ebay.de/itm/188837566628?_skw=Tesla+T4&amp;hash=item2bf79898a4:g:fvkAAOSwcTZoGF6k</link>
-      <guid isPermaLink="false">deal-2026-08-29-63</guid>
-      <description>Category: Tesla T4. Marketplace: EBAY_DE. Price: €557,24. Buy-low target: €519,99. Condition: Gebraucht. Seller: cloud_storage_corp.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [Nvidia Quadro RTX] €570,00 — NVIDIA Quadro RTX 5000 – 3072 CUDA / 16GB GDDR6 / RT‑ &amp; Tensor‑Cores / DP 1.4 (burc-3871)</title>
+      <link>https://www.ebay.de/itm/377333317958?_skw=Quadro+RTX&amp;hash=item57dad18146:g:HMcAAeSwzZZqUKhl</link>
+      <guid isPermaLink="false">deal-2026-09-11-55</guid>
+      <description>Category: Nvidia Quadro RTX. Marketplace: EBAY_DE. Price: €570,00. Buy-low target: €511,72. Condition: Gebraucht. Seller: burc-3871. Was €490,00 on 2026-08-18.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [RTX 5060] €569,90 — Palit GeForce RTX 5060 Ti Infinity 3 16GB + Rechnung (pat8787)</title>
-      <link>https://www.ebay.de/itm/407176314450?_skw=RTX+5060+16GB&amp;hash=item5ecd997e52:g:Nm8AAeSwrBFqkXv-</link>
-      <guid isPermaLink="false">deal-2026-08-29-64</guid>
-      <description>Category: RTX 5060. Marketplace: EBAY_DE. Price: €569,90. Buy-low target: €519,20. Condition: Gebraucht. Seller: pat8787.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [RTX 5060] €580,00 — Palit Infinity 3 NVIDIA GeForce RTX 5060 Ti Grafikkarte 16 GB (rebbejens)</title>
+      <link>https://www.ebay.de/itm/336778081964?_skw=RTX+5060+16GB&amp;hash=item4e6989b6ac:g:RvwAAeSwoAJqmrMJ</link>
+      <guid isPermaLink="false">deal-2026-09-11-56</guid>
+      <description>Category: RTX 5060. Marketplace: EBAY_DE. Price: €580,00. Buy-low target: €508,60. Condition: Gebraucht. Seller: rebbejens. Was €600,00 on 2026-09-08.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [RTX 4070 Ti Super] €840,00 — ASUS Dual GeForce RTX 4070 Ti SUPER OC Edition 16GB GDDR6X (kodo2505)</title>
-      <link>https://www.ebay.de/itm/377440506835?_skw=RTX+4070+Ti+Super&amp;hash=item57e13513d3:g:WSgAAeSwiCJqiYw7</link>
-      <guid isPermaLink="false">deal-2026-08-29-65</guid>
-      <description>Category: RTX 4070 Ti Super. Marketplace: EBAY_DE. Price: €840,00. Buy-low target: €732,00. Condition: Gebraucht. Seller: kodo2505.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [Tesla T4] €611,56 — Dell NVIDIA Tesla T4 16GB Graphics Accelerator | 2G183 (etb-technologies)</title>
+      <link>https://www.ebay.de/itm/287510184070?_skw=Tesla+T4&amp;hash=item42f0f14086:g:veYAAeSwMeVqeK4b</link>
+      <guid isPermaLink="false">deal-2026-09-11-57</guid>
+      <description>Category: Tesla T4. Marketplace: EBAY_DE. Price: €611,56. Buy-low target: €567,60. Condition: Gebraucht. Seller: etb-technologies. Was €612,25 on 2026-08-23.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [RTX 4080 Super] €870,00 — ZOTAC Gaming GeForce RTX 4080 SUPER 16GB GDDR6X Trinity Black-Edition Triple-Fan (goldenv)</title>
-      <link>https://www.ebay.de/itm/327301344790?_skw=RTX+4080+Super&amp;hash=item4c34ae2e16:g:4E0AAeSwXRhqd6rD</link>
-      <guid isPermaLink="false">deal-2026-08-29-66</guid>
-      <description>Category: RTX 4080 Super. Marketplace: EBAY_DE. Price: €870,00. Buy-low target: €799,60. Condition: Gebraucht. Seller: goldenv. Was €899,00 on 2026-08-22.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [Tesla T4] €611,56 — HP NVIDIA Tesla T4 16GB Graphics Accelerator | P09571-001 (etb-technologies)</title>
+      <link>https://www.ebay.de/itm/377401226418?_skw=Tesla+T4&amp;hash=item57deddb4b2:g:22cAAeSwOfRqdcyd</link>
+      <guid isPermaLink="false">deal-2026-09-11-58</guid>
+      <description>Category: Tesla T4. Marketplace: EBAY_DE. Price: €611,56. Buy-low target: €567,60. Condition: Gebraucht. Seller: etb-technologies. Was €612,25 on 2026-08-23.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [Gaming PC mit RTX 3080] €890,00 — Gaming PC | Ryzen 7 5700X | RTX 3080 | 32GB RAM | 256GB SSD | Win11 Pro (streppo)</title>
-      <link>https://www.ebay.de/itm/820034832787?_skw=Gaming+PC+RTX+3080&amp;hash=itembeede28993:g:FtwAAeSwNoNqibl8</link>
-      <guid isPermaLink="false">deal-2026-08-29-67</guid>
-      <description>Category: Gaming PC mit RTX 3080. Marketplace: EBAY_DE. Price: €890,00. Buy-low target: €879,40. Condition: Gebraucht. Seller: streppo.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [RTX 4070 Ti Super] €799,97 — Gigabyte GeForce RTX 4070 Ti SUPER GAMING OC 16GB GDDR6X Grafikkarte mit HDMI DP (elektrocenter24)</title>
+      <link>https://www.ebay.de/itm/287557976967?_skw=RTX+4070+Ti+Super&amp;hash=item42f3ca8387:g:f-gAAeSwrj5qlqr-</link>
+      <guid isPermaLink="false">deal-2026-09-11-59</guid>
+      <description>Category: RTX 4070 Ti Super. Marketplace: EBAY_DE. Price: €799,97. Buy-low target: €799,60. Condition: Gebraucht. Seller: elektrocenter24.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [RTX 4080 Super] €899,00 — NVIDIA GeForce RTX 4080 Super 16GB GDDR6X Gaming Grafikkarte Acer OEM (nmc-systems)</title>
-      <link>https://www.ebay.de/itm/318318043136?_skw=RTX+4080+Super&amp;hash=item4a1d3be000:g:wicAAeSw8iBqCfEV</link>
-      <guid isPermaLink="false">deal-2026-08-29-68</guid>
-      <description>Category: RTX 4080 Super. Marketplace: EBAY_DE. Price: €899,00. Buy-low target: €799,60. Condition: Gebraucht. Seller: nmc-systems.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [RTX 4070 Ti Super] €850,00 — Palit GeForce RTX 4070 Ti SUPER JetStream OC 16 GB GDDR6X HDMI DP PCI-E  #334592 (survivalt_47)</title>
+      <link>https://www.ebay.de/itm/388820690122?_skw=RTX+4070+Ti+Super&amp;hash=item5a8784e4ca:g:DqEAAeSwj3xomRsX</link>
+      <guid isPermaLink="false">deal-2026-09-11-60</guid>
+      <description>Category: RTX 4070 Ti Super. Marketplace: EBAY_DE. Price: €850,00. Buy-low target: €799,60. Condition: Gebraucht. Seller: survivalt_47.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [RTX 5070 16GB] €906,00 — MSI GeForce RTX 5070 Ti 16G Shadow 3X OC Gaming | AI | Grafikkarte 16GB GDDR7 (boss917)</title>
-      <link>https://www.ebay.de/itm/188800993879?_skw=RTX+5070+16GB&amp;hash=item2bf56a8a57:g:f0QAAeSwK~ZqgY9-</link>
-      <guid isPermaLink="false">deal-2026-08-29-69</guid>
-      <description>Category: RTX 5070 16GB. Marketplace: EBAY_DE. Price: €906,00. Buy-low target: €836,00. Condition: Gebraucht. Seller: boss917. Was €939,99 on 2026-08-22.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [RTX 4080 Super] €939,00 — ASUS ProArt GeForce RTX 4080 Super OC 16GB GDDR6X  NVIDIA Grafikkarte (sogu4136)</title>
+      <link>https://www.ebay.de/itm/227509173898?_skw=RTX+4080+Super&amp;hash=item34f89a7e8a:g:ch4AAeSw-qlqmlqg</link>
+      <guid isPermaLink="false">deal-2026-09-11-61</guid>
+      <description>Category: RTX 4080 Super. Marketplace: EBAY_DE. Price: €939,00. Buy-low target: €880,00. Condition: Gebraucht. Seller: sogu4136. Was €950,00 on 2026-09-08.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [Gaming PC mit RTX 3080] €949,99 — Gaming PC i7-9700F 3,0GHz 32GB DDR4 RTX 3080 Ti 12GB NVMe 1TB Win 11 WLAN (so_la_76)</title>
-      <link>https://www.ebay.de/itm/137297450992?_skw=Gaming+PC+RTX+3080&amp;hash=item1ff790d7f0:g:QdIAAeSwQOlqAHFK</link>
-      <guid isPermaLink="false">deal-2026-08-29-70</guid>
-      <description>Category: Gaming PC mit RTX 3080. Marketplace: EBAY_DE. Price: €949,99. Buy-low target: €879,40. Condition: Gebraucht. Seller: so_la_76.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [RTX 4080 Super] €949,90 — ⭐️ Premium Nvidia RTX 4080 Super - Gigabyte GAMING OC 16GB GDDR6X Grafikkarte (pretenamav)</title>
+      <link>https://www.ebay.de/itm/188911855380?_skw=RTX+4080+Super&amp;hash=item2bfc062714:g:1OEAAeSwDahqomEH</link>
+      <guid isPermaLink="false">deal-2026-09-11-62</guid>
+      <description>Category: RTX 4080 Super. Marketplace: EBAY_DE. Price: €949,90. Buy-low target: €880,00. Condition: Gebraucht. Seller: pretenamav.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [RTX 5070 16GB] €950,00 — Grafikkarte INNO3D GeForce RTX 5070 Ti X3  - 16GB GDDR7, HDMI, 3x DP - Wie NEU ! (csk_1234575)</title>
-      <link>https://www.ebay.de/itm/800572504192?_skw=RTX+5070+16GB&amp;hash=itemba65d6f880:g:34cAAeSwGEZqkIKD</link>
-      <guid isPermaLink="false">deal-2026-08-29-71</guid>
-      <description>Category: RTX 5070 16GB. Marketplace: EBAY_DE. Price: €950,00. Buy-low target: €836,00. Condition: Gebraucht. Seller: csk_1234575.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>[EBAY_DE] [Gaming PC mit RTX 3080] €950,00 — Gaming Pc Corsair iCUE Gaming PC Tower Ryzen 5 3600 6-Core 32GB RAM RTX 3080 RGB (merfa6101)</title>
-      <link>https://www.ebay.de/itm/158082253614?_skw=Gaming+PC+RTX+3080&amp;hash=item24ce6fc32e:g:0hwAAeSwQw5qVisE</link>
-      <guid isPermaLink="false">deal-2026-08-29-72</guid>
-      <description>Category: Gaming PC mit RTX 3080. Marketplace: EBAY_DE. Price: €950,00. Buy-low target: €879,40. Condition: Gebraucht. Seller: merfa6101.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>[EBAY_DE] [Gaming PC mit RTX 3080] €950,00 — Gaming PC i7 12700k,32 GB DDR4 Ram,Asus Rog Strix RTX 3080 (katzenfreund02)</title>
-      <link>https://www.ebay.de/itm/158191594923?_skw=Gaming+PC+RTX+3080&amp;hash=item24d4f42dab:g:IEsAAeSwJmhqkJLL</link>
-      <guid isPermaLink="false">deal-2026-08-29-73</guid>
-      <description>Category: Gaming PC mit RTX 3080. Marketplace: EBAY_DE. Price: €950,00. Buy-low target: €879,40. Condition: Gebraucht. Seller: katzenfreund02.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [RTX 4080 Super] €955,00 — RTX 4080 SUPER AMP – Garantie bis 09/2027 – OVP – Top Zustand (matip_7363)</title>
+      <link>https://www.ebay.de/itm/366642041600?_skw=RTX+4080+Super&amp;hash=item555d919300:g:3y8AAeSwqcxpn2nZ</link>
+      <guid isPermaLink="false">deal-2026-09-11-63</guid>
+      <description>Category: RTX 4080 Super. Marketplace: EBAY_DE. Price: €955,00. Buy-low target: €880,00. Condition: Gebraucht. Seller: matip_7363. Was €970,00 on 2026-09-08.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [Gaming PC mit RTX 3080] €999,00 — AMD Ryzen 7 5800X Gaming PC, 32GB RAM, RTX 3080, 1TB SSD, Win11 Pro Blu-ray WLAN (workstation4u)</title>
       <link>https://www.ebay.de/itm/257207886880?_skw=Gaming+PC+RTX+3080&amp;hash=item3be2c8e420:g:DeMAAeSwEeRorsRz</link>
-      <guid isPermaLink="false">deal-2026-08-29-74</guid>
-      <description>Category: Gaming PC mit RTX 3080. Marketplace: EBAY_DE. Price: €999,00. Buy-low target: €879,40. Condition: Gebraucht. Seller: workstation4u.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <guid isPermaLink="false">deal-2026-09-11-64</guid>
+      <description>Category: Gaming PC mit RTX 3080. Marketplace: EBAY_DE. Price: €999,00. Buy-low target: €959,60. Condition: Gebraucht. Seller: workstation4u.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [Gaming PC mit RTX 3080] €999,00 — Gaming PC - Ryzen 7 5800X - RTX 3080 SUPRIM - 32GB RAM (subz3rox)</title>
       <link>https://www.ebay.de/itm/127396213149?_skw=Gaming+PC+RTX+3080&amp;hash=item1da967f19d:g:JngAAeSwCupo1rFw</link>
-      <guid isPermaLink="false">deal-2026-08-29-75</guid>
-      <description>Category: Gaming PC mit RTX 3080. Marketplace: EBAY_DE. Price: €999,00. Buy-low target: €879,40. Condition: Gebraucht. Seller: subz3rox.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <guid isPermaLink="false">deal-2026-09-11-65</guid>
+      <description>Category: Gaming PC mit RTX 3080. Marketplace: EBAY_DE. Price: €999,00. Buy-low target: €959,60. Condition: Gebraucht. Seller: subz3rox.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [Gaming PC mit RTX 3080] €999,00 — Gaming PC - AMD Ryzen 5,RTX 3080 Suprim X Lian Li O11DW, 32 GB, Wasserkühlung (javaz9076)</title>
       <link>https://www.ebay.de/itm/406722065604?_skw=Gaming+PC+RTX+3080&amp;hash=item5eb28634c4:g:d6EAAeSw50Npoke9</link>
-      <guid isPermaLink="false">deal-2026-08-29-76</guid>
-      <description>Category: Gaming PC mit RTX 3080. Marketplace: EBAY_DE. Price: €999,00. Buy-low target: €879,40. Condition: Gebraucht. Seller: javaz9076. Was €1.100,00 on 2026-08-18.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <guid isPermaLink="false">deal-2026-09-11-66</guid>
+      <description>Category: Gaming PC mit RTX 3080. Marketplace: EBAY_DE. Price: €999,00. Buy-low target: €959,60. Condition: Gebraucht. Seller: javaz9076. Was €1.100,00 on 2026-08-18.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [Gaming PC mit RTX 3080] €1.000,00 — Gaming Pc i7 11700kf rtx3080 (kaan200)</title>
       <link>https://www.ebay.de/itm/156402929473?_skw=Gaming+PC+RTX+3080&amp;hash=item246a574f41:g:yZQAAOSwb2Rm4Y~5</link>
-      <guid isPermaLink="false">deal-2026-08-29-77</guid>
-      <description>Category: Gaming PC mit RTX 3080. Marketplace: EBAY_DE. Price: €1.000,00. Buy-low target: €879,40. Condition: Gebraucht. Seller: kaan200.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <guid isPermaLink="false">deal-2026-09-11-67</guid>
+      <description>Category: Gaming PC mit RTX 3080. Marketplace: EBAY_DE. Price: €1.000,00. Buy-low target: €959,60. Condition: Gebraucht. Seller: kaan200.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[EBAY_DE] [Gaming PC mit RTX 3080] €1.000,00 — Mittelklasse Gaming PC MSI Gaming Z Trio RTX 3080 10G/AMD RYZEN 5 4500/32GB RAM (phischrte0)</title>
+      <link>https://www.ebay.de/itm/820084332455?_skw=Gaming+PC+RTX+3080&amp;hash=itembef0d5d7a7:g:Ur4AAeSwEU1ql1vX</link>
+      <guid isPermaLink="false">deal-2026-09-11-68</guid>
+      <description>Category: Gaming PC mit RTX 3080. Marketplace: EBAY_DE. Price: €1.000,00. Buy-low target: €959,60. Condition: Gebraucht. Seller: phischrte0. Was €1.200,00 on 2026-09-08.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [Gaming PC mit RTX 3080] €1.001,00 — weom Gaming-PC Tower AMD Ryzen 9 5900X NVIDIA GeForce RTX 3080 RGB schwarz (rein_1085)</title>
       <link>https://www.ebay.de/itm/377337132553?_skw=Gaming+PC+RTX+3080&amp;hash=item57db0bb609:g:vPsAAeSw8QJqUy6T</link>
-      <guid isPermaLink="false">deal-2026-08-29-78</guid>
-      <description>Category: Gaming PC mit RTX 3080. Marketplace: EBAY_DE. Price: €1.001,00. Buy-low target: €879,40. Condition: Gebraucht. Seller: rein_1085.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <guid isPermaLink="false">deal-2026-09-11-69</guid>
+      <description>Category: Gaming PC mit RTX 3080. Marketplace: EBAY_DE. Price: €1.001,00. Buy-low target: €959,60. Condition: Gebraucht. Seller: rein_1085.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [RTX 3090] €1.190,00 — RTX 3090 24GB Zotac Trinity Nvidia AI GPU graphics card grafikkarte (mypccampbg)</title>
-      <link>https://www.ebay.de/itm/237035453662?_skw=RTX+3090&amp;hash=item373069fcde:g:CxEAAeSwsx9qju9X</link>
-      <guid isPermaLink="false">deal-2026-08-29-79</guid>
-      <description>Category: RTX 3090. Marketplace: EBAY_DE. Price: €1.190,00. Buy-low target: €1.119,92. Condition: Gebraucht. Seller: mypccampbg.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [Gaming PC mit RTX 3080] €1.050,00 — gaming pc rtx 3080/ 32gb ram/i7 12700kf / Abholung (tho2868)</title>
+      <link>https://www.ebay.de/itm/306179180909?_skw=Gaming+PC+RTX+3080&amp;hash=item4749b3896d:g:aEEAAeSwhuxn1FnO</link>
+      <guid isPermaLink="false">deal-2026-09-11-70</guid>
+      <description>Category: Gaming PC mit RTX 3080. Marketplace: EBAY_DE. Price: €1.050,00. Buy-low target: €959,60. Condition: Gebraucht. Seller: tho2868.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [RTX 3090] €1.250,00 — NVIDIA GeForce RTX 3090 Founders Edition 24GB GDDR6X Grafikkarte... (tjungblut)</title>
-      <link>https://www.ebay.de/itm/278308854735?_skw=RTX+3090&amp;hash=item40cc801bcf:g:CHcAAeSwiIVqjRKr</link>
-      <guid isPermaLink="false">deal-2026-08-29-80</guid>
-      <description>Category: RTX 3090. Marketplace: EBAY_DE. Price: €1.250,00. Buy-low target: €1.119,92. Condition: Gebraucht. Seller: tjungblut.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [Gaming PC mit RTX 3080] €1.050,00 — Gaming Pc Rtx 3080 Suprim X I9 11900k (lunico_801)</title>
+      <link>https://www.ebay.de/itm/820077548086?_skw=Gaming+PC+RTX+3080&amp;hash=itembef06e5236:g:6IIAAeSwjFZql~LM</link>
+      <guid isPermaLink="false">deal-2026-09-11-71</guid>
+      <description>Category: Gaming PC mit RTX 3080. Marketplace: EBAY_DE. Price: €1.050,00. Buy-low target: €959,60. Condition: Gebraucht. Seller: lunico_801.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [RTX 3090] €1.285,00 — ASUS ROG Strix GeForce RTX 3090 OC 24GB PCI Express ROG-STRIX-RTX3090-O24G (abu.abdal_65)</title>
-      <link>https://www.ebay.de/itm/820058171727?_skw=RTX+3090&amp;hash=itembeef46a94f:g:FPgAAeSwZsBqkYa-</link>
-      <guid isPermaLink="false">deal-2026-08-29-81</guid>
-      <description>Category: RTX 3090. Marketplace: EBAY_DE. Price: €1.285,00. Buy-low target: €1.119,92. Condition: Gebraucht. Seller: abu.abdal_65.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [Gaming PC mit RTX 3080] €1.099,00 — AMD Ryzen 7 5700X3D Gaming PC 32GB RAM, RTX 3080, 1TB SSD Win11 Pro Blu-ray WLAN (workstation4u)</title>
+      <link>https://www.ebay.de/itm/257207881907?_skw=Gaming+PC+RTX+3080&amp;hash=item3be2c8d0b3:g:DeMAAeSwEeRorsRz</link>
+      <guid isPermaLink="false">deal-2026-09-11-72</guid>
+      <description>Category: Gaming PC mit RTX 3080. Marketplace: EBAY_DE. Price: €1.099,00. Buy-low target: €959,60. Condition: Gebraucht. Seller: workstation4u.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
-      <title>[EBAY_DE] [RTX 3090 Ti] €1.400,00 — Gigabyte AORUS RTX 3090 Ti Xtreme Waterforce 24GB (hart-4522)</title>
-      <link>https://www.ebay.de/itm/147515428847?_skw=RTX+3090+Ti&amp;hash=item22589acfef:g:lywAAeSwMtZqhb~K</link>
-      <guid isPermaLink="false">deal-2026-08-29-82</guid>
-      <description>Category: RTX 3090 Ti. Marketplace: EBAY_DE. Price: €1.400,00. Buy-low target: €1.319,20. Condition: Gebraucht. Seller: hart-4522.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <title>[EBAY_DE] [Gaming PC mit RTX 3080] €1.100,00 — Gaming PC mit RTX3080 (denomeno69)</title>
+      <link>https://www.ebay.de/itm/317503149041?_skw=Gaming+PC+RTX+3080&amp;hash=item49eca993f1:g:eIIAAeSwbTRpCk0R</link>
+      <guid isPermaLink="false">deal-2026-09-11-73</guid>
+      <description>Category: Gaming PC mit RTX 3080. Marketplace: EBAY_DE. Price: €1.100,00. Buy-low target: €959,60. Condition: Gebraucht. Seller: denomeno69.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[EBAY_DE] [Gaming PC mit RTX 3080] €1.100,00 — Gaming Pc RTX 3080 Ryzen 5900x (akxy32)</title>
+      <link>https://www.ebay.de/itm/176940114998?_skw=Gaming+PC+RTX+3080&amp;hash=item293273e436:g:eBcAAeSwaGVn3ItF</link>
+      <guid isPermaLink="false">deal-2026-09-11-74</guid>
+      <description>Category: Gaming PC mit RTX 3080. Marketplace: EBAY_DE. Price: €1.100,00. Buy-low target: €959,60. Condition: Gebraucht. Seller: akxy32.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[EBAY_DE] [Gaming PC mit RTX 3080] €1.100,00 — gaming pc 3080 Ryzen 7 5800 (fri_9398)</title>
+      <link>https://www.ebay.de/itm/167333256762?_skw=Gaming+PC+RTX+3080&amp;hash=item26f5d6de3a:g:ffcAAeSwx-lnslfi</link>
+      <guid isPermaLink="false">deal-2026-09-11-75</guid>
+      <description>Category: Gaming PC mit RTX 3080. Marketplace: EBAY_DE. Price: €1.100,00. Buy-low target: €959,60. Condition: Gebraucht. Seller: fri_9398.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[EBAY_DE] [RTX 3090] €1.300,00 — ASUS GeForce 3090 RTX Turbo 24GB (mehrere vorhanden) (surfinger1000)</title>
+      <link>https://www.ebay.de/itm/287574944368?_skw=RTX+3090&amp;hash=item42f4cd6a70:g:wDUAAeSwpSVqlAAA</link>
+      <guid isPermaLink="false">deal-2026-09-11-76</guid>
+      <description>Category: RTX 3090. Marketplace: EBAY_DE. Price: €1.300,00. Buy-low target: €1.200,00. Condition: Gebraucht. Seller: surfinger1000.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[EBAY_DE] [RTX 3090] €1.349,00 — Gainward GeForce RTX 3090 Phantom GS 24GB GDDR6X - Top Zustand - OVP - AI / KI / (robotronic71)</title>
+      <link>https://www.ebay.de/itm/298662408333?_skw=RTX+3090&amp;hash=item4589aab08d:g:WlsAAeSwl2dqovgu</link>
+      <guid isPermaLink="false">deal-2026-09-11-77</guid>
+      <description>Category: RTX 3090. Marketplace: EBAY_DE. Price: €1.349,00. Buy-low target: €1.200,00. Condition: Gebraucht. Seller: robotronic71.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[EBAY_DE] [RTX 3090] €1.349,00 — EVGA GeForce RTX 3090 XC3 ULTRA 24GB GDDR6X Grafikkarte getestet, kein Mining (gokuito_berlin)</title>
+      <link>https://www.ebay.de/itm/158279170209?_skw=RTX+3090&amp;hash=item24da2c78a1:g:RygAAeSw6i5qowWD</link>
+      <guid isPermaLink="false">deal-2026-09-11-78</guid>
+      <description>Category: RTX 3090. Marketplace: EBAY_DE. Price: €1.349,00. Buy-low target: €1.200,00. Condition: Gebraucht. Seller: gokuito_berlin.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[EBAY_DE] [RTX 3090] €1.349,99 — GIGABYTE GeForce RTX 3090 GAMING OC 24GB GDDR6X Grafikkarte GPU - guter Zustand (power-builds)</title>
+      <link>https://www.ebay.de/itm/318850310515?_skw=RTX+3090&amp;hash=item4a3cf5a173:g:8jkAAeSwbWFqoegu</link>
+      <guid isPermaLink="false">deal-2026-09-11-79</guid>
+      <description>Category: RTX 3090. Marketplace: EBAY_DE. Price: €1.349,99. Buy-low target: €1.200,00. Condition: Gebraucht. Seller: power-builds.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[EBAY_DE] [RTX 3090] €1.379,99 — MSI GeForce RTX 3090 TI GAMING X TRIO 24 GB (ob-iwahn)</title>
+      <link>https://www.ebay.de/itm/278349922482?_skw=RTX+3090&amp;hash=item40cef2c0b2:g:s08AAeSw9XJqnb5Z</link>
+      <guid isPermaLink="false">deal-2026-09-11-80</guid>
+      <description>Category: RTX 3090. Marketplace: EBAY_DE. Price: €1.379,99. Buy-low target: €1.200,00. Condition: Gebraucht. Seller: ob-iwahn.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[EBAY_DE] [RTX 3090 Ti] €1.499,00 — MSI GeForce RTX 3090 Ti SUPRIM X 24GB GDDR6X (dopajepa)</title>
+      <link>https://www.ebay.de/itm/198632429526?_skw=RTX+3090+Ti&amp;hash=item2e3f6a57d6:g:9vsAAeSwcvJqosPD</link>
+      <guid isPermaLink="false">deal-2026-09-11-81</guid>
+      <description>Category: RTX 3090 Ti. Marketplace: EBAY_DE. Price: €1.499,00. Buy-low target: €1.419,60. Condition: Gebraucht. Seller: dopajepa.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[EBAY_DE] [RTX 3090 Ti] €1.549,99 — EVGA GeForce RTX 3090 Ti FTW3 Black Gaming, 24GB GDDR6X GPU Grafikkarte - Top Zu (power-builds)</title>
+      <link>https://www.ebay.de/itm/318850265578?_skw=RTX+3090+Ti&amp;hash=item4a3cf4f1ea:g:7Q0AAeSwIf5qoeYq</link>
+      <guid isPermaLink="false">deal-2026-09-11-82</guid>
+      <description>Category: RTX 3090 Ti. Marketplace: EBAY_DE. Price: €1.549,99. Buy-low target: €1.419,60. Condition: Gebraucht. Seller: power-builds.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[EBAY_DE] [RTX 3090 Ti] €1.599,00 — MSI NVIDA GeForce  RTX 3090Ti GAMING X TRIO Graphics Card GPU 24G GDDR6X (newdisk)</title>
+      <link>https://www.ebay.de/itm/127774066669?_skw=RTX+3090+Ti&amp;hash=item1dbfed87ed:g:DxkAAeSw3ulpxiJM</link>
+      <guid isPermaLink="false">deal-2026-09-11-83</guid>
+      <description>Category: RTX 3090 Ti. Marketplace: EBAY_DE. Price: €1.599,00. Buy-low target: €1.419,60. Condition: Gebraucht. Seller: newdisk.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
     <item>
       <title>[EBAY_DE] [Gaming PC mit RTX 3090] €1.750,00 — 4K Highend Gaming PC Intel / 32GB / NVIDIA RTX 3090 TI 24GB niveau RTX 5080 4090 (m4st3r)</title>
       <link>https://www.ebay.de/itm/267743870492?_skw=Gaming+PC+RTX+3090&amp;hash=item3e56c73e1c:g:vEIAAeSwZrlpynEJ</link>
-      <guid isPermaLink="false">deal-2026-08-29-83</guid>
-      <description>Category: Gaming PC mit RTX 3090. Marketplace: EBAY_DE. Price: €1.750,00. Buy-low target: €1.590,00. Condition: Gebraucht. Seller: m4st3r.</description>
-      <pubDate>Sat, 29 Aug 2026 05:05:40 +0000</pubDate>
+      <guid isPermaLink="false">deal-2026-09-11-84</guid>
+      <description>Category: Gaming PC mit RTX 3090. Marketplace: EBAY_DE. Price: €1.750,00. Buy-low target: €1.680,00. Condition: Gebraucht. Seller: m4st3r.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[EBAY_DE] [AMD Ryzen AI Max 395 (Strix Halo)] €2.100,00 — ASUS ROG Flow Z13/13,4&quot;/Ryzen AI MAX+395/32GB/1TB/Radeon 8060S/Win 11 (aivaron)</title>
+      <link>https://www.ebay.de/itm/168668868965?_skw=Ryzen+AI+Max+395&amp;hash=item274572b165:g:EIYAAeSwwtVqitzh</link>
+      <guid isPermaLink="false">deal-2026-09-11-85</guid>
+      <description>Category: AMD Ryzen AI Max 395 (Strix Halo). Marketplace: EBAY_DE. Price: €2.100,00. Buy-low target: €1.867,08. Condition: Gebraucht. Seller: aivaron.</description>
+      <pubDate>Fri, 11 Sep 2026 05:09:57 +0000</pubDate>
     </item>
   </channel>
 </rss>
