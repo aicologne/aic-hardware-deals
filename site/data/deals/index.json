@@ -2,32 +2,20 @@
   {
     "query": "AMD Ryzen AI Max 395 (Strix Halo)",
     "file": "AMD-Ryzen-AI-Max-395-Strix-Halo.csv",
-<<<<<<< HEAD
-    "rows": 3,
+    "rows": 2,
     "capacity_gb": null
-=======
-    "rows": 2
->>>>>>> a005e41fb8506fb55f9d7b74e8903c8a38d748e8
   },
   {
     "query": "DDR4 RDIMM 32GB",
     "file": "DDR4-RDIMM-32GB.csv",
-<<<<<<< HEAD
-    "rows": 45,
+    "rows": 40,
     "capacity_gb": 32
-=======
-    "rows": 40
->>>>>>> a005e41fb8506fb55f9d7b74e8903c8a38d748e8
   },
   {
     "query": "DDR4 RDIMM 64GB",
     "file": "DDR4-RDIMM-64GB.csv",
-<<<<<<< HEAD
-    "rows": 35,
+    "rows": 26,
     "capacity_gb": 64
-=======
-    "rows": 26
->>>>>>> a005e41fb8506fb55f9d7b74e8903c8a38d748e8
   },
   {
     "query": "DDR5 32GB",
@@ -36,32 +24,16 @@
     "capacity_gb": 32
   },
   {
-<<<<<<< HEAD
-    "query": "DDR5 RDIMM",
-    "file": "DDR5-RDIMM.csv",
-    "rows": 1,
-    "capacity_gb": 32
-  },
-  {
     "query": "EliteDesk 800 G4 Mini",
     "file": "EliteDesk-800-G4-Mini.csv",
-    "rows": 8,
+    "rows": 7,
     "capacity_gb": null
-=======
-    "query": "EliteDesk 800 G4 Mini",
-    "file": "EliteDesk-800-G4-Mini.csv",
-    "rows": 7
->>>>>>> a005e41fb8506fb55f9d7b74e8903c8a38d748e8
   },
   {
     "query": "EliteDesk 800 G5 Mini",
     "file": "EliteDesk-800-G5-Mini.csv",
-<<<<<<< HEAD
-    "rows": 24,
+    "rows": 16,
     "capacity_gb": null
-=======
-    "rows": 16
->>>>>>> a005e41fb8506fb55f9d7b74e8903c8a38d748e8
   },
   {
     "query": "Gaming PC mit RTX 3080",
@@ -78,52 +50,32 @@
   {
     "query": "Mac Studio Ultra",
     "file": "Mac-Studio-Ultra.csv",
-<<<<<<< HEAD
-    "rows": 4,
+    "rows": 6,
     "capacity_gb": null
-=======
-    "rows": 6
->>>>>>> a005e41fb8506fb55f9d7b74e8903c8a38d748e8
   },
   {
     "query": "NVMe SSD 2TB",
     "file": "NVMe-SSD-2TB.csv",
-<<<<<<< HEAD
-    "rows": 50,
+    "rows": 49,
     "capacity_gb": null
-=======
-    "rows": 49
->>>>>>> a005e41fb8506fb55f9d7b74e8903c8a38d748e8
   },
   {
     "query": "Nvidia Quadro RTX",
     "file": "Nvidia-Quadro-RTX.csv",
-<<<<<<< HEAD
-    "rows": 35,
+    "rows": 27,
     "capacity_gb": null
-=======
-    "rows": 27
->>>>>>> a005e41fb8506fb55f9d7b74e8903c8a38d748e8
   },
   {
     "query": "OptiPlex 3070 Micro",
     "file": "OptiPlex-3070-Micro.csv",
-<<<<<<< HEAD
-    "rows": 38,
+    "rows": 39,
     "capacity_gb": null
-=======
-    "rows": 39
->>>>>>> a005e41fb8506fb55f9d7b74e8903c8a38d748e8
   },
   {
     "query": "RTX 3090",
     "file": "RTX-3090.csv",
-<<<<<<< HEAD
-    "rows": 47,
+    "rows": 36,
     "capacity_gb": 24
-=======
-    "rows": 36
->>>>>>> a005e41fb8506fb55f9d7b74e8903c8a38d748e8
   },
   {
     "query": "RTX 3090 Ti",
@@ -134,62 +86,38 @@
   {
     "query": "RTX 4060 Ti 16GB",
     "file": "RTX-4060-Ti-16GB.csv",
-<<<<<<< HEAD
-    "rows": 4,
+    "rows": 5,
     "capacity_gb": 16
-=======
-    "rows": 5
->>>>>>> a005e41fb8506fb55f9d7b74e8903c8a38d748e8
   },
   {
     "query": "RTX 4070 Ti Super",
     "file": "RTX-4070-Ti-Super.csv",
-<<<<<<< HEAD
-    "rows": 17,
+    "rows": 15,
     "capacity_gb": 16
-=======
-    "rows": 15
->>>>>>> a005e41fb8506fb55f9d7b74e8903c8a38d748e8
   },
   {
     "query": "RTX 4080 Super",
     "file": "RTX-4080-Super.csv",
-<<<<<<< HEAD
-    "rows": 25,
+    "rows": 22,
     "capacity_gb": 16
-=======
-    "rows": 22
->>>>>>> a005e41fb8506fb55f9d7b74e8903c8a38d748e8
   },
   {
     "query": "RTX 5060",
     "file": "RTX-5060.csv",
-<<<<<<< HEAD
-    "rows": 11,
+    "rows": 10,
     "capacity_gb": 16
-=======
-    "rows": 10
->>>>>>> a005e41fb8506fb55f9d7b74e8903c8a38d748e8
   },
   {
     "query": "RTX 5070 16GB",
     "file": "RTX-5070-16GB.csv",
-<<<<<<< HEAD
-    "rows": 13,
+    "rows": 9,
     "capacity_gb": 16
-=======
-    "rows": 9
->>>>>>> a005e41fb8506fb55f9d7b74e8903c8a38d748e8
   },
   {
     "query": "Tesla P40",
     "file": "Tesla-P40.csv",
-<<<<<<< HEAD
-    "rows": 34,
+    "rows": 45,
     "capacity_gb": 24
-=======
-    "rows": 45
->>>>>>> a005e41fb8506fb55f9d7b74e8903c8a38d748e8
   },
   {
     "query": "Tesla T4",
@@ -212,21 +140,13 @@
   {
     "query": "X99 Mainboard",
     "file": "X99-Mainboard.csv",
-<<<<<<< HEAD
-    "rows": 8,
+    "rows": 9,
     "capacity_gb": null
-=======
-    "rows": 9
->>>>>>> a005e41fb8506fb55f9d7b74e8903c8a38d748e8
   },
   {
     "query": "Xeon E5-2690v4",
     "file": "Xeon-E5-2690v4.csv",
-<<<<<<< HEAD
-    "rows": 15,
+    "rows": 13,
     "capacity_gb": null
-=======
-    "rows": 13
->>>>>>> a005e41fb8506fb55f9d7b74e8903c8a38d748e8
   }
 ]

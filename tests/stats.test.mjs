@@ -2,19 +2,23 @@
 // Run from the repo root:  node --test tests/
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import {
   parseCSV, toRows, toHistoryRows, toAnyRows, analyze, euro, num, median, flagFor,
   historySeries, movers, indexPct, euroPerGb, CAPACITY_GB, groupKey, topDeals,
   newestScanDate, staleness, SCAN_HOUR_UTC, STALE_AFTER_HOURS,
+  marketChurn, scanDatesFrom, estimateResale, buildShortlist, SHORTLIST,
 } from '../site/csv.js';
 
-const dataDir = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'site', 'data');
+const siteDir = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'site');
+const dataDir = path.join(siteDir, 'data');
 const csvPath = path.join(dataDir, 'ebay_deals.csv');
 const text = readFileSync(csvPath, 'utf8');
 const historyText = readFileSync(path.join(dataDir, 'history.csv'), 'utf8');
+const listingRows = toAnyRows(readFileSync(path.join(dataDir, 'listing_history.csv'), 'utf8'))
+  .filter(r => r.url);
 
 test('parser handles quoted fields, commas and escaped quotes', () => {
   const t = 'a,b,c\r\n"x, y","q ""z""",3\nplain,field,9\n';
@@ -235,6 +239,188 @@ test('the committed history.csv parses and yields a usable scan date', () => {
   const newest = newestScanDate(rows);
   assert.match(newest, /^\d{4}-\d{2}-\d{2}$/);
   assert.equal(newest, rows.map(r => r.date).sort().at(-1), 'newest is the max scan date');
+});
+
+
+// --- expected-margin shortlist (mirror of ebay-search-skill/shortlist.py) ----
+// The report (Python) and the page (JS) must agree: the same fixtures and
+// expectations are asserted in tests/test_shortlist.py, and the two
+// implementations were diffed field-by-field on the real CSVs (max numeric
+// difference 0.0) when this was built. These tests keep them from drifting.
+
+const SL_DATES = Array.from({ length: 11 }, (_, i) => `2026-09-${String(i + 1).padStart(2, '0')}`);
+const SL_NEWEST = SL_DATES[SL_DATES.length - 1];
+
+function slDeal(query, price) {
+  return { query, price: String(price), title: 'listing', seller: 'seller',
+           condition: 'Gebraucht', marketplace: 'EBAY_DE',
+           url: `https://example.test/${query}/${price}` };
+}
+function slTracked(query, first, last, url) {
+  return { url, query, marketplace: 'EBAY_DE', first_seen: first, last_seen: last,
+           first_price: '100.00', last_price: '100.00' };
+}
+/** `aged` listings first seen on day 1; the first `gone` of them left. */
+function slHist(query, aged, gone, prefix = 'h') {
+  return Array.from({ length: aged }, (_, i) =>
+    slTracked(query, SL_DATES[0], i < gone ? SL_DATES[1] : SL_NEWEST, `${prefix}${i}`));
+}
+const slPriced = (query, prices) => prices.map(p => slDeal(query, p));
+
+test('scanDatesFrom collects sorted unique scan dates', () => {
+  assert.deepEqual(scanDatesFrom([slTracked('RAM', '2026-09-05', '2026-09-07', 'a'),
+                                  slTracked('RAM', '2026-09-01', '2026-09-07', 'b')]),
+                   ['2026-09-01', '2026-09-05', '2026-09-07']);
+});
+
+test('marketChurn counts aged listings and those that left the market', () => {
+  const rows = [slTracked('RAM', SL_DATES[0], SL_NEWEST, 'a'),   // aged 10, still listed
+                slTracked('RAM', SL_DATES[0], SL_DATES[3], 'b'), // aged 10, gone
+                slTracked('RAM', SL_DATES[8], SL_NEWEST, 'c')];  // aged 2 -> ignored
+  const out = marketChurn(rows, SL_DATES);
+  assert.equal(out.overall.aged, 2);
+  assert.equal(out.overall.gone, 1);
+  assert.equal(out.overall.rate, 0.5);
+  assert.equal(out.byKey['EBAY_DE · RAM'].aged, 2);
+  assert.equal(marketChurn([], SL_DATES).overall.rate, null, 'no history -> no rate');
+});
+
+test('estimateResale prefers a usable sold anchor and labels the fallback', () => {
+  assert.deepEqual(estimateResale('RTX 3090', { 'RTX 3090': { median_sold: 1500, sample_size: 12 } }, 1200),
+                   { price: 1500, source: 'sold median', sample: 12 });
+  // an anchor without samples is not evidence
+  assert.deepEqual(estimateResale('RTX 3090', { 'RTX 3090': { median_sold: 1500, sample_size: 0 } }, 1200),
+                   { price: 1200, source: 'asking median', sample: 0 });
+  assert.deepEqual(estimateResale('X', {}, null), { price: null, source: null, sample: 0 });
+});
+
+test('shortlist skips thin categories and never lists a negative margin', () => {
+  const rows = slPriced('Thin', [10, 10, 10, 10]).concat(slPriced('Fat', [10, 100, 100, 100, 100]));
+  const out = buildShortlist(rows, { listingRows: slHist('Fat', 10, 5), scanDates: SL_DATES, limit: 10 });
+  assert.deepEqual(out.items.map(i => i.query), ['Fat']);
+  assert.deepEqual(out.skipped.thinCategories, ['EBAY_DE · Thin']);
+
+  const neg = buildShortlist(slPriced('Fat', [100, 100, 100, 100, 90]),
+                             { listingRows: slHist('Fat', 10, 5), scanDates: SL_DATES });
+  assert.deepEqual(neg.items, []);
+  assert.equal(neg.skipped.negativeMargin, 5);
+});
+
+test('shortlist margin applies the fee to the resale estimate', () => {
+  const out = buildShortlist(slPriced('Fat', [100, 200, 300, 400, 50]),
+                             { listingRows: slHist('Fat', 10, 5), scanDates: SL_DATES, feeRate: 0.13, limit: 1 });
+  const item = out.items[0];
+  assert.equal(item.estResale, 200);           // median of 50..400
+  assert.equal(item.price, 50);
+  assert.ok(Math.abs(item.net - (200 * 0.87 - 50)) < 1e-9);
+});
+
+test('shortlist ranking is risk-adjusted, not just margin', () => {
+  const rows = slPriced('Dead', [10, 100, 100, 100, 100]).concat(slPriced('Alive', [80, 100, 100, 100, 100]));
+  const history = slHist('Dead', 10, 0, 'd').concat(slHist('Alive', 10, 9, 'a'));
+  const out = buildShortlist(rows, { listingRows: history, scanDates: SL_DATES, limit: 2 });
+  const byQuery = Object.fromEntries(out.items.map(i => [i.query, i]));
+  assert.equal(byQuery.Dead.churn, 0);         // nothing ever leaves
+  assert.equal(byQuery.Alive.churn, 0.9);      // its stock actually moves
+  assert.ok(byQuery.Dead.net > byQuery.Alive.net, 'Dead has the bigger raw margin');
+  assert.deepEqual(out.items.map(i => i.query), ['Alive', 'Dead']);
+  assert.equal(out.items[0].rank, 1);
+});
+
+test('shortlist separates unproven categories from ranked ones', () => {
+  const rows = slPriced('Fat', [10, 100, 100, 100, 100]);
+  const history = slHist('Fat', 10, 0).concat(slHist('Other', 1, 1, 'o'));
+  // minAged above both samples -> only the global rate is available -> unproven
+  const out = buildShortlist(rows, { listingRows: history, scanDates: SL_DATES, minAged: 11, limit: 5 });
+  assert.deepEqual(out.items, []);
+  assert.deepEqual(out.unproven.map(u => u.query), ['Fat']);
+  assert.equal(out.unproven[0].churnSource, 'global');
+  assert.equal(out.unproven[0].rank, undefined, 'unproven entries are not ranked');
+
+  const ranked = buildShortlist(rows, { listingRows: history, scanDates: SL_DATES, minAged: 5, limit: 5 });
+  assert.deepEqual(ranked.items.map(i => i.query), ['Fat']);
+  assert.equal(ranked.items[0].churnSource, 'category');
+});
+
+test('shortlist caps: two per category, and the limit and ranks hold', () => {
+  const out = buildShortlist(slPriced('Fat', [10, 20, 30, 100, 100, 100]),
+                             { listingRows: slHist('Fat', 10, 5), scanDates: SL_DATES, limit: 10 });
+  assert.deepEqual(out.items.map(i => i.price), [10, 20]);
+
+  const rows = [];
+  let history = [];
+  for (const name of ['A', 'B', 'C']) {
+    rows.push(...slPriced(name, [10, 100, 100, 100, 100]));
+    history = history.concat(slHist(name, 10, 5, name));
+  }
+  const limited = buildShortlist(rows, { listingRows: history, scanDates: SL_DATES, limit: 2 });
+  assert.equal(limited.items.length, 2);
+  assert.deepEqual(limited.items.map(i => i.rank), [1, 2]);
+});
+
+test('shortlist is safe with no rows and no history', () => {
+  const out = buildShortlist([], {});
+  assert.deepEqual(out.items, []);
+  assert.deepEqual(out.unproven, []);
+  assert.equal(out.skipped.negativeMargin, 0);
+  assert.equal(SHORTLIST.DEFAULT_FEE_RATE, 0.13);
+});
+
+test('shortlist on the committed scan returns ranked, positive-margin items', () => {
+  const rows = toRows(text);
+  const out = buildShortlist(rows, { listingRows, feeRate: 0.13, limit: 10 });
+  assert.ok(out.items.length > 0, 'the real scan yields a shortlist');
+  out.items.forEach((item, i) => {
+    assert.equal(item.rank, i + 1, 'ranks are sequential');
+    assert.ok(item.net > 0, 'only positive margins are listed');
+    assert.ok(item.estResale > 0);
+    assert.equal(item.churnSource, 'category', 'ranked items have a measured churn rate');
+  });
+  for (let i = 1; i < out.items.length; i++) {
+    assert.ok(out.items[i - 1].score >= out.items[i].score, 'sorted by risk-adjusted score');
+  }
+  const perCategory = {};
+  for (const item of out.items) perCategory[item.query] = (perCategory[item.query] || 0) + 1;
+  assert.ok(Object.values(perCategory).every(n => n <= SHORTLIST.MAX_PER_CATEGORY),
+            'at most two items per category');
+  out.unproven.forEach(u => assert.equal(u.rank, undefined));
+});
+
+// --- repo hygiene: generated data must be parseable, never conflicted ------
+// Regression: a merge into main left "\u003c\u003c\u003c\u003c\u003c\u003c\u003c HEAD" markers inside
+// site/data/deals/index.json (and two Marketplace sheets) and pushed them. The
+// deployed page silently fell back to the single CSV and the €/GB map stopped
+// hydrating from the manifest — no test noticed, because nothing parsed it.
+
+test('no unresolved merge conflict markers anywhere under site/', () => {
+  const offenders = [];
+  const walk = dir => {
+    for (const entry of readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) { walk(full); continue; }
+      const text = readFileSync(full, 'utf8');
+      text.split('\n').forEach((line, i) => {
+        if (/^(\u003c{7}|={7}|\u003e{7})(\s|$)/.test(line)) {
+          offenders.push(path.relative(siteDir, full) + ':' + (i + 1));
+        }
+      });
+    }
+  };
+  walk(siteDir);
+  assert.deepEqual(offenders, [], 'conflict markers found in: ' + offenders.join(', '));
+});
+
+test('the per-category chunk manifest parses and matches the files on disk', () => {
+  const raw = readFileSync(path.join(dataDir, 'deals', 'index.json'), 'utf8');
+  let manifest;
+  assert.doesNotThrow(() => { manifest = JSON.parse(raw); }, 'index.json is not valid JSON');
+  assert.ok(Array.isArray(manifest) && manifest.length > 0, 'manifest is empty');
+  for (const entry of manifest) {
+    assert.ok(entry.query && entry.file, 'manifest entry needs query + file');
+    assert.ok(existsSync(path.join(dataDir, 'deals', entry.file)),
+      'manifest lists a missing chunk: ' + entry.file);
+    assert.ok(entry.rows == null || entry.rows >= 0, 'rows must be a count');
+  }
 });
 
 // --- human-readable sanity summary (node --test shows it in the report) ---

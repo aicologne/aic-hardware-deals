@@ -36,6 +36,7 @@ jobs:
           python -m unittest discover -s ebay-search-skill/tests -v
           node --test tests/stats.test.mjs tests/marketplace.test.mjs
           node tests/marketplace_smoke.mjs
+          node tests/app_smoke.mjs
 
       - name: Run the eBay scan
         env:

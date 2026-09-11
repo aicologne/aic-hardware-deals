@@ -12,6 +12,7 @@
 import {
   toRows, toHistoryRows, toAnyRows, analyze, euro, flagFor, num, median, marketplaceOf,
   euroPerGb, historySeries, movers, indexPct, topDeals, CAPACITY_GB, staleness,
+  buildShortlist,
 } from './csv.js';
 
 const CSV_URL = window.DEALS_CSV || 'data/ebay_deals.csv';
@@ -21,6 +22,9 @@ const HISTORY_URL = window.DEALS_HISTORY || 'data/history.csv';
 const LISTING_URL = window.DEALS_LISTING_HISTORY || 'data/listing_history.csv';
 const SOLD_URL = window.DEALS_SOLD || 'data/sold_anchors.csv';
 const LOAD_TIMEOUT_MS = 20000; // hard cap: spinner can never spin longer than this
+// eBay seller fee, mirroring EBAY_FEE_RATE in render_report.py — the report and
+// the page must show the same margin.
+const FEE_RATE = 0.13;
 
 const $ = (sel, root = document) => root.querySelector(sel);
 
@@ -171,6 +175,20 @@ const I18N = {
     generated: (date, total, cats) => `Generated ${date} · ${total} items across ${cats} categories`,
     staleWarning: days => `⚠️ prices are ${days} day${days === 1 ? '' : 's'} old — the nightly scan has not committed fresh data`,
     noDeals: 'No listings found in the latest scan.',
+    shortlistTitle: '🎯 Shortlist — ranked by expected margin',
+    shortlistIntro: (churnPct, est) => 'Expected margin = resale estimate × (1 − 13 % fee) − asking, weighted by market churn' +
+      (churnPct == null ? '' : ' (' + churnPct + ' % of tracked listings left the market)') + '. ' + est,
+    slEstSold: 'Resale estimates are sold medians (Verkauft anchors).',
+    slEstAsking: 'Resale estimates are asking medians — the sold-price anchors are off (repo Variable EBAY_SOLD_ANCHORS=1), so read these margins as asking-price ceilings, not money in hand.',
+    shortlistNone: 'No listing has a positive expected margin at the current estimates (or no category has enough tracked listings to measure liquidity yet).',
+    slEst: 'Est. resale',
+    slMargin: 'Margin',
+    slClears: 'Clears ≈',
+    slChurnChip: (pct, n) => 'churn ' + pct + ' % of ' + n + ' tracked',
+    slEstChip: 'est: asking median',
+    slUnprovenIntro: 'Unproven — the margin looks real, liquidity cannot be measured yet (too few tracked listings in that category to read a churn rate), so it is not ranked:',
+    slFooter: (neg, thin) => neg + ' listings have a negative expected margin at these estimates and are not listed; ' + thin +
+      (thin === 1 ? ' category is' : ' categories are') + ' too thin to rank.',
     dealHighlights: '🔥 Deal highlights',
     dealHighlightsIntro: 'Listings currently at or within 15 % of the buy-low target — the shortlist to inspect first:',
     noHighlights: 'No listings currently sit at the buy-low targets. Check back after the next nightly scan, or widen the windows in ebay_search.py.',
@@ -249,6 +267,20 @@ const I18N = {
     generated: (date, total, cats) => `Erstellt ${date} · ${total} Artikel in ${cats} Kategorien`,
     staleWarning: days => `⚠️ Preise sind ${days} Tag${days === 1 ? '' : 'e'} alt — der Nacht-Scan hat keine frischen Daten geliefert`,
     noDeals: 'Im letzten Scan wurden keine Angebote gefunden.',
+    shortlistTitle: '🎯 Shortlist — nach erwarteter Marge sortiert',
+    shortlistIntro: (churnPct, est) => 'Erwartete Marge = Wiederverkaufsschätzung × (1 − 13 % Gebühr) − Angebotspreis, gewichtet mit der Marktfluktuation' +
+      (churnPct == null ? '' : ' (' + churnPct + ' % der beobachteten Angebote sind aus dem Markt verschwunden)') + '. ' + est,
+    slEstSold: 'Die Wiederverkaufsschätzung ist der Verkaufs-Median (Verkauft-Anker).',
+    slEstAsking: 'Die Wiederverkaufsschätzung ist der Angebots-Median — die Verkaufspreis-Anker sind ausgeschaltet (Repo-Variable EBAY_SOLD_ANCHORS=1), diese Margen sind also Obergrenzen und kein Geld in der Hand.',
+    shortlistNone: 'Kein Angebot hat mit den aktuellen Schätzungen eine positive erwartete Marge (oder es gibt noch zu wenige beobachtete Angebote für eine Liquiditätsmessung).',
+    slEst: 'Gesch. Wiederverkauf',
+    slMargin: 'Marge',
+    slClears: 'Fluktuation ≈',
+    slChurnChip: (pct, n) => pct + ' % von ' + n + ' beobachtet',
+    slEstChip: 'Schätzung: Angebots-Median',
+    slUnprovenIntro: 'Ungeprüft — die Marge sieht real aus, die Liquidität ist noch nicht messbar (zu wenige beobachtete Angebote in dieser Kategorie für eine Fluktuationsrate), daher nicht einsortiert:',
+    slFooter: (neg, thin) => neg + ' Angebote haben mit diesen Schätzungen eine negative erwartete Marge und werden nicht gelistet; ' + thin +
+      (thin === 1 ? ' Kategorie ist' : ' Kategorien sind') + ' zu dünn für ein Ranking.',
     dealHighlights: '🔥 Deal-Highlights',
     dealHighlightsIntro: 'Angebote, die aktuell am oder innerhalb von 15 % des Buy-Low-Ziels liegen — die Shortlist für den ersten Blick:',
     noHighlights: 'Aktuell liegt kein Angebot am Buy-Low-Ziel. Nach dem nächsten Nacht-Scan erneut prüfen oder die Fenster in ebay_search.py anpassen.',
@@ -322,6 +354,7 @@ let tocObserver = null;  // one scrollspy observer at a time
 let history = null;      // { compositeKey: [{date, median}] } from data/history.csv (null = unavailable)
 let historyRows = null;  // raw rows from data/history.csv — drives the freshness warning
 let listingHistory = null; // { url: {first_price, first_seen, last_price} } (null = unavailable)
+let listingRows = null;   // raw per-listing rows — drives the shortlist's churn rate
 let soldAnchors = null;  // { query: {median_sold, sample_size} } from data/sold_anchors.csv (null = unavailable)
 const filters = { search: '', marketplace: 'all', category: 'all', maxPrice: null, sort: 'price-asc' };
 
@@ -553,6 +586,61 @@ function renderHighlights(flagged, container, single) {
   );
 }
 
+function renderShortlist(sl, container, single) {
+  const h2 = el('h2', { id: 'shortlist' }, t('shortlistTitle'));
+  const churnPct = sl.churn.overall.rate == null ? null : Math.round(sl.churn.overall.rate * 100);
+  const estNote = sl.estimatedFrom.sold > 0 ? t('slEstSold') : t('slEstAsking');
+  const intro = el('p', { class: 'section-intro' }, t('shortlistIntro')(churnPct, estNote));
+
+  if (!sl.items.length) {
+    container.append(h2, intro, el('p', {}, t('shortlistNone')));
+    appendUnproven(sl, container);
+    return;
+  }
+
+  const headers = ['#', t('thCategory'), t('thPrice'), t('slEst'), t('slMargin'),
+                   t('slClears'), t('thTitle'), t('thNote')];
+  const cells = [
+    r => el('td', { class: 'cell-rank', text: String(r.rank) }),
+    r => el('td', { class: 'cell-cat', text: r.query }),
+    priceCell,
+    r => el('td', { class: 'cell-est', text: euro(r.estResale) }),
+    r => el('td', { class: 'cell-margin' }, el('strong', { text: euro(r.net) })),
+    r => el('td', { class: 'cell-churn', text: Math.round(r.churn * 100) + ' %' }),
+    titleCell,
+    shortlistNoteCell,
+  ];
+  if (!single) {
+    headers.splice(2, 0, t('thMkt'));
+    cells.splice(2, 0, r => el('td', { class: 'cell-mkt', text: r.marketplace }));
+  }
+  container.append(h2, intro, buildTable(headers, sl.items, cells, 'table-shortlist'));
+  appendUnproven(sl, container);
+  container.append(el('p', { class: 'section-note' },
+    t('slFooter')(sl.skipped.negativeMargin, sl.skipped.thinCategories.length)));
+}
+
+/** Churn + estimate-provenance chips, plus the repricing note when there is one. */
+function shortlistNoteCell(r) {
+  const chips = [el('span', { class: 'chip chip-churn',
+    text: t('slChurnChip')(Math.round(r.churn * 100), r.aged) })];
+  if (r.estSource !== 'sold median') chips.push(el('span', { class: 'chip', text: t('slEstChip') }));
+  const rp = repricedNote(r);
+  if (rp) chips.push(el('span', { class: 'note-reprice', text: rp }));
+  return el('td', { class: 'cell-note' }, ...chips);
+}
+
+/** Real margins whose category has too little tracked history to weight. */
+function appendUnproven(sl, container) {
+  if (!sl.unproven.length) return;
+  container.append(
+    el('p', { class: 'section-intro' }, t('slUnprovenIntro')),
+    el('ul', { class: 'sl-unproven' }, ...sl.unproven.map(u => el('li', {},
+      u.query + ' — ' + euro(u.price) + ' → ' + t('slEst') + ' ' + euro(u.estResale) +
+      ' (' + t('slMargin') + ' ' + euro(u.net) + ')'))),
+  );
+}
+
 function renderMovers(mv, container, single) {
   const risers = mv.filter(m => m.delta > 0).slice(0, 5);
   const fallers = mv.filter(m => m.delta < 0).slice(0, 5);
@@ -768,6 +856,14 @@ function renderReport() {
   const shownTotal = shown.reduce((n, g) => n + g.count, 0);
   $('#f-count').textContent = t('fCount')(shownTotal, total);
 
+  // Shortlist first: it is the ranked, actionable view. Skipped until the
+  // per-listing history has loaded — without it every category would look
+  // "unproven", which is a half-second of wrong information on first paint.
+  if (!active && listingRows) {
+    renderShortlist(buildShortlist(cachedRows || [], {
+      soldAnchors, listingRows, feeRate: FEE_RATE,
+    }), content, single);
+  }
   if (!active) renderHighlights(topDeals(flagged), content, single);
   const mv = history ? movers(history) : [];
   if (!active && mv.length) renderMovers(mv, content, single);
@@ -775,7 +871,7 @@ function renderReport() {
     content.append(el('p', {}, t('fNoMatches')));
   } else {
     const hasCapacity = shown.some(g => CAPACITY_GB[g.query] != null);
-    const usedIds = new Set(active ? [] : ['deal-highlights', 'median-movers']);
+    const usedIds = new Set(active ? [] : ['shortlist', 'deal-highlights', 'median-movers']);
     for (const g of shown) renderGroup(g, content, usedIds, single, hasCapacity);
   }
   content.hidden = false;
@@ -811,6 +907,7 @@ async function loadSecondaryData() {
   }
   if (listingRes && listingRes.res.ok) {
     const lrows = toAnyRows(listingRes.text);
+    listingRows = lrows;
     listingHistory = {};
     for (const r of lrows) if (r.url) listingHistory[r.url] = r;
     upgraded = true;

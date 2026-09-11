@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Render ebay_deals.csv into LATEST.md — the final price report.
 
-The report is the product: it combines the latest scan with the deal windows
-(carried in the CSV as win_min/win_max), flags items at/below the buy-low
-target, shows per-category medians, a 30-day median trend and recent movers
+The report is the product: it ranks the scan into a 🎯 **shortlist by expected
+margin** (resale estimate less the eBay fee, weighted by how fast that category's
+listings actually leave the market — see shortlist.py), then shows the raw 🔥
+buy-low flags, per-category medians, a 30-day median trend and recent movers
 (from site/data/history.csv), per-listing repricing notes (from
 site/data/listing_history.csv), €/GB value metrics, and ends with methodology.
 
@@ -23,8 +24,12 @@ DEFAULT_MARKETPLACE = "EBAY_DE"
 # Only categories with an unambiguous capacity get a value; mixed categories
 # (e.g. Quadro RTX 8/16/24 GB) stay without and render "—".
 from queries import DEFAULT_QUERIES  # noqa: E402
+import shortlist  # noqa: E402
 
 CAPACITY_GB = {q["name"]: q["capacity_gb"] for q in DEFAULT_QUERIES if q.get("capacity_gb")}
+
+# How many ranked opportunities the 🎯 shortlist shows (see shortlist.py).
+SHORTLIST_LIMIT = int(os.environ.get("SHORTLIST_LIMIT", "10"))
 
 # eBay seller fee rate (of the gross price), used for the Net column. Override
 # via EBAY_FEE_RATE (e.g. "0.13"); set to "0" to hide the column.
@@ -47,6 +52,7 @@ FOOTNOTES = [
     "€/GB is price ÷ capacity of the scan category (e.g. 32 GB RDIMM, 24 GB RTX 3090); mixed-capacity categories show —.",
     "Sold median (when present) comes from eBay's public 'Verkauft' search — a best-effort resale anchor, not the Browse API; sample size matters.",
     "In multi-marketplace mode, scan windows are interpreted in each marketplace's currency.",
+    "🎯 Shortlist: expected margin = resale estimate × (1 − fee) − asking, weighted by **market churn** — the share of that category's tracked listings that left the market (sold *or* withdrawn; the tool cannot tell them apart, so it is a rate, not a probability). Only categories with their own churn measurement are ranked; the rest are listed as unproven.",
 ]
 
 
@@ -218,7 +224,8 @@ def main():
     listing_path = sys.argv[4] if len(sys.argv) > 4 else "site/data/listing_history.csv"
     sold_path = sys.argv[5] if len(sys.argv) > 5 else "sold_anchors.csv"
     history = load_history(history_path)
-    listing_history = load_listing_history(listing_path)
+    listing_rows = shortlist.load_listing_rows(listing_path)
+    listing_history = {r.get("url"): r for r in listing_rows}
     sold_anchors = load_sold_anchors(sold_path)
 
     rows = []
@@ -268,14 +275,82 @@ def main():
     L.append(MARKET_CONTEXT)
     L.append("")
 
+    # --- 🎯 shortlist: expected margin × market churn --------------------
+    sl = shortlist.build_shortlist(
+        rows, sold_anchors=sold_anchors, listing_rows=listing_rows,
+        fee_rate=FEE_RATE, limit=SHORTLIST_LIMIT,
+    )
+    ranked = sl["items"]      # deliberately not "items": that name is reused below
+    overall_churn = sl["churn"]["overall"]["rate"]
+
+    L.append("## 🎯 Shortlist — ranked by expected margin")
+    L.append("")
+    if ranked:
+        est_src = sl["estimated_from"]
+        if est_src["sold median"]:
+            est_note = (f"Resale estimates are **sold medians** ({est_src['sold median']} of "
+                        f"{len(ranked)} from the Verkauft anchors).")
+        else:
+            est_note = ("Resale estimates are **asking medians** — the sold-price anchors are "
+                        "off (repo Variable EBAY_SOLD_ANCHORS=1), so read these margins as "
+                        "asking-price ceilings, not money in hand.")
+        churn_note = (f"market churn {overall_churn:.0%} overall"
+                      if overall_churn is not None else "market churn unknown")
+        L.append(f"Expected margin = resale estimate × (1 − {FEE_RATE * 100:.0f} % fee) − asking, "
+                 f"weighted by **market churn** — the share of that category's tracked listings "
+                 f"that left the market ({churn_note}). {est_note}")
+        L.append("")
+        headers = ["#", "Category", "Price", "Est. resale", "Margin", "Clears ≈", "Title", "Note"]
+        if multi:
+            headers.insert(2, "Mkt")
+        L.append("| " + " | ".join(headers) + " |")
+        L.append("|" + "---|" * len(headers))
+        for it in ranked:
+            title = (it["title"] or "").replace("|", "\\|")
+            note = f"churn {it['churn']:.0%} of {it['aged']} tracked"
+            if it["est_source"] != "sold median":
+                note += " · est: asking median"
+            repriced = repriced_note(it, listing_history)
+            if repriced:
+                note += f" · {repriced}"
+            cells = [str(it["rank"]), it["query"], f"**{euro(it['price'])}**",
+                     euro(it["est_resale"]), f"**{euro(it['net'])}**",
+                     f"{it['churn']:.0%}", f"[{title}]({it['url']})", note]
+            if multi:
+                cells.insert(2, it["marketplace"])
+            L.append("| " + " | ".join(cells) + " |")
+        L.append("")
+        if sl["unproven"]:
+            L.append("**Unproven — the margin looks real, liquidity cannot be measured yet** "
+                     "(too few tracked listings in that category to read a churn rate, so it is "
+                     "not ranked):")
+            L.append("")
+            for u in sl["unproven"]:
+                L.append(f"- {u['query']} — {euro(u['price'])} → est. {euro(u['est_resale'])}, "
+                         f"margin {euro(u['net'])} · [listing]({u['url']})")
+            L.append("")
+        neg = sl["skipped"]["negative_margin"]
+        thin = len(sl["skipped"]["thin_categories"])
+        L.append(f"_{neg} of {len(rows)} listings have a negative expected margin at these "
+                 f"estimates and are not listed; {thin} "
+                 f"{'category is' if thin == 1 else 'categories are'} too thin "
+                 f"(< {shortlist.MIN_LISTINGS} listings) to rank._")
+        L.append("")
+    else:
+        L.append("No listing has a positive expected margin at the current estimates (or no "
+                 "category has enough tracked listings to measure liquidity yet). The raw "
+                 "buy-low flags below are the fallback view.")
+        L.append("")
+
     # --- deal highlights -------------------------------------------------
-    L.append("## 🔥 Deal highlights")
+    L.append("## 🔥 Deal highlights — the raw buy-low flags")
     L.append("")
     flagged = [r for r in rows if flag_for(r) == "🔥 at/near buy-low target"]
     if flagged:
         flagged.sort(key=lambda r: r["_price"])
-        L.append("Listings currently **at or within 15 % of the buy-low target** — the "
-                 "shortlist to inspect first:")
+        L.append(f"Every listing at or within 15 % of its buy-low target ({len(flagged)} of "
+                 f"{len(rows)} — the flag is broad by design; the ranked shortlist above is the "
+                 f"actionable view):")
         L.append("")
         headers = ["Category", "Price", "Buy-low target", "Title", "Seller", "Note"]
         if net_label:
@@ -394,7 +469,8 @@ def main():
 
     with open(out_path, "w", encoding="utf-8") as f:
         f.write("\n".join(L))
-    print(f"wrote {out_path} with {len(rows)} rows, {len(flagged)} highlighted deals, {len(mv)} movers")
+    print(f"wrote {out_path} with {len(rows)} rows, {len(sl['items'])} ranked opportunities "
+          f"({len(sl['unproven'])} unproven), {len(flagged)} highlighted deals, {len(mv)} movers")
 
 
 if __name__ == "__main__":

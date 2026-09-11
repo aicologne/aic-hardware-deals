@@ -36,6 +36,7 @@ jobs:
         run: |
           node --test tests/stats.test.mjs tests/marketplace.test.mjs
           node tests/marketplace_smoke.mjs
+          node tests/app_smoke.mjs
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

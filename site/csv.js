@@ -288,3 +288,185 @@ export function topDeals(flagged, max = 20) {
   }
   return picks;
 }
+
+// --- expected-margin shortlist ---------------------------------------------
+// Mirror of ebay-search-skill/shortlist.py: same constants, same arithmetic
+// order, so the report and the page agree to the cent (pinned by
+// tests/test_shortlist.py and tests/stats.test.mjs on both sides).
+//
+// Why: the 🔥 flag marks anything within 15 % of an adaptive buy-low target —
+// 85 of 603 listings (14 %) across 20 of 25 categories on 2026-09-11, which is
+// not a shortlist. What matters is
+//
+//     margin = resale estimate * (1 - feeRate) - asking
+//
+// weighted by **market churn**: the share of that category's tracked listings
+// that left the market. "Left" means sold *or* withdrawn — the tool cannot tell
+// them apart, so it is a rate, not a probability, and every margin here is a
+// ceiling rather than a promise.
+
+export const SHORTLIST = {
+  MIN_LISTINGS: 5,       // below this a category median is noise, not a market
+  MIN_AGE_SCANS: 5,      // a listing must be observable this long to count as aged
+  MIN_AGED: 8,           // below this the global churn rate is used instead
+  DEFAULT_LIMIT: 10,
+  MAX_PER_CATEGORY: 2,
+  UNPROVEN_LIMIT: 3,
+  DEFAULT_FEE_RATE: 0.13,
+};
+
+/** Sorted unique scan dates seen in the per-listing history. */
+export function scanDatesFrom(listingRows) {
+  const dates = new Set();
+  for (const r of listingRows || []) {
+    for (const field of ['first_seen', 'last_seen']) {
+      const value = String((r && r[field]) || '').trim();
+      if (value) dates.add(value);
+    }
+  }
+  return [...dates].sort();
+}
+
+/** How often tracked listings leave the market — overall and per category. */
+export function marketChurn(listingRows, scanDates, minAgeScans = SHORTLIST.MIN_AGE_SCANS) {
+  const dates = scanDates || scanDatesFrom(listingRows);
+  const index = new Map(dates.map((d, i) => [d, i]));
+  const newestIndex = dates.length - 1;
+  const newest = dates[newestIndex];
+  const overall = { aged: 0, gone: 0, rate: null };
+  const byKey = {};
+  for (const r of listingRows || []) {
+    const first = String((r && r.first_seen) || '').trim();
+    const last = String((r && r.last_seen) || '').trim();
+    if (!index.has(first) || !last) continue;
+    if (newestIndex - index.get(first) < minAgeScans) continue;
+    const key = groupKey(r);
+    const bucket = byKey[key] || (byKey[key] = { aged: 0, gone: 0, rate: null });
+    for (const target of [bucket, overall]) {
+      target.aged += 1;
+      if (last !== newest) target.gone += 1;
+    }
+  }
+  for (const bucket of [...Object.values(byKey), overall]) {
+    if (bucket.aged) bucket.rate = bucket.gone / bucket.aged;
+  }
+  return { overall, byKey };
+}
+
+/** Resale estimate for one category: sold anchor if usable, else asking median. */
+export function estimateResale(query, soldAnchors, categoryMedian, minSample = 1) {
+  const anchor = soldAnchors ? soldAnchors[query] : null;
+  if (anchor) {
+    const medianSold = num(anchor.median_sold);
+    const sample = Number.isFinite(+anchor.sample_size) ? Math.trunc(+anchor.sample_size) : 0;
+    if (medianSold != null && sample >= minSample) {
+      return { price: medianSold, source: 'sold median', sample };
+    }
+  }
+  if (categoryMedian == null) return { price: null, source: null, sample: 0 };
+  return { price: categoryMedian, source: 'asking median', sample: 0 };
+}
+
+/**
+ * Rank listings by margin * market churn.
+ * -> { items: [...] (ranked, own churn measurement),
+ *      unproven: [...] (positive margin, liquidity not measurable yet),
+ *      skipped: { thinCategories, negativeMargin },
+ *      churn, estimatedFrom: { sold, asking } }
+ */
+export function buildShortlist(rows, options = {}) {
+  const {
+    soldAnchors = null, listingRows = [], scanDates = null,
+    feeRate = SHORTLIST.DEFAULT_FEE_RATE, limit = SHORTLIST.DEFAULT_LIMIT,
+    minListings = SHORTLIST.MIN_LISTINGS, minAged = SHORTLIST.MIN_AGED,
+    maxPerCategory = SHORTLIST.MAX_PER_CATEGORY, unprovenLimit = SHORTLIST.UNPROVEN_LIMIT,
+  } = options;
+
+  const churn = marketChurn(listingRows, scanDates);
+  const overall = churn.overall;
+
+  const groups = new Map();
+  for (const r of rows || []) {
+    if (num(r.price) == null) continue;
+    const key = groupKey(r);
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(r);
+  }
+
+  const thinCategories = [];
+  const candidates = [];
+  const estimatedFrom = { sold: 0, asking: 0 };
+  let negativeMargin = 0;
+
+  for (const [key, group] of groups) {
+    const prices = group.map(r => num(r.price)).sort((a, b) => a - b);
+    if (prices.length < minListings) { thinCategories.push(key); continue; }
+    const categoryMedian = median(prices);
+    const query = group[0].query || '';
+    const est = estimateResale(query, soldAnchors, categoryMedian);
+
+    const bucket = churn.byKey[key] || { aged: 0, gone: 0, rate: null };
+    let weight, weightSource;
+    if (bucket.aged >= minAged && bucket.rate != null) { weight = bucket.rate; weightSource = 'category'; }
+    else if (overall.rate != null && overall.aged >= minAged) { weight = overall.rate; weightSource = 'global'; }
+    else { weight = 1.0; weightSource = 'unknown'; }
+
+    for (const r of group) {
+      const price = num(r.price);
+      const net = est.price * (1 - feeRate) - price;
+      if (!(net > 0)) { negativeMargin += 1; continue; }
+      candidates.push({
+        query,
+        marketplace: marketplaceOf(r),
+        price,
+        estResale: est.price,
+        estSource: est.source,
+        estSample: est.sample,
+        net,
+        churn: weight,
+        churnSource: weightSource,
+        aged: bucket.aged,
+        score: net * weight,
+        title: r.title || '',
+        url: r.url || '',
+        seller: r.seller || '',
+        condition: r.condition || '',
+      });
+    }
+  }
+
+  candidates.sort((a, b) =>
+    (b.score - a.score) || (b.net - a.net) || (a.price - b.price) ||
+    (a.query < b.query ? -1 : a.query > b.query ? 1 : 0));
+
+  // Only categories whose own listings have been watched long enough to read a
+  // churn rate are ranked; the rest are real but unproven and cannot compete
+  // for the top slot (e.g. Mac Studio Ultra: n=6, one aged listing, a median
+  // that swings 27 % on a single row).
+  const items = [];
+  const unproven = [];
+  const perCategory = new Map();
+  for (const c of candidates) {
+    const used = perCategory.get(c.query) || 0;
+    if (used >= maxPerCategory) continue;
+    if (c.churnSource !== 'category') {
+      if (unproven.length < unprovenLimit) { unproven.push({ ...c }); perCategory.set(c.query, used + 1); }
+      continue;
+    }
+    if (items.length >= limit) continue;
+    perCategory.set(c.query, used + 1);
+    if (c.estSource === 'sold median') estimatedFrom.sold += 1;
+    else if (c.estSource === 'asking median') estimatedFrom.asking += 1;
+    items.push({ ...c, rank: items.length + 1 });
+  }
+
+  return {
+    items,
+    unproven,
+    skipped: { thinCategories: thinCategories.sort(), negativeMargin },
+    churn,
+    estimatedFrom,
+    feeRate,
+  };
+}
+

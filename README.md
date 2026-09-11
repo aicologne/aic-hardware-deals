@@ -49,6 +49,8 @@ A working deal-hunting kit for buying used/refurbished hardware (headless mini P
 | `ebay-search-skill/` | Working tooling: Browse API scanner (multi-marketplace), local relay, report/history/listing/feed renderers, alert notifier, skill docs |
 | `facebook-marketplace-skill/` | **Country/city search-link generator** for Facebook Marketplace (19 countries): builds the exact deep links Marketplace understands (keyword, exact phrase, radius, min/max price, sort, days listed, delivery) and can print, open, or save them as a markdown report — **deep links only, no scraping** (Marketplace has no public API) |
 | `.github/workflows/ebay-scan.yml` | Nightly scan → history → report → feed → alerts → GitHub Pages deployment |
+| `ebay-search-skill/shortlist.py` | **Expected-margin ranking** — turns the scan into a ranked shortlist: resale estimate × (1 − fee) − asking, weighted by each category's measured market churn. Pure functions, unit-tested, mirrored in `site/csv.js` |
+| `tests/app_smoke.mjs` | Runs the whole page (`site/app.js`) against a stub DOM and the **real** CSVs, then asserts the shortlist, highlights and category tables rendered — the site's only render test |
 | `ebay-search-skill/check_freshness.py` | **Staleness guard** — fails when the newest row in `site/data/history.csv` is older than `--max-age-hours` (default 36 h); `--notify` pings Telegram/Discord. Unit-tested, CWD-independent |
 | `ebay-search-skill/alert.py` | One-line Telegram/Discord sender shared by the guards (also used by the nightly's `if: failure()` step); a no-op when no channel is configured |
 | `sync_skills.py` | Regenerates the local DSH skill mirror (`.dsh/skills/`) from the two skill folders here, and reports drift with `--check` |
@@ -324,6 +326,37 @@ Every piece is unit-tested: `python -m unittest discover -s ebay-search-skill/te
 
 ---
 
+## 🎯 The shortlist — expected margin, risk-adjusted
+
+The report's headline answers one question: **what is worth acting on, and by how much?** The 🔥 flag could not: on the 2026-09-11 scan it marked 85 of 603 listings (14 %) across 20 of 25 categories — a "shortlist" containing a fifth of the market.
+
+```
+margin = resale estimate × (1 − eBay fee) − asking price
+score  = margin × market churn
+```
+
+**Resale estimate** comes from the sold-price anchors when they exist (`EBAY_SOLD_ANCHORS=1` → `sold_anchors.csv`) and from the category's asking median otherwise. The fallback is always labelled **"est: asking median"** in the report and on the site, because asking medians are ceilings, not money in hand.
+
+**Market churn** is measured from this repo's own listing history: of the listings tracked for ≥ 5 scans, which share left the market? On the 2026-09 data (920 aged listings, 57 % overall):
+
+| Discount at first sight | n | left the market |
+|---|---|---|
+| < 10 % below the median | 509 | 41 % |
+| 10–25 % below | 234 | 70 % |
+| > 25 % below | 175 | 83 % |
+
+Monotonic in the discount — which is what makes it a liquidity signal rather than noise, and why a €91 margin on category stock that turns over (RTX 3090, 72 %) outranks a bigger margin on stock that sits. **A listing that "left" may have sold or been withdrawn**; the tool cannot tell those apart, so churn is a rate, not a probability, and every margin is a ceiling.
+
+Rules that keep the ranking honest:
+
+- Categories with **< 5 listings** are skipped, and a category needs **its own** churn measurement (≥ 8 aged listings) to be ranked at all. Everything else lands in **unproven** — real margin, unmeasurable liquidity, unranked. On the 2026-09-11 scan that demoted Mac Studio Ultra (n = 6, one aged listing, a median that swings 27 % on one row) out of the #1 slot it would otherwise have taken.
+- At most **2 items per category**, so one seller listing ten identical mini PCs cannot fill the list.
+- **Negative expected margins are never listed** (498 of 603 listings on 2026-09-11 — most listings ask above the fee-adjusted median).
+
+Tuning: `SHORTLIST_LIMIT` (default 10), `EBAY_FEE_RATE` (default 0.13), and the constants at the top of `shortlist.py` / `shortlist` in `site/csv.js` — which are mirrored implementations, diffed field-by-field on the real CSVs when built (maximum numeric difference 0.0) and pinned from both sides by `tests/test_shortlist.py` and `tests/stats.test.mjs`.
+
+---
+
 ## The report (`LATEST.md`) — the final product
 
 Every nightly run commits `ebay_deals.csv` and renders **`LATEST.md`** — a self-contained price report with:
@@ -371,6 +404,8 @@ The workflow also publishes `ebay_deals.csv` into `site/data/` and deploys `site
 - [x] **Price-drop alerts** — `notify.py` pings listings that dropped ≥5 % below their first-seen price
 - [x] **Sold-price anchors (opt-in)** — `sold_anchors.py` fetches median sold prices from eBay's "Verkauft" search → "sold median €X (n=Y)" in the report
 - [x] **More scan categories** — MacBook Pro Max / Mac Studio Ultra (big unified memory), RTX 4060 Ti 16 GB, Radeon PRO W7800/W7900, Tesla T4/P100, DDR5 RDIMM, NVMe 2 TB — and current-market static windows for the shortage-era prices
+- [x] **🎯 Expected-margin shortlist** — `shortlist.py` + the site's ranked table: resale estimate × (1 − fee) − asking, weighted by measured market churn, with thin/unmeasurable categories split out as unproven (the 🔥 flag alone marked 14 % of the market)
+- [x] **Site render test** — `tests/app_smoke.mjs` runs `app.js` against a stub DOM and the real CSVs in CI; it immediately caught a corrupt `index.json` (unresolved merge markers) that had shipped to the live site
 - [x] **Staleness guard + failure alerts** — `check_freshness.py` (unit-tested), a daily `freshness-check.yml`, an `if: failure()` ping in the nightly, and a ⚠️ freshness badge on the site — closing the failure mode that let a 10-night outage pass unnoticed
 - [x] **Generated DSH skill mirror** — `sync_skills.py --check` keeps `.dsh/skills/` identical to the repo skills (the mirror had silently kept the pre-fix `windows.py`)
 - [ ] **Kleinanzeigen auto-digest** — automate the private-market channel (nightly search of saved alerts, below-target filtering, same alerting)

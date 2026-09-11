@@ -1,12 +1,36 @@
 # 🛒 eBay.de Used Hardware — Price Report
 
-_Generated 2026-09-11 05:09 UTC · 603 items across 25 categories · marketplace EBAY_DE · used · EUR · index **+2,4 %**_
+_Generated 2026-09-11 19:54 UTC · 603 items across 25 categories · marketplace EBAY_DE · used · EUR · index **+2,4 %**_
 
 **Market context (2026):** the DRAM/GDDR shortage keeps used prices elevated. Used RTX 3090s ask €1000–1500 on eBay.de; DDR5 German retail is ~4.2–4.5× its July-2025 level; DDR4 RDIMM shops ask €219–230 for 32 GB while private sellers still move pre-shortage stock at €60–120. Note the new-price anchors: a BOSGAME M5 (Strix Halo, 128 GB) costs €1581–1700 new — used Strix Halo above that is not a deal. Verify everything live — prices move weekly.
 
-## 🔥 Deal highlights
+## 🎯 Shortlist — ranked by expected margin
 
-Listings currently **at or within 15 % of the buy-low target** — the shortlist to inspect first:
+Expected margin = resale estimate × (1 − 13 % fee) − asking, weighted by **market churn** — the share of that category's tracked listings that left the market (market churn 57% overall). Resale estimates are **asking medians** — the sold-price anchors are off (repo Variable EBAY_SOLD_ANCHORS=1), so read these margins as asking-price ceilings, not money in hand.
+
+| # | Category | Price | Est. resale | Margin | Clears ≈ | Title | Note |
+|---|---|---|---|---|---|---|---|
+| 1 | RTX 4070 Ti Super | **€799,97** | €1.112,19 | **€167,64** | 45% | [Gigabyte GeForce RTX 4070 Ti SUPER GAMING OC 16GB GDDR6X Grafikkarte mit HDMI DP](https://www.ebay.de/itm/287557976967?_skw=RTX+4070+Ti+Super&hash=item42f3ca8387:g:f-gAAeSwrj5qlqr-) | churn 45% of 22 tracked · est: asking median |
+| 2 | RTX 4080 Super | **€939,00** | €1.222,10 | **€124,22** | 59% | [ASUS ProArt GeForce RTX 4080 Super OC 16GB GDDR6X  NVIDIA Grafikkarte](https://www.ebay.de/itm/227509173898?_skw=RTX+4080+Super&hash=item34f89a7e8a:g:ch4AAeSw-qlqmlqg) | churn 59% of 29 tracked · est: asking median · was €950,00 on 2026-09-08 |
+| 3 | RTX 4080 Super | **€949,90** | €1.222,10 | **€113,32** | 59% | [⭐️ Premium Nvidia RTX 4080 Super - Gigabyte GAMING OC 16GB GDDR6X Grafikkarte](https://www.ebay.de/itm/188911855380?_skw=RTX+4080+Super&hash=item2bfc062714:g:1OEAAeSwDahqomEH) | churn 59% of 29 tracked · est: asking median |
+| 4 | RTX 3090 | **€1.300,00** | €1.599,00 | **€91,13** | 72% | [ASUS GeForce 3090 RTX Turbo 24GB (mehrere vorhanden)](https://www.ebay.de/itm/287574944368?_skw=RTX+3090&hash=item42f4cd6a70:g:wDUAAeSwpSVqlAAA) | churn 72% of 72 tracked · est: asking median |
+| 5 | Nvidia Quadro RTX | **€517,70** | €715,00 | **€104,35** | 61% | [NVIDIA QUADRO RTX 5000 16GB GDDR6 PCI-E Grafikkarte](https://www.ebay.de/itm/327331595016?_skw=Quadro+RTX&hash=item4c367bc308:g:1zIAAOSwME5m21CG) | churn 61% of 54 tracked · est: asking median · was €516,80 on 2026-08-29 |
+| 6 | RTX 3090 Ti | **€1.499,00** | €1.869,00 | **€127,03** | 43% | [MSI GeForce RTX 3090 Ti SUPRIM X 24GB GDDR6X](https://www.ebay.de/itm/198632429526?_skw=RTX+3090+Ti&hash=item2e3f6a57d6:g:9vsAAeSwcvJqosPD) | churn 43% of 14 tracked · est: asking median |
+| 7 | RTX 4070 Ti Super | **€850,00** | €1.112,19 | **€117,61** | 45% | [Palit GeForce RTX 4070 Ti SUPER JetStream OC 16 GB GDDR6X HDMI DP PCI-E  #334592](https://www.ebay.de/itm/388820690122?_skw=RTX+4070+Ti+Super&hash=item5a8784e4ca:g:DqEAAeSwj3xomRsX) | churn 45% of 22 tracked · est: asking median |
+| 8 | Nvidia Quadro RTX | **€542,99** | €715,00 | **€79,06** | 61% | [Nvidia Quadro RTX 5000 Workstation-GPU 16 GB GDDR6 4x DP, USB-C PCI-E   #330025](https://www.ebay.de/itm/117367830423?_skw=Quadro+RTX&hash=item1b53aaf797:g:oTMAAeSwG9Fqi-Nx) | churn 61% of 54 tracked · est: asking median · was €548,90 on 2026-09-10 |
+| 9 | DDR5 32GB | **€250,00** | €350,00 | **€54,50** | 80% | [Dell 32GB 16Gx8 CAMM DDR5-5600 RAM](https://www.ebay.de/itm/137595556000?_skw=DDR5+32GB&hash=item20095590a0:g:Qw4AAeSw9jhqdZcy) | churn 80% of 93 tracked · est: asking median |
+| 10 | DDR5 32GB | **€250,00** | €350,00 | **€54,50** | 80% | [Kingston 32gb DDR5 UDIMM 4800MT/s KVR48U40BD8](https://www.ebay.de/itm/158067128946?_skw=DDR5+32GB&hash=item24cd88fa72:g:MRwAAeSwKwBqToZk) | churn 80% of 93 tracked · est: asking median |
+
+**Unproven — the margin looks real, liquidity cannot be measured yet** (too few tracked listings in that category to read a churn rate, so it is not ranked):
+
+- Mac Studio Ultra — €3.299,00 → est. €4.445,00, margin €568,15 · [listing](https://www.ebay.de/itm/117189776990?_skw=Mac+Studio+Ultra&hash=item1b490e165e:g:sP0AAOSwtThk30T5)
+- Mac Studio Ultra — €3.806,81 → est. €4.445,00, margin €60,34 · [listing](https://www.ebay.de/itm/296590641248?_skw=Mac+Studio+Ultra&hash=item450e2e0860:g:XCMAAOSwrslmojZV)
+
+_498 of 603 listings have a negative expected margin at these estimates and are not listed; 1 category is too thin (< 5 listings) to rank._
+
+## 🔥 Deal highlights — the raw buy-low flags
+
+Every listing at or within 15 % of its buy-low target (85 of 603 — the flag is broad by design; the ranked shortlist above is the actionable view):
 
 | Category | Price | Net (−13 %) | Buy-low target | Title | Seller | Note |
 |---|---|---|---|---|---|---|
@@ -908,5 +932,6 @@ _Window €28–63 · median **€41,74** · cheapest **€28,55** · 3 at/near 
 - €/GB is price ÷ capacity of the scan category (e.g. 32 GB RDIMM, 24 GB RTX 3090); mixed-capacity categories show —.
 - Sold median (when present) comes from eBay's public 'Verkauft' search — a best-effort resale anchor, not the Browse API; sample size matters.
 - In multi-marketplace mode, scan windows are interpreted in each marketplace's currency.
+- 🎯 Shortlist: expected margin = resale estimate × (1 − fee) − asking, weighted by **market churn** — the share of that category's tracked listings that left the market (sold *or* withdrawn; the tool cannot tell them apart, so it is a rate, not a probability). Only categories with their own churn measurement are ranked; the rest are listed as unproven.
 
 _Tooling: `ebay-search-skill/` (Browse API scanner + local relay) · Categories: 27386 GPUs · 171957 desktops · 170083 RAM · 11210 server RAM · Generated by the nightly GitHub Actions workflow_

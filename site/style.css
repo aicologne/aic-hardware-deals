@@ -321,6 +321,17 @@ code {
 #report > h2:first-child { margin-top: 0; }
 
 .section-intro { color: var(--text-muted); margin: 0 0 1rem; }
+/* Smaller print for caveats the reader must not miss (e.g. the shortlist's
+   "these margins are asking-price ceilings" note and the skipped-listing count). */
+.section-note { color: var(--text-soft); font-size: 0.88rem; margin: 0 0 0.5rem; }
+/* 🎯 Shortlist — the ranked, actionable table (see csv.js buildShortlist). */
+.table-shortlist .cell-rank { color: var(--text-soft); font-variant-numeric: tabular-nums; text-align: right; }
+.table-shortlist .cell-price strong { color: var(--deal); }
+.table-shortlist .cell-margin strong { color: var(--ok); font-variant-numeric: tabular-nums; }
+.table-shortlist .cell-est, .table-shortlist .cell-churn { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.chip-churn { background: var(--surface-2); color: var(--text-muted); border: 1px solid var(--border); }
+.sl-unproven { color: var(--text-muted); font-size: 0.92rem; margin: 0 0 1rem; padding-left: 1.1rem; }
+.sl-unproven li { margin: 0.15rem 0; }
 
 .category { margin-bottom: 1rem; }
 
