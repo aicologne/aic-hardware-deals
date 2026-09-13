@@ -8,7 +8,7 @@
   {
     "query": "DDR4 RDIMM 32GB",
     "file": "DDR4-RDIMM-32GB.csv",
-    "rows": 38,
+    "rows": 39,
     "capacity_gb": 32
   },
   {
@@ -26,13 +26,13 @@
   {
     "query": "EliteDesk 800 G4 Mini",
     "file": "EliteDesk-800-G4-Mini.csv",
-    "rows": 7,
+    "rows": 13,
     "capacity_gb": null
   },
   {
     "query": "EliteDesk 800 G5 Mini",
     "file": "EliteDesk-800-G5-Mini.csv",
-    "rows": 16,
+    "rows": 17,
     "capacity_gb": null
   },
   {
@@ -62,25 +62,25 @@
   {
     "query": "Nvidia Quadro RTX",
     "file": "Nvidia-Quadro-RTX.csv",
-    "rows": 27,
+    "rows": 26,
     "capacity_gb": null
   },
   {
     "query": "OptiPlex 3070 Micro",
     "file": "OptiPlex-3070-Micro.csv",
-    "rows": 40,
+    "rows": 36,
     "capacity_gb": null
   },
   {
     "query": "RTX 3090",
     "file": "RTX-3090.csv",
-    "rows": 37,
+    "rows": 42,
     "capacity_gb": 24
   },
   {
     "query": "RTX 3090 Ti",
     "file": "RTX-3090-Ti.csv",
-    "rows": 10,
+    "rows": 11,
     "capacity_gb": 24
   },
   {
@@ -92,19 +92,19 @@
   {
     "query": "RTX 4070 Ti Super",
     "file": "RTX-4070-Ti-Super.csv",
-    "rows": 15,
+    "rows": 16,
     "capacity_gb": 16
   },
   {
     "query": "RTX 4080 Super",
     "file": "RTX-4080-Super.csv",
-    "rows": 22,
+    "rows": 21,
     "capacity_gb": 16
   },
   {
     "query": "RTX 5060",
     "file": "RTX-5060.csv",
-    "rows": 11,
+    "rows": 8,
     "capacity_gb": 16
   },
   {
@@ -140,7 +140,7 @@
   {
     "query": "X99 Mainboard",
     "file": "X99-Mainboard.csv",
-    "rows": 8,
+    "rows": 9,
     "capacity_gb": null
   },
   {
