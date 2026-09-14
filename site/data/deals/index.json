@@ -8,13 +8,13 @@
   {
     "query": "DDR4 RDIMM 32GB",
     "file": "DDR4-RDIMM-32GB.csv",
-    "rows": 39,
+    "rows": 38,
     "capacity_gb": 32
   },
   {
     "query": "DDR4 RDIMM 64GB",
     "file": "DDR4-RDIMM-64GB.csv",
-    "rows": 38,
+    "rows": 39,
     "capacity_gb": 64
   },
   {
@@ -50,25 +50,25 @@
   {
     "query": "Mac Studio Ultra",
     "file": "Mac-Studio-Ultra.csv",
-    "rows": 6,
+    "rows": 7,
     "capacity_gb": null
   },
   {
     "query": "NVMe SSD 2TB",
     "file": "NVMe-SSD-2TB.csv",
-    "rows": 49,
+    "rows": 50,
     "capacity_gb": null
   },
   {
     "query": "Nvidia Quadro RTX",
     "file": "Nvidia-Quadro-RTX.csv",
-    "rows": 26,
+    "rows": 27,
     "capacity_gb": null
   },
   {
     "query": "OptiPlex 3070 Micro",
     "file": "OptiPlex-3070-Micro.csv",
-    "rows": 36,
+    "rows": 35,
     "capacity_gb": null
   },
   {
@@ -92,19 +92,19 @@
   {
     "query": "RTX 4070 Ti Super",
     "file": "RTX-4070-Ti-Super.csv",
-    "rows": 16,
+    "rows": 14,
     "capacity_gb": 16
   },
   {
     "query": "RTX 4080 Super",
     "file": "RTX-4080-Super.csv",
-    "rows": 21,
+    "rows": 18,
     "capacity_gb": 16
   },
   {
     "query": "RTX 5060",
     "file": "RTX-5060.csv",
-    "rows": 8,
+    "rows": 9,
     "capacity_gb": 16
   },
   {
@@ -140,7 +140,7 @@
   {
     "query": "X99 Mainboard",
     "file": "X99-Mainboard.csv",
-    "rows": 9,
+    "rows": 10,
     "capacity_gb": null
   },
   {
