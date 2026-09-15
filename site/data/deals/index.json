@@ -2,7 +2,7 @@
   {
     "query": "AMD Ryzen AI Max 395 (Strix Halo)",
     "file": "AMD-Ryzen-AI-Max-395-Strix-Halo.csv",
-    "rows": 2,
+    "rows": 1,
     "capacity_gb": null
   },
   {
@@ -26,13 +26,13 @@
   {
     "query": "EliteDesk 800 G4 Mini",
     "file": "EliteDesk-800-G4-Mini.csv",
-    "rows": 13,
+    "rows": 12,
     "capacity_gb": null
   },
   {
     "query": "EliteDesk 800 G5 Mini",
     "file": "EliteDesk-800-G5-Mini.csv",
-    "rows": 17,
+    "rows": 16,
     "capacity_gb": null
   },
   {
@@ -50,7 +50,7 @@
   {
     "query": "Mac Studio Ultra",
     "file": "Mac-Studio-Ultra.csv",
-    "rows": 7,
+    "rows": 8,
     "capacity_gb": null
   },
   {
@@ -62,13 +62,13 @@
   {
     "query": "Nvidia Quadro RTX",
     "file": "Nvidia-Quadro-RTX.csv",
-    "rows": 27,
+    "rows": 26,
     "capacity_gb": null
   },
   {
     "query": "OptiPlex 3070 Micro",
     "file": "OptiPlex-3070-Micro.csv",
-    "rows": 35,
+    "rows": 38,
     "capacity_gb": null
   },
   {
@@ -86,7 +86,7 @@
   {
     "query": "RTX 4060 Ti 16GB",
     "file": "RTX-4060-Ti-16GB.csv",
-    "rows": 4,
+    "rows": 2,
     "capacity_gb": 16
   },
   {
@@ -98,13 +98,13 @@
   {
     "query": "RTX 4080 Super",
     "file": "RTX-4080-Super.csv",
-    "rows": 18,
+    "rows": 17,
     "capacity_gb": 16
   },
   {
     "query": "RTX 5060",
     "file": "RTX-5060.csv",
-    "rows": 9,
+    "rows": 8,
     "capacity_gb": 16
   },
   {
@@ -116,7 +116,7 @@
   {
     "query": "Tesla P40",
     "file": "Tesla-P40.csv",
-    "rows": 44,
+    "rows": 45,
     "capacity_gb": 24
   },
   {
@@ -128,7 +128,7 @@
   {
     "query": "ThinkCentre M720q",
     "file": "ThinkCentre-M720q.csv",
-    "rows": 50,
+    "rows": 49,
     "capacity_gb": null
   },
   {
@@ -140,13 +140,13 @@
   {
     "query": "X99 Mainboard",
     "file": "X99-Mainboard.csv",
-    "rows": 10,
+    "rows": 8,
     "capacity_gb": null
   },
   {
     "query": "Xeon E5-2690v4",
     "file": "Xeon-E5-2690v4.csv",
-    "rows": 14,
+    "rows": 12,
     "capacity_gb": null
   }
 ]
