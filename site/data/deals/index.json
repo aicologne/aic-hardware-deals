@@ -14,13 +14,13 @@
   {
     "query": "DDR4 RDIMM 64GB",
     "file": "DDR4-RDIMM-64GB.csv",
-    "rows": 39,
+    "rows": 41,
     "capacity_gb": 64
   },
   {
     "query": "DDR5 32GB",
     "file": "DDR5-32GB.csv",
-    "rows": 49,
+    "rows": 50,
     "capacity_gb": 32
   },
   {
@@ -50,7 +50,7 @@
   {
     "query": "Mac Studio Ultra",
     "file": "Mac-Studio-Ultra.csv",
-    "rows": 8,
+    "rows": 6,
     "capacity_gb": null
   },
   {
@@ -62,7 +62,7 @@
   {
     "query": "Nvidia Quadro RTX",
     "file": "Nvidia-Quadro-RTX.csv",
-    "rows": 26,
+    "rows": 27,
     "capacity_gb": null
   },
   {
@@ -74,13 +74,13 @@
   {
     "query": "RTX 3090",
     "file": "RTX-3090.csv",
-    "rows": 42,
+    "rows": 43,
     "capacity_gb": 24
   },
   {
     "query": "RTX 3090 Ti",
     "file": "RTX-3090-Ti.csv",
-    "rows": 11,
+    "rows": 9,
     "capacity_gb": 24
   },
   {
@@ -92,7 +92,7 @@
   {
     "query": "RTX 4070 Ti Super",
     "file": "RTX-4070-Ti-Super.csv",
-    "rows": 14,
+    "rows": 16,
     "capacity_gb": 16
   },
   {
@@ -104,13 +104,13 @@
   {
     "query": "RTX 5060",
     "file": "RTX-5060.csv",
-    "rows": 8,
+    "rows": 6,
     "capacity_gb": 16
   },
   {
     "query": "RTX 5070 16GB",
     "file": "RTX-5070-16GB.csv",
-    "rows": 7,
+    "rows": 9,
     "capacity_gb": 16
   },
   {
@@ -122,13 +122,13 @@
   {
     "query": "Tesla T4",
     "file": "Tesla-T4.csv",
-    "rows": 13,
+    "rows": 14,
     "capacity_gb": 16
   },
   {
     "query": "ThinkCentre M720q",
     "file": "ThinkCentre-M720q.csv",
-    "rows": 49,
+    "rows": 50,
     "capacity_gb": null
   },
   {
@@ -140,7 +140,7 @@
   {
     "query": "X99 Mainboard",
     "file": "X99-Mainboard.csv",
-    "rows": 8,
+    "rows": 5,
     "capacity_gb": null
   },
   {
