@@ -2,13 +2,13 @@
   {
     "query": "AMD Ryzen AI Max 395 (Strix Halo)",
     "file": "AMD-Ryzen-AI-Max-395-Strix-Halo.csv",
-    "rows": 1,
+    "rows": 4,
     "capacity_gb": null
   },
   {
     "query": "DDR4 RDIMM 32GB",
     "file": "DDR4-RDIMM-32GB.csv",
-    "rows": 38,
+    "rows": 37,
     "capacity_gb": 32
   },
   {
@@ -26,13 +26,13 @@
   {
     "query": "EliteDesk 800 G4 Mini",
     "file": "EliteDesk-800-G4-Mini.csv",
-    "rows": 12,
+    "rows": 13,
     "capacity_gb": null
   },
   {
     "query": "EliteDesk 800 G5 Mini",
     "file": "EliteDesk-800-G5-Mini.csv",
-    "rows": 16,
+    "rows": 18,
     "capacity_gb": null
   },
   {
@@ -44,13 +44,13 @@
   {
     "query": "Gaming PC mit RTX 3090",
     "file": "Gaming-PC-mit-RTX-3090.csv",
-    "rows": 4,
+    "rows": 5,
     "capacity_gb": null
   },
   {
     "query": "Mac Studio Ultra",
     "file": "Mac-Studio-Ultra.csv",
-    "rows": 6,
+    "rows": 5,
     "capacity_gb": null
   },
   {
@@ -62,13 +62,13 @@
   {
     "query": "Nvidia Quadro RTX",
     "file": "Nvidia-Quadro-RTX.csv",
-    "rows": 27,
+    "rows": 26,
     "capacity_gb": null
   },
   {
     "query": "OptiPlex 3070 Micro",
     "file": "OptiPlex-3070-Micro.csv",
-    "rows": 38,
+    "rows": 42,
     "capacity_gb": null
   },
   {
@@ -86,13 +86,13 @@
   {
     "query": "RTX 4060 Ti 16GB",
     "file": "RTX-4060-Ti-16GB.csv",
-    "rows": 2,
+    "rows": 1,
     "capacity_gb": 16
   },
   {
     "query": "RTX 4070 Ti Super",
     "file": "RTX-4070-Ti-Super.csv",
-    "rows": 16,
+    "rows": 15,
     "capacity_gb": 16
   },
   {
@@ -104,19 +104,19 @@
   {
     "query": "RTX 5060",
     "file": "RTX-5060.csv",
-    "rows": 6,
+    "rows": 7,
     "capacity_gb": 16
   },
   {
     "query": "RTX 5070 16GB",
     "file": "RTX-5070-16GB.csv",
-    "rows": 9,
+    "rows": 11,
     "capacity_gb": 16
   },
   {
     "query": "Tesla P40",
     "file": "Tesla-P40.csv",
-    "rows": 45,
+    "rows": 37,
     "capacity_gb": 24
   },
   {
@@ -146,7 +146,7 @@
   {
     "query": "Xeon E5-2690v4",
     "file": "Xeon-E5-2690v4.csv",
-    "rows": 12,
+    "rows": 10,
     "capacity_gb": null
   }
 ]
