@@ -14,7 +14,7 @@
   {
     "query": "DDR4 RDIMM 64GB",
     "file": "DDR4-RDIMM-64GB.csv",
-    "rows": 26,
+    "rows": 23,
     "capacity_gb": 64
   },
   {
@@ -62,31 +62,31 @@
   {
     "query": "Nvidia Quadro RTX",
     "file": "Nvidia-Quadro-RTX.csv",
-    "rows": 30,
+    "rows": 27,
     "capacity_gb": null
   },
   {
     "query": "OptiPlex 3070 Micro",
     "file": "OptiPlex-3070-Micro.csv",
-    "rows": 40,
+    "rows": 50,
     "capacity_gb": null
   },
   {
     "query": "RTX 3090",
     "file": "RTX-3090.csv",
-    "rows": 50,
+    "rows": 44,
     "capacity_gb": 24
   },
   {
     "query": "RTX 3090 Ti",
     "file": "RTX-3090-Ti.csv",
-    "rows": 9,
+    "rows": 8,
     "capacity_gb": 24
   },
   {
     "query": "RTX 4060 Ti 16GB",
     "file": "RTX-4060-Ti-16GB.csv",
-    "rows": 2,
+    "rows": 3,
     "capacity_gb": 16
   },
   {
@@ -104,25 +104,25 @@
   {
     "query": "RTX 5060",
     "file": "RTX-5060.csv",
-    "rows": 6,
+    "rows": 3,
     "capacity_gb": 16
   },
   {
     "query": "RTX 5070 16GB",
     "file": "RTX-5070-16GB.csv",
-    "rows": 12,
+    "rows": 13,
     "capacity_gb": 16
   },
   {
     "query": "Tesla P40",
     "file": "Tesla-P40.csv",
-    "rows": 38,
+    "rows": 39,
     "capacity_gb": 24
   },
   {
     "query": "Tesla T4",
     "file": "Tesla-T4.csv",
-    "rows": 16,
+    "rows": 15,
     "capacity_gb": 16
   },
   {
@@ -140,7 +140,7 @@
   {
     "query": "X99 Mainboard",
     "file": "X99-Mainboard.csv",
-    "rows": 15,
+    "rows": 17,
     "capacity_gb": null
   },
   {
