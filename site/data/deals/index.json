@@ -2,19 +2,19 @@
   {
     "query": "AMD Ryzen AI Max 395 (Strix Halo)",
     "file": "AMD-Ryzen-AI-Max-395-Strix-Halo.csv",
-    "rows": 3,
+    "rows": 2,
     "capacity_gb": null
   },
   {
     "query": "DDR4 RDIMM 32GB",
     "file": "DDR4-RDIMM-32GB.csv",
-    "rows": 39,
+    "rows": 42,
     "capacity_gb": 32
   },
   {
     "query": "DDR4 RDIMM 64GB",
     "file": "DDR4-RDIMM-64GB.csv",
-    "rows": 23,
+    "rows": 22,
     "capacity_gb": 64
   },
   {
@@ -44,7 +44,7 @@
   {
     "query": "Gaming PC mit RTX 3090",
     "file": "Gaming-PC-mit-RTX-3090.csv",
-    "rows": 4,
+    "rows": 5,
     "capacity_gb": null
   },
   {
@@ -62,7 +62,7 @@
   {
     "query": "Nvidia Quadro RTX",
     "file": "Nvidia-Quadro-RTX.csv",
-    "rows": 27,
+    "rows": 25,
     "capacity_gb": null
   },
   {
@@ -74,55 +74,55 @@
   {
     "query": "RTX 3090",
     "file": "RTX-3090.csv",
-    "rows": 44,
+    "rows": 46,
     "capacity_gb": 24
   },
   {
     "query": "RTX 3090 Ti",
     "file": "RTX-3090-Ti.csv",
-    "rows": 8,
+    "rows": 9,
     "capacity_gb": 24
   },
   {
     "query": "RTX 4060 Ti 16GB",
     "file": "RTX-4060-Ti-16GB.csv",
-    "rows": 3,
+    "rows": 2,
     "capacity_gb": 16
   },
   {
     "query": "RTX 4070 Ti Super",
     "file": "RTX-4070-Ti-Super.csv",
-    "rows": 14,
+    "rows": 15,
     "capacity_gb": 16
   },
   {
     "query": "RTX 4080 Super",
     "file": "RTX-4080-Super.csv",
-    "rows": 23,
+    "rows": 20,
     "capacity_gb": 16
   },
   {
     "query": "RTX 5060",
     "file": "RTX-5060.csv",
-    "rows": 3,
+    "rows": 4,
     "capacity_gb": 16
   },
   {
     "query": "RTX 5070 16GB",
     "file": "RTX-5070-16GB.csv",
-    "rows": 13,
+    "rows": 9,
     "capacity_gb": 16
   },
   {
     "query": "Tesla P40",
     "file": "Tesla-P40.csv",
-    "rows": 39,
+    "rows": 38,
     "capacity_gb": 24
   },
   {
     "query": "Tesla T4",
     "file": "Tesla-T4.csv",
-    "rows": 15,
+    "rows": 13,
     "capacity_gb": 16
   },
   {
@@ -140,7 +140,7 @@
   {
     "query": "X99 Mainboard",
     "file": "X99-Mainboard.csv",
-    "rows": 17,
+    "rows": 19,
     "capacity_gb": null
   },
   {
