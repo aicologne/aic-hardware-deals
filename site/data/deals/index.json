@@ -2,13 +2,13 @@
   {
     "query": "AMD Ryzen AI Max 395 (Strix Halo)",
     "file": "AMD-Ryzen-AI-Max-395-Strix-Halo.csv",
-    "rows": 4,
+    "rows": 6,
     "capacity_gb": null
   },
   {
     "query": "DDR4 RDIMM 32GB",
     "file": "DDR4-RDIMM-32GB.csv",
-    "rows": 43,
+    "rows": 44,
     "capacity_gb": 32
   },
   {
@@ -32,7 +32,7 @@
   {
     "query": "EliteDesk 800 G5 Mini",
     "file": "EliteDesk-800-G5-Mini.csv",
-    "rows": 20,
+    "rows": 18,
     "capacity_gb": null
   },
   {
@@ -50,7 +50,7 @@
   {
     "query": "Mac Studio Ultra",
     "file": "Mac-Studio-Ultra.csv",
-    "rows": 6,
+    "rows": 7,
     "capacity_gb": null
   },
   {
@@ -62,7 +62,7 @@
   {
     "query": "Nvidia Quadro RTX",
     "file": "Nvidia-Quadro-RTX.csv",
-    "rows": 28,
+    "rows": 27,
     "capacity_gb": null
   },
   {
@@ -74,13 +74,13 @@
   {
     "query": "RTX 3090",
     "file": "RTX-3090.csv",
-    "rows": 45,
+    "rows": 46,
     "capacity_gb": 24
   },
   {
     "query": "RTX 3090 Ti",
     "file": "RTX-3090-Ti.csv",
-    "rows": 10,
+    "rows": 11,
     "capacity_gb": 24
   },
   {
@@ -98,19 +98,19 @@
   {
     "query": "RTX 4080 Super",
     "file": "RTX-4080-Super.csv",
-    "rows": 20,
+    "rows": 19,
     "capacity_gb": 16
   },
   {
     "query": "RTX 5060",
     "file": "RTX-5060.csv",
-    "rows": 6,
+    "rows": 10,
     "capacity_gb": 16
   },
   {
     "query": "RTX 5070 16GB",
     "file": "RTX-5070-16GB.csv",
-    "rows": 10,
+    "rows": 13,
     "capacity_gb": 16
   },
   {
