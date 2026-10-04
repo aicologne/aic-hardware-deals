@@ -139,6 +139,8 @@ def search(
     # an unknown param is silently ignored and the API falls back to EBAY_US).
     # The price filter REQUIRES priceCurrency (error 12012) and condition
     # values take {BRACES} (e.g. conditions:{USED}).
+    # Title excludes are NOT sent here: the Browse API has no keyword-exclusion
+    # filter — apply_local_filters drops them from the returned page instead.
     filters = [f"price:[{pmin}..{pmax}]", f"priceCurrency:{currency}"]
     if cond:
         filters.append(f"conditions:{{{cond}}}")
@@ -222,17 +224,90 @@ def parse_item(it, query_name, marketplace, win_min=None, win_max=None):
 
 USED_CONDITIONS = {"USED", "Used", "Gebraucht", "Open box", "For parts or not working"}
 
+# Exclude phrases at least this long match as substrings; shorter ones match
+# only whole words. Rationale: eBay titles glue words together, so "Z8G4-Netzteil"
+# must match "netzteil" — but "cpu" also sits inside legitimate complete-system
+# titles ("... 2x Xeon Gold 6132 CPU 128GB"), and "cto" sits inside "Octo" and
+# "Vectorworks". 5 characters separates the distinctive part names from the
+# ambiguous short ones.
+WORD_MATCH_MIN_LEN = 5
 
-def apply_local_filters(items, pmin, pmax, cond, currency="EUR"):
+
+def _is_word_char(ch):
+    """True for a character a regex word boundary would treat as word-internal."""
+    return ch.isalnum() or ch == "_"
+
+
+def _contains_word(haystack, needle):
+    """True when `needle` occurs in `haystack` as a whole word.
+
+    Hand-rolled instead of `re` so the scanner keeps a stdlib-only import list
+    and the boundary rule is visible/testable; it is deliberately unicode-aware
+    because the exclude lists carry German terms ("kühler", "gehäuse").
+    """
+    start = haystack.find(needle)
+    while start != -1:
+        end = start + len(needle)
+        left_ok = start == 0 or not _is_word_char(haystack[start - 1])
+        right_ok = end == len(haystack) or not _is_word_char(haystack[end])
+        if left_ok and right_ok:
+            return True
+        start = haystack.find(needle, start + 1)
+    return False
+
+
+def _contains_term(haystack, term):
+    """Short terms match whole words, longer ones as substrings (see the const)."""
+    if len(term) < WORD_MATCH_MIN_LEN:
+        return _contains_word(haystack, term)
+    return term in haystack
+
+
+def match_exclude(title, exclude):
+    """Return the first exclude phrase found in `title`, or None.
+
+    Case-insensitive title match — the whole `exclude` feature (queries.py)
+    lives here. eBay's Browse API has NO keyword-exclusion filter: the
+    documented filters are `excludeSellers` and `excludeCategoryIds`
+    (developer.ebay.com/api-docs/buy/static/ref-buy-browse-filters.html) and `q`
+    has no minus-prefix syntax, so an unknown filter name would be silently
+    ignored on every request. Filtering the returned page locally is the
+    supported route.
+
+    Matching is case-insensitive, and terms shorter than WORD_MATCH_MIN_LEN
+    match whole words only (see `_contains_term`) — eBay titles glue words
+    together ("Z8G4-Netzteil" must still match "netzteil"), but a bare "cpu"
+    must not drop a complete workstation that merely lists its processors.
+
+    Limitation: this filters the page the API returned (sorted cheapest first),
+    it does not fetch more pages. Excludes therefore pair best with a floor
+    above the parts tier — they remove stragglers, they cannot reveal the
+    complete systems hiding behind a page full of 200 € spare parts.
+    """
+    haystack = str(title or "").lower()
+    if not haystack:
+        return None
+    if isinstance(exclude, str):
+        # A bare string would be iterated character by character, making every
+        # term a single letter that matches nearly every title.
+        exclude = [exclude]
+    for term in exclude or ():
+        needle = str(term).strip().lower()
+        if needle and _contains_term(haystack, needle):
+            return needle
+    return None
+
+
+def apply_local_filters(items, pmin, pmax, cond, currency="EUR", exclude=None):
     """Belt-and-braces client-side enforcement of the deal window.
 
     The server-side filters (price/priceCurrency/conditions) are authoritative,
     but eBay has been observed to ignore malformed filters silently — so the
-    script double-checks the currency, the price range, and the condition, and
-    reports how many items were dropped and why.
+    script double-checks the currency, the price range, the condition and the
+    title excludes, and reports how many items were dropped and why.
     """
     kept = []
-    dropped = {"currency": 0, "price": 0, "condition": 0}
+    dropped = {"currency": 0, "price": 0, "condition": 0, "title": 0}
     for it in items:
         price = it.get("price")
         if not isinstance(price, dict):
@@ -256,6 +331,9 @@ def apply_local_filters(items, pmin, pmax, cond, currency="EUR"):
             group, desc = "", str(cond_obj or "")
         if cond and group != cond and desc not in USED_CONDITIONS:
             dropped["condition"] += 1
+            continue
+        if match_exclude(it.get("title"), exclude):
+            dropped["title"] += 1
             continue
         kept.append(it)
     return kept, dropped
@@ -360,6 +438,9 @@ def scan_marketplace(
         if adaptive:
             label += f"  [adaptive vs static {q.get('min')}–{q.get('max')}]"
         print(f"=== {label} ===")
+        exclude = q.get("exclude")
+        if exclude:
+            print(f"    excluding titles containing: {', '.join(map(str, exclude))}")
         if demo:
             items = DEMO_ITEMS
         else:
@@ -396,12 +477,14 @@ def scan_marketplace(
                 print(f"  ERROR: {e}")
                 continue
         items, dropped = apply_local_filters(
-            items, wmin, wmax, q.get("cond"), currency=currency
+            items, wmin, wmax, q.get("cond"), currency=currency, exclude=exclude
         )
         if any(dropped.values()):
             print(
                 f"  (local filter dropped {dropped['currency']} wrong-currency, "
-                f"{dropped['price']} out-of-range, {dropped['condition']} wrong condition)"
+                f"{dropped['price']} out-of-range, {dropped['condition']} wrong condition"
+                + (f", {dropped['title']} excluded title" if exclude else "")
+                + ")"
             )
         for it in items:
             row = parse_item(it, q["name"], marketplace, wmin, wmax)

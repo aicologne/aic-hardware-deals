@@ -37,6 +37,12 @@ jobs:
           node --test tests/stats.test.mjs tests/marketplace.test.mjs
           node tests/marketplace_smoke.mjs
           node tests/app_smoke.mjs
+          # The mirror in .dsh/skills/ is what an agent session actually
+          # loads, and it drifted before: a stale .dsh relay once called a
+          # function that no longer existed, so a --relay scan returned zero
+          # rows with no visible error. Hash-compare source vs mirror and fail
+          # here rather than letting the next session run the broken copy.
+          python sync_skills.py --check
 
       - name: Run the eBay scan
         env:

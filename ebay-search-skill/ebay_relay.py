@@ -106,6 +106,10 @@ class RelayHandler(BaseHTTPRequestHandler):
         currency = arg("currency", "EUR")
         limit = int(arg("limit", 50))
         sort = arg("sort", "price")
+        # NOTE: no `exclude` handling here on purpose — the Browse API has no
+        # keyword-exclusion filter (`excludeSellers`/`excludeCategoryIds` are
+        # seller/category based, `q` has no minus syntax), so title excludes are
+        # applied by the scanner via ebay_search.apply_local_filters.
 
         realm = e.detect_realm(os.environ.get("EBAY_CLIENT_ID", ""),
                                os.environ.get("EBAY_CLIENT_SECRET", ""))

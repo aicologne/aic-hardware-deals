@@ -36,7 +36,7 @@ A working deal-hunting kit for buying used/refurbished hardware (headless mini P
 | File | What it is |
 |---|---|
 | [`LATEST.md`](LATEST.md) | **The final price report** — regenerated every night by the workflow (deal highlights, per-category medians, €/GB value, 30-day trend, median movers, market index, buy-low flags) |
-| [`ebay_deals.csv`](ebay_deals.csv) | Raw scan output (30 queries, EUR/used, client-side filtered, with marketplace column) |
+| [`ebay_deals.csv`](ebay_deals.csv) | Raw scan output (36 queries, EUR/used, client-side filtered, with marketplace column) |
 | [`site/data/history.csv`](site/data/history.csv) | **Price history** — one median/cheapest row per (marketplace, category) per scan date; powers the 30-day trendline, movers and the index |
 | [`site/data/listing_history.csv`](site/data/listing_history.csv) | **Per-listing price history** — first-seen vs last-seen per listing URL, for "was €X on DATE" repricing notes and **price-drop alerts** |
 | [`sold_anchors.csv`](sold_anchors.csv) | **Sold-price anchors (opt-in)** — median sold price per category from eBay's "Verkauft" search, merged into the report as resale context (generated only when `EBAY_SOLD_ANCHORS=1` is set) |
@@ -123,7 +123,7 @@ Full details in [`kleinanzeigen_playbook.md`](kleinanzeigen_playbook.md) (21 rea
 
 | File | Purpose |
 |---|---|
-| `ebay_search.py` | CLI scanner: 30 default queries (GPUs ≥16 GB incl. Quadro RTX, Radeon PRO W7800/W7900, Tesla T4/P100, RTX 4060 Ti 16 GB, 8th-gen mini PCs, DDR4/DDR5 RAM incl. RDIMM, NVMe 2 TB, Macs with big unified memory, AI hardware — DGX Spark / Strix Halo, whole gaming PCs, X99 build parts), realm auto-detection (sandbox vs production), correct filter syntax, client-side currency/price/condition enforcement, **adaptive deal windows** from the price history, **multi-marketplace mode** (`--marketplaces EBAY_DE,EBAY_AT,…` or the `EBAY_MARKETPLACES` env var, per-marketplace currency), `--demo`/`--debug`/`--relay` modes, CSV output with marketplace column |
+| `ebay_search.py` | CLI scanner: 36 default queries (GPUs ≥16 GB incl. Quadro RTX, Radeon PRO W7800/W7900, Tesla T4/P100, RTX 4060 Ti 16 GB, 8th-gen mini PCs, dual-socket workstations — HP Z8 G4, Dell Precision 7920, Lenovo ThinkStation P920 — DDR4/DDR5 RAM incl. RDIMM, NVMe 2 TB, Macs with big unified memory, AI hardware — DGX Spark / Strix Halo, whole gaming PCs, X99 build parts), realm auto-detection (sandbox vs production), correct filter syntax, client-side currency/price/condition enforcement, **adaptive deal windows** from the price history, **multi-marketplace mode** (`--marketplaces EBAY_DE,EBAY_AT,…` or the `EBAY_MARKETPLACES` env var, per-marketplace currency), `--demo`/`--debug`/`--relay` modes, CSV output with marketplace column |
 | `ebay_relay.py` | Local HTTP relay (127.0.0.1 only) that forwards to eBay's HTTPS API — enables live scans from network-restricted environments (e.g., a DSH sandbox that blocks outbound HTTPS but allows loopback HTTP) |
 | `render_report.py` | Renders `ebay_deals.csv` → `LATEST.md` (deal highlights, per-category medians, **€/GB column**, **Net column after ~13 % eBay fees**, buy-low flags, 30-day trend + **median movers** + **market index** from `site/data/history.csv`, **repricing notes** from `site/data/listing_history.csv`, **sold medians** from `sold_anchors.csv`, marketplace columns in multi-marketplace mode) |
 | `windows.py` | **Adaptive deal windows** — refines each query's static min/max from the last 30 days of medians (`site/data/history.csv`): the buy-low target tracks the market's lower quartile and the window ceiling widens as prices rise, so the scan and the 🔥 flags never go stale |
@@ -156,6 +156,12 @@ Full details in [`kleinanzeigen_playbook.md`](kleinanzeigen_playbook.md) (21 rea
     "cond": "USED",           # USED / NEW / REFURBISHED / "" = any
     "category": 27386,        # 27386 GPUs · 171957 Desktops · 170083 RAM · 11210 Server-RAM · None = keyword-only
     "capacity_gb": 16,        # OPTIONAL: unambiguous capacity → €/GB column appears
+    "exclude": ["defekt",     # OPTIONAL: title phrases that disqualify a LISTING (parts,
+                "cpu"],       #   accessories, broken). Case-insensitive; terms of 5+ chars
+                              #   match as substrings, shorter ones as whole words only
+                              #   (so "cpu" cannot drop a complete rig that lists its CPUs)
+    "barebone_floor_eur": 882, # OPTIONAL: price of the barebone/parts listing sharing the
+                              #   model name; `min` must be >= this (unit-tested)
     "mp": {"max": 2200},      # OPTIONAL: Facebook Marketplace deep links for the board
                               #   {"max": 1100}                        → all FB_MARKETPLACES countries, default city
                               #   {"max": 200, "city": "all"}          → every city of those countries
@@ -164,16 +170,17 @@ Full details in [`kleinanzeigen_playbook.md`](kleinanzeigen_playbook.md) (21 rea
 },
 ```
 
-Derived automatically — **no other file needs editing**:
+Derived automatically — **one exception, stated honestly**: a category that introduces a *new* `capacity_gb` also needs its key added to the fallback map in `site/csv.js` (the normal path hydrates €/GB from `data/deals/index.json` at runtime; the fallback only matters for single-CSV mode). Everything else follows from the dict:
 
 | Where | Derives from |
 |---|---|
 | eBay scan (nightly) | `DEFAULT_QUERIES` (scanner iterates the list) |
-| €/GB column (site + `LATEST.md`) | `capacity_gb` → `render_report.py` + `site/data/deals/index.json` → site hydrates at runtime |
+| €/GB column (site + `LATEST.md`) | `capacity_gb` → `render_report.py` + `site/data/deals/index.json` → site hydrates at runtime (fallback map in `csv.js`, checked both ways by the tests) |
 | Marketplace board links | `mp` block → `fb_marketplace.py --from-queries` regenerates all sheets + `searches.csv` in one call |
 | Per-category site chunks | `split_deals.py` (re-splits the CSV per query automatically) |
+| Parts/noise filtering | `exclude` → `ebay_search.apply_local_filters` (eBay's Browse API has no keyword-exclusion filter) |
 
-Unit tests (`tests/test_queries.py`) guard the derived views, so a new product with a typo (missing field, duplicate name, `min >= max`) fails the pipeline instead of silently breaking the report.
+Unit tests (`tests/test_queries.py`) guard the derived views **and the deal quality**: a new product with a typo (missing field, duplicate name, `min >= max`) fails the pipeline, and so does a window that sits at or below its documented `barebone_floor_eur`, a window narrower than 1.3× or wider than 20×, or an `exclude` entry that is not a lowercase non-empty string. Any product that carries a barebone floor must also carry an `exclude` list — a floor alone cannot tell a complete machine from its spare parts, which is the whole reason `exclude` exists. The `csv.js` capacity fallback is checked **both ways**, so a new €/GB category cannot silently render "—" in single-CSV mode.
 
 ### Quick start
 

@@ -125,19 +125,28 @@ export function groupKey(r) {
 // Capacity in GB per scan category. Single source of truth: queries.py
 // (`capacity_gb` field) -> split_deals.py writes it into data/deals/index.json,
 // and app.js hydrates this map at runtime. The entries below are only a
-// FALLBACK for the single-CSV mode and unit tests; new products need no
-// front-end edit. Mixed-capacity categories (e.g. Quadro RTX 8/16/24 GB)
-// stay absent and render "—".
+// FALLBACK for the single-CSV mode and unit tests. Mixed-capacity categories
+// (e.g. Quadro RTX 8/16/24 GB) stay absent and render "—".
+// NOTE: the "new products need no front-end edit" rule holds for everything
+// except a category that introduces a NEW `capacity_gb`: add it here too, or
+// €/GB renders "—" in single-CSV fallback mode. tests/test_queries.py checks
+// this map against queries.py BOTH ways, so a forgotten key fails the pipeline.
 export const CAPACITY_GB = {
   'RTX 3090': 24,
   'RTX 3090 Ti': 24,
   'RTX 4070 Ti Super': 16,
   'RTX 4080 Super': 16,
   'RTX 5070 16GB': 16,
+  'RTX 5060': 16,
+  'RTX 4060 Ti 16GB': 16,
   'Tesla P40': 24,
+  'Tesla T4': 16,
+  'Radeon PRO W7800': 32,
+  'Radeon PRO W7900': 48,
   'DDR4 RDIMM 32GB': 32,
   'DDR4 RDIMM 64GB': 64,
   'DDR5 32GB': 32,
+  'DDR5 RDIMM': 32,
 };
 
 export function euroPerGb(price, query) {

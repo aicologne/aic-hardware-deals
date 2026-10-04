@@ -15,6 +15,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from _helpers import temp_dir  # noqa: E402
 import ebay_search  # noqa: E402
+import queries  # noqa: E402
 
 
 class TestDetectRealm(unittest.TestCase):
@@ -93,7 +94,7 @@ class TestApplyLocalFilters(unittest.TestCase):
         ]
         kept, dropped = ebay_search.apply_local_filters(items, 60, 250, "USED", currency="EUR")
         self.assertEqual(len(kept), 1)
-        self.assertEqual(dropped, {"currency": 1, "price": 2, "condition": 1})
+        self.assertEqual(dropped, {"currency": 1, "price": 2, "condition": 1, "title": 0})
 
     def test_no_condition_filter_keeps_all_conditions(self):
         items = [
@@ -102,7 +103,7 @@ class TestApplyLocalFilters(unittest.TestCase):
         ]
         kept, dropped = ebay_search.apply_local_filters(items, 0, 200, None, currency="EUR")
         self.assertEqual(len(kept), 2)
-        self.assertEqual(dropped, {"currency": 0, "price": 0, "condition": 0})
+        self.assertEqual(dropped, {"currency": 0, "price": 0, "condition": 0, "title": 0})
 
     def test_boundaries_inclusive(self):
         items = [{"price": {"value": "60", "currency": "EUR"}},
@@ -120,6 +121,101 @@ class TestApplyLocalFilters(unittest.TestCase):
         items = [{"price": {"value": "100"}}]
         kept, dropped = ebay_search.apply_local_filters(items, 0, 200, None, currency="EUR")
         self.assertEqual(len(kept), 1, "empty currency passes the filter")
+
+
+class TestMatchExclude(unittest.TestCase):
+    """The local `exclude` feature, driven by the SHIPPED list.
+
+    The fixture is `queries.EXCLUDE_WORKSTATION_ALL` — the real list the three
+    workstation products use — so a change there is exercised here instead of
+    drifting silently behind a hand-copied list.
+    """
+
+    EXCLUDE = queries.EXCLUDE_WORKSTATION_ALL
+
+    def test_matches_case_insensitively(self):
+        self.assertEqual(ebay_search.match_exclude("HP Z8 G4 DEFEKT", self.EXCLUDE), "defekt")
+        self.assertEqual(ebay_search.match_exclude("Netzteil 1700W", self.EXCLUDE), "netzteil")
+
+    def test_substring_match_catches_glued_titles(self):
+        """Longer terms match inside glued words; the FIRST match wins by list order.
+
+        "Z8G4-CTO-Chassis" matches both "cto" (word) and "chassis" (substring),
+        and match_exclude documents list order — not title order — so the
+        assertion names the earlier term deliberately.
+        """
+        self.assertEqual(ebay_search.match_exclude("Z8G4-CTO-Chassis", self.EXCLUDE), "cto")
+        self.assertEqual(ebay_search.match_exclude("Z8G4Barebone", self.EXCLUDE), "barebone")
+        self.assertEqual(ebay_search.match_exclude("Z8G4-Netzteil", self.EXCLUDE), "netzteil")
+
+    def test_returns_none_for_clean_title(self):
+        self.assertIsNone(ebay_search.match_exclude(
+            "HP Z8 G4 Workstation 2x Xeon Gold 6148 128GB RTX 4000", self.EXCLUDE))
+
+    def test_short_terms_do_not_match_inside_words(self):
+        """The MAJOR review finding: 'cto' must not fire on 'Octo'/'vector'."""
+        self.assertIsNone(ebay_search.match_exclude("OCTO Core Server", self.EXCLUDE))
+        self.assertIsNone(ebay_search.match_exclude(
+            "Workstation für Vectorworks", self.EXCLUDE))
+
+    def test_short_terms_still_match_as_whole_words(self):
+        self.assertEqual(ebay_search.match_exclude("HP Z8 G4 CTO Chassis", self.EXCLUDE), "cto")
+        self.assertEqual(
+            ebay_search.match_exclude("HP Z8 G4 (CTO) ohne RAM", self.EXCLUDE), "cto")
+
+    def test_complete_machine_listing_its_cpu_survives(self):
+        """The core false-positive guard: a complete system may say 'CPU'."""
+        self.assertIsNone(ebay_search.match_exclude(
+            "HP Z8 G4 Workstation 2x Xeon Gold 6132 CPU 128GB 1TB", self.EXCLUDE))
+        self.assertIsNone(ebay_search.match_exclude(
+            "Dell Precision 7920 Tower 2x Xeon Silver 4114 CPU", self.EXCLUDE))
+
+    def test_no_exclude_list_and_missing_title_are_safe(self):
+        self.assertIsNone(ebay_search.match_exclude("HP Z8 G4 defekt", None))
+        self.assertIsNone(ebay_search.match_exclude("HP Z8 G4 defekt", []))
+        self.assertIsNone(ebay_search.match_exclude(None, self.EXCLUDE))
+        self.assertIsNone(ebay_search.match_exclude("", self.EXCLUDE))
+
+    def test_a_bare_string_is_treated_as_one_term(self):
+        """Iterating a string would make every letter a term ('d' matches all)."""
+        self.assertEqual(ebay_search.match_exclude("HP Z8 G4 defekt", "defekt"), "defekt")
+        self.assertIsNone(ebay_search.match_exclude("HP Z8 G4 Workstation 128GB", "defekt"))
+
+    def test_blank_and_whitespace_terms_never_match(self):
+        self.assertIsNone(ebay_search.match_exclude("HP Z8 G4", ["  ", ""]))
+
+    def test_umlaut_variant_matches_needing_lowercase_config(self):
+        # titles often drop the umlaut; the exclude list carries both variants
+        self.assertEqual(
+            ebay_search.match_exclude("Kühler für Z8 G4", ["kühler", "kuehler"]), "kühler")
+        self.assertEqual(
+            ebay_search.match_exclude("Kuehler Z8 G4", ["kühler", "kuehler"]), "kuehler")
+
+    def test_filter_drops_excluded_titles_and_counts_them(self):
+        items = [
+            {"title": "HP Z8 G4 Workstation 2x Xeon 128GB",
+             "price": {"value": "2400", "currency": "EUR"},
+             "condition": {"conditionGroup": "USED"}},
+            {"title": "HP Z8 G4 Netzteil 1700W",
+             "price": {"value": "209", "currency": "EUR"},
+             "condition": {"conditionGroup": "USED"}},
+            {"title": "HP Z8 G4 CTO Chassis ohne CPU",
+             "price": {"value": "882", "currency": "EUR"},
+             "condition": {"conditionGroup": "USED"}},
+        ]
+        kept, dropped = ebay_search.apply_local_filters(
+            items, 100, 13500, "USED", currency="EUR", exclude=self.EXCLUDE)
+        self.assertEqual([i["title"] for i in kept], ["HP Z8 G4 Workstation 2x Xeon 128GB"])
+        self.assertEqual(dropped["title"], 2)
+        self.assertEqual(dropped["price"], 0, "excludes are counted separately from price")
+
+    def test_filter_without_exclude_list_keeps_parts(self):
+        items = [{"title": "HP Z8 G4 Netzteil 1700W",
+                  "price": {"value": "209", "currency": "EUR"},
+                  "condition": {"conditionGroup": "USED"}}]
+        kept, dropped = ebay_search.apply_local_filters(items, 100, 13500, "USED", currency="EUR")
+        self.assertEqual(len(kept), 1, "no exclude list configured -> no title filtering")
+        self.assertEqual(dropped["title"], 0)
 
 
 class TestLoadEnvFile(unittest.TestCase):
@@ -195,6 +291,38 @@ class TestScanMarketplaceDemo(unittest.TestCase):
                 [q], "client", "secret", "EBAY_DE", "EUR", "relay", demo=True
             )
         self.assertEqual(len(rows), len(ebay_search.DEMO_ITEMS))
+
+    def test_scan_applies_the_query_exclude_list(self):
+        """End-to-end wiring: a query's `exclude` must actually drop rows.
+
+        Without this, deleting the `exclude=` keyword at the
+        scan_marketplace -> apply_local_filters call site would keep the whole
+        suite green while parts silently reappear in the report.
+        """
+        q = {"name": "HP Z8 G4 Workstation", "q": "HP Z8 G4", "min": 1000,
+             "max": 13500, "cond": "USED", "category": 171957,
+             "exclude": list(queries.EXCLUDE_WORKSTATION_ALL)}
+        items = [
+            {"title": "HP Z8 G4 Workstation 2x Xeon 128GB",
+             "price": {"value": "2400", "currency": "EUR"},
+             "condition": {"conditionGroup": "USED"}},
+            {"title": "HP Z8 G4 Netzteil 1700W",
+             "price": {"value": "1200", "currency": "EUR"},
+             "condition": {"conditionGroup": "USED"}},
+            {"title": "HP Z8 G4 CTO Chassis ohne CPU",
+             "price": {"value": "1100", "currency": "EUR"},
+             "condition": {"conditionGroup": "USED"}},
+        ]
+        with mock.patch.object(ebay_search, "relay_search",
+                               return_value={"itemSummaries": items}), \
+             mock.patch.object(ebay_search.time, "sleep"), \
+             mock.patch("sys.stdout", new=mock.MagicMock()):
+            rows = ebay_search.scan_marketplace(
+                [q], "client", "secret", "EBAY_DE", "EUR", "relay", relay="http://127.0.0.1:1"
+            )
+        self.assertEqual(len(rows), 1, "parts and barebones must not reach the CSV")
+        self.assertEqual(rows[0]["title"], "HP Z8 G4 Workstation 2x Xeon 128GB")
+        self.assertEqual(rows[0]["query"], "HP Z8 G4 Workstation")
 
 
 if __name__ == "__main__":

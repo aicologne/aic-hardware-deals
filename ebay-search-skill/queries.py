@@ -12,11 +12,67 @@
 #   category   eBay category id, or None for keyword-only scans
 #   capacity_gb  OPTIONAL: unambiguous capacity for the €/GB column
 #              (omit for mixed-capacity categories like "Nvidia Quadro RTX")
+#   exclude    OPTIONAL: lowercase phrases that disqualify a LISTING by its
+#              title (parts, accessories, broken units). Enforced locally in
+#              ebay_search.apply_local_filters — the Browse API has no
+#              keyword-exclusion filter, so this is the only place it can
+#              happen. Terms of 5+ characters match as substrings (titles glue
+#              words: "Z8G4-Netzteil"); shorter ones match whole words only, so
+#              "cpu" cannot kill a complete workstation that merely lists its
+#              processors. This is what lets a floor sit below the barebone
+#              price when the model name doubles as a parts name.
+#   barebone_floor_eur  OPTIONAL: EUR price of the cheapest barebone/parts
+#              listing that shares the model name (no CPU/RAM). `min` must be
+#              >= this; tests/test_queries.py enforces it, so a floor can
+#              never silently start admitting barebones.
 #   mp         OPTIONAL: Facebook Marketplace deep-link config for the board:
 #              { "max": 1100 }                       -> all FB_MARKETPLACES countries, default city
 #              { "max": 200, "city": "all" }         -> every city of the countries
 #              { "max": 120, "min": 40, "countries": "DE,AT" }  -> specific countries
 #              Omit `mp` entirely if you don't want Marketplace links.
+#
+# --- shared exclude lists -------------------------------------------------
+# A workstation model name is also the name of its own spare parts (a "HP Z8
+# G4" PSU, the bare CTO chassis, a lone CPU), so a price floor alone cannot
+# tell a complete machine from a part. Both lists disqualify a listing by
+# TITLE via ebay_search.match_exclude and are shared by the three entries
+# below so they live in exactly one place.
+#
+# WORD list: terms that also occur INSIDE ordinary listing words, so they are
+# matched as whole words. "cto" is the motivating case — "Octo" and "vector"
+# contain it. NOTE: "cpu" is deliberately NOT here — word boundaries cannot
+# separate a complete system that lists its processors ("2x Xeon Gold 6132 CPU")
+# from a CPU-only listing, because both write "CPU" as a standalone word, so the
+# term would drop the target inventory. "ohne cpu" (SUBSTRING list) catches the
+# barebone listings that actually say so.
+EXCLUDE_WORKSTATION_WORDS = [
+    "cto",            # the bare CTO chassis is the €882–980 barebone tier
+]
+
+# SUBSTRING list: distinctive 5+ character terms that cannot appear inside an
+# unrelated word, so they match even when a title glues them on ("Z8G4-Netzteil").
+EXCLUDE_WORKSTATION_PARTS = [
+    "defekt",         # broken / for parts
+    "bastler",
+    "ersatzteil",
+    "netzteil",       # PSU — a Z8 G4 1700 W PSU alone asks ~€209
+    "mainboard",
+    "motherboard",
+    "kühler",         # cooler (ASCII variant included: titles often drop the umlaut)
+    "kuehler",
+    "gehäuse",        # chassis
+    "gehaeuse",
+    "chassis",
+    "barebone",
+    "ohne ram",       # a barebone listing that says so instead of "chassis"
+    "ohne cpu",
+    "not working",
+]
+
+# What the three workstation entries below actually use. A fresh list per entry
+# (never the shared objects) so no caller can mutate the module-level lists by
+# touching a product's `exclude`.
+EXCLUDE_WORKSTATION_ALL = EXCLUDE_WORKSTATION_WORDS + EXCLUDE_WORKSTATION_PARTS
 
 DEFAULT_QUERIES = [
     # --- GPUs >= 16 GB VRAM (category 27386 = Grafik-/Videokarten) ---
@@ -326,7 +382,65 @@ DEFAULT_QUERIES = [
         "max": 3000,
         "cond": "USED",
         "category": 164,
-    }
+    },
+    # --- Dual-socket tower workstations (Xeon Scalable, 8-channel RDIMM) ---
+    # The same class as the HP Z8 G4: a full tower with 2 CPU sockets, 24 DDR4
+    # slots and 2-4 double-width GPU bays — i.e. an off-the-shelf 2×3090 AI
+    # host (see build_plan_2x3090.md) that is also very resellable. One entry
+    # per brand's flagship tower; the single-socket siblings (Dell 7820,
+    # Lenovo P720) are a class below and deliberately not tracked.
+    #
+    # The windows are set from dealer anchors, NOT from a live eBay scan, and
+    # are deliberately WIDE (they must not hide the market — that is the whole
+    # point of windows.py). The floors sit above the barebone/parts tier that
+    # shares each model name — the `exclude` lists throw those listings out by
+    # title, and `barebone_floor_eur` (CTO chassis without CPU/RAM: €882 Z8 G4,
+    # €882 P920, €980 Precision 7920) is the price the floor must not go below.
+    # The ceilings sit just above the most expensive single German listing
+    # seen, so RAM-loaded flagships still match and only pallets, multi-unit
+    # lots and mispriced listings are rejected.
+    # Asking-price band on all three (Gekko, refurbed, Harlander, Oct 2026):
+    # 16 GB entry ~€1.1–1.5k · the 2×Xeon/128 GB/RTX 4000-typical box
+    # ~€2.2–2.7k · 768 GB–1.5 TB ~€7.1–13.0k. RAM is the dominant driver
+    # (refurbed charges +€3,310 for 512 GB; ≈8.6 €/GB), which is why one
+    # window cannot separate an entry deal from a RAM-loaded one.
+    # KNOWN GAP: these are asking prices from refurb dealers, and eBay.de is
+    # bot-blocked here, so the eBay floor may sit lower. Verify live — and
+    # consider splitting each model into an entry (64–128 GB) and a RAM-loaded
+    # (512 GB+) query if the single window mixes tiers once history exists.
+    {
+        "name": "HP Z8 G4 Workstation",
+        # "Workstation" is not required: "HP Z8 G4" is already specific, and a
+        # mandatory suffix would hide complete systems that omit the word.
+        "q": "HP Z8 G4",
+        "min": 1000,
+        "max": 13500,
+        "cond": "USED",
+        "category": 171957,
+        "barebone_floor_eur": 882,
+        "exclude": list(EXCLUDE_WORKSTATION_ALL),
+    },
+    {
+        "name": "Dell Precision 7920 Tower",
+        # Bare "Precision 7920" also matches the 7920 Rack — hence the excludes.
+        "q": "Precision 7920",
+        "min": 1100,
+        "max": 14000,
+        "cond": "USED",
+        "category": 171957,
+        "barebone_floor_eur": 980,
+        "exclude": list(EXCLUDE_WORKSTATION_ALL) + ["rack"],
+    },
+    {
+        "name": "Lenovo ThinkStation P920",
+        "q": "ThinkStation P920",
+        "min": 950,
+        "max": 11000,
+        "cond": "USED",
+        "category": 171957,
+        "barebone_floor_eur": 882,
+        "exclude": list(EXCLUDE_WORKSTATION_ALL),
+    },
 ]
 
 

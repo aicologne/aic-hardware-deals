@@ -107,7 +107,10 @@ Useful filters (inside `filter=`):
 | currency | `priceCurrency:EUR` | must accompany `price` |
 | condition | `conditions:{USED}` | **values in {CURLY BRACES}**: `{NEW}`, `{USED}`, `{REFURBISHED}` |
 | pickup | `deliveryOptions:PICKUP` | local pickup only (Kleinanzeigen-style deals) |
-| excludes | `excludes:defekt` | filter keywords |
+| excluded sellers | `excludeSellers:{rpsSeller\|bigSales}` | drop items from these eBay user IDs |
+| excluded categories | `excludeCategoryIds:{15032\|31387}` | drop whole categories |
+
+**There is no keyword-exclusion filter.** `excludeSellers` and `excludeCategoryIds` are the only exclusion filters in the [Buy API field-filter reference](https://developer.ebay.com/api-docs/buy/static/ref-buy-browse-filters.html), and `q` has no minus-prefix syntax — so you cannot ask the API for "HP Z8 G4 but not Netzteil". An unknown filter name is silently ignored (see the warning below); filter the returned page locally instead, which is what the scanner's `exclude` list does in `ebay_search.match_exclude` (substring for terms of 5+ characters, whole-word for shorter ones such as `cpu` and `cto`).
 
 ⚠️ eBay silently ignores malformed/unknown params instead of erroring — always use `--debug` to print the request URL and response totals, and the script's client-side filter double-checks EUR/price/condition.
 
