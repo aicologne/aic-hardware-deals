@@ -1,6 +1,6 @@
 # Facebook Marketplace — DDR4 RDIMM 32GB
 
-_Generated 2026-10-05 12:03 UTC · filters: query='DDR4 RDIMM 32GB', radius 65 km, min 40, max 120 · deep links only — open each in a logged-in browser._
+_Generated 2026-10-06 11:48 UTC · filters: query='DDR4 RDIMM 32GB', radius 65 km, min 40, max 120 · deep links only — open each in a logged-in browser._
 
 ## Germany (DE) — EUR
 
