@@ -2,7 +2,7 @@
   {
     "query": "AMD Ryzen AI Max 395 (Strix Halo)",
     "file": "AMD-Ryzen-AI-Max-395-Strix-Halo.csv",
-    "rows": 3,
+    "rows": 2,
     "capacity_gb": null
   },
   {
@@ -26,25 +26,25 @@
   {
     "query": "Dell Precision 7920 Tower",
     "file": "Dell-Precision-7920-Tower.csv",
-    "rows": 48,
+    "rows": 50,
     "capacity_gb": null
   },
   {
     "query": "EliteDesk 800 G4 Mini",
     "file": "EliteDesk-800-G4-Mini.csv",
-    "rows": 20,
+    "rows": 19,
     "capacity_gb": null
   },
   {
     "query": "EliteDesk 800 G5 Mini",
     "file": "EliteDesk-800-G5-Mini.csv",
-    "rows": 18,
+    "rows": 19,
     "capacity_gb": null
   },
   {
     "query": "Gaming PC mit RTX 3080",
     "file": "Gaming-PC-mit-RTX-3080.csv",
-    "rows": 49,
+    "rows": 50,
     "capacity_gb": null
   },
   {
@@ -62,13 +62,13 @@
   {
     "query": "Lenovo ThinkStation P920",
     "file": "Lenovo-ThinkStation-P920.csv",
-    "rows": 11,
+    "rows": 12,
     "capacity_gb": null
   },
   {
     "query": "Mac Studio Ultra",
     "file": "Mac-Studio-Ultra.csv",
-    "rows": 5,
+    "rows": 6,
     "capacity_gb": null
   },
   {
@@ -80,7 +80,7 @@
   {
     "query": "Nvidia Quadro RTX",
     "file": "Nvidia-Quadro-RTX.csv",
-    "rows": 24,
+    "rows": 22,
     "capacity_gb": null
   },
   {
@@ -92,13 +92,13 @@
   {
     "query": "RTX 3090",
     "file": "RTX-3090.csv",
-    "rows": 42,
+    "rows": 35,
     "capacity_gb": 24
   },
   {
     "query": "RTX 3090 Ti",
     "file": "RTX-3090-Ti.csv",
-    "rows": 11,
+    "rows": 10,
     "capacity_gb": 24
   },
   {
@@ -110,13 +110,13 @@
   {
     "query": "RTX 4070 Ti Super",
     "file": "RTX-4070-Ti-Super.csv",
-    "rows": 18,
+    "rows": 16,
     "capacity_gb": 16
   },
   {
     "query": "RTX 4080 Super",
     "file": "RTX-4080-Super.csv",
-    "rows": 22,
+    "rows": 18,
     "capacity_gb": 16
   },
   {
@@ -146,7 +146,7 @@
   {
     "query": "ThinkCentre M720q",
     "file": "ThinkCentre-M720q.csv",
-    "rows": 49,
+    "rows": 50,
     "capacity_gb": null
   },
   {
@@ -158,7 +158,7 @@
   {
     "query": "X99 Mainboard",
     "file": "X99-Mainboard.csv",
-    "rows": 42,
+    "rows": 43,
     "capacity_gb": null
   },
   {
