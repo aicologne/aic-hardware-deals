@@ -2,19 +2,19 @@
   {
     "query": "AMD Ryzen AI Max 395 (Strix Halo)",
     "file": "AMD-Ryzen-AI-Max-395-Strix-Halo.csv",
-    "rows": 2,
+    "rows": 3,
     "capacity_gb": null
   },
   {
     "query": "DDR4 RDIMM 32GB",
     "file": "DDR4-RDIMM-32GB.csv",
-    "rows": 46,
+    "rows": 45,
     "capacity_gb": 32
   },
   {
     "query": "DDR4 RDIMM 64GB",
     "file": "DDR4-RDIMM-64GB.csv",
-    "rows": 43,
+    "rows": 44,
     "capacity_gb": 64
   },
   {
@@ -32,7 +32,7 @@
   {
     "query": "EliteDesk 800 G4 Mini",
     "file": "EliteDesk-800-G4-Mini.csv",
-    "rows": 19,
+    "rows": 20,
     "capacity_gb": null
   },
   {
@@ -44,7 +44,7 @@
   {
     "query": "Gaming PC mit RTX 3080",
     "file": "Gaming-PC-mit-RTX-3080.csv",
-    "rows": 50,
+    "rows": 49,
     "capacity_gb": null
   },
   {
@@ -92,7 +92,7 @@
   {
     "query": "RTX 3090",
     "file": "RTX-3090.csv",
-    "rows": 35,
+    "rows": 37,
     "capacity_gb": 24
   },
   {
@@ -100,12 +100,6 @@
     "file": "RTX-3090-Ti.csv",
     "rows": 10,
     "capacity_gb": 24
-  },
-  {
-    "query": "RTX 4060 Ti 16GB",
-    "file": "RTX-4060-Ti-16GB.csv",
-    "rows": 1,
-    "capacity_gb": 16
   },
   {
     "query": "RTX 4070 Ti Super",
@@ -116,7 +110,7 @@
   {
     "query": "RTX 4080 Super",
     "file": "RTX-4080-Super.csv",
-    "rows": 18,
+    "rows": 19,
     "capacity_gb": 16
   },
   {
@@ -128,7 +122,7 @@
   {
     "query": "RTX 5070 16GB",
     "file": "RTX-5070-16GB.csv",
-    "rows": 4,
+    "rows": 3,
     "capacity_gb": 16
   },
   {
