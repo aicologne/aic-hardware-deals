@@ -14,13 +14,13 @@
   {
     "query": "DDR4 RDIMM 64GB",
     "file": "DDR4-RDIMM-64GB.csv",
-    "rows": 40,
+    "rows": 41,
     "capacity_gb": 64
   },
   {
     "query": "DDR5 32GB",
     "file": "DDR5-32GB.csv",
-    "rows": 49,
+    "rows": 48,
     "capacity_gb": 32
   },
   {
@@ -32,7 +32,7 @@
   {
     "query": "EliteDesk 800 G4 Mini",
     "file": "EliteDesk-800-G4-Mini.csv",
-    "rows": 21,
+    "rows": 22,
     "capacity_gb": null
   },
   {
@@ -80,7 +80,7 @@
   {
     "query": "Nvidia Quadro RTX",
     "file": "Nvidia-Quadro-RTX.csv",
-    "rows": 22,
+    "rows": 23,
     "capacity_gb": null
   },
   {
@@ -92,19 +92,19 @@
   {
     "query": "RTX 3090",
     "file": "RTX-3090.csv",
-    "rows": 34,
+    "rows": 36,
     "capacity_gb": 24
   },
   {
     "query": "RTX 3090 Ti",
     "file": "RTX-3090-Ti.csv",
-    "rows": 11,
+    "rows": 10,
     "capacity_gb": 24
   },
   {
     "query": "RTX 4070 Ti Super",
     "file": "RTX-4070-Ti-Super.csv",
-    "rows": 16,
+    "rows": 15,
     "capacity_gb": 16
   },
   {
@@ -116,13 +116,13 @@
   {
     "query": "RTX 5060",
     "file": "RTX-5060.csv",
-    "rows": 5,
+    "rows": 3,
     "capacity_gb": 16
   },
   {
     "query": "RTX 5070 16GB",
     "file": "RTX-5070-16GB.csv",
-    "rows": 4,
+    "rows": 3,
     "capacity_gb": 16
   },
   {
@@ -140,7 +140,7 @@
   {
     "query": "ThinkCentre M720q",
     "file": "ThinkCentre-M720q.csv",
-    "rows": 50,
+    "rows": 49,
     "capacity_gb": null
   },
   {
