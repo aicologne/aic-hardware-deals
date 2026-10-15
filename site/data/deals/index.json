@@ -2,31 +2,31 @@
   {
     "query": "AMD Ryzen AI Max 395 (Strix Halo)",
     "file": "AMD-Ryzen-AI-Max-395-Strix-Halo.csv",
-    "rows": 4,
+    "rows": 3,
     "capacity_gb": null
   },
   {
     "query": "DDR4 RDIMM 32GB",
     "file": "DDR4-RDIMM-32GB.csv",
-    "rows": 48,
+    "rows": 46,
     "capacity_gb": 32
   },
   {
     "query": "DDR4 RDIMM 64GB",
     "file": "DDR4-RDIMM-64GB.csv",
-    "rows": 40,
+    "rows": 42,
     "capacity_gb": 64
   },
   {
     "query": "DDR5 32GB",
     "file": "DDR5-32GB.csv",
-    "rows": 49,
+    "rows": 47,
     "capacity_gb": 32
   },
   {
     "query": "Dell Precision 7920 Tower",
     "file": "Dell-Precision-7920-Tower.csv",
-    "rows": 50,
+    "rows": 48,
     "capacity_gb": null
   },
   {
@@ -38,13 +38,13 @@
   {
     "query": "EliteDesk 800 G5 Mini",
     "file": "EliteDesk-800-G5-Mini.csv",
-    "rows": 17,
+    "rows": 19,
     "capacity_gb": null
   },
   {
     "query": "Gaming PC mit RTX 3080",
     "file": "Gaming-PC-mit-RTX-3080.csv",
-    "rows": 50,
+    "rows": 48,
     "capacity_gb": null
   },
   {
@@ -56,7 +56,7 @@
   {
     "query": "HP Z8 G4 Workstation",
     "file": "HP-Z8-G4-Workstation.csv",
-    "rows": 26,
+    "rows": 27,
     "capacity_gb": null
   },
   {
@@ -80,7 +80,7 @@
   {
     "query": "Nvidia Quadro RTX",
     "file": "Nvidia-Quadro-RTX.csv",
-    "rows": 20,
+    "rows": 22,
     "capacity_gb": null
   },
   {
@@ -92,31 +92,31 @@
   {
     "query": "RTX 3090",
     "file": "RTX-3090.csv",
-    "rows": 35,
+    "rows": 41,
     "capacity_gb": 24
   },
   {
     "query": "RTX 3090 Ti",
     "file": "RTX-3090-Ti.csv",
-    "rows": 10,
+    "rows": 9,
     "capacity_gb": 24
   },
   {
     "query": "RTX 4070 Ti Super",
     "file": "RTX-4070-Ti-Super.csv",
-    "rows": 15,
+    "rows": 17,
     "capacity_gb": 16
   },
   {
     "query": "RTX 4080 Super",
     "file": "RTX-4080-Super.csv",
-    "rows": 17,
+    "rows": 18,
     "capacity_gb": 16
   },
   {
     "query": "RTX 5060",
     "file": "RTX-5060.csv",
-    "rows": 2,
+    "rows": 3,
     "capacity_gb": 16
   },
   {
@@ -134,7 +134,7 @@
   {
     "query": "Tesla T4",
     "file": "Tesla-T4.csv",
-    "rows": 15,
+    "rows": 16,
     "capacity_gb": 16
   },
   {
