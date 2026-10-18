@@ -1,6 +1,6 @@
 # 🛒 eBay.de Used Hardware — Price Report
 
-_Generated 2026-10-17 09:01 UTC · 756 items across 28 categories · marketplace EBAY_DE · used · EUR · index **+2,1 %**_
+_Generated 2026-10-18 09:20 UTC · 756 items across 28 categories · marketplace EBAY_DE · used · EUR · index **+3,0 %**_
 
 **Market context (2026):** the DRAM/GDDR shortage keeps used prices elevated. Used RTX 3090s ask €1000–1500 on eBay.de; DDR5 German retail is ~4.2–4.5× its July-2025 level; DDR4 RDIMM shops ask €219–230 for 32 GB while private sellers still move pre-shortage stock at €60–120. Note the new-price anchors: a BOSGAME M5 (Strix Halo, 128 GB) costs €1581–1700 new — used Strix Halo above that is not a deal. Verify everything live — prices move weekly.
 
@@ -10,41 +10,52 @@ Expected margin = resale estimate × (1 − 13 % fee) − asking, weighted by **
 
 | # | Category | Price | Est. resale | Margin | Clears ≈ | Title | Note |
 |---|---|---|---|---|---|---|---|
-| 1 | Mac Studio Ultra | **€3.806,81** | €4.799,50 | **€368,75** | 63% | [Apple Mac Studio 2022 M1 Ultra-Chip / 20C CPU / 48C GPU / 64GB / 1TB SSD](https://www.ebay.de/itm/296590641248?_skw=Mac+Studio+Ultra&hash=item450e2e0860:g:XCMAAOSwrslmojZV) | churn 63% of 19 tracked · est: asking median |
-| 2 | DDR4 RDIMM 64GB | **€220,00** | €439,81 | **€162,63** | 92% | [64GB 4xHynix 16GB PC4-2400T DDR4-RAM ECC RDIMM 1R - HMA42GR7AFR4N-UH](https://www.ebay.de/itm/188150950371?_skw=DDR4+RDIMM+64GB&hash=item2bceaba9e3:g:lJQAAeSwKFhps-oT) | churn 92% of 180 tracked · est: asking median |
-| 3 | DDR4 RDIMM 64GB | **€227,22** | €439,81 | **€155,41** | 92% | [64GB DDR4 2rx8 ECC KIT 2400T \| 4x 16GB Module \| Micron MTA18ASF2G72PDZ-2G3B](https://www.ebay.de/itm/267782774427?_skw=DDR4+RDIMM+64GB&hash=item3e5918de9b:g:LE0AAeSwDbVqpHge) | churn 92% of 180 tracked · est: asking median · was €226,42 on 2026-10-12 |
-| 4 | Mac Studio Ultra | **€3.950,00** | €4.799,50 | **€225,56** | 63% | [Apple Mac Studio M1 Ultra 20C CPU 64C GPU 64GB RAM 1TB SSD mit Apple Care+ OVP](https://www.ebay.de/itm/237039451061?_skw=Mac+Studio+Ultra&hash=item3730a6fbb5:g:4YwAAeSwo5FqlGMK) | churn 63% of 19 tracked · est: asking median |
-| 5 | RTX 3090 | **€1.384,25** | €1.695,83 | **€91,12** | 88% | [*TESTED* MSI GeForce RTX 3090 VENTUS 3X OC 24GB GDDR6X Graphics Card](https://www.ebay.de/itm/820116623988?_skw=RTX+3090&hash=itembef2c29274:g:K0wAAeSwyb9qpLme) | churn 88% of 230 tracked · est: asking median · was €1.522,78 on 2026-09-12 |
-| 6 | EliteDesk 800 G4 Mini | **€284,34** | €463,00 | **€118,47** | 66% | [HP EliteDesk 800 G4 Desktop Mini Core i5 8500T 4-32GB RAM 120-2000GB SSD](https://www.ebay.de/itm/178168671623?_skw=EliteDesk+800+G4+Mini&hash=item297bae2d87:g:rCcAAeSwMttqX27m) | churn 66% of 62 tracked · est: asking median · was €181,50 on 2026-08-23 |
-| 7 | RTX 3090 | **€1.390,00** | €1.695,83 | **€85,37** | 88% | [Aorus RTX3090 24GB GDDR6X Master Ki, Workstation & Gaming GPU - OHNE KÜHLER!](https://www.ebay.de/itm/407202964384?_skw=RTX+3090&hash=item5ecf3023a0:g:2E8AAeSwBsNqoLo4) | churn 88% of 230 tracked · est: asking median |
-| 8 | EliteDesk 800 G4 Mini | **€289,48** | €463,00 | **€113,33** | 66% | [HP EliteDesk 800 G4 Desktop Mini Core i7 8700T 4-32GB RAM 120-2000GB SSD](https://www.ebay.de/itm/178567470602?_skw=EliteDesk+800+G4+Mini&hash=item2993735e0a:g:IiQAAeSwrt5qx5Fb) | churn 66% of 62 tracked · est: asking median · was €373,95 on 2026-10-09 |
-| 9 | Gaming PC mit RTX 3080 | **€1.100,00** | €1.400,00 | **€118,00** | 56% | [Gaming PC mit RTX3080](https://www.ebay.de/itm/317503149041?_skw=Gaming+PC+RTX+3080&hash=item49eca993f1:g:eIIAAeSwbTRpCk0R) | churn 56% of 109 tracked · est: asking median |
-| 10 | Gaming PC mit RTX 3080 | **€1.100,00** | €1.400,00 | **€118,00** | 56% | [​Gaming PC \| RTX 3080 12GB \| i7-12700K \| 32GB RAM \| 2,5 TB SSD](https://www.ebay.de/itm/318253095556?_skw=Gaming+PC+RTX+3080&hash=item4a195cda84:g:ayAAAeSwKE5p-eBX) | churn 56% of 109 tracked · est: asking median · was €1.199,00 on 2026-08-23 |
+| 1 | DDR4 RDIMM 64GB | **€220,00** | €464,32 | **€183,96** | 92% | [64GB 4xHynix 16GB PC4-2400T DDR4-RAM ECC RDIMM 1R - HMA42GR7AFR4N-UH](https://www.ebay.de/itm/188150950371?_skw=DDR4+RDIMM+64GB&hash=item2bceaba9e3:g:lJQAAeSwKFhps-oT) | churn 92% of 186 tracked · est: asking median |
+| 2 | DDR4 RDIMM 64GB | **€227,22** | €464,32 | **€176,74** | 92% | [64GB DDR4 2rx8 ECC KIT 2400T \| 4x 16GB Module \| Micron MTA18ASF2G72PDZ-2G3B](https://www.ebay.de/itm/267782774427?_skw=DDR4+RDIMM+64GB&hash=item3e5918de9b:g:LE0AAeSwDbVqpHge) | churn 92% of 186 tracked · est: asking median · was €226,42 on 2026-10-12 |
+| 3 | Mac Studio Ultra | **€3.806,81** | €4.592,60 | **€188,76** | 74% | [Apple Mac Studio 2022 M1 Ultra-Chip / 20C CPU / 48C GPU / 64GB / 1TB SSD](https://www.ebay.de/itm/296590641248?_skw=Mac+Studio+Ultra&hash=item450e2e0860:g:XCMAAOSwrslmojZV) | churn 74% of 19 tracked · est: asking median |
+| 4 | RTX 3090 | **€1.384,25** | €1.699,00 | **€93,88** | 87% | [*TESTED* MSI GeForce RTX 3090 VENTUS 3X OC 24GB GDDR6X Graphics Card](https://www.ebay.de/itm/820116623988?_skw=RTX+3090&hash=itembef2c29274:g:K0wAAeSwyb9qpLme) | churn 87% of 234 tracked · est: asking median · was €1.522,78 on 2026-09-12 |
+| 5 | RTX 3090 | **€1.390,00** | €1.699,00 | **€88,13** | 87% | [Aorus RTX3090 24GB GDDR6X Master Ki, Workstation & Gaming GPU - OHNE KÜHLER!](https://www.ebay.de/itm/407202964384?_skw=RTX+3090&hash=item5ecf3023a0:g:2E8AAeSwBsNqoLo4) | churn 87% of 234 tracked · est: asking median |
+| 6 | EliteDesk 800 G4 Mini | **€287,63** | €466,00 | **€117,79** | 65% | [HP EliteDesk 800 G4 Desktop Mini Core i5 8500T 4-32GB RAM 120-2000GB SSD](https://www.ebay.de/itm/178168671623?_skw=EliteDesk+800+G4+Mini&hash=item297bae2d87:g:rCcAAeSwMttqX27m) | churn 65% of 62 tracked · est: asking median · was €181,50 on 2026-08-23 |
+| 7 | EliteDesk 800 G4 Mini | **€289,48** | €466,00 | **€115,94** | 65% | [HP EliteDesk 800 G4 Desktop Mini Core i7 8700T 4-32GB RAM 120-2000GB SSD](https://www.ebay.de/itm/178567470602?_skw=EliteDesk+800+G4+Mini&hash=item2993735e0a:g:IiQAAeSwrt5qx5Fb) | churn 65% of 62 tracked · est: asking median · was €373,95 on 2026-10-09 |
+| 8 | Gaming PC mit RTX 3080 | **€1.100,00** | €1.400,00 | **€118,00** | 56% | [Gaming PC mit RTX3080](https://www.ebay.de/itm/317503149041?_skw=Gaming+PC+RTX+3080&hash=item49eca993f1:g:eIIAAeSwbTRpCk0R) | churn 56% of 107 tracked · est: asking median |
+| 9 | Gaming PC mit RTX 3080 | **€1.100,00** | €1.400,00 | **€118,00** | 56% | [​Gaming PC \| RTX 3080 12GB \| i7-12700K \| 32GB RAM \| 2,5 TB SSD](https://www.ebay.de/itm/318253095556?_skw=Gaming+PC+RTX+3080&hash=item4a195cda84:g:ayAAAeSwKE5p-eBX) | churn 56% of 107 tracked · est: asking median · was €1.199,00 on 2026-08-23 |
+| 10 | RTX 4080 Super | **€1.100,00** | €1.351,48 | **€75,79** | 77% | [Gigabyte GeForce RTX 4080 SUPER AERO OC 16G (OVP)](https://www.ebay.de/itm/377540491618?_skw=RTX+4080+Super&hash=item57e72ab962:g:4AsAAeSwXXlpOtwx) | churn 77% of 64 tracked · est: asking median · was €1.000,00 on 2026-10-03 |
 
-_614 of 756 listings have a negative expected margin at these estimates and are not listed; 5 categories are too thin (< 5 listings) to rank._
+_617 of 756 listings have a negative expected margin at these estimates and are not listed; 4 categories are too thin (< 5 listings) to rank._
 
 ## 🔥 Deal highlights — the raw buy-low flags
 
-Every listing at or within 15 % of its buy-low target (150 of 756 — the flag is broad by design; the ranked shortlist above is the actionable view):
+Every listing at or within 15 % of its buy-low target (161 of 756 — the flag is broad by design; the ranked shortlist above is the actionable view):
 
 | Category | Price | Net (−13 %) | Buy-low target | Title | Seller | Note |
 |---|---|---|---|---|---|---|
-| Xeon E5-2690v4 | **€41,74** | €36,31 | €38,07 | [Intel Xeon 14-Core E5-2690v4 - (14 x 2,60 GHz)](https://www.ebay.de/itm/267068574899?_skw=Xeon+E5-2690v4&hash=item3e2e870cb3:g:jMMAAeSw2jVomw0x) | buerorechner24 | 🔥 at/near buy-low target |
 | Xeon E5-2690v4 | **€41,74** | €36,31 | €38,07 | [Intel Xeon 14-Core E5-2690v4 - (14 x 2,60 GHz)](https://www.ebay.de/itm/266890150382?_skw=Xeon+E5-2690v4&hash=item3e23e481ee:g:oSsAAeSwAnpomwvX) | buerorechner24 | 🔥 at/near buy-low target |
-| DDR4 RDIMM 32GB | **€99,00** | €86,13 | €95,40 | [8GB 16GB 32GB 64GB DDR4 Server RAM 2133 2400 2666 2933 3200 MHz RDIMM](https://www.ebay.de/itm/406873510814?_skw=DDR4+RDIMM+32GB&hash=item5ebb8d139e:g:eCcAAeSw9yVp5p6l) | fibich.onlinehandel | was €49,00 on 2026-08-18 |
-| DDR4 RDIMM 32GB | **€100,00** | €87,00 | €95,40 | [SAMSUNG M393A4K40CB1-CRC4Q 32GB DDR4 RDIMM PC4-2400T](https://www.ebay.de/itm/267674336098?_skw=DDR4+RDIMM+32GB&hash=item3e52a23b62:g:JwsAAeSwevZqDIeJ) | thovdk | 🔥 at/near buy-low target |
-| DDR4 RDIMM 32GB | **€105,00** | €91,35 | €95,40 | [Samsung 16GB DDR4 PC4-2133P ECC RDIMM 1Rx4 M393A2K40BB0-CPB0Q NetApp 107-22175](https://www.ebay.de/itm/327076498579?_skw=DDR4+RDIMM+32GB&hash=item4c27474c93:g:YPkAAeSwMihpyrTS) | sk2015.dani | 🔥 at/near buy-low target |
-| DDR4 RDIMM 32GB | **€107,47** | €93,50 | €95,40 | [SK HYNIX 32GB Kit (4 x 8GB) PC4-2400T 1Rx8 - ECC RDIMM DDR4 Server Ram](https://www.ebay.de/itm/198494685480?_skw=DDR4+RDIMM+32GB&hash=item2e37348928:g:0FsAAeSwTh5pzDxr) | pi_automation | was €105,59 on 2026-09-08 |
+| DDR4 RDIMM 32GB | **€99,00** | €86,13 | €96,00 | [8GB 16GB 32GB 64GB DDR4 Server RAM 2133 2400 2666 2933 3200 MHz RDIMM](https://www.ebay.de/itm/406873510814?_skw=DDR4+RDIMM+32GB&hash=item5ebb8d139e:g:eCcAAeSw9yVp5p6l) | fibich.onlinehandel | was €49,00 on 2026-08-18 |
+| DDR4 RDIMM 32GB | **€100,00** | €87,00 | €96,00 | [SAMSUNG M393A4K40CB1-CRC4Q 32GB DDR4 RDIMM PC4-2400T](https://www.ebay.de/itm/267674336098?_skw=DDR4+RDIMM+32GB&hash=item3e52a23b62:g:JwsAAeSwevZqDIeJ) | thovdk | 🔥 at/near buy-low target |
+| DDR4 RDIMM 32GB | **€105,00** | €91,35 | €96,00 | [Samsung 16GB DDR4 PC4-2133P ECC RDIMM 1Rx4 M393A2K40BB0-CPB0Q NetApp 107-22175](https://www.ebay.de/itm/327076498579?_skw=DDR4+RDIMM+32GB&hash=item4c27474c93:g:YPkAAeSwMihpyrTS) | sk2015.dani | 🔥 at/near buy-low target |
+| DDR4 RDIMM 32GB | **€107,47** | €93,50 | €96,00 | [SK HYNIX 32GB Kit (4 x 8GB) PC4-2400T 1Rx8 - ECC RDIMM DDR4 Server Ram](https://www.ebay.de/itm/198494685480?_skw=DDR4+RDIMM+32GB&hash=item2e37348928:g:0FsAAeSwTh5pzDxr) | pi_automation | was €105,59 on 2026-09-08 |
+| DDR4 RDIMM 32GB | **€110,00** | €95,70 | €96,00 | [32GB SK hynix DDR4 ECC RDIMM PC4-2400T Server RAM HMA84GR7AFR4N](https://www.ebay.de/itm/198722131183?_skw=DDR4+RDIMM+32GB&hash=item2e44c314ef:g:TQQAAeSwj1lq0zg-) | mrrephil | 🔥 at/near buy-low target |
+| DDR4 RDIMM 32GB | **€110,00** | €95,70 | €96,00 | [DDR4 32GB (2x16GB)  2Rx8, RDIMM ECC REG, PC4-19200,SK Hynix HMA82GR7AFR8N-UH (3)](https://www.ebay.de/itm/327386246193?_skw=DDR4+RDIMM+32GB&hash=item4c39bdac31:g:2PIAAeSwFJ9qwPeg) | cheetah-spottycat | 🔥 at/near buy-low target |
+| DDR4 RDIMM 32GB | **€110,00** | €95,70 | €96,00 | [DDR4 32GB (2x16GB)  2Rx8, RDIMM ECC REG, PC4-19200,SK Hynix HMA82GR7AFR8N-UH (5)](https://www.ebay.de/itm/327386252965?_skw=DDR4+RDIMM+32GB&hash=item4c39bdc6a5:g:AfsAAeSwsutqwPm3) | cheetah-spottycat | 🔥 at/near buy-low target |
+| DDR4 RDIMM 32GB | **€110,00** | €95,70 | €96,00 | [DDR4 32GB (2x16GB)  2Rx8, RDIMM ECC REG, PC4-19200,SK Hynix HMA82GR7AFR8N-UH (7)](https://www.ebay.de/itm/327386260261?_skw=DDR4+RDIMM+32GB&hash=item4c39bde325:g:XzwAAeSwjQZqwPsv) | cheetah-spottycat | 🔥 at/near buy-low target |
+| DDR4 RDIMM 32GB | **€110,00** | €95,70 | €96,00 | [DDR4 32GB (2x16GB)  2Rx8, RDIMM ECC REG,PC4-19200,SK Hynix HMA82GR7AFR8N-UH (12)](https://www.ebay.de/itm/327386268601?_skw=DDR4+RDIMM+32GB&hash=item4c39be03b9:g:ob4AAeSw2t1qwP60) | cheetah-spottycat | 🔥 at/near buy-low target |
+| DDR4 RDIMM 32GB | **€110,00** | €95,70 | €96,00 | [DDR4 32GB (2x16GB)  2Rx8, RDIMM ECC REG,PC4-19200,SK Hynix HMA82GR7AFR8N-UH (14)](https://www.ebay.de/itm/327386270129?_skw=DDR4+RDIMM+32GB&hash=item4c39be09b1:g:tE0AAeSwO2lqwP9h) | cheetah-spottycat | 🔥 at/near buy-low target |
+| DDR4 RDIMM 32GB | **€110,00** | €95,70 | €96,00 | [DDR4 32GB (2x16GB)  2Rx8, RDIMM ECC REG,PC4-19200,Micron MTA18ASF2G72PDZ-2G (22)](https://www.ebay.de/itm/327386307857?_skw=DDR4+RDIMM+32GB&hash=item4c39be9d11:g:Q3AAAeSwAJ5qwQa8) | cheetah-spottycat | 🔥 at/near buy-low target |
+| X99 Mainboard | **€110,00** | €95,70 | €107,20 | [Asus X99-A  Intel X99 ATX Mainboard inkl. XEON E5 1660 V3 3GHz & Kühlkörper](https://www.ebay.de/itm/158377682054?_skw=X99+Mainboard&hash=item24e00ba486:g:d6gAAeSw2Alqvslw) | canspar-63 | was €150,00 on 2026-10-02 |
+| X99 Mainboard | **€119,00** | €103,53 | €107,20 | [ASUS X99-DELUXE Intel X99 ATX Mainboard mit i7-5820k CPU (6 Kerne, max. 3.6GHz)](https://www.ebay.de/itm/227537365613?_skw=X99+Mainboard&hash=item34fa48aa6d:g:-jkAAeSwq8Rqr~1M) | bertholdb21 | 🔥 at/near buy-low target |
+| X99 Mainboard | **€119,90** | €104,31 | €107,20 | [ASRock X99 Extreme4 Mainboard LGA2011-3 ATX DDR4 Ultra M.2 mit Blende gebraucht](https://www.ebay.de/itm/287652262571?_skw=X99+Mainboard&hash=item42f96932ab:g:Iw0AAeSwrD9q0jyi) | sk-phone | 🔥 at/near buy-low target |
+| X99 Mainboard | **€119,99** | €104,39 | €107,20 | [JGINYUE X99-8D4/2.5G SERVER DUAL SOCKET 2011-3 MAINBOARD + I/O-SHIELD](https://www.ebay.de/itm/278369565653?_skw=X99+Mainboard&hash=item40d01e7bd5:g:3zkAAeSwOZRqpfuH) | m-comp | 🔥 at/near buy-low target |
 | NVMe SSD 2TB | **€144,95** | €126,11 | €139,88 | [Office-PC \| 2,8 GHz \| bis 32GB RAM \| bis 2 TB SSD \| Win 11 Pro \| Office 2024 Pro](https://www.ebay.de/itm/198071390916?_skw=NVMe+2TB&hash=item2e1df992c4:g:W98AAeSw3Hxp77FJ) | secondlife_it-solution | was €79,95 on 2026-08-23 |
-| OptiPlex 3070 Micro | **€148,22** | €128,95 | €145,20 | [Dell OptiPlex 3070 Micro Core i3-8100T 8GB RAM 256 NVMe + 500GB HDD Windows 11 Pro](https://www.ebay.de/itm/158109742478?_skw=OptiPlex+3070+Micro&hash=item24d013358e:g:jkkAAeSw9ZVqYQp9) | iangel-uk | was €146,03 on 2026-08-22 |
-| OptiPlex 3070 Micro | **€152,55** | €132,72 | €145,20 | [Dell OptiPlex 3070 Micro Desktop Intel Core i5-8500T 2.10 GHz 8 GB DDR4 Ohne HDD](https://www.ebay.de/itm/840026864504?_skw=OptiPlex+3070+Micro&hash=itemc39580bb78:g:VGIAAeSwa15qsX-V) | harddrivesonly | 🔥 at/near buy-low target |
-| OptiPlex 3070 Micro | **€156,52** | €136,17 | €145,20 | [Dell OptiPlex 3070 Micro Core i3-9100T 8GB RAM 256 NVMe + 500GB HDD Windows 11 Pro](https://www.ebay.de/itm/158054766863?_skw=OptiPlex+3070+Micro&hash=item24cccc590f:g:MxYAAeSw~3tqSU~y) | iangel-uk | was €154,21 on 2026-08-22 |
-| OptiPlex 3070 Micro | **€159,00** | €138,33 | €145,20 | [Dell OptiPlex 3070 Micro Mini PC🔥 intel i5-9500T🔥 0-16GB RAM 0-256GB SSD](https://www.ebay.de/itm/257782077766?_skw=OptiPlex+3070+Micro&hash=item3c05025946:g:hzgAAeSwbItqwrLM) | trade-serv | 🔥 at/near buy-low target |
+| OptiPlex 3070 Micro | **€148,22** | €128,95 | €145,50 | [Dell OptiPlex 3070 Micro Core i3-8100T 8GB RAM 256 NVMe + 500GB HDD Windows 11 Pro](https://www.ebay.de/itm/158109742478?_skw=OptiPlex+3070+Micro&hash=item24d013358e:g:jkkAAeSw9ZVqYQp9) | iangel-uk | was €146,03 on 2026-08-22 |
+| OptiPlex 3070 Micro | **€152,55** | €132,72 | €145,50 | [Dell OptiPlex 3070 Micro Desktop Intel Core i5-8500T 2.10 GHz 8 GB DDR4 Ohne HDD](https://www.ebay.de/itm/840026864504?_skw=OptiPlex+3070+Micro&hash=itemc39580bb78:g:VGIAAeSwa15qsX-V) | harddrivesonly | 🔥 at/near buy-low target |
+| OptiPlex 3070 Micro | **€156,52** | €136,17 | €145,50 | [Dell OptiPlex 3070 Micro Core i3-9100T 8GB RAM 256 NVMe + 500GB HDD Windows 11 Pro](https://www.ebay.de/itm/158054766863?_skw=OptiPlex+3070+Micro&hash=item24cccc590f:g:MxYAAeSw~3tqSU~y) | iangel-uk | was €154,21 on 2026-08-22 |
+| OptiPlex 3070 Micro | **€159,00** | €138,33 | €145,50 | [Dell OptiPlex 3070 Micro Mini PC🔥 intel i5-9500T🔥 0-16GB RAM 0-256GB SSD](https://www.ebay.de/itm/257782077766?_skw=OptiPlex+3070+Micro&hash=item3c05025946:g:hzgAAeSwbItqwrLM) | trade-serv | 🔥 at/near buy-low target |
 | NVMe SSD 2TB | **€159,00** | €138,33 | €139,88 | [Apple MacBook Pro 13" (A1502) Early 2015 bis zu 2TB NVMe SSD Upgrade](https://www.ebay.de/itm/264094788032?_skw=NVMe+2TB&hash=item3d7d46a9c0:g:1oQAAOSwzDFcGj0k) | tronicspot | was €119,00 on 2026-08-23 |
 | NVMe SSD 2TB | **€159,00** | €138,33 | €139,88 | [HP Z Turbo Drive Quad Pro](https://www.ebay.de/itm/377073885231?_skw=NVMe+2TB&hash=item57cb5ae02f:g:OZsAAeSwcXdqU5tB) | burc-3871 | was €147,00 on 2026-08-23 |
-| OptiPlex 3070 Micro | **€159,99** | €139,19 | €145,20 | [Mini PC Dell OptiPlex 3070 Micro 8GB 128GB SSD Intel Quadcore I3-9100T Win11](https://www.ebay.de/itm/137474583170?_skw=OptiPlex+3070+Micro&hash=item20021faa82:g:Y50AAeSw7sJqRlBs) | berlin-shop | 🔥 at/near buy-low target |
-| OptiPlex 3070 Micro | **€160,00** | €139,20 | €145,20 | [Dell OptiPlex 3070 Micro Desktop i5-9500T 2.20 GHz 4 GB DDR4 RAM Ohne HDD](https://www.ebay.de/itm/840010607142?_skw=OptiPlex+3070+Micro&hash=itemc39488aa26:g:-WwAAeSwxYpqyzFw) | harddrivesonly | 🔥 at/near buy-low target |
-| OptiPlex 3070 Micro | **€163,10** | €141,90 | €145,20 | [Dell OptiPlex 3070 Micro Desktop Intel Core i5-9500T 2.20 GHz 8 GB DDR4 Ohne HDD](https://www.ebay.de/itm/189007588190?_skw=OptiPlex+3070+Micro&hash=item2c01baeb5e:g:DPoAAeSwSohqxyQv) | harddrivesonly | 🔥 at/near buy-low target |
+| OptiPlex 3070 Micro | **€159,99** | €139,19 | €145,50 | [Mini PC Dell OptiPlex 3070 Micro 8GB 128GB SSD Intel Quadcore I3-9100T Win11](https://www.ebay.de/itm/137474583170?_skw=OptiPlex+3070+Micro&hash=item20021faa82:g:Y50AAeSw7sJqRlBs) | berlin-shop | 🔥 at/near buy-low target |
+| OptiPlex 3070 Micro | **€160,00** | €139,20 | €145,50 | [Dell OptiPlex 3070 Micro Desktop i5-9500T 2.20 GHz 4 GB DDR4 RAM Ohne HDD](https://www.ebay.de/itm/840010607142?_skw=OptiPlex+3070+Micro&hash=itemc39488aa26:g:-WwAAeSwxYpqyzFw) | harddrivesonly | 🔥 at/near buy-low target |
+| OptiPlex 3070 Micro | **€163,10** | €141,90 | €145,50 | [Dell OptiPlex 3070 Micro Desktop Intel Core i5-9500T 2.20 GHz 8 GB DDR4 Ohne HDD](https://www.ebay.de/itm/189007588190?_skw=OptiPlex+3070+Micro&hash=item2c01baeb5e:g:DPoAAeSwSohqxyQv) | harddrivesonly | 🔥 at/near buy-low target |
+| ThinkCentre M720q | **€178,38** | €155,19 | €175,96 | [Lenovo ThinkCentre M720q Tiny Core i5-8400T 1,70 GHz 8 GB DDR4 Ohne Festplatte](https://www.ebay.de/itm/840021649591?_skw=ThinkCentre+M720q&hash=itemc3953128b7:g:7FIAAeSwi1pq1G82) | harddrivesonly | 🔥 at/near buy-low target |
 | ThinkCentre M720q | **€179,99** | €156,59 | €175,96 | [Lenovo ThinkCentre M720q Tiny Mini PC \| i5-8400T 8GB RAM 256GB SSD Win11](https://www.ebay.de/itm/820196699483?_skw=ThinkCentre+M720q&hash=itembef7886d5b:g:QLYAAeSw~yNqv-OX) | clm_tgg | 🔥 at/near buy-low target |
 | EliteDesk 800 G5 Mini | **€180,00** | €156,60 | €174,40 | [HP EliteDesk 800 G5 DM MINI-PC Intel Core i5 9500 8GB RAM 256GB SSD](https://www.ebay.de/itm/198710119435?_skw=EliteDesk+800+G5+Mini&hash=item2e440bcc0b:g:2qwAAeSwnahqzS~a) | etech101 | was €185,00 on 2026-10-13 |
 | EliteDesk 800 G5 Mini | **€180,00** | €156,60 | €174,40 | [HP Elitedesk G5 800 mini PC i5-9500](https://www.ebay.de/itm/377529740919?_skw=EliteDesk+800+G5+Mini&hash=item57e686ae77:g:Nz8AAeSwoDtquuAw) | sejfmust0 | 🔥 at/near buy-low target |
@@ -54,21 +65,21 @@ Every listing at or within 15 % of its buy-low target (150 of 756 — the flag i
 | ThinkCentre M720q | **€189,71** | €165,05 | €175,96 | [Lenovo ThinkCentre M720q Tiny PC - i5-9400T - 8GB RAM - 240GB SSD (ANGEBOTE OK)](https://www.ebay.de/itm/115875156217?_skw=ThinkCentre+M720q&hash=item1afab290f9:g:5fYAAOSwbJBn58fw) | techlabzltd | was €186,91 on 2026-08-23 |
 | ThinkCentre M720q | **€189,99** | €165,29 | €175,96 | [Mini PC Lenovo ThinkCentre M720q Tiny Intel i3-8100T 8GB 256GB SSD HDMI Seriell](https://www.ebay.de/itm/236997020719?_skw=ThinkCentre+M720q&hash=item372e1f8c2f:g:iYIAAeSwjJxqeYpa) | thinkstore24_de | 🔥 at/near buy-low target |
 | EliteDesk 800 G5 Mini | **€195,00** | €169,65 | €174,40 | [HP EliteDesk 800 G5 DM MINI-PC Intel Core i5 9500 16GB RAM 256GB SSD](https://www.ebay.de/itm/198710119458?_skw=EliteDesk+800+G5+Mini&hash=item2e440bcc22:g:KQ4AAeSwTPNqzTA1) | etech101 | 🔥 at/near buy-low target |
-| ThinkCentre M720q | **€196,00** | €170,52 | €175,96 | [Lenovo ThinkCentre M720q Win11 Pro I5-8400T 6x1.70GHz 8GB RAM 128GB](https://www.ebay.de/itm/900010129357?_skw=ThinkCentre+M720q&hash=itemd18cc8b7cd:g:8M0AAeSwniBqwLIh) | farnyman182 | 🔥 at/near buy-low target |
 | ThinkCentre M720q | **€196,00** | €170,52 | €175,96 | [Lenovo ThinkCentre M720q Mini PC Intel Core i5 8GB 256GB SSD Windows 10 Pro](https://www.ebay.de/itm/960057523135?_skw=ThinkCentre+M720q&hash=itemdf87e33bbf:g:VDQAAeSwSWNqw7Ji) | pe212495 | 🔥 at/near buy-low target |
+| ThinkCentre M720q | **€196,00** | €170,52 | €175,96 | [Lenovo ThinkCentre M720q Win11 Pro I5-8400T 6x1.70GHz 8GB RAM 128GB](https://www.ebay.de/itm/900021889317?_skw=ThinkCentre+M720q&hash=itemd18d7c2925:g:8M0AAeSwniBqwLIh) | farnyman182 | 🔥 at/near buy-low target |
 | ThinkCentre M720q | **€198,50** | €172,69 | €175,96 | [Lenovo ThinkCentre M720q TINY i5-8500T 8GB 256GB NVMe SSD W11 Pro](https://www.ebay.de/itm/357871617687?_skw=ThinkCentre+M720q&hash=item5352cf8697:g:ZroAAeSwPttpDfXZ) | save-it.shop | 🔥 at/near buy-low target |
-| EliteDesk 800 G5 Mini | **€199,00** | €173,13 | €174,40 | [HP Elitedesk 800 G5 DM i5-9500T 8GB 256GB Mini-PC WLAN 3x DP (Win 11 ready)](https://www.ebay.de/itm/298152164624?_skw=EliteDesk+800+G5+Mini&hash=item456b40fd10:g:EwgAAeSwDz9pwOz-) | www.pcline24 | was €239,00 on 2026-08-23 |
 | EliteDesk 800 G5 Mini | **€199,00** | €173,13 | €174,40 | [HP Elitedesk 800 G5 DM Core i5-9500T 8GB 256GB NVME WLAN VGA Desktop Mini PC](https://www.ebay.de/itm/298143907694?_skw=EliteDesk+800+G5+Mini&hash=item456ac2ff6e:g:K-cAAeSwXbFpvVrl) | www.pcline24 | was €239,00 on 2026-08-23 |
+| EliteDesk 800 G5 Mini | **€199,00** | €173,13 | €174,40 | [HP Elitedesk 800 G5 DM i5-9500T 8GB 256GB Mini-PC WLAN 3x DP (Win 11 ready)](https://www.ebay.de/itm/298152164624?_skw=EliteDesk+800+G5+Mini&hash=item456b40fd10:g:EwgAAeSwDz9pwOz-) | www.pcline24 | was €239,00 on 2026-08-23 |
 | ThinkCentre M720q | **€199,00** | €173,13 | €175,96 | [Lenovo ThinkCentre M720q Tiny i5-9400T 1,8Ghz 8GB W-LAN Bluethooth oh. SSD](https://www.ebay.de/itm/257646825901?_skw=ThinkCentre+M720q&hash=item3bfcf291ad:g:kN4AAeSwkR5pNyxD) | darya-international | 🔥 at/near buy-low target |
 | ThinkCentre M720q | **€199,56** | €173,62 | €175,96 | [Lenovo ThinkCentre M720q Tiny Core i7-8700T 2.40 GHz 16 GB DDR4 Ohne HDD Schwarz](https://www.ebay.de/itm/840024919173?_skw=ThinkCentre+M720q&hash=itemc395630c85:g:7S8AAeSw6LVq0frg) | harddrivesonly | 🔥 at/near buy-low target |
 | ThinkCentre M720q | **€200,00** | €174,00 | €175,96 | [Lenovo Thinkcentre M720q Tiny Intel Core i5-8500T 256GB SSD 512 GB HDD 8GB RAM](https://www.ebay.de/itm/336839454258?_skw=ThinkCentre+M720q&hash=item4e6d322e32:g:OpUAAeSwF-5qy2vI) | exbitliners | 🔥 at/near buy-low target |
 | ThinkCentre M720q | **€200,00** | €174,00 | €175,96 | [Lenovo ThinkCentre M720q Tiny 512GB SSD, Intel Core i3-8100T, 3,10GHz, 16GB RAM](https://www.ebay.de/itm/336818963240?_skw=ThinkCentre+M720q&hash=item4e6bf98328:g:o1gAAeSwtJFqu8l9) | hermantoothrot | 🔥 at/near buy-low target |
 | DDR4 RDIMM 64GB | **€220,00** | €191,40 | €212,00 | [64GB 4xHynix 16GB PC4-2400T DDR4-RAM ECC RDIMM 1R - HMA42GR7AFR4N-UH](https://www.ebay.de/itm/188150950371?_skw=DDR4+RDIMM+64GB&hash=item2bceaba9e3:g:lJQAAeSwKFhps-oT) | martha_62 | 🔥 at/near buy-low target |
-| ThinkCentre M920q | **€226,04** | €196,65 | €223,20 | [Lenovo ThinkCentre M920q Tiny Core i5 8500T 4-32GB RAM 120-2000GB SSD Win 11 Pro](https://www.ebay.de/itm/178168669274?_skw=ThinkCentre+M920q&hash=item297bae245a:g:VHIAAeSwEM5qX27o) | nexchance_it | was €210,78 on 2026-09-20 |
-| ThinkCentre M920q | **€226,04** | €196,65 | €223,20 | [Lenovo ThinkCentre M920q Tiny Core i5 8400T 4-32GB RAM 120-2000GB SSD Win 11 Pro](https://www.ebay.de/itm/178168671926?_skw=ThinkCentre+M920q&hash=item297bae2eb6:g:CN8AAeSwQtRqX270) | nexchance_it | was €210,78 on 2026-09-20 |
+| ThinkCentre M920q | **€226,04** | €196,65 | €223,30 | [Lenovo ThinkCentre M920q Tiny Core i5 8500T 4-32GB RAM 120-2000GB SSD Win 11 Pro](https://www.ebay.de/itm/178168669274?_skw=ThinkCentre+M920q&hash=item297bae245a:g:VHIAAeSwEM5qX27o) | nexchance_it | was €210,78 on 2026-09-20 |
+| ThinkCentre M920q | **€226,04** | €196,65 | €223,30 | [Lenovo ThinkCentre M920q Tiny Core i5 8400T 4-32GB RAM 120-2000GB SSD Win 11 Pro](https://www.ebay.de/itm/178168671926?_skw=ThinkCentre+M920q&hash=item297bae2eb6:g:CN8AAeSwQtRqX270) | nexchance_it | was €210,78 on 2026-09-20 |
 | DDR4 RDIMM 64GB | **€227,22** | €197,68 | €212,00 | [64GB DDR4 2rx8 ECC KIT 2400T \| 4x 16GB Module \| Micron MTA18ASF2G72PDZ-2G3B](https://www.ebay.de/itm/267782774427?_skw=DDR4+RDIMM+64GB&hash=item3e5918de9b:g:LE0AAeSwDbVqpHge) | it-procure | was €226,42 on 2026-10-12 |
-| ThinkCentre M920q | **€238,00** | €207,06 | €223,20 | [*3Jahre GEWL* Lenovo ThinkCentre M920q Tiny i3 9Gen 4GB 250GB HDD 2.5' wi10](https://www.ebay.de/itm/127432558776?_skw=ThinkCentre+M920q&hash=item1dab9288b8:g:Yv8AAeSwsPdo70mh) | dealo24_de | 🔥 at/near buy-low target |
-| DDR4 RDIMM 64GB | **€240,00** | €208,80 | €212,00 | [64 GB DDR4 Server RAM, 4x 16 GB, ECC, Registered, 2400 , 2Rx8, PC4](https://www.ebay.de/itm/336844400960?_skw=DDR4+RDIMM+64GB&hash=item4e6d7da940:g:tNcAAeSwcHNqz6cw) | sepharin | 🔥 at/near buy-low target |
+| ThinkCentre M920q | **€238,00** | €207,06 | €223,30 | [*3Jahre GEWL* Lenovo ThinkCentre M920q Tiny i3 9Gen 4GB 250GB HDD 2.5' wi10](https://www.ebay.de/itm/127432558776?_skw=ThinkCentre+M920q&hash=item1dab9288b8:g:Yv8AAeSwsPdo70mh) | dealo24_de | 🔥 at/near buy-low target |
+| DDR4 RDIMM 64GB | **€240,00** | €208,80 | €212,00 | [2x32GB RDIMM RAM DDR4 64GB SK Hynix 2Rx4 PC4-2133P-RB1-11 HMA84GR7MFR4N-TF](https://www.ebay.de/itm/366738741332?_skw=DDR4+RDIMM+64GB&hash=item5563551854:g:moMAAeSw7Upq0nry) | carmas_397111 | 🔥 at/near buy-low target |
 | Tesla P40 | **€240,68** | €209,39 | €223,20 | [Nvidia Tesla P40 24GB GDDR5 PCI-E 3.0 x16 GPU Accelerator Graphics Card](https://www.ebay.de/itm/860000409244?_skw=Tesla+P40&hash=itemc83c04d69c:g:Lv8AAeSwad1qTg0v) | eb-eonbios | 🔥 at/near buy-low target |
 | Tesla P40 | **€241,00** | €209,67 | €223,20 | [Nvidia Tesla P40 24GB GDDR5 PCI-E 3.0 x16 GPU Accelerator  Graphics Card](https://www.ebay.de/itm/358770597920?_skw=Tesla+P40&hash=item538864e020:g:Lv8AAeSwad1qTg0v) | duehu82 | 🔥 at/near buy-low target |
 | Tesla P40 | **€241,00** | €209,67 | €223,20 | [Nvidia Tesla P40 24GB GDDR5 PCI-E 3.0 x16 GPU Accelerator  Graphics Card](https://www.ebay.de/itm/377574576876?_skw=Tesla+P40&hash=item57e932d2ec:g:Lv8AAeSwad1qTg0v) | sichuanqingyangansh-0 | 🔥 at/near buy-low target |
@@ -78,34 +89,33 @@ Every listing at or within 15 % of its buy-low target (150 of 756 — the flag i
 | Tesla P40 | **€246,00** | €214,02 | €223,20 | [Free shipping NVIDIA Tesla P40 24GB GDDR5 PCI-E 3.0 x16 GPU Accelerator Card](https://www.ebay.de/itm/317926309114?_skw=Tesla+P40&hash=item4a05e27cfa:g:5ykAAOSwFExkZvOk) | mens6053 | was €262,00 on 2026-09-08 |
 | Tesla P40 | **€246,00** | €214,02 | €223,20 | [NVIDIA Tesla P40 24GB GDDR5 PCI-E 3.0 x16 GPU Accelerator Card](https://www.ebay.de/itm/198138653410?_skw=Tesla+P40&hash=item2e21fbeae2:g:jkEAAOSwfXZmclD1) | pykj666 | was €262,00 on 2026-09-08 |
 | Tesla P40 | **€246,00** | €214,02 | €223,20 | [Free shipping NVIDIA Tesla P40 24GB GDDR5 PCI-E 3.0 x16 GPU Accelerator Card](https://www.ebay.de/itm/198138654026?_skw=Tesla+P40&hash=item2e21fbed4a:g:5ykAAOSwFExkZvOk) | pykj666 | was €262,00 on 2026-09-08 |
-| ThinkCentre M920q | **€247,00** | €214,89 | €223,20 | [*3Jahre GEWL* Lenovo ThinkCentre M920q Tiny i3 9Gen 4GB 240GB SSD 2.5' wi10](https://www.ebay.de/itm/127432551585?_skw=ThinkCentre+M920q&hash=item1dab926ca1:g:RvEAAeSwp1ho70gD) | dealo24_de | 🔥 at/near buy-low target |
+| ThinkCentre M920q | **€247,00** | €214,89 | €223,30 | [*3Jahre GEWL* Lenovo ThinkCentre M920q Tiny i3 9Gen 4GB 240GB SSD 2.5' wi10](https://www.ebay.de/itm/127432551585?_skw=ThinkCentre+M920q&hash=item1dab926ca1:g:RvEAAeSwp1ho70gD) | dealo24_de | 🔥 at/near buy-low target |
 | Tesla P40 | **€249,00** | €216,63 | €223,20 | [Genuine original NVIDIA Tesla P40 24GB DDR5 Accelerator Card PCI-E FOR SERVERS](https://www.ebay.de/itm/358641961423?_skw=Tesla+P40&hash=item5380ba09cf:g:cQIAAeSw1MxqIucw) | xgjhf1866 | was €255,00 on 2026-08-23 |
-| ThinkCentre M920q | **€249,00** | €216,63 | €223,20 | [LENOVO PC ThinkCentre M920q Tiny Intel Core i5-9500T ab 8 GB ab 256 GB SSD WLAN](https://www.ebay.de/itm/257790471371?_skw=ThinkCentre+M920q&hash=item3c05826ccb:g:PnEAAeSwU0hp~Jmm) | it-square | 🔥 at/near buy-low target |
-| ThinkCentre M920q | **€249,00** | €216,63 | €223,20 | [Lenovo ThinkCentre M710t Intel Core i7-7700 16GB 256 GB NVMe  ilyama MonitorSet.](https://www.ebay.de/itm/404549590188?_skw=ThinkCentre+M920q&hash=item5e3108dcac:g:l-0AAOSwMxliwM~a) | saaci_44 | was €229,00 on 2026-09-19 |
-| ThinkCentre M920q | **€254,00** | €220,98 | €223,20 | [*3Jahre GEWL* Lenovo ThinkCentre M920q Tiny i3 9Gen 4GB 250GB HDD 2.5' W11H](https://www.ebay.de/itm/116828561032?_skw=ThinkCentre+M920q&hash=item1b33865e88:g:ZC0AAeSwdg9o70lW) | dealo24_de | 🔥 at/near buy-low target |
-| ThinkCentre M920q | **€254,24** | €221,19 | €223,20 | [Lenovo ThinkCentre M920q Tiny Core i5 9500T 4-32GB RAM 120-2000GB SSD Win 11 Pro](https://www.ebay.de/itm/178168671983?_skw=ThinkCentre+M920q&hash=item297bae2eef:g:5RIAAeSw4VJqX271) | nexchance_it | was €247,52 on 2026-09-16 |
-| ThinkCentre M920q | **€254,90** | €221,76 | €223,20 | [Lenovo ThinkCentre M720q TINY Core i5-9400T 8GB 256GB SSD WLAN+BT Win11 Pro](https://www.ebay.de/itm/168243497803?_skw=ThinkCentre+M920q&hash=item272c180b4b:g:Q04AAOSwghZoJxv-) | hells_dells | was €269,90 on 2026-08-23 |
+| ThinkCentre M920q | **€249,00** | €216,63 | €223,30 | [LENOVO PC ThinkCentre M920q Tiny Intel Core i5-9500T ab 8 GB ab 256 GB SSD WLAN](https://www.ebay.de/itm/257790471371?_skw=ThinkCentre+M920q&hash=item3c05826ccb:g:PnEAAeSwU0hp~Jmm) | it-square | 🔥 at/near buy-low target |
+| ThinkCentre M920q | **€249,00** | €216,63 | €223,30 | [Lenovo ThinkCentre M710t Intel Core i7-7700 16GB 256 GB NVMe  ilyama MonitorSet.](https://www.ebay.de/itm/404549590188?_skw=ThinkCentre+M920q&hash=item5e3108dcac:g:l-0AAOSwMxliwM~a) | saaci_44 | was €229,00 on 2026-09-19 |
+| ThinkCentre M920q | **€254,00** | €220,98 | €223,30 | [*3Jahre GEWL* Lenovo ThinkCentre M920q Tiny i3 9Gen 4GB 250GB HDD 2.5' W11H](https://www.ebay.de/itm/116828561032?_skw=ThinkCentre+M920q&hash=item1b33865e88:g:ZC0AAeSwdg9o70lW) | dealo24_de | 🔥 at/near buy-low target |
+| ThinkCentre M920q | **€254,24** | €221,19 | €223,30 | [Lenovo ThinkCentre M920q Tiny Core i5 9500T 4-32GB RAM 120-2000GB SSD Win 11 Pro](https://www.ebay.de/itm/178168671983?_skw=ThinkCentre+M920q&hash=item297bae2eef:g:5RIAAeSw4VJqX271) | nexchance_it | was €247,52 on 2026-09-16 |
+| ThinkCentre M920q | **€254,90** | €221,76 | €223,30 | [Lenovo ThinkCentre M720q TINY Core i5-9400T 8GB 256GB SSD WLAN+BT Win11 Pro](https://www.ebay.de/itm/168243497803?_skw=ThinkCentre+M920q&hash=item272c180b4b:g:Q04AAOSwghZoJxv-) | hells_dells | was €269,90 on 2026-08-23 |
+| DDR5 32GB | **€280,00** | €243,60 | €279,20 | [G.Skill DIMM 16 GB DDR5-6000, Arbeitsspeicher, schwarz](https://www.ebay.de/itm/960078872629?_skw=DDR5+32GB&hash=itemdf89290035:g:oQAAAeSwCSlq01gf) | happyrind | 🔥 at/near buy-low target |
 | DDR5 32GB | **€283,14** | €246,33 | €279,20 | [TEAMGROUP T-CREATE EXPERT 16GB 2x8GB DDR5 6000 CL38 White CTCWD58G6000HC38ABK](https://www.ebay.de/itm/398356273394?_skw=DDR5+32GB&hash=item5cbfe258f2:g:gmUAAeSwmKhqmezp) | devino_solutions | was €281,81 on 2026-10-12 |
-| EliteDesk 800 G4 Mini | **€284,34** | €247,38 | €280,89 | [HP EliteDesk 800 G4 Desktop Mini Core i5 8500T 4-32GB RAM 120-2000GB SSD](https://www.ebay.de/itm/178168671623?_skw=EliteDesk+800+G4+Mini&hash=item297bae2d87:g:rCcAAeSwMttqX27m) | nexchance_it | was €181,50 on 2026-08-23 |
-| EliteDesk 800 G4 Mini | **€289,48** | €251,85 | €280,89 | [HP EliteDesk 800 G4 Desktop Mini Core i7 8700T 4-32GB RAM 120-2000GB SSD](https://www.ebay.de/itm/178567470602?_skw=EliteDesk+800+G4+Mini&hash=item2993735e0a:g:IiQAAeSwrt5qx5Fb) | nexchance_it | was €373,95 on 2026-10-09 |
-| DDR5 32GB | **€291,00** | €253,17 | €279,20 | [SK hynix 32GB DDR5 SO-DIMM 2x16GB - 5600 MT/s - Getestet](https://www.ebay.de/itm/128135003009?_skw=DDR5+32GB&hash=item1dd570fb81:g:T68AAeSwyetqz3TW) | mdestan | 🔥 at/near buy-low target |
+| DDR5 32GB | **€283,14** | €246,33 | €279,20 | [Samsung 32GB (2x16GB) Laptop DDR5 SO-DIMM PC5-5600B Non-ECC RAM M425R2GA3EB0-CWM](https://www.ebay.de/itm/287651102977?_skw=DDR5+32GB&hash=item42f9578101:g:yTIAAeSwTBlq0Y60) | salfr92 | was €314,13 on 2026-10-16 |
+| EliteDesk 800 G4 Mini | **€287,63** | €250,24 | €286,50 | [HP EliteDesk 800 G4 Desktop Mini Core i5 8500T 4-32GB RAM 120-2000GB SSD](https://www.ebay.de/itm/178168671623?_skw=EliteDesk+800+G4+Mini&hash=item297bae2d87:g:rCcAAeSwMttqX27m) | nexchance_it | was €181,50 on 2026-08-23 |
+| DDR5 32GB | **€288,00** | €250,56 | €279,20 | [SK hynix 32GB DDR5 SO-DIMM 2x16GB - 5600 MT/s - Getestet](https://www.ebay.de/itm/128135003009?_skw=DDR5+32GB&hash=item1dd570fb81:g:T68AAeSwyetqz3TW) | mdestan | was €291,00 on 2026-10-15 |
+| EliteDesk 800 G4 Mini | **€289,48** | €251,85 | €286,50 | [HP EliteDesk 800 G4 Desktop Mini Core i7 8700T 4-32GB RAM 120-2000GB SSD](https://www.ebay.de/itm/178567470602?_skw=EliteDesk+800+G4+Mini&hash=item2993735e0a:g:IiQAAeSwrt5qx5Fb) | nexchance_it | was €373,95 on 2026-10-09 |
 | DDR5 32GB | **€295,00** | €256,65 | €279,20 | [Kingston 32GB DDR5-4800 SO-DIMM RAM – 2x16GB – KCP548SS8-16](https://www.ebay.de/itm/227563319577?_skw=DDR5+32GB&hash=item34fbd4b119:g:OTMAAeSw24ZqzGoS) | reboot-it92 | was €300,00 on 2026-10-12 |
-| EliteDesk 800 G4 Mini | **€299,00** | €260,13 | €280,89 | [HP EliteDesk 800 G4 Mini PC i7-8700 16GB 512GB SSD  Win11 Pro](https://www.ebay.de/itm/127564548274?_skw=EliteDesk+800+G4+Mini&hash=item1db37088b2:g:zccAAeSwGvhpWsVC) | onero_tekno | 🔥 at/near buy-low target |
+| EliteDesk 800 G4 Mini | **€299,00** | €260,13 | €286,50 | [HP EliteDesk 800 G4 Mini PC i7-8700 16GB 512GB SSD  Win11 Pro](https://www.ebay.de/itm/127564548274?_skw=EliteDesk+800+G4+Mini&hash=item1db37088b2:g:zccAAeSwGvhpWsVC) | onero_tekno | 🔥 at/near buy-low target |
 | DDR5 32GB | **€299,00** | €260,13 | €279,20 | [G.SKILL Ripjaws 32 GB RAM DDR5 SO-DIMM Kit • 2 × 16 GB • DDR5-4800...](https://www.ebay.de/itm/158332361459?_skw=DDR5+32GB&hash=item24dd581af3:g:kHYAAeSwVgFqtMcM) | wattoparts | 🔥 at/near buy-low target |
 | DDR5 32GB | **€299,00** | €260,13 | €279,20 | [Samsung RAM SO-DIMM 32 GB DDR5 4800MHz](https://www.ebay.de/itm/278252870054?_skw=DDR5+32GB&hash=item40c929d9a6:g:9-IAAeSwQ0FqdHRP) | cs-trading24 | was €329,00 on 2026-09-18 |
-| DDR5 32GB | **€299,00** | €260,13 | €279,20 | [KINGSTON FURY IMPACT DDR5 5600 32GB](https://www.ebay.de/itm/860037001263?_skw=DDR5+32GB&hash=itemc83e33302f:g:XAQAAeSw50pqzP-V) | son917022 | was €359,00 on 2026-10-13 |
 | DDR5 32GB | **€299,00** | €260,13 | €279,20 | [Corsair Vengeance SO-DIMM 32GB, DDR5-4800 \| CMSX32GX5M1A4800C40](https://www.ebay.de/itm/336436317166?_skw=DDR5+32GB&hash=item4e552acbee:g:ypAAAeSwsDBpkZfP) | basedreamer | 🔥 at/near buy-low target |
-| DDR5 32GB | **€300,00** | €261,00 | €279,20 | [Kingston FURY Beast White EXPO 16GB 6000MT/s DDR5 CL36 DIMM ECC Gaming Memory](https://www.ebay.de/itm/880005098608?_skw=DDR5+32GB&hash=itemcce4642c70:g:hpIAAeSwwyZqyqfx) | silky-kane | was €320,00 on 2026-10-11 |
+| DDR5 32GB | **€299,00** | €260,13 | €279,20 | [Kingston FURY Impact 32GB (2 x 16GB) PC5-38400 (DDR5-4800) SO-DIMM...](https://www.ebay.de/itm/307235977722?_skw=DDR5+32GB&hash=item4788b0f9fa:g:cOcAAeSwdIJq01d1) | diplomat3 | 🔥 at/near buy-low target |
 | DDR5 32GB | **€300,00** | €261,00 | €279,20 | [Kingston Fury Renegade DDR5 Silver/Black XMP 16GB 6000MT/s CL32 DIMM](https://www.ebay.de/itm/800690634620?_skw=DDR5+32GB&hash=itemba6ce17f7c:g:ku0AAeSw77xqAjIM) | reiyi-72 | 🔥 at/near buy-low target |
-| DDR5 32GB | **€300,00** | €261,00 | €279,20 | [32 GB Samsung RAM – 2×16 GB – HP OMEN 16](https://www.ebay.de/itm/318743636803?_skw=DDR5+32GB&hash=item4a3699eb43:g:9NcAAeSw7Slqgvrn) | nele7504 | 🔥 at/near buy-low target |
 | DDR5 32GB | **€300,00** | €261,00 | €279,20 | [Kingston FURY Beast DDR5 16GB (2x8GB) 5600 DIMM 288-Pin KF556C36BBEK2-32](https://www.ebay.de/itm/227567043489?_skw=DDR5+32GB&hash=item34fc0d83a1:g:kdQAAeSwXg5qz2JG) | real_thanquol | 🔥 at/near buy-low target |
-| DDR5 32GB | **€300,00** | €261,00 | €279,20 | [Samsung 32GB (2x16GB) DDR5-5600 SO-DIMM RAM 262-Pin M425R2GA3EB0-CWM0L](https://www.ebay.de/itm/128137011995?_skw=DDR5+32GB&hash=item1dd58fa31b:g:khUAAeSwHf9q0Ohr) | sonnebumee | 🔥 at/near buy-low target |
-| DDR5 32GB | **€300,00** | €261,00 | €279,20 | [Samsung 32GB (2x16GB) DDR5-5600 SO-DIMM RAM PC5-5600B M425R2GA3EB0-CWMOD](https://www.ebay.de/itm/128137032652?_skw=DDR5+32GB&hash=item1dd58ff3cc:g:dpAAAeSwAmVq0OtQ) | sonnebumee | 🔥 at/near buy-low target |
-| DDR5 32GB | **€300,00** | €261,00 | €279,20 | [1x Kingston Fury BEAST 32GB DDR5 2x16GB KF548C38BBK2  4800 MHz PC Gaming RAM](https://www.ebay.de/itm/960074828827?_skw=DDR5+32GB&hash=itemdf88eb4c1b:g:OUUAAeSwNslq0hpM) | 1stor1a | 🔥 at/near buy-low target |
+| DDR5 32GB | **€300,00** | €261,00 | €279,20 | [32 GB Samsung RAM – 2×16 GB – HP OMEN 16](https://www.ebay.de/itm/318743636803?_skw=DDR5+32GB&hash=item4a3699eb43:g:9NcAAeSw7Slqgvrn) | nele7504 | 🔥 at/near buy-low target |
 | DDR5 32GB | **€309,00** | €268,83 | €279,20 | [Kingston 32GB DDR5 SO-DIMM 5600 MT/s (2x16GB) - Getestet & Neuwertig](https://www.ebay.de/itm/298734449520?_skw=DDR5+32GB&hash=item458df5f370:g:k3kAAeSw4tZqw4eZ) | thomasst93 | was €329,00 on 2026-10-05 |
-| DDR5 32GB | **€314,60** | €273,70 | €279,20 | [Samsung 32GB (2x16GB) Laptop DDR5 SO-DIMM PC5-5600B Non-ECC RAM M425R2GA3EB0-CWM](https://www.ebay.de/itm/287651102977?_skw=DDR5+32GB&hash=item42f9578101:g:yTIAAeSwTBlq0Y60) | salfr92 | was €314,13 on 2026-10-16 |
+| DDR5 32GB | **€319,00** | €277,53 | €279,20 | [Samsung 32GB SO-PC5-38400 SO-DDR5-4800  4800MT/s  SO-DIMM for Notebook / mini-PC](https://www.ebay.de/itm/940021233958?_skw=DDR5+32GB&hash=itemdadda1b926:g:esIAAeSwMAxq094K) | hardelektronik | 🔥 at/near buy-low target |
 | DDR5 32GB | **€319,00** | €277,53 | €279,20 | [Kingston ValueRAM 32GB DDR5-4800 SO-DIMM PC5-38400 KVR55S40BD8-32](https://www.ebay.de/itm/840014697045?_skw=DDR5+32GB&hash=itemc394c71255:g:5Z0AAeSwffVqzSMP) | mystermax_27 | was €339,00 on 2026-10-13 |
 | DDR5 32GB | **€320,00** | €278,40 | €279,20 | [SK hynix DDR5 SO-DIMM 16GB (2x8GB) PC5-4800B HMCG66MEBSA092N BA](https://www.ebay.de/itm/287652846760?_skw=DDR5+32GB&hash=item42f9721ca8:g:9~AAAeSw8VFq0o6W) | s_a_h_i_n | 🔥 at/near buy-low target |
+| DDR5 32GB | **€320,16** | €278,54 | €279,20 | [SK Hynix 32GB 2Rx8 PC5-4800B HMCG88MEBUA084N DDR5 UDIMM RAM](https://www.ebay.de/itm/880024868924?_skw=DDR5+32GB&hash=itemcce591d83c:g:3OsAAeSwmBlq02hp) | alekusmobiles | 🔥 at/near buy-low target |
 | DDR5 32GB | **€320,78** | €279,08 | €279,20 | [Crucial Pro DDR5 RAM 16GB 6000MHz CL48 (CP16G60C48U5) (U)(W)](https://www.ebay.de/itm/318871216505?_skw=DDR5+32GB&hash=item4a3e34a179:g:ij8AAeSwj0lqqFZY) | outletonn | 🔥 at/near buy-low target |
 | Tesla T4 | **€580,08** | €504,67 | €575,60 | [HP NVIDIA Tesla T4 16GB GDDR6 GPU Grafikkarte P17819-B21 R0W29A](https://www.ebay.de/itm/206607063373?_skw=Tesla+T4&hash=item301abd994d:g:fvkAAOSwcTZoGF6k) | cloud_storage_corp | 🔥 at/near buy-low target |
 | Tesla T4 | **€599,00** | €521,13 | €575,60 | [NVIDIA Tesla T4 16GB - KI Grafikkarte - LLM - Inferenz](https://www.ebay.de/itm/940015301562?_skw=Tesla+T4&hash=itemdadd4733ba:g:ghEAAeSw~Qtq0MgL) | maximume*bayer* | 🔥 at/near buy-low target |
@@ -115,17 +125,18 @@ Every listing at or within 15 % of its buy-low target (150 of 756 — the flag i
 | Nvidia Quadro RTX | **€650,00** | €565,50 | €624,00 | [NVIDIA QUADRO RTX 4000 8GB GDDR6 Graphic Card](https://www.ebay.de/itm/127218727595?_skw=Quadro+RTX&hash=item1d9ed3baab:g:Z7wAAeSwScZoa6Fp) | newdisk | 🔥 at/near buy-low target |
 | Tesla T4 | **€655,00** | €569,85 | €575,60 | [NVIDIA Tesla T4 Turing GPU 16GB GDDR6 Accelerator Card CUDA Graphics Card](https://www.ebay.de/itm/117450785367?_skw=Tesla+T4&hash=item1b589cc257:g:e1EAAeSwXiVqxMO9) | newdisk | 🔥 at/near buy-low target |
 | Tesla T4 | **€655,00** | €569,85 | €575,60 | [NVIDIA Tesla T4 Turing GPU 16GB GDDR6 Accelerator Card CUDA Graphics Card](https://www.ebay.de/itm/286635901285?_skw=Tesla+T4&hash=item42bcd4c165:g:AMcAAOSwT-RnxUuI) | ruixiu | was €799,00 on 2026-08-23 |
-| Nvidia Quadro RTX | **€689,47** | €599,84 | €624,00 | [NVIDIA Quadro RTX 4000 Professional Grafikkarte 8GB GDDR6 GPU getestet](https://www.ebay.de/itm/206491453056?_skw=Quadro+RTX&hash=item3013d98680:g:WYgAAeSw7Ddqf3Pp) | risingsungaming | was €668,61 on 2026-08-18 |
 | Nvidia Quadro RTX | **€699,00** | €608,13 | €624,00 | [Nvidia Quadro RTX 5000 16GB GDDR6 256 Bit PCI Express x16 3.0](https://www.ebay.de/itm/147455604808?_skw=Quadro+RTX&hash=item225509f848:g:84oAAeSwxclqu4o5) | smg-germany | 🔥 at/near buy-low target |
 | Nvidia Quadro RTX | **€715,00** | €622,05 | €624,00 | [NVIDIA QUADRO RTX 4000 8GB GDDR6 Graphic Card](https://www.ebay.de/itm/176294482916?_skw=Quadro+RTX&hash=item290bf853e4:g:1RQAAOSwoAtl-WvV) | zepenl-0 | 🔥 at/near buy-low target |
 | Nvidia Quadro RTX | **€715,00** | €622,05 | €624,00 | [NVIDIA QUADRO RTX 4000 8GB GDDR6 288 cores Graphic Card 256-bit 160W](https://www.ebay.de/itm/186361101619?_skw=Quadro+RTX&hash=item2b63fcbd33:g:LUMAAOSwBOtl~pL1) | sinobright | 🔥 at/near buy-low target |
 | RTX 4070 Ti Super | **€900,00** | €783,00 | €847,60 | [Zotac RTX 4070 Ti Super Trinity Black 16GB \| TOP Zustand ✅ \| Free Delivery 📦](https://www.ebay.de/itm/178531608477?_skw=RTX+4070+Ti+Super&hash=item299150279d:g:C6oAAeSwXGNquI4t) | aldern2000 | 🔥 at/near buy-low target |
 | RTX 4070 Ti Super | **€949,99** | €826,49 | €847,60 | [INNO3D GeForce RTX 4070 Ti SUPER TWIN X2 16GB Ray Tracing DLSS 4.5](https://www.ebay.de/itm/298705759732?_skw=RTX+4070+Ti+Super&hash=item458c402df4:g:sFcAAeSwOJNqtjkc) | azureole | was €900,00 on 2026-09-25 |
 | RTX 4080 Super | **€1.100,00** | €957,00 | €1.034,20 | [Gigabyte GeForce RTX 4080 SUPER AERO OC 16G (OVP)](https://www.ebay.de/itm/377540491618?_skw=RTX+4080+Super&hash=item57e72ab962:g:4AsAAeSwXXlpOtwx) | starmeys | was €1.000,00 on 2026-10-03 |
-| Gaming PC mit RTX 3080 | **€1.100,00** | €957,00 | €1.039,20 | [Gaming PC mit RTX3080](https://www.ebay.de/itm/317503149041?_skw=Gaming+PC+RTX+3080&hash=item49eca993f1:g:eIIAAeSwbTRpCk0R) | denomeno69 | 🔥 at/near buy-low target |
-| Gaming PC mit RTX 3080 | **€1.100,00** | €957,00 | €1.039,20 | [​Gaming PC \| RTX 3080 12GB \| i7-12700K \| 32GB RAM \| 2,5 TB SSD](https://www.ebay.de/itm/318253095556?_skw=Gaming+PC+RTX+3080&hash=item4a195cda84:g:ayAAAeSwKE5p-eBX) | johawo-0 | was €1.199,00 on 2026-08-23 |
-| Gaming PC mit RTX 3080 | **€1.100,00** | €957,00 | €1.039,20 | [Gaming Pc RTX 3080 Ryzen 5900x](https://www.ebay.de/itm/176940114998?_skw=Gaming+PC+RTX+3080&hash=item293273e436:g:eBcAAeSwaGVn3ItF) | akxy32 | 🔥 at/near buy-low target |
-| Gaming PC mit RTX 3080 | **€1.100,00** | €957,00 | €1.039,20 | [gaming pc 3080 Ryzen 7 5800](https://www.ebay.de/itm/167333256762?_skw=Gaming+PC+RTX+3080&hash=item26f5d6de3a:g:ffcAAeSwx-lnslfi) | fri_9398 | 🔥 at/near buy-low target |
+| Gaming PC mit RTX 3080 | **€1.100,00** | €957,00 | €1.039,30 | [Gaming PC mit RTX3080](https://www.ebay.de/itm/317503149041?_skw=Gaming+PC+RTX+3080&hash=item49eca993f1:g:eIIAAeSwbTRpCk0R) | denomeno69 | 🔥 at/near buy-low target |
+| Gaming PC mit RTX 3080 | **€1.100,00** | €957,00 | €1.039,30 | [​Gaming PC \| RTX 3080 12GB \| i7-12700K \| 32GB RAM \| 2,5 TB SSD](https://www.ebay.de/itm/318253095556?_skw=Gaming+PC+RTX+3080&hash=item4a195cda84:g:ayAAAeSwKE5p-eBX) | johawo-0 | was €1.199,00 on 2026-08-23 |
+| Gaming PC mit RTX 3080 | **€1.100,00** | €957,00 | €1.039,30 | [Gaming Pc RTX 3080 Ryzen 5900x](https://www.ebay.de/itm/176940114998?_skw=Gaming+PC+RTX+3080&hash=item293273e436:g:eBcAAeSwaGVn3ItF) | akxy32 | 🔥 at/near buy-low target |
+| Gaming PC mit RTX 3080 | **€1.100,00** | €957,00 | €1.039,30 | [gaming pc 3080 Ryzen 7 5800](https://www.ebay.de/itm/167333256762?_skw=Gaming+PC+RTX+3080&hash=item26f5d6de3a:g:ffcAAeSwx-lnslfi) | fri_9398 | 🔥 at/near buy-low target |
+| Dell Precision 7920 Tower | **€1.103,95** | €960,44 | €1.100,00 | [HP Z6 G4 Workstation 2xGOLD 6152 2,10GHz 48GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/168203925846?_skw=Precision+7920&hash=item2729bc3956:g:mEQAAeSw2dxpowR9) | macproworld | was €1.100,06 on 2026-10-11 |
+| Dell Precision 7920 Tower | **€1.103,95** | €960,44 | €1.100,00 | [HP Z6 G4 Workstation 2xGOLD 6140 2,30GHz 48GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/168203926413?_skw=Precision+7920&hash=item2729bc3b8d:g:ax0AAeSweoZpo3KD) | macproworld | was €1.100,06 on 2026-10-11 |
 | Dell Precision 7920 Tower | **€1.111,93** | €967,38 | €1.100,00 | [HP Z6 G4 Workstation 2xGOLD 6134 3,20GHz 32GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/327028109962?_skw=Precision+7920&hash=item4c2464f28a:g:120AAeSwAuNpoHFg) | thamesserver | was €1.103,19 on 2026-10-04 |
 | Dell Precision 7920 Tower | **€1.124,56** | €978,37 | €1.100,00 | [HP Z6 G4 Workstation 2xGOLD 6138 2,00GHz 32GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/327028109980?_skw=Precision+7920&hash=item4c2464f29c:g:120AAeSwAuNpoHFg) | thamesserver | was €1.115,71 on 2026-10-04 |
 | Dell Precision 7920 Tower | **€1.135,85** | €988,19 | €1.100,00 | [HP Z6 G4 Workstation 2xGOLD 6134 3,20GHz 48GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/188118720159?_skw=Precision+7920&hash=item2bccbfde9f:g:mEQAAeSw2dxpowR9) | servershopping_com | was €1.126,91 on 2026-10-04 |
@@ -133,7 +144,7 @@ Every listing at or within 15 % of its buy-low target (150 of 756 — the flag i
 | Dell Precision 7920 Tower | **€1.137,20** | €989,36 | €1.100,00 | [HP Z6 G4 Workstation 2xGOLD 6140 2,30GHz 32GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/327028109956?_skw=Precision+7920&hash=item4c2464f284:g:120AAeSwAuNpoHFg) | thamesserver | was €1.128,26 on 2026-10-04 |
 | Dell Precision 7920 Tower | **€1.138,81** | €990,76 | €1.100,00 | [HP Z6 G4 Workstation 2xGOLD 6134 3,20GHz 64GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/168203926203?_skw=Precision+7920&hash=item2729bc3abb:g:MuoAAeSwvDJpo16X) | macproworld | was €1.129,86 on 2026-10-04 |
 | Dell Precision 7920 Tower | **€1.148,06** | €998,81 | €1.100,00 | [HP Z6 G4 Workstation 2xGOLD 6138 2,00GHz 48GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/188118720141?_skw=Precision+7920&hash=item2bccbfde8d:g:eOIAAeSwP2Vpo2ff) | servershopping_com | was €1.139,03 on 2026-10-04 |
-| Gaming PC mit RTX 3080 | **€1.150,00** | €1.000,50 | €1.039,20 | [Gaming PC RTX 3080, Intel Core Ultra 5 245KF, 16GB DDR5, 1TB SSD](https://www.ebay.de/itm/398382191783?_skw=Gaming+PC+RTX+3080&hash=item5cc16dd4a7:g:8l8AAeSw4k1qox01) | dalemomoss | 🔥 at/near buy-low target |
+| Gaming PC mit RTX 3080 | **€1.150,00** | €1.000,50 | €1.039,30 | [Gaming PC RTX 3080, Intel Core Ultra 5 245KF, 16GB DDR5, 1TB SSD](https://www.ebay.de/itm/398382191783?_skw=Gaming+PC+RTX+3080&hash=item5cc16dd4a7:g:8l8AAeSw4k1qox01) | dalemomoss | 🔥 at/near buy-low target |
 | Dell Precision 7920 Tower | **€1.150,43** | €1.000,87 | €1.100,00 | [HP Z6 G4 Workstation 2xGOLD 6138 2,00GHz 64GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/168203926611?_skw=Precision+7920&hash=item2729bc3c53:g:fFkAAeSwTqFpo2pq) | macproworld | was €1.141,38 on 2026-10-04 |
 | Dell Precision 7920 Tower | **€1.160,28** | €1.009,44 | €1.100,00 | [HP Z6 G4 Workstation 2xGOLD 6152 2,10GHz 48GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/157724444857?_skw=Precision+7920&hash=item24b91c08b9:g:mEQAAeSw2dxpowR9) | servershopping_com | was €1.151,15 on 2026-10-04 |
 | Dell Precision 7920 Tower | **€1.160,28** | €1.009,44 | €1.100,00 | [HP Z6 G4 Workstation 2xGOLD 6140 2,30GHz 48GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/188118720826?_skw=Precision+7920&hash=item2bccbfe13a:g:ax0AAeSweoZpo3KD) | servershopping_com | was €1.151,15 on 2026-10-04 |
@@ -141,7 +152,7 @@ Every listing at or within 15 % of its buy-low target (150 of 756 — the flag i
 | Dell Precision 7920 Tower | **€1.162,05** | €1.010,98 | €1.100,00 | [HP Z6 G4 Workstation 2xGOLD 6140 2,30GHz 64GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/168203926307?_skw=Precision+7920&hash=item2729bc3b23:g:ZnEAAeSwUStpo3L0) | macproworld | was €1.152,91 on 2026-10-04 |
 | Dell Precision 7920 Tower | **€1.175,11** | €1.022,35 | €1.100,00 | [HP Z6 G4 Workstation 2xGOLD 6134 3,20GHz 48GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/327028109989?_skw=Precision+7920&hash=item4c2464f2a5:g:mEQAAeSw2dxpowR9) | thamesserver | was €1.165,87 on 2026-10-04 |
 | Dell Precision 7920 Tower | **€1.187,74** | €1.033,33 | €1.100,00 | [HP Z6 G4 Workstation 2xGOLD 6138 2,00GHz 48GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/327028109999?_skw=Precision+7920&hash=item4c2464f2af:g:eOIAAeSwP2Vpo2ff) | thamesserver | was €1.178,40 on 2026-10-04 |
-| Gaming PC mit RTX 3080 | **€1.190,00** | €1.035,30 | €1.039,20 | [Gaming PC : RTX 3080 TI 12 GB + Intel I7 (12 Core) + 32 GB Gaming RAM](https://www.ebay.de/itm/176790689569?_skw=Gaming+PC+RTX+3080&hash=item29298bd721:g:stkAAOSw1IRnhtCf) | geosaou0 | 🔥 at/near buy-low target |
+| Gaming PC mit RTX 3080 | **€1.190,00** | €1.035,30 | €1.039,30 | [Gaming PC : RTX 3080 TI 12 GB + Intel I7 (12 Core) + 32 GB Gaming RAM](https://www.ebay.de/itm/176790689569?_skw=Gaming+PC+RTX+3080&hash=item29298bd721:g:stkAAOSw1IRnhtCf) | geosaou0 | 🔥 at/near buy-low target |
 | Dell Precision 7920 Tower | **€1.196,92** | €1.041,32 | €1.100,00 | [HP Z6 G4 Workstation 2xGOLD 6134 3,20GHz 64GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/157724445708?_skw=Precision+7920&hash=item24b91c0c0c:g:MuoAAeSwvDJpo16X) | servershopping_com | was €1.187,50 on 2026-10-04 |
 | Dell Precision 7920 Tower | **€1.200,38** | €1.044,33 | €1.100,00 | [HP Z6 G4 Workstation 2xGOLD 6152 2,10GHz 48GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/327028109973?_skw=Precision+7920&hash=item4c2464f295:g:mEQAAeSw2dxpowR9) | thamesserver | was €1.190,94 on 2026-10-04 |
 | Dell Precision 7920 Tower | **€1.200,38** | €1.044,33 | €1.100,00 | [HP Z6 G4 Workstation 2xGOLD 6140 2,30GHz 48GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/327028110032?_skw=Precision+7920&hash=item4c2464f2d0:g:ax0AAeSweoZpo3KD) | thamesserver | was €1.190,94 on 2026-10-04 |
@@ -156,58 +167,58 @@ Every listing at or within 15 % of its buy-low target (150 of 756 — the flag i
 | Dell Precision 7920 Tower | **€1.250,92** | €1.088,30 | €1.100,00 | [HP Z6 G4 Workstation 2xGOLD 6138 2,00GHz 64GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/327028110018?_skw=Precision+7920&hash=item4c2464f2c2:g:fFkAAeSwTqFpo2pq) | thamesserver | was €1.241,08 on 2026-10-04 |
 | Dell Precision 7920 Tower | **€1.263,56** | €1.099,30 | €1.100,00 | [HP Z6 G4 Workstation 2xGOLD 6152 2,10GHz 64GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/327028109995?_skw=Precision+7920&hash=item4c2464f2ab:g:kt4AAeSwsVBpowUg) | thamesserver | was €1.253,62 on 2026-10-04 |
 | Dell Precision 7920 Tower | **€1.263,56** | €1.099,30 | €1.100,00 | [HP Z6 G4 Workstation 2xGOLD 6140 2,30GHz 64GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/327028110038?_skw=Precision+7920&hash=item4c2464f2d6:g:ZnEAAeSwUStpo3L0) | thamesserver | was €1.253,62 on 2026-10-04 |
-| HP Z8 G4 Workstation | **€1.346,00** | €1.171,02 | €1.330,90 | [HP Z8 G4 Configurable Workstation 2x Intel Xeon Gold 12C, 256GB RAM, Quadro GPU](https://www.ebay.de/itm/405385751808?_skw=HP+Z8+G4&hash=item5e62dfad00:g:C9EAAeSwYUhqceJT) | bargain*hardware | was €1.006,00 on 2026-10-04 |
-| HP Z8 G4 Workstation | **€1.359,25** | €1.182,55 | €1.330,90 | [HP Z8 G4 Workstation 2x Xeon Gold 6230 64GB 180GB SSD NVIDIA Quadro K5200](https://www.ebay.de/itm/860035585168?_skw=HP+Z8+G4&hash=itemc83e1d9490:g:WhoAAeSw4LtqsnBc) | turnon-it | 🔥 at/near buy-low target |
-| RTX 3090 | **€1.384,25** | €1.204,30 | €1.234,49 | [*TESTED* MSI GeForce RTX 3090 VENTUS 3X OC 24GB GDDR6X Graphics Card](https://www.ebay.de/itm/820116623988?_skw=RTX+3090&hash=itembef2c29274:g:K0wAAeSwyb9qpLme) | videogameszzz123 | was €1.522,78 on 2026-09-12 |
-| HP Z8 G4 Workstation | **€1.389,00** | €1.208,43 | €1.330,90 | [24-Core HP Z840 Workstation 2x Intel Xeon E5-2678v3 DDR4 SSD Quadro GeForce RTX](https://www.ebay.de/itm/264552510952?_skw=HP+Z8+G4&hash=item3d988ef5e8:g:UvYAAOSwShVi0X19) | workstation4u | was €1.049,00 on 2026-10-04 |
-| RTX 3090 | **€1.390,00** | €1.209,30 | €1.234,49 | [Aorus RTX3090 24GB GDDR6X Master Ki, Workstation & Gaming GPU - OHNE KÜHLER!](https://www.ebay.de/itm/407202964384?_skw=RTX+3090&hash=item5ecf3023a0:g:2E8AAeSwBsNqoLo4) | hardwaredrop | 🔥 at/near buy-low target |
-| RTX 3090 | **€1.400,00** | €1.218,00 | €1.234,49 | [GIGABYTE AORUS XTREME GeForce RTX 3090 24GB GDDR6X Wasserkühler RGB](https://www.ebay.de/itm/117466215333?_skw=RTX+3090&hash=item1b598833a5:g:GCIAAeSweihqz1yp) | fordi-2005 | 🔥 at/near buy-low target |
-| RTX 3090 | **€1.400,00** | €1.218,00 | €1.234,49 | [GIGABYTE GeForce RTX 3090 Gaming OC 24G 24GB PCIe x16 RGB Lüfter](https://www.ebay.de/itm/336844912318?_skw=RTX+3090&hash=item4e6d8576be:g:hicAAeSw7ZRq0FgU) | de_toade | 🔥 at/near buy-low target |
-| HP Z8 G4 Workstation | **€1.409,00** | €1.225,83 | €1.330,90 | [24-Core HP Z840 Workstation 2x Intel Xeon E5-2678v3 RAM SSD AMD RX RTX Quadro](https://www.ebay.de/itm/264728950400?_skw=HP+Z8+G4&hash=item3da3133680:g:ZjgAAOSwUb9i0Xex) | workstation4u | was €1.019,00 on 2026-10-04 |
-| HP Z8 G4 Workstation | **€1.415,00** | €1.231,05 | €1.330,90 | [HP Z8 G4 Workstation 1x Xeon Scalable Gen2, 32GB DDR4 RAM, Quadro GFX](https://www.ebay.de/itm/126800785671?_skw=HP+Z8+G4&hash=item1d85ea7107:g:UxUAAeSwUNBqGuYw) | bargain*hardware | was €1.032,00 on 2026-10-04 |
-| HP Z8 G4 Workstation | **€1.425,00** | €1.239,75 | €1.330,90 | [HP Z8 G4 Configurable Workstation 2nd Gen Scalable 512GB DDR4 Nvidia RTX GPU Lot](https://www.ebay.de/itm/405977260845?_skw=HP+Z8+G4&hash=item5e8621632d:g:5ZYAAeSw4n5qu~s1) | bargain*hardware | was €1.049,00 on 2026-10-04 |
-| Lenovo ThinkStation P920 | **€1.431,00** | €1.244,97 | €1.418,80 | [Lenovo P920 Configurable Workstation Xeon Platinum 28C, 1TB RAM, Quadro RTX Lot](https://www.ebay.de/itm/406938696644?_skw=ThinkStation+P920&hash=item5ebf6fbbc4:g:CEoAAeSwG~Zqn-gU) | bargain*hardware | was €1.176,00 on 2026-10-04 |
-| Lenovo ThinkStation P920 | **€1.450,00** | €1.261,50 | €1.418,80 | [Lenovo ThinkStation P920 Workstation Xeon Gold 6136 64GB DDR4 Quadro P2200](https://www.ebay.de/itm/407199335384?_skw=ThinkStation+P920&hash=item5ecef8c3d8:g:rYcAAeSwjT9qnron) | bargain*hardware | was €1.267,00 on 2026-10-04 |
-| Lenovo ThinkStation P920 | **€1.453,00** | €1.264,11 | €1.418,80 | [Lenovo P920 Configurable Workstation Intel Xeon Gold 14C, 256GB RAM, Quadro GPU](https://www.ebay.de/itm/406938696023?_skw=ThinkStation+P920&hash=item5ebf6fb957:g:XccAAeSwDodqUgyC) | bargain*hardware | was €973,00 on 2026-10-04 |
-| HP Z8 G4 Workstation | **€1.467,00** | €1.276,29 | €1.330,90 | [HP Z8 G4 Tower Workstation 2x Xeon Gold 6138 2.0GHz 20-Core, 64GB, P2200 Quadro](https://www.ebay.de/itm/407204744071?_skw=HP+Z8+G4&hash=item5ecf4b4b87:g:2cAAAeSwNnNqxfrT) | bargain*hardware | was €1.431,00 on 2026-10-07 |
-| Lenovo ThinkStation P920 | **€1.468,00** | €1.277,16 | €1.418,80 | [Lenovo P920 Configurable Workstation Intel Xeon Gold 20C, 512GB RAM, Quadro GPU](https://www.ebay.de/itm/406938698429?_skw=ThinkStation+P920&hash=item5ebf6fc2bd:g:52EAAeSwFdZqn5bK) | bargain*hardware | was €1.110,00 on 2026-10-04 |
-| HP Z8 G4 Workstation | **€1.492,00** | €1.298,04 | €1.330,90 | [HP Z8 G4 Editing Tower Xeon Gold 6150 18-Core 64GB RAM Quadro P2200 256GB NVMe](https://www.ebay.de/itm/147562214740?_skw=HP+Z8+G4&hash=item225b64b554:g:fRUAAeSwBX5qoXsD) | bargain*hardware | was €1.290,00 on 2026-10-04 |
-| Lenovo ThinkStation P920 | **€1.499,00** | €1.304,13 | €1.418,80 | [Lenovo ThinkStation P920 Workstation Xeon Gold 6240 64GB DDR4 Quadro P2200](https://www.ebay.de/itm/407199382374?_skw=ThinkStation+P920&hash=item5ecef97b66:g:31oAAeSwFd9qnsKM) | bargain*hardware | was €1.316,00 on 2026-10-04 |
-| HP Z8 G4 Workstation | **€1.528,00** | €1.329,36 | €1.330,90 | [HP Z8 G4 Tower Workstation 2x Xeon Gold 6240 2.6GHz 18-Core, 64GB, P2200 Quadro](https://www.ebay.de/itm/407204783230?_skw=HP+Z8+G4&hash=item5ecf4be47e:g:R4AAAeSwTy1qoYiL) | bargain*hardware | was €1.327,00 on 2026-10-04 |
-| Lenovo ThinkStation P920 | **€1.597,00** | €1.389,39 | €1.418,80 | [Lenovo ThinkStation P920 Workstation Xeon Platinum 8173M 64GB DDR4 Quadro P2200](https://www.ebay.de/itm/147557089066?_skw=ThinkStation+P920&hash=item225b167f2a:g:T8IAAeSwTNpqnsu8) | bargain*hardware | was €1.414,00 on 2026-10-04 |
+| HP Z8 G4 Workstation | **€1.346,00** | €1.171,02 | €1.333,67 | [HP Z8 G4 Configurable Workstation 2x Intel Xeon Gold 12C, 256GB RAM, Quadro GPU](https://www.ebay.de/itm/405385751808?_skw=HP+Z8+G4&hash=item5e62dfad00:g:C9EAAeSwYUhqceJT) | bargain*hardware | was €1.006,00 on 2026-10-04 |
+| HP Z8 G4 Workstation | **€1.359,25** | €1.182,55 | €1.333,67 | [HP Z8 G4 Workstation 2x Xeon Gold 6230 64GB 180GB SSD NVIDIA Quadro K5200](https://www.ebay.de/itm/860035585168?_skw=HP+Z8+G4&hash=itemc83e1d9490:g:WhoAAeSw4LtqsnBc) | turnon-it | 🔥 at/near buy-low target |
+| RTX 3090 | **€1.384,25** | €1.204,30 | €1.236,26 | [*TESTED* MSI GeForce RTX 3090 VENTUS 3X OC 24GB GDDR6X Graphics Card](https://www.ebay.de/itm/820116623988?_skw=RTX+3090&hash=itembef2c29274:g:K0wAAeSwyb9qpLme) | videogameszzz123 | was €1.522,78 on 2026-09-12 |
+| HP Z8 G4 Workstation | **€1.389,00** | €1.208,43 | €1.333,67 | [24-Core HP Z840 Workstation 2x Intel Xeon E5-2678v3 DDR4 SSD Quadro GeForce RTX](https://www.ebay.de/itm/264552510952?_skw=HP+Z8+G4&hash=item3d988ef5e8:g:UvYAAOSwShVi0X19) | workstation4u | was €1.049,00 on 2026-10-04 |
+| RTX 3090 | **€1.390,00** | €1.209,30 | €1.236,26 | [Aorus RTX3090 24GB GDDR6X Master Ki, Workstation & Gaming GPU - OHNE KÜHLER!](https://www.ebay.de/itm/407202964384?_skw=RTX+3090&hash=item5ecf3023a0:g:2E8AAeSwBsNqoLo4) | hardwaredrop | 🔥 at/near buy-low target |
+| RTX 3090 | **€1.390,00** | €1.209,30 | €1.236,26 | [ASUS ROG Strix GeForce RTX 3090 O24G Gaming](https://www.ebay.de/itm/227571370841?_skw=RTX+3090&hash=item34fc4f8b59:g:wpgAAeSw0H5q01i9) | lennart30 | 🔥 at/near buy-low target |
+| RTX 3090 | **€1.400,00** | €1.218,00 | €1.236,26 | [GIGABYTE AORUS XTREME GeForce RTX 3090 24GB GDDR6X Wasserkühler RGB](https://www.ebay.de/itm/117466215333?_skw=RTX+3090&hash=item1b598833a5:g:GCIAAeSweihqz1yp) | fordi-2005 | 🔥 at/near buy-low target |
+| HP Z8 G4 Workstation | **€1.409,00** | €1.225,83 | €1.333,67 | [24-Core HP Z840 Workstation 2x Intel Xeon E5-2678v3 RAM SSD AMD RX RTX Quadro](https://www.ebay.de/itm/264728950400?_skw=HP+Z8+G4&hash=item3da3133680:g:ZjgAAOSwUb9i0Xex) | workstation4u | was €1.019,00 on 2026-10-04 |
+| HP Z8 G4 Workstation | **€1.415,00** | €1.231,05 | €1.333,67 | [HP Z8 G4 Workstation 1x Xeon Scalable Gen2, 32GB DDR4 RAM, Quadro GFX](https://www.ebay.de/itm/126800785671?_skw=HP+Z8+G4&hash=item1d85ea7107:g:UxUAAeSwUNBqGuYw) | bargain*hardware | was €1.032,00 on 2026-10-04 |
+| HP Z8 G4 Workstation | **€1.425,00** | €1.239,75 | €1.333,67 | [HP Z8 G4 Configurable Workstation 2nd Gen Scalable 512GB DDR4 Nvidia RTX GPU Lot](https://www.ebay.de/itm/405977260845?_skw=HP+Z8+G4&hash=item5e8621632d:g:5ZYAAeSw4n5qu~s1) | bargain*hardware | was €1.049,00 on 2026-10-04 |
+| Lenovo ThinkStation P920 | **€1.431,00** | €1.244,97 | €1.422,40 | [Lenovo P920 Configurable Workstation Xeon Platinum 28C, 1TB RAM, Quadro RTX Lot](https://www.ebay.de/itm/406938696644?_skw=ThinkStation+P920&hash=item5ebf6fbbc4:g:CEoAAeSwG~Zqn-gU) | bargain*hardware | was €1.176,00 on 2026-10-04 |
+| Lenovo ThinkStation P920 | **€1.450,00** | €1.261,50 | €1.422,40 | [Lenovo ThinkStation P920 Workstation Xeon Gold 6136 64GB DDR4 Quadro P2200](https://www.ebay.de/itm/407199335384?_skw=ThinkStation+P920&hash=item5ecef8c3d8:g:rYcAAeSwjT9qnron) | bargain*hardware | was €1.267,00 on 2026-10-04 |
+| Lenovo ThinkStation P920 | **€1.453,00** | €1.264,11 | €1.422,40 | [Lenovo P920 Configurable Workstation Intel Xeon Gold 14C, 256GB RAM, Quadro GPU](https://www.ebay.de/itm/406938696023?_skw=ThinkStation+P920&hash=item5ebf6fb957:g:XccAAeSwDodqUgyC) | bargain*hardware | was €973,00 on 2026-10-04 |
+| HP Z8 G4 Workstation | **€1.467,00** | €1.276,29 | €1.333,67 | [HP Z8 G4 Tower Workstation 2x Xeon Gold 6138 2.0GHz 20-Core, 64GB, P2200 Quadro](https://www.ebay.de/itm/407204744071?_skw=HP+Z8+G4&hash=item5ecf4b4b87:g:2cAAAeSwNnNqxfrT) | bargain*hardware | was €1.431,00 on 2026-10-07 |
+| Lenovo ThinkStation P920 | **€1.468,00** | €1.277,16 | €1.422,40 | [Lenovo P920 Configurable Workstation Intel Xeon Gold 20C, 512GB RAM, Quadro GPU](https://www.ebay.de/itm/406938698429?_skw=ThinkStation+P920&hash=item5ebf6fc2bd:g:52EAAeSwFdZqn5bK) | bargain*hardware | was €1.110,00 on 2026-10-04 |
+| HP Z8 G4 Workstation | **€1.492,00** | €1.298,04 | €1.333,67 | [HP Z8 G4 Editing Tower Xeon Gold 6150 18-Core 64GB RAM Quadro P2200 256GB NVMe](https://www.ebay.de/itm/147562214740?_skw=HP+Z8+G4&hash=item225b64b554:g:fRUAAeSwBX5qoXsD) | bargain*hardware | was €1.290,00 on 2026-10-04 |
+| Lenovo ThinkStation P920 | **€1.499,00** | €1.304,13 | €1.422,40 | [Lenovo ThinkStation P920 Workstation Xeon Gold 6240 64GB DDR4 Quadro P2200](https://www.ebay.de/itm/407199382374?_skw=ThinkStation+P920&hash=item5ecef97b66:g:31oAAeSwFd9qnsKM) | bargain*hardware | was €1.316,00 on 2026-10-04 |
+| HP Z8 G4 Workstation | **€1.528,00** | €1.329,36 | €1.333,67 | [HP Z8 G4 Tower Workstation 2x Xeon Gold 6240 2.6GHz 18-Core, 64GB, P2200 Quadro](https://www.ebay.de/itm/407204783230?_skw=HP+Z8+G4&hash=item5ecf4be47e:g:R4AAAeSwTy1qoYiL) | bargain*hardware | was €1.327,00 on 2026-10-04 |
+| Lenovo ThinkStation P920 | **€1.597,00** | €1.389,39 | €1.422,40 | [Lenovo ThinkStation P920 Workstation Xeon Platinum 8173M 64GB DDR4 Quadro P2200](https://www.ebay.de/itm/147557089066?_skw=ThinkStation+P920&hash=item225b167f2a:g:T8IAAeSwTNpqnsu8) | bargain*hardware | was €1.414,00 on 2026-10-04 |
 | RTX 3090 Ti | **€1.599,00** | €1.391,13 | €1.439,20 | [MSI NVIDA GeForce  RTX 3090Ti GAMING X TRIO Graphics Card GPU 24G GDDR6X](https://www.ebay.de/itm/127774066669?_skw=RTX+3090+Ti&hash=item1dbfed87ed:g:DxkAAeSw3ulpxiJM) | newdisk | 🔥 at/near buy-low target |
-| AMD Ryzen AI Max 395 (Strix Halo) | **€2.220,00** | €1.931,40 | €2.079,60 | [ASUS ROG Flow Z13 AMD Ryzen AI MAX+ 395 \| 32GB RAM \| 1TB SSD \| Wie Neu](https://www.ebay.de/itm/267814562039?_skw=Ryzen+AI+Max+395&hash=item3e5afde8f7:g:rfsAAeSwEu1qsLNX) | horsebox-2013 | 🔥 at/near buy-low target |
+| AMD Ryzen AI Max 395 (Strix Halo) | **€2.220,00** | €1.931,40 | €2.055,90 | [ASUS ROG Flow Z13 AMD Ryzen AI MAX+ 395 \| 32GB RAM \| 1TB SSD \| Wie Neu](https://www.ebay.de/itm/267814562039?_skw=Ryzen+AI+Max+395&hash=item3e5afde8f7:g:rfsAAeSwEu1qsLNX) | horsebox-2013 | 🔥 at/near buy-low target |
 | Mac Studio Ultra | **€3.806,81** | €3.311,92 | €3.578,50 | [Apple Mac Studio 2022 M1 Ultra-Chip / 20C CPU / 48C GPU / 64GB / 1TB SSD](https://www.ebay.de/itm/296590641248?_skw=Mac+Studio+Ultra&hash=item450e2e0860:g:XCMAAOSwrslmojZV) | stefanchristou | 🔥 at/near buy-low target |
 | Mac Studio Ultra | **€3.950,00** | €3.436,50 | €3.578,50 | [Apple Mac Studio M1 Ultra 20C CPU 64C GPU 64GB RAM 1TB SSD mit Apple Care+ OVP](https://www.ebay.de/itm/237039451061?_skw=Mac+Studio+Ultra&hash=item3730a6fbb5:g:4YwAAeSwo5FqlGMK) | wodcleaner | 🔥 at/near buy-low target |
 
 ## 📊 Used-market index & movers
 
-**Market index: +2,1 %** — mean change of 29 category medians vs. their reference scan (~7 days back). Positive = market heating up (shortage pressure); negative = cooling.
+**Market index: +3,0 %** — mean change of 29 category medians vs. their reference scan (~7 days back). Positive = market heating up (shortage pressure); negative = cooling.
 
 **Risers**
 
 | Category | Latest median | Reference | Change |
 |---|---|---|---|
 | DDR5 RDIMM | **€320,00** | €245,30 (2026-08-23) | **+30,5 %** |
-| RTX 5070 16GB | **€1.546,03** | €1.250,00 (2026-10-10) | **+23,7 %** |
-| X99 Mainboard | **€179,00** | €159,90 (2026-10-10) | **+11,9 %** |
-| EliteDesk 800 G4 Mini | **€463,00** | €414,00 (2026-10-10) | **+11,8 %** |
-| Lenovo ThinkStation P920 | **€1.999,00** | €1.791,50 (2026-10-10) | **+11,6 %** |
+| RTX 5070 16GB | **€1.546,03** | €1.199,50 (2026-10-11) | **+28,9 %** |
+| RTX 4060 Ti 16GB | **€734,00** | €599,00 (2026-10-17) | **+22,5 %** |
+| RTX 4080 Super | **€1.351,48** | €1.200,00 (2026-10-11) | **+12,6 %** |
+| RTX 5060 | **€734,00** | €669,50 (2026-10-11) | **+9,6 %** |
 
 **Fallers**
 
 | Category | Latest median | Reference | Change |
 |---|---|---|---|
-| RTX 4060 Ti 16GB | **€599,00** | €669,99 (2026-10-09) | **-10,6 %** |
-| Mac Studio Ultra | **€4.799,50** | €5.349,50 (2026-10-10) | **-10,3 %** |
-| AMD Ryzen AI Max 395 (Strix Halo) | **€2.220,00** | €2.421,11 (2026-10-10) | **-8,3 %** |
-| RTX 5060 | **€752,00** | €820,00 (2026-10-10) | **-8,3 %** |
-| EliteDesk 800 G5 Mini | **€210,00** | €218,00 (2026-10-10) | **-3,7 %** |
+| AMD Ryzen AI Max 395 (Strix Halo) | **€2.220,00** | €2.421,11 (2026-10-11) | **-8,3 %** |
+| RTX 3090 Ti | **€1.850,00** | €1.988,00 (2026-10-11) | **-6,9 %** |
+| Mac Studio Ultra | **€4.592,60** | €4.900,00 (2026-10-11) | **-6,3 %** |
+| ThinkCentre M720q | **€226,52** | €236,00 (2026-10-11) | **-4,0 %** |
+| OptiPlex 3070 Micro | **€194,00** | €201,00 (2026-10-11) | **-3,5 %** |
 
 
 ## AMD Ryzen AI Max 395 (Strix Halo) (1 items)
 
-_Window €2.080–4.350 · median **€2.220,00** · cheapest **€2.220,00** · 1 at/near buy-low · 30d €2.599,50→€2.220,00 (30d)_
+_Window €2.056–4.350 · median **€2.220,00** · cheapest **€2.220,00** · 1 at/near buy-low · 30d €2.599,50→€2.220,00 (30d)_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
@@ -215,7 +226,7 @@ _Window €2.080–4.350 · median **€2.220,00** · cheapest **€2.220,00** �
 
 ## DDR4 RDIMM 32GB (46 items)
 
-_Window €95–188 · median **€129,50** · cheapest **€99,00** · 4 at/near buy-low · 30d €100,00→€129,50 (30d) · median €4,05/GB_
+_Window €96–188 · median **€127,00** · cheapest **€99,00** · 11 at/near buy-low · 30d €100,00→€127,00 (30d) · median €3,97/GB_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
@@ -223,19 +234,20 @@ _Window €95–188 · median **€129,50** · cheapest **€99,00** · 4 at/nea
 | **€100,00** | €87,00 | 3,12/GB | Gebraucht | [SAMSUNG M393A4K40CB1-CRC4Q 32GB DDR4 RDIMM PC4-2400T](https://www.ebay.de/itm/267674336098?_skw=DDR4+RDIMM+32GB&hash=item3e52a23b62:g:JwsAAeSwevZqDIeJ) | thovdk | 🔥 at/near buy-low target |
 | **€105,00** | €91,35 | 3,28/GB | Gebraucht | [Samsung 16GB DDR4 PC4-2133P ECC RDIMM 1Rx4 M393A2K40BB0-CPB0Q NetApp 107-22175](https://www.ebay.de/itm/327076498579?_skw=DDR4+RDIMM+32GB&hash=item4c27474c93:g:YPkAAeSwMihpyrTS) | sk2015.dani | 🔥 at/near buy-low target |
 | **€107,47** | €93,50 | 3,36/GB | Used | [SK HYNIX 32GB Kit (4 x 8GB) PC4-2400T 1Rx8 - ECC RDIMM DDR4 Server Ram](https://www.ebay.de/itm/198494685480?_skw=DDR4+RDIMM+32GB&hash=item2e37348928:g:0FsAAeSwTh5pzDxr) | pi_automation | 🔥 at/near buy-low target · was €105,59 on 2026-09-08 |
-| **€110,00** | €95,70 | 3,44/GB | Gebraucht | [DDR4 32GB (2x16GB)  2Rx8, RDIMM ECC REG, PC4-19200,SK Hynix HMA82GR7AFR8N-UH (3)](https://www.ebay.de/itm/327386246193?_skw=DDR4+RDIMM+32GB&hash=item4c39bdac31:g:2PIAAeSwFJ9qwPeg) | cheetah-spottycat | ok |
-| **€110,00** | €95,70 | 3,44/GB | Gebraucht | [DDR4 32GB (2x16GB)  2Rx8, RDIMM ECC REG, PC4-19200,SK Hynix HMA82GR7AFR8N-UH (5)](https://www.ebay.de/itm/327386252965?_skw=DDR4+RDIMM+32GB&hash=item4c39bdc6a5:g:AfsAAeSwsutqwPm3) | cheetah-spottycat | ok |
-| **€110,00** | €95,70 | 3,44/GB | Gebraucht | [DDR4 32GB (2x16GB)  2Rx8, RDIMM ECC REG, PC4-19200,SK Hynix HMA82GR7AFR8N-UH (7)](https://www.ebay.de/itm/327386260261?_skw=DDR4+RDIMM+32GB&hash=item4c39bde325:g:XzwAAeSwjQZqwPsv) | cheetah-spottycat | ok |
-| **€110,00** | €95,70 | 3,44/GB | Gebraucht | [DDR4 32GB (2x16GB)  2Rx8, RDIMM ECC REG,PC4-19200,SK Hynix HMA82GR7AFR8N-UH (12)](https://www.ebay.de/itm/327386268601?_skw=DDR4+RDIMM+32GB&hash=item4c39be03b9:g:ob4AAeSw2t1qwP60) | cheetah-spottycat | ok |
-| **€110,00** | €95,70 | 3,44/GB | Gebraucht | [DDR4 32GB (2x16GB)  2Rx8, RDIMM ECC REG,PC4-19200,SK Hynix HMA82GR7AFR8N-UH (14)](https://www.ebay.de/itm/327386270129?_skw=DDR4+RDIMM+32GB&hash=item4c39be09b1:g:tE0AAeSwO2lqwP9h) | cheetah-spottycat | ok |
-| **€110,00** | €95,70 | 3,44/GB | Gebraucht | [DDR4 32GB (2x16GB)  2Rx8, RDIMM ECC REG,PC4-19200,Micron MTA18ASF2G72PDZ-2G (22)](https://www.ebay.de/itm/327386307857?_skw=DDR4+RDIMM+32GB&hash=item4c39be9d11:g:Q3AAAeSwAJ5qwQa8) | cheetah-spottycat | ok |
+| **€110,00** | €95,70 | 3,44/GB | Gebraucht | [32GB SK hynix DDR4 ECC RDIMM PC4-2400T Server RAM HMA84GR7AFR4N](https://www.ebay.de/itm/198722131183?_skw=DDR4+RDIMM+32GB&hash=item2e44c314ef:g:TQQAAeSwj1lq0zg-) | mrrephil | 🔥 at/near buy-low target |
+| **€110,00** | €95,70 | 3,44/GB | Gebraucht | [DDR4 32GB (2x16GB)  2Rx8, RDIMM ECC REG, PC4-19200,SK Hynix HMA82GR7AFR8N-UH (3)](https://www.ebay.de/itm/327386246193?_skw=DDR4+RDIMM+32GB&hash=item4c39bdac31:g:2PIAAeSwFJ9qwPeg) | cheetah-spottycat | 🔥 at/near buy-low target |
+| **€110,00** | €95,70 | 3,44/GB | Gebraucht | [DDR4 32GB (2x16GB)  2Rx8, RDIMM ECC REG, PC4-19200,SK Hynix HMA82GR7AFR8N-UH (5)](https://www.ebay.de/itm/327386252965?_skw=DDR4+RDIMM+32GB&hash=item4c39bdc6a5:g:AfsAAeSwsutqwPm3) | cheetah-spottycat | 🔥 at/near buy-low target |
+| **€110,00** | €95,70 | 3,44/GB | Gebraucht | [DDR4 32GB (2x16GB)  2Rx8, RDIMM ECC REG, PC4-19200,SK Hynix HMA82GR7AFR8N-UH (7)](https://www.ebay.de/itm/327386260261?_skw=DDR4+RDIMM+32GB&hash=item4c39bde325:g:XzwAAeSwjQZqwPsv) | cheetah-spottycat | 🔥 at/near buy-low target |
+| **€110,00** | €95,70 | 3,44/GB | Gebraucht | [DDR4 32GB (2x16GB)  2Rx8, RDIMM ECC REG,PC4-19200,SK Hynix HMA82GR7AFR8N-UH (12)](https://www.ebay.de/itm/327386268601?_skw=DDR4+RDIMM+32GB&hash=item4c39be03b9:g:ob4AAeSw2t1qwP60) | cheetah-spottycat | 🔥 at/near buy-low target |
+| **€110,00** | €95,70 | 3,44/GB | Gebraucht | [DDR4 32GB (2x16GB)  2Rx8, RDIMM ECC REG,PC4-19200,SK Hynix HMA82GR7AFR8N-UH (14)](https://www.ebay.de/itm/327386270129?_skw=DDR4+RDIMM+32GB&hash=item4c39be09b1:g:tE0AAeSwO2lqwP9h) | cheetah-spottycat | 🔥 at/near buy-low target |
+| **€110,00** | €95,70 | 3,44/GB | Gebraucht | [DDR4 32GB (2x16GB)  2Rx8, RDIMM ECC REG,PC4-19200,Micron MTA18ASF2G72PDZ-2G (22)](https://www.ebay.de/itm/327386307857?_skw=DDR4+RDIMM+32GB&hash=item4c39be9d11:g:Q3AAAeSwAJ5qwQa8) | cheetah-spottycat | 🔥 at/near buy-low target |
 | **€113,19** | €98,48 | 3,54/GB | Used | [32GB DDR4 2rx8 ECC KIT 2400T \| 2x 16GB Module \| Micron MTA18ASF2G72PDZ-2G3B](https://www.ebay.de/itm/267782775090?_skw=DDR4+RDIMM+32GB&hash=item3e5918e132:g:r4kAAeSwgQNqpHil) | it-procure | ok · was €112,80 on 2026-10-12 |
 | **€113,21** | €98,49 | 3,54/GB | Used | [Samsung M393A4K40BB0-CPB DDR4 32GB ECC Reg. DDR4-2133P-RA0-10-DC0 / Server](https://www.ebay.de/itm/227546592161?_skw=DDR4+RDIMM+32GB&hash=item34fad573a1:g:B94AAeSwcH1qvXwu) | it-medic-24-7 | ok · was €111,77 on 2026-10-01 |
 | **€113,21** | €98,49 | 3,54/GB | Used | [Samsung M393A4K40BB0-CPB DDR4 32GB ECC Reg. DDR4-2133P-RA0-10-DC0 / Server](https://www.ebay.de/itm/227523292774?_skw=DDR4+RDIMM+32GB&hash=item34f971ee66:g:fGkAAeSwA8Fqqb~l) | it-medic-24-7 | ok · was €111,46 on 2026-09-16 |
 | **€115,00** | €100,05 | 3,59/GB | Gebraucht | [32GB (2x 16GB) Micron 16GB 1Rx4 PC4-2666V DDR4 ECC REG RDIMM](https://www.ebay.de/itm/366689177414?_skw=DDR4+RDIMM+32GB&hash=item556060cf46:g:wqkAAeSwUtBqtq0M) | max_23657 | ok · was €155,00 on 2026-09-28 |
 | **€119,00** | €103,53 | 3,72/GB | Gebraucht | [(32GB) 1x HPE SK Hynix 32GB DDR4 2400MHz ECC RDIMM Server RAM HMA84GR7MFR4N-UH](https://www.ebay.de/itm/227488556584?_skw=DDR4+RDIMM+32GB&hash=item34f75fe628:g:Pr8AAeSwS7Zqi00R) | schaffmanet | ok |
-| **€120,00** | €104,40 | 3,75/GB | Gebraucht | [32GB DDR4 ECC Registered RAM PC4-2133P SK hynix (752370-091)](https://www.ebay.de/itm/117022051256?_skw=DDR4+RDIMM+32GB&hash=item1b3f0ecbb8:g:AN0AAeSwhlpphbwX) | kevinistes | ok |
 | **€120,00** | €104,40 | 3,75/GB | Gebraucht | [32GB DDR4 ECC Registered RAM 4DRx4 PC4-2133P HPE (752372-081)](https://www.ebay.de/itm/117091660367?_skw=DDR4+RDIMM+32GB&hash=item1b4334f24f:g:-SEAAeSwdyZphNpF) | kevinistes | ok |
+| **€120,00** | €104,40 | 3,75/GB | Gebraucht | [32 GB SK Hynix DDR4-2400T ECC Registered RDIMM Server RAM](https://www.ebay.de/itm/307236489456?_skw=DDR4+RDIMM+32GB&hash=item4788b8c8f0:g:PCAAAeSw4Ulq08O6) | kammel19 | ok |
 | **€120,00** | €104,40 | 3,75/GB | Gebraucht | [Samsung DDR4 32GB (2x16GB) PC4 2400T M393A2K40CB1-CRC4Q Server Arbeitsspeiche...](https://www.ebay.de/itm/168379524648?_skw=DDR4+RDIMM+32GB&hash=item273433a628:g:zn0AAeSwIDhqCE0u) | logihanns | ok |
 | **€124,99** | €108,74 | 3,91/GB | Gebraucht | [Lenovo 32GB DDR4-2666 Registered ECC PC4-21300V-R DIMM 2R X4 7X77A01304 01DE974](https://www.ebay.de/itm/407285405433?_skw=DDR4+RDIMM+32GB&hash=item5ed41a16f9:g:czkAAeSwfjtqzRdX) | marvigerwin0 | ok · was €139,99 on 2026-10-13 |
 | **€125,00** | €108,75 | 3,91/GB | Gebraucht | [32GB Micron MTA36ASF4G72PZ-2G3D1QI DDR4 2400MHz ECC REG. RDIMM CL17 Server RAM](https://www.ebay.de/itm/178328633830?_skw=DDR4+RDIMM+32GB&hash=item29853701e6:g:WzUAAeSwto1qAPQJ) | eg-com-bo | ok |
@@ -246,10 +258,10 @@ _Window €95–188 · median **€129,50** · cheapest **€99,00** · 4 at/nea
 | **€130,00** | €113,10 | 4,06/GB | Gebraucht | [Samsung 32GB DDR4-2133 RDIMM ECC —— Preisvorschläge gerne!](https://www.ebay.de/itm/407276441996?_skw=DDR4+RDIMM+32GB&hash=item5ed391518c:g:Be8AAeSwNhNqx8XU) | lazar07 | ok · was €150,00 on 2026-10-09 |
 | **€130,00** | €113,10 | 4,06/GB | Gebraucht | [SK-hynix DDR4 32Gb (4x8Gb) ECC RAM 2666MHz RDIMM](https://www.ebay.de/itm/327304894859?_skw=DDR4+RDIMM+32GB&hash=item4c34e4598b:g:VbAAAeSwn1Jqet5h) | xestorm | ok |
 | **€133,00** | €115,71 | 4,16/GB | Gebraucht | [2x Micron 16GB DDR4 PC4-2400T ECC RDIMM MTA18ASF2G72PZ-2G3B1RI NetApp 107-00175](https://www.ebay.de/itm/327076481366?_skw=DDR4+RDIMM+32GB&hash=item4c27470956:g:OKUAAeSwJE9pyrHt) | sk2015.dani | ok |
-| **€134,99** | €117,44 | 4,22/GB | Gebraucht | [32GB DDR4-2400 ECC RDIMM 2Rx4 PC4-2400T HPE Server RAM 809084-091](https://www.ebay.de/itm/327405000979?_skw=DDR4+RDIMM+32GB&hash=item4c3adbd913:g:IoMAAeSw3Odqx6X5) | danieheidle0 | ok · was €156,73 on 2026-10-15 |
 | **€135,00** | €117,45 | 4,22/GB | Gebraucht | [SK Hynix 32GB DDR4 2Rx4 PC4-2666V-RB2-12 HMA84GR7AFR4N-VK T3 AC SERVER RAM](https://www.ebay.de/itm/287653673995?_skw=DDR4+RDIMM+32GB&hash=item42f97ebc0b:g:blMAAeSwKxxq0yLE) | hod-tech | ok |
 | **€136,36** | €118,63 | 4,26/GB | Used | [Hynix 32GB (1x32GB) 2Rx4 PC4-2133P DDR4 Arbeitsspeicher Kit HMA84GR7MFR4N-TF](https://www.ebay.de/itm/147627495642?_skw=DDR4+RDIMM+32GB&hash=item225f48d0da:g:bs4AAeSw-olptV58) | ivlic21 | ok · was €135,69 on 2026-10-09 |
 | **€139,00** | €120,93 | 4,34/GB | Gebraucht | [Samsung 32GB 2Rx4 PC4-2400 DDR4 ECC RDIMM M393A4K40BB1-CRC0Q Server RAM](https://www.ebay.de/itm/257794106091?_skw=DDR4+RDIMM+32GB&hash=item3c05b9e2eb:g:SSwAAeSwknRqy96q) | marcoramin | ok |
+| **€139,99** | €121,79 | 4,37/GB | Gebraucht | [SK Hynix ECC DDR4 RAM 32GB 2Rx4 PC4-2933Y-RB2-12 HMA84GR7CJR4N-WM  2933MHz](https://www.ebay.de/itm/920049588050?_skw=DDR4+RDIMM+32GB&hash=itemd6373a9752:g:5fQAAeSwin9p0sdH) | kappnikla | ok |
 | **€140,00** | €121,80 | 4,38/GB | Gebraucht | [Server RAM DDR4 REG ECC PC4-19200R 2400 MHz RDIMM 4GB 8GB 16GB 32GB 64GB 128GB](https://www.ebay.de/itm/117014549219?_skw=DDR4+RDIMM+32GB&hash=item1b3e9c52e3:g:w5QAAeSwjs1pgIfP) | computer-store-berlin | ok · was €65,00 on 2026-08-18 |
 | **€142,28** | €123,78 | 4,45/GB | Used | [Global Memory 32GB DDR4 2666MHz PC4-21300 288-PIN ECC RDIMM Server Arbeitsspeicher](https://www.ebay.de/itm/117432477730?_skw=DDR4+RDIMM+32GB&hash=item1b57856822:g:ylUAAeSwAXtqt63l) | evtechit | ok · was €141,78 on 2026-10-11 |
 | **€145,00** | €126,15 | 4,53/GB | Gebraucht | [Samsung 32GB DDR4 RDIMM ECC Server RAM M393A4K40CB2-CVFBY K](https://www.ebay.de/itm/920021019852?_skw=DDR4+RDIMM+32GB&hash=itemd63586accc:g:QPgAAeSwc~Rqx7Lx) | hensch-7021 | ok |
@@ -264,23 +276,21 @@ _Window €95–188 · median **€129,50** · cheapest **€99,00** · 4 at/nea
 | **€152,72** | €132,87 | 4,77/GB | Gebraucht | [HPE 32GB 2Rx4 PC4-2666V DDR4 ECC RDIMM HMA8GR7JJR4N-VK 840758-091 Server RAM](https://www.ebay.de/itm/128106813019?_skw=DDR4+RDIMM+32GB&hash=item1dd3c2d65b:g:x1wAAeSwXfJqvQCb) | mktradeb | ok |
 | **€154,14** | €134,10 | 4,82/GB | Used | [SK HYNIX 32GB 2Rx4 PC4-2400T-RB1-11 HMA84GR7MFR4N-UH TD AA 1731 DDR4 (SERVER RAM](https://www.ebay.de/itm/318759435884?_skw=DDR4+RDIMM+32GB&hash=item4a378afe6c:g:-ysAAeSwU0pqDyuY) | gaming-computers-uk | ok · was €151,20 on 2026-09-24 |
 | **€155,00** | €134,85 | 4,84/GB | Gebraucht | [Samsung 32GB DDR4 2133MHz PC4-2133P ECC RDIMM M393A4K40BB0-CPB0Q](https://www.ebay.de/itm/960062584659?_skw=DDR4+RDIMM+32GB&hash=itemdf88307753:g:XRsAAeSw24RqWllP) | domml_5575 | ok |
-| **€165,00** | €143,55 | 5,16/GB | Gebraucht | [Micron 32GB PC4-2933 DDR4-RAM ECC RDIMM 2RX8 - MTA18ASF4G72PDZ](https://www.ebay.de/itm/366300246230?_skw=DDR4+RDIMM+32GB&hash=item55493230d6:g:QX8AAeSwU4Jpwpu1) | chri-221123 | ok |
 
-## DDR4 RDIMM 64GB (39 items)
+## DDR4 RDIMM 64GB (40 items)
 
-_Window €212–655 · median **€439,81** · cheapest **€220,00** · 3 at/near buy-low · 30d €320,00→€439,81 (30d) · median €6,87/GB_
+_Window €212–655 · median **€464,32** · cheapest **€220,00** · 3 at/near buy-low · 30d €276,46→€464,32 (30d) · median €7,26/GB_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
 | **€220,00** | €191,40 | 3,44/GB | Gebraucht | [64GB 4xHynix 16GB PC4-2400T DDR4-RAM ECC RDIMM 1R - HMA42GR7AFR4N-UH](https://www.ebay.de/itm/188150950371?_skw=DDR4+RDIMM+64GB&hash=item2bceaba9e3:g:lJQAAeSwKFhps-oT) | martha_62 | 🔥 at/near buy-low target |
 | **€227,22** | €197,68 | 3,55/GB | Used | [64GB DDR4 2rx8 ECC KIT 2400T \| 4x 16GB Module \| Micron MTA18ASF2G72PDZ-2G3B](https://www.ebay.de/itm/267782774427?_skw=DDR4+RDIMM+64GB&hash=item3e5918de9b:g:LE0AAeSwDbVqpHge) | it-procure | 🔥 at/near buy-low target · was €226,42 on 2026-10-12 |
-| **€240,00** | €208,80 | 3,75/GB | Gebraucht | [64 GB DDR4 Server RAM, 4x 16 GB, ECC, Registered, 2400 , 2Rx8, PC4](https://www.ebay.de/itm/336844400960?_skw=DDR4+RDIMM+64GB&hash=item4e6d7da940:g:tNcAAeSwcHNqz6cw) | sepharin | 🔥 at/near buy-low target |
+| **€240,00** | €208,80 | 3,75/GB | Gebraucht | [2x32GB RDIMM RAM DDR4 64GB SK Hynix 2Rx4 PC4-2133P-RB1-11 HMA84GR7MFR4N-TF](https://www.ebay.de/itm/366738741332?_skw=DDR4+RDIMM+64GB&hash=item5563551854:g:moMAAeSw7Upq0nry) | carmas_397111 | 🔥 at/near buy-low target |
 | **€249,00** | €216,63 | 3,89/GB | Gebraucht | [64GB Micron MTA36ASF4G72PZ-2G9J3UI/2G9J3VI DDR4 RDIMM ServerRAM ~Rechnung/MwSt](https://www.ebay.de/itm/377244638177?_skw=DDR4+RDIMM+64GB&hash=item57d5885be1:g:Z3YAAeSwZGVqJsbi) | sw_do | ok · was €299,00 on 2026-08-24 |
 | **€250,00** | €217,50 | 3,91/GB | Gebraucht | [Hynix DDR4 64GB (2x32GB) PC4-2133P HMA84GR7MFR4N-TF TD BB Server...](https://www.ebay.de/itm/168792922802?_skw=DDR4+RDIMM+64GB&hash=item274cd79ab2:g:Vm8AAeSwRZJqz90Q) | logihanns | ok |
 | **€266,79** | €232,11 | 4,17/GB | Used | [4xSamsung 16GB PC4-21300 64GB KIT DDR4-2666MHz Registered ECC M393A2K43CB2-CTD](https://www.ebay.de/itm/127892146592?_skw=DDR4+RDIMM+64GB&hash=item1dc6f749a0:g:HUYAAeSw2HBqGZlA) | servershopping | ok · was €291,24 on 2026-09-08 |
 | **€280,00** | €243,60 | 4,38/GB | Gebraucht | [(Pack 4x)  HPE 16GB Dual Rank x4 DDR4-2133 (64GB)](https://www.ebay.de/itm/206253409892?_skw=DDR4+RDIMM+64GB&hash=item3005a94664:g:c8UAAeSw7LZp-cVL) | robertnukem | ok |
 | **€281,10** | €244,56 | 4,39/GB | Used | [64GB (8 x 8GB) DDR4 PC4-2133P PC4-17000 ECC Registered Server Memory Upgrade Kit](https://www.ebay.de/itm/116298145176?_skw=DDR4+RDIMM+64GB&hash=item1b13e8dd98:g:sKMAAOSwWpJmRau8) | servershopping | ok · was €276,95 on 2026-08-24 |
-| **€290,00** | €252,30 | 4,53/GB | Gebraucht | [SK Hynix DDR4-RAM 64GB PC4-2933Y HMAA8GR7AJR4N-WM RDIMM ECC](https://www.ebay.de/itm/237120216622?_skw=DDR4+RDIMM+64GB&hash=item3735775e2e:g:RMwAAeSwfMpqzKOp) | lmm-tech | ok |
 | **€300,00** | €261,00 | 4,69/GB | Gebraucht | [DDR4 64GB (2x32GB) 2Rx4 RDIMM ECC REG, PC4-21300, Micron MTA36ASF4G72PZ-2G6 (17)](https://www.ebay.de/itm/327386304947?_skw=DDR4+RDIMM+64GB&hash=item4c39be91b3:g:otQAAeSwSGhqwQTF) | cheetah-spottycat | ok |
 | **€300,00** | €261,00 | 4,69/GB | Gebraucht | [DDR4 64GB (2x32GB) 2Rx4 RDIMM ECC REG, PC4-21300, Micron MTA36ASF4G72PZ-2G6 (20)](https://www.ebay.de/itm/327386305329?_skw=DDR4+RDIMM+64GB&hash=item4c39be9331:g:1fEAAeSw7sxqwQYD) | cheetah-spottycat | ok |
 | **€300,00** | €261,00 | 4,69/GB | Gebraucht | [DDR4 64GB (2x32GB) 2Rx4 RDIMM ECC REG, PC4-21300, Micron MTA36ASF4G72PZ-2G6 (21)](https://www.ebay.de/itm/327386306071?_skw=DDR4+RDIMM+64GB&hash=item4c39be9617:g:vu8AAeSw--pqwQZQ) | cheetah-spottycat | ok |
@@ -297,8 +307,8 @@ _Window €212–655 · median **€439,81** · cheapest **€220,00** · 3 at/n
 | **€488,07** | €424,62 | 7,63/GB | Gebraucht | [MTA36ASF8G72PZ-2G9B2 MICRON 64GB 2RX4 PC4-2933Y DDR4 RDIMM Server Speicher](https://www.ebay.de/itm/189051082221?_skw=DDR4+RDIMM+64GB&hash=item2c045295ed:g:ZikAAOSw2ddoLEBB) | cloud_storage_corp | ok |
 | **€499,00** | €434,13 | 7,80/GB | Gebraucht | [HPE 64GB 2Rx4 PC4-2933Y DDR4 Proliant Gen10 RAM Server Memory Kit / P03054-091](https://www.ebay.de/itm/298253970491?_skw=DDR4+RDIMM+64GB&hash=item4571526c3b:g:AmoAAeSwE8Zp6Uuq) | ksl-it | ok |
 | **€499,00** | €434,13 | 7,80/GB | Gebraucht | [Samsung M393A8G40MB2-CVF 64GB PC4-23400Y-R 2RX4 DDR4-2933MHz RAM](https://www.ebay.de/itm/405615072327?_skw=DDR4+RDIMM+64GB&hash=item5e708ad447:g:ngUAAeSwmcFqvj5i) | bargain*hardware | ok |
-| **€499,99** | €434,99 | 7,81/GB | Gebraucht | [SAMSUNG M386A8K40BMB-CRC5Q 64GB DDR4 RDIMM PC4-2400T REG SERVER RAM](https://www.ebay.de/itm/277904038645?_skw=DDR4+RDIMM+64GB&hash=item40b45f1af5:g:keAAAeSwDPJp4sT2) | m-comp | ok |
 | **€499,99** | €434,99 | 7,81/GB | Gebraucht | [SK hynix 64GB 2Rx4 PC4-2933Y DDR4 ECC RDIMM - HMAA8GR7AJR4N-WM](https://www.ebay.de/itm/137821957174?_skw=DDR4+RDIMM+64GB&hash=item2016d42c36:g:tVwAAeSwkIlqxjkL) | hosek13 | ok |
+| **€499,99** | €434,99 | 7,81/GB | Gebraucht | [SAMSUNG M386A8K40BMB-CRC5Q 64GB DDR4 RDIMM PC4-2400T REG SERVER RAM](https://www.ebay.de/itm/277904038645?_skw=DDR4+RDIMM+64GB&hash=item40b45f1af5:g:keAAAeSwDPJp4sT2) | m-comp | ok |
 | **€504,93** | €439,29 | 7,89/GB | Gebraucht | [HMAA8GR7MJR4N-WM Hynix 64GB DDR4 ECC RDIMM Server RAM 1x64GB 2Rx4 2933Y](https://www.ebay.de/itm/206606978494?_skw=DDR4+RDIMM+64GB&hash=item301abc4dbe:g:paQAAOSwDF9g0DQy) | cloud_storage_corp | ok |
 | **€504,93** | €439,29 | 7,89/GB | Gebraucht | [HMAA8GR7AJR4N-WM HYNIX 64GB 1x DDR4 PC4-2933Y 2Rx4 RDIMM ECC Registriert RAM](https://www.ebay.de/itm/206608025564?_skw=DDR4+RDIMM+64GB&hash=item301acc47dc:g:1mMAAOSwnC5ihU7m) | cloud_storage_corp | ok |
 | **€507,78** | €441,77 | 7,93/GB | Gebraucht | [Dell SNPW403YC/64G 64GB ECC RDIMM 1x64GB DDR4 PC4-2933Y-R 2Rx4 Server-RAM](https://www.ebay.de/itm/880005634580?_skw=DDR4+RDIMM+64GB&hash=itemcce46c5a14:g:SrwAAOSwmNRnv~Em) | cloud_storage_corp | ok |
@@ -311,45 +321,45 @@ _Window €212–655 · median **€439,81** · cheapest **€220,00** · 3 at/n
 | **€549,00** | €477,63 | 8,58/GB | Gebraucht | [64Gb DDR4 3200 - Micron 36ASF8G72PZ-3G2F1](https://www.ebay.de/itm/298659920406?_skw=DDR4+RDIMM+64GB&hash=item458984ba16:g:t0cAAeSw9vVqob3m) | sn1per88 | ok |
 | **€566,09** | €492,50 | 8,85/GB | Used | [SK Hynix 64GB 2RX4 DDR4 PC4-2933 ECC Server Ram \| Arbeitsspeicher HMAA8GR7MJR4N-WM](https://www.ebay.de/itm/168374367533?_skw=DDR4+RDIMM+64GB&hash=item2733e4f52d:g:eLMAAeSwwatqBXZV) | macproworld | ok · was €564,84 on 2026-10-16 |
 | **€599,99** | €521,99 | 9,37/GB | Gebraucht | [HYNIX HMAA8GL7CPR4N-VK 64GB DDR4 RDIMM PC4-2666V REG SERVER RAM HPE 840759-091](https://www.ebay.de/itm/287229633970?_skw=DDR4+RDIMM+64GB&hash=item42e03865b2:g:OHQAAeSwOchpwtEA) | m-comp | ok |
+| **€599,99** | €521,99 | 9,37/GB | Gebraucht | [HYNIX HMAA8GL7AJR4N-WM 64GB DDR4 RDIMM PC4-2933Y REG SERVER RAM](https://www.ebay.de/itm/287275975134?_skw=DDR4+RDIMM+64GB&hash=item42e2fb81de:g:d5oAAeSwUbhp4O-s) | m-comp | ok |
+| **€600,00** | €522,00 | 9,38/GB | Gebraucht | [SK hynix 128GB (2x64GB) DDR4 2666V ECC RDIMM 2S2Rx4 Server RAM Wie Neu](https://www.ebay.de/itm/860052201350?_skw=DDR4+RDIMM+64GB&hash=itemc83f1b1f86:g:l3kAAeSwhkRq0pem) | mullermannheimer | ok |
 
 ## DDR5 32GB (47 items)
 
-_Window €279–525 · median **€350,00** · cheapest **€283,14** · 19 at/near buy-low · 30d €349,11→€350,00 (30d) · median €10,94/GB_
+_Window €279–525 · median **€350,00** · cheapest **€280,00** · 18 at/near buy-low · 30d €350,00→€350,00 (30d) · median €10,94/GB_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
+| **€280,00** | €243,60 | 8,75/GB | Gebraucht | [G.Skill DIMM 16 GB DDR5-6000, Arbeitsspeicher, schwarz](https://www.ebay.de/itm/960078872629?_skw=DDR5+32GB&hash=itemdf89290035:g:oQAAAeSwCSlq01gf) | happyrind | 🔥 at/near buy-low target |
 | **€283,14** | €246,33 | 8,85/GB | Used | [TEAMGROUP T-CREATE EXPERT 16GB 2x8GB DDR5 6000 CL38 White CTCWD58G6000HC38ABK](https://www.ebay.de/itm/398356273394?_skw=DDR5+32GB&hash=item5cbfe258f2:g:gmUAAeSwmKhqmezp) | devino_solutions | 🔥 at/near buy-low target · was €281,81 on 2026-10-12 |
-| **€291,00** | €253,17 | 9,09/GB | Gebraucht | [SK hynix 32GB DDR5 SO-DIMM 2x16GB - 5600 MT/s - Getestet](https://www.ebay.de/itm/128135003009?_skw=DDR5+32GB&hash=item1dd570fb81:g:T68AAeSwyetqz3TW) | mdestan | 🔥 at/near buy-low target |
+| **€283,14** | €246,33 | 8,85/GB | Used | [Samsung 32GB (2x16GB) Laptop DDR5 SO-DIMM PC5-5600B Non-ECC RAM M425R2GA3EB0-CWM](https://www.ebay.de/itm/287651102977?_skw=DDR5+32GB&hash=item42f9578101:g:yTIAAeSwTBlq0Y60) | salfr92 | 🔥 at/near buy-low target · was €314,13 on 2026-10-16 |
+| **€288,00** | €250,56 | 9,00/GB | Gebraucht | [SK hynix 32GB DDR5 SO-DIMM 2x16GB - 5600 MT/s - Getestet](https://www.ebay.de/itm/128135003009?_skw=DDR5+32GB&hash=item1dd570fb81:g:T68AAeSwyetqz3TW) | mdestan | 🔥 at/near buy-low target · was €291,00 on 2026-10-15 |
 | **€295,00** | €256,65 | 9,22/GB | Gebraucht | [Kingston 32GB DDR5-4800 SO-DIMM RAM – 2x16GB – KCP548SS8-16](https://www.ebay.de/itm/227563319577?_skw=DDR5+32GB&hash=item34fbd4b119:g:OTMAAeSw24ZqzGoS) | reboot-it92 | 🔥 at/near buy-low target · was €300,00 on 2026-10-12 |
 | **€299,00** | €260,13 | 9,34/GB | Gebraucht | [G.SKILL Ripjaws 32 GB RAM DDR5 SO-DIMM Kit • 2 × 16 GB • DDR5-4800...](https://www.ebay.de/itm/158332361459?_skw=DDR5+32GB&hash=item24dd581af3:g:kHYAAeSwVgFqtMcM) | wattoparts | 🔥 at/near buy-low target |
 | **€299,00** | €260,13 | 9,34/GB | Gebraucht | [Samsung RAM SO-DIMM 32 GB DDR5 4800MHz](https://www.ebay.de/itm/278252870054?_skw=DDR5+32GB&hash=item40c929d9a6:g:9-IAAeSwQ0FqdHRP) | cs-trading24 | 🔥 at/near buy-low target · was €329,00 on 2026-09-18 |
-| **€299,00** | €260,13 | 9,34/GB | Gebraucht | [KINGSTON FURY IMPACT DDR5 5600 32GB](https://www.ebay.de/itm/860037001263?_skw=DDR5+32GB&hash=itemc83e33302f:g:XAQAAeSw50pqzP-V) | son917022 | 🔥 at/near buy-low target · was €359,00 on 2026-10-13 |
 | **€299,00** | €260,13 | 9,34/GB | Gebraucht | [Corsair Vengeance SO-DIMM 32GB, DDR5-4800 \| CMSX32GX5M1A4800C40](https://www.ebay.de/itm/336436317166?_skw=DDR5+32GB&hash=item4e552acbee:g:ypAAAeSwsDBpkZfP) | basedreamer | 🔥 at/near buy-low target |
-| **€300,00** | €261,00 | 9,38/GB | Gebraucht | [Kingston FURY Beast White EXPO 16GB 6000MT/s DDR5 CL36 DIMM ECC Gaming Memory](https://www.ebay.de/itm/880005098608?_skw=DDR5+32GB&hash=itemcce4642c70:g:hpIAAeSwwyZqyqfx) | silky-kane | 🔥 at/near buy-low target · was €320,00 on 2026-10-11 |
+| **€299,00** | €260,13 | 9,34/GB | Gebraucht | [Kingston FURY Impact 32GB (2 x 16GB) PC5-38400 (DDR5-4800) SO-DIMM...](https://www.ebay.de/itm/307235977722?_skw=DDR5+32GB&hash=item4788b0f9fa:g:cOcAAeSwdIJq01d1) | diplomat3 | 🔥 at/near buy-low target |
 | **€300,00** | €261,00 | 9,38/GB | Gebraucht | [Kingston Fury Renegade DDR5 Silver/Black XMP 16GB 6000MT/s CL32 DIMM](https://www.ebay.de/itm/800690634620?_skw=DDR5+32GB&hash=itemba6ce17f7c:g:ku0AAeSw77xqAjIM) | reiyi-72 | 🔥 at/near buy-low target |
-| **€300,00** | €261,00 | 9,38/GB | Gebraucht | [32 GB Samsung RAM – 2×16 GB – HP OMEN 16](https://www.ebay.de/itm/318743636803?_skw=DDR5+32GB&hash=item4a3699eb43:g:9NcAAeSw7Slqgvrn) | nele7504 | 🔥 at/near buy-low target |
 | **€300,00** | €261,00 | 9,38/GB | Gebraucht | [Kingston FURY Beast DDR5 16GB (2x8GB) 5600 DIMM 288-Pin KF556C36BBEK2-32](https://www.ebay.de/itm/227567043489?_skw=DDR5+32GB&hash=item34fc0d83a1:g:kdQAAeSwXg5qz2JG) | real_thanquol | 🔥 at/near buy-low target |
-| **€300,00** | €261,00 | 9,38/GB | Gebraucht | [Samsung 32GB (2x16GB) DDR5-5600 SO-DIMM RAM 262-Pin M425R2GA3EB0-CWM0L](https://www.ebay.de/itm/128137011995?_skw=DDR5+32GB&hash=item1dd58fa31b:g:khUAAeSwHf9q0Ohr) | sonnebumee | 🔥 at/near buy-low target |
-| **€300,00** | €261,00 | 9,38/GB | Gebraucht | [Samsung 32GB (2x16GB) DDR5-5600 SO-DIMM RAM PC5-5600B M425R2GA3EB0-CWMOD](https://www.ebay.de/itm/128137032652?_skw=DDR5+32GB&hash=item1dd58ff3cc:g:dpAAAeSwAmVq0OtQ) | sonnebumee | 🔥 at/near buy-low target |
-| **€300,00** | €261,00 | 9,38/GB | Gebraucht | [1x Kingston Fury BEAST 32GB DDR5 2x16GB KF548C38BBK2  4800 MHz PC Gaming RAM](https://www.ebay.de/itm/960074828827?_skw=DDR5+32GB&hash=itemdf88eb4c1b:g:OUUAAeSwNslq0hpM) | 1stor1a | 🔥 at/near buy-low target |
+| **€300,00** | €261,00 | 9,38/GB | Gebraucht | [32 GB Samsung RAM – 2×16 GB – HP OMEN 16](https://www.ebay.de/itm/318743636803?_skw=DDR5+32GB&hash=item4a3699eb43:g:9NcAAeSw7Slqgvrn) | nele7504 | 🔥 at/near buy-low target |
 | **€309,00** | €268,83 | 9,66/GB | Gebraucht | [Kingston 32GB DDR5 SO-DIMM 5600 MT/s (2x16GB) - Getestet & Neuwertig](https://www.ebay.de/itm/298734449520?_skw=DDR5+32GB&hash=item458df5f370:g:k3kAAeSw4tZqw4eZ) | thomasst93 | 🔥 at/near buy-low target · was €329,00 on 2026-10-05 |
-| **€314,60** | €273,70 | 9,83/GB | Used | [Samsung 32GB (2x16GB) Laptop DDR5 SO-DIMM PC5-5600B Non-ECC RAM M425R2GA3EB0-CWM](https://www.ebay.de/itm/287651102977?_skw=DDR5+32GB&hash=item42f9578101:g:yTIAAeSwTBlq0Y60) | salfr92 | 🔥 at/near buy-low target · was €314,13 on 2026-10-16 |
+| **€319,00** | €277,53 | 9,97/GB | Gebraucht | [Samsung 32GB SO-PC5-38400 SO-DDR5-4800  4800MT/s  SO-DIMM for Notebook / mini-PC](https://www.ebay.de/itm/940021233958?_skw=DDR5+32GB&hash=itemdadda1b926:g:esIAAeSwMAxq094K) | hardelektronik | 🔥 at/near buy-low target |
 | **€319,00** | €277,53 | 9,97/GB | Gebraucht | [Kingston ValueRAM 32GB DDR5-4800 SO-DIMM PC5-38400 KVR55S40BD8-32](https://www.ebay.de/itm/840014697045?_skw=DDR5+32GB&hash=itemc394c71255:g:5Z0AAeSwffVqzSMP) | mystermax_27 | 🔥 at/near buy-low target · was €339,00 on 2026-10-13 |
 | **€320,00** | €278,40 | 10,00/GB | Gebraucht | [SK hynix DDR5 SO-DIMM 16GB (2x8GB) PC5-4800B HMCG66MEBSA092N BA](https://www.ebay.de/itm/287652846760?_skw=DDR5+32GB&hash=item42f9721ca8:g:9~AAAeSw8VFq0o6W) | s_a_h_i_n | 🔥 at/near buy-low target |
+| **€320,16** | €278,54 | 10,01/GB | Used | [SK Hynix 32GB 2Rx8 PC5-4800B HMCG88MEBUA084N DDR5 UDIMM RAM](https://www.ebay.de/itm/880024868924?_skw=DDR5+32GB&hash=itemcce591d83c:g:3OsAAeSwmBlq02hp) | alekusmobiles | 🔥 at/near buy-low target |
 | **€320,78** | €279,08 | 10,02/GB | Gebraucht | [Crucial Pro DDR5 RAM 16GB 6000MHz CL48 (CP16G60C48U5) (U)(W)](https://www.ebay.de/itm/318871216505?_skw=DDR5+32GB&hash=item4a3e34a179:g:ij8AAeSwj0lqqFZY) | outletonn | 🔥 at/near buy-low target |
 | **€325,00** | €282,75 | 10,16/GB | Gebraucht | [Corsair VENGEANCE DDR5 SDRAM DIMM RAM Arbeitsspeicher Speichermodul 6000](https://www.ebay.de/itm/800401677016?_skw=DDR5+32GB&hash=itemba5ba85ad8:g:x-wAAeSw1stqY6-o) | es-1238 | ok |
 | **€330,00** | €287,10 | 10,31/GB | Gebraucht | [Crucial DDR5 RAM 32GB Kit (2x16GB) 5600MHz SODIMM CT2K16G56C46S5](https://www.ebay.de/itm/137753996430?_skw=DDR5+32GB&hash=item2012c72c8e:g:J20AAeSwsyZqrhPf) | deltagrok | ok · was €380,00 on 2026-09-24 |
 | **€342,39** | €297,88 | 10,70/GB | Gebraucht | [Corsair Dominator Platinum RGB DDR5-6000 16GB Single Module Desktop RAM getestet](https://www.ebay.de/itm/206432275595?_skw=DDR5+32GB&hash=item3010528c8b:g:azEAAeSwlslqX~U9) | risingsungaming | ok · was €340,90 on 2026-08-26 |
 | **€349,99** | €304,49 | 10,94/GB | Gebraucht | [Samsung 32 Gb DDR5 4800 MHz SODIMM Laptop RAM](https://www.ebay.de/itm/358759946518?_skw=DDR5+32GB&hash=item5387c25916:g:q2UAAeSwsW9qspC6) | computer_punkt | ok |
-| **€350,00** | €304,50 | 10,94/GB | Gebraucht | [Kingston Fury Renegade Pro 16GB DDR5-6000 RDIMM CL32](https://www.ebay.de/itm/198706936960?_skw=DDR5+32GB&hash=item2e43db3c80:g:bNoAAeSwqRlqy6Ne) | volkisch | ok |
-| **€350,00** | €304,50 | 10,94/GB | Gebraucht | [Kingston Fury Renegade Pro 16GB DDR5-6000 RDIMM CL32](https://www.ebay.de/itm/198706935797?_skw=DDR5+32GB&hash=item2e43db37f5:g:UlwAAeSwPoJqy6IP) | volkisch | ok |
 | **€350,00** | €304,50 | 10,94/GB | Gebraucht | [Samsung 32 GB RAM Arbeitsspeicher 5600 MHz SO-DIMM DDR5 PC5-5600B](https://www.ebay.de/itm/158205874552?_skw=DDR5+32GB&hash=item24d5ce1178:g:8SoAAeSwi0pqhcjV) | in-534699 | ok |
+| **€350,00** | €304,50 | 10,94/GB | Gebraucht | [Corsair Vengeance 32GB DDR5 5200MHz CL40 RAM 2x16GB](https://www.ebay.de/itm/227572476694?_skw=DDR5+32GB&hash=item34fc606b16:g:biMAAeSwaNxq1IG3) | toni04 | ok |
+| **€350,00** | €304,50 | 10,94/GB | Gebraucht | [Kingston FURY Impact DDR5 SO-DIMM 32GB 4800MT/s KF548S38IB-32](https://www.ebay.de/itm/800807690183?_skw=DDR5+32GB&hash=itemba73db9fc7:g:M6kAAeSwcdxq1EzB) | alaa962 | ok |
 | **€350,00** | €304,50 | 10,94/GB | Gebraucht | [crucial 32gb ddr5 5600 MHr](https://www.ebay.de/itm/168087795203?_skw=DDR5+32GB&hash=item2722d03603:g:zdsAAeSwzahpaoiv) | fedied_97 | ok |
 | **€355,72** | €309,48 | 11,12/GB | Used | [SK hynix 32GB DDR5 UDIMM 5600MT/s CL46](https://www.ebay.de/itm/298663496507?_skw=DDR5+32GB&hash=item4589bb4b3b:g:soAAAeSw7C5qoWS4) | caselogicuk | ok · was €349,78 on 2026-09-12 |
 | **€358,65** | €312,03 | 11,21/GB | Used | [Corsair VENGEANCE 32GB (2 x 16GB) PC5-44800 (DDR5-5600) Memory](https://www.ebay.de/itm/128131614671?_skw=DDR5+32GB&hash=item1dd53d47cf:g:0TMAAeSwfwBqzUmS) | max.x40 | ok · was €357,78 on 2026-10-13 |
-| **€359,99** | €313,19 | 11,25/GB | Gebraucht | [SK hynix 32GB DDR5-4800 SO-DIMM Laptop RAM Arbeitsspeicher HMCG88MEBSA095N](https://www.ebay.de/itm/128094256148?_skw=DDR5+32GB&hash=item1dd3033c14:g:xsoAAeSwHRhqs52L) | rampire | ok · was €349,99 on 2026-09-24 |
-| **€359,99** | €313,19 | 11,25/GB | Gebraucht | [Samsung 32GB DDR5-4800 SO-DIMM Laptop RAM Arbeitsspeicher M425R4GA3BB0-CQKOD](https://www.ebay.de/itm/128094265514?_skw=DDR5+32GB&hash=item1dd30360aa:g:-pcAAeSwJERqs5~y) | rampire | ok · was €349,99 on 2026-09-24 |
 | **€360,00** | €313,20 | 11,25/GB | Gebraucht | [Samsung 32GB (2x16GB) DDR5-5600 SODIMM RAM – Top Zustand](https://www.ebay.de/itm/960027190486?_skw=DDR5+32GB&hash=itemdf861464d6:g:owAAAeSwOHZqxWn1) | emil_6890 | ok |
+| **€360,00** | €313,20 | 11,25/GB | Gebraucht | [Kingston FURY Beast RGB 32GB DDR5-5600 CL40 schwarz RAM Arbeitsspeicher](https://www.ebay.de/itm/336848683528?_skw=DDR5+32GB&hash=item4e6dbf0208:g:Dt4AAeSwTWpq0zN3) | sprechpuppe | ok |
 | **€366,62** | €318,96 | 11,46/GB | Gebraucht | [Corsair Vengeance RAM 16GB DDR5 5200MHz CL40](https://www.ebay.de/itm/318022752854?_skw=DDR5+32GB&hash=item4a0ba21a56:g:1iwAAeSw6lxpumsB) | outletonn | ok |
 | **€370,00** | €321,90 | 11,56/GB | Gebraucht | [Crucial 32GB DDR5-4800 UDIMM Arbeitsspeicher CT32G48C40U5 - Desktop Ram OVP](https://www.ebay.de/itm/800746177451?_skw=DDR5+32GB&hash=itemba703103ab:g:wY8AAeSw7bpqvx1X) | conraddam | ok · was €380,00 on 2026-10-02 |
 | **€375,00** | €326,25 | 11,72/GB | Gebraucht | [phs memory 32GB DDR5 SO-DIMM RAM 5600MHz PC5-44800S Non-ECC](https://www.ebay.de/itm/227499362381?_skw=DDR5+32GB&hash=item34f804c84d:g:FsQAAeSwF-ZqkZTh) | iceteagreen2013 | ok |
@@ -361,17 +371,21 @@ _Window €279–525 · median **€350,00** · cheapest **€283,14** · 19 at/
 | **€380,00** | €330,60 | 11,88/GB | Gebraucht | [Crucial 32GB Kit (2x16GB) DDR5-5600 PC5-44800 SO-DIMM 260-Pin](https://www.ebay.de/itm/298719772287?_skw=DDR5+32GB&hash=item458d15fe7f:g:jqkAAeSwesVqvOth) | barkly | ok |
 | **€380,00** | €330,60 | 11,88/GB | Gebraucht | [Crucial 32GB Kit (2x16GB) DDR5-5600 SO-DIMM ECC CL46 CT16G56C46S5](https://www.ebay.de/itm/178456515937?_skw=DDR5+32GB&hash=item298cd65561:g:UYYAAeSwie9qlcab) | flohe-93 | ok |
 | **€380,00** | €330,60 | 11,88/GB | Gebraucht | [Samsung 32GB (1 x 32GB) DDR5-5600 SODIMM Laptop Memory  M425R4GA3EB0-CWM0M](https://www.ebay.de/itm/287510705608?_skw=DDR5+32GB&hash=item42f0f935c8:g:mu4AAeSwVqBp6SsI) | crzerk | ok · was €330,00 on 2026-08-25 |
-| **€390,00** | €339,30 | 12,19/GB | Gebraucht | [Samsung 32GB DDR5 5600 Mhz SO-DIMM Laptop RAM (2Rx8) PC5-5600B-SB0-1010-XT](https://www.ebay.de/itm/227558641578?_skw=DDR5+32GB&hash=item34fb8d4faa:g:mgEAAeSwJHtqzyMc) | figgir | ok |
+| **€380,00** | €330,60 | 11,88/GB | Gebraucht | [Kingston 32GB (2×16GB) DDR5-4800 CL40 Laptop RAM KVR48S40BS8-16](https://www.ebay.de/itm/227571655430?_skw=DDR5+32GB&hash=item34fc53e306:g:jnkAAeSwQDxq06hk) | figgir | ok |
+| **€380,00** | €330,60 | 11,88/GB | Gebraucht | [Samsung 32GB DDR5 5600 Mhz SO-DIMM Laptop RAM (2Rx8) PC5-5600B-SB0-1010-XT](https://www.ebay.de/itm/227558641578?_skw=DDR5+32GB&hash=item34fb8d4faa:g:mgEAAeSwJHtqzyMc) | figgir | ok · was €390,00 on 2026-10-14 |
 | **€398,00** | €346,26 | 12,44/GB | Gebraucht | [Kingston FURY SO-DIMM, 32GB (1x32GB), DDR5-5600, CL40-40-40, 2RX8](https://www.ebay.de/itm/227200074210?_skw=DDR5+32GB&hash=item34e62e01e2:g:8oEAAeSwxYtpgP~F) | roman2002 | ok · was €329,00 on 2026-08-25 |
-| **€401,00** | €348,87 | 12,53/GB | Gebraucht | [Micron (MTC16C2085S1SC48BA1) 32GB PC5-38400B-S (2RX8, DDR5-4800MHz) SO-DIMM RAM](https://www.ebay.de/itm/147582113859?_skw=DDR5+32GB&hash=item225c945843:g:UkcAAeSwYdBqrT35) | bargain*hardware | ok |
-| **€401,00** | €348,87 | 12,53/GB | Gebraucht | [Hynix (HMCG88MEBSA029N) 32GB PC5-38400B-S (2RX8, DDR5-4800MHz) SO-DIMM RAM](https://www.ebay.de/itm/407226948631?_skw=DDR5+32GB&hash=item5ed09e1c17:g:f-MAAeSwy3FqrT4C) | bargain*hardware | ok |
+| **€399,99** | €347,99 | 12,50/GB | Gebraucht | [SK hynix 32GB DDR5-4800 SO-DIMM Laptop RAM Arbeitsspeicher HMCG88MEBSA095N](https://www.ebay.de/itm/128094256148?_skw=DDR5+32GB&hash=item1dd3033c14:g:xsoAAeSwHRhqs52L) | rampire | ok · was €349,99 on 2026-09-24 |
+| **€399,99** | €347,99 | 12,50/GB | Gebraucht | [Samsung 32GB DDR5-4800 SO-DIMM Laptop RAM Arbeitsspeicher M425R4GA3BB0-CQKOD](https://www.ebay.de/itm/128094265514?_skw=DDR5+32GB&hash=item1dd30360aa:g:-pcAAeSwJERqs5~y) | rampire | ok · was €349,99 on 2026-09-24 |
+| **€399,99** | €347,99 | 12,50/GB | Gebraucht | [Kingston FURY Beast 32GB Kit 2x16GB DDR5 5200MHz CL40 DIMM RAM Arbeitsspeicher](https://www.ebay.de/itm/800806390611?_skw=DDR5+32GB&hash=itemba73c7cb53:g:1eMAAeSwDPBq09Vc) | upcyclingkontor | ok |
 
 ## Dell Precision 7920 Tower (50 items)
 
-_Window €1.100–14.000 · median **€1.250,07** · cheapest **€1.111,93** · 28 at/near buy-low · 30d €1.239,38→€1.250,07 (14d)_
+_Window €1.100–14.000 · median **€1.243,75** · cheapest **€1.103,95** · 30 at/near buy-low · 30d €1.239,38→€1.243,75 (15d)_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
+| **€1.103,95** | €960,44 | — | Used | [HP Z6 G4 Workstation 2xGOLD 6152 2,10GHz 48GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/168203925846?_skw=Precision+7920&hash=item2729bc3956:g:mEQAAeSw2dxpowR9) | macproworld | 🔥 at/near buy-low target · was €1.100,06 on 2026-10-11 |
+| **€1.103,95** | €960,44 | — | Used | [HP Z6 G4 Workstation 2xGOLD 6140 2,30GHz 48GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/168203926413?_skw=Precision+7920&hash=item2729bc3b8d:g:ax0AAeSweoZpo3KD) | macproworld | 🔥 at/near buy-low target · was €1.100,06 on 2026-10-11 |
 | **€1.111,93** | €967,38 | — | Used | [HP Z6 G4 Workstation 2xGOLD 6134 3,20GHz 32GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/327028109962?_skw=Precision+7920&hash=item4c2464f28a:g:120AAeSwAuNpoHFg) | thamesserver | 🔥 at/near buy-low target · was €1.103,19 on 2026-10-04 |
 | **€1.124,56** | €978,37 | — | Used | [HP Z6 G4 Workstation 2xGOLD 6138 2,00GHz 32GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/327028109980?_skw=Precision+7920&hash=item4c2464f29c:g:120AAeSwAuNpoHFg) | thamesserver | 🔥 at/near buy-low target · was €1.115,71 on 2026-10-04 |
 | **€1.135,85** | €988,19 | — | Used | [HP Z6 G4 Workstation 2xGOLD 6134 3,20GHz 48GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/188118720159?_skw=Precision+7920&hash=item2bccbfde9f:g:mEQAAeSw2dxpowR9) | servershopping_com | 🔥 at/near buy-low target · was €1.126,91 on 2026-10-04 |
@@ -420,23 +434,21 @@ _Window €1.100–14.000 · median **€1.250,07** · cheapest **€1.111,93** 
 | **€1.465,61** | €1.275,08 | — | Used | [HP Z6 G4 Workstation 2xGOLD 6140 2,30GHz 48GB DDR4 512GB NVME RTX 4000 2TB SATA](https://www.ebay.de/itm/168203913786?_skw=Precision+7920&hash=item2729bc0a3a:g:ax0AAeSweoZpo3KD) | servershopping_com | ok · was €1.454,09 on 2026-10-04 |
 | **€1.480,25** | €1.287,82 | — | Used | [HP Z6 G4 Workstation 2xGOLD 6138 2,00GHz 96GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/327028109947?_skw=Precision+7920&hash=item4c2464f27b:g:SVIAAeSwUStpo2tD) | thamesserver | ok · was €1.468,60 on 2026-10-04 |
 | **€1.492,72** | €1.298,67 | — | Used | [HP Z6 G4 Workstation 2xGOLD 6140 2,30GHz 96GB DDR4 512GB NVME SSD M4000 2TB SATA](https://www.ebay.de/itm/327028109937?_skw=Precision+7920&hash=item4c2464f271:g:VEAAAeSwsvBpo3NH) | thamesserver | ok · was €1.480,98 on 2026-10-04 |
-| **€1.515,90** | €1.318,83 | — | Used | [36-CORE HP Z6 G4 2x GOLD 6140 2,30GHz 48GB DDR4 512GB NVME SSD RTX 4000 2TB SATA](https://www.ebay.de/itm/327028109958?_skw=Precision+7920&hash=item4c2464f286:g:ax0AAeSweoZpo3KD) | thamesserver | ok · was €1.503,98 on 2026-10-04 |
-| **€1.516,27** | €1.319,15 | — | Used | [HP Z6 G4 Workstation 2xGOLD 6140 2,30GHz 48GB DDR4 512GB NVME RTX 4000 2TB SATA](https://www.ebay.de/itm/327028110023?_skw=Precision+7920&hash=item4c2464f2c7:g:ax0AAeSweoZpo3KD) | thamesserver | ok · was €1.513,47 on 2026-10-14 |
 
-## EliteDesk 800 G4 Mini (25 items)
+## EliteDesk 800 G4 Mini (26 items)
 
-_Window €281–621 · median **€463,00** · cheapest **€284,34** · 3 at/near buy-low · 30d €345,99→€463,00 (30d)_
+_Window €286–638 · median **€466,00** · cheapest **€287,63** · 3 at/near buy-low · 30d €345,99→€466,00 (30d)_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
-| **€284,34** | €247,38 | — | Gebraucht | [HP EliteDesk 800 G4 Desktop Mini Core i5 8500T 4-32GB RAM 120-2000GB SSD](https://www.ebay.de/itm/178168671623?_skw=EliteDesk+800+G4+Mini&hash=item297bae2d87:g:rCcAAeSwMttqX27m) | nexchance_it | 🔥 at/near buy-low target · was €181,50 on 2026-08-23 |
+| **€287,63** | €250,24 | — | Gebraucht | [HP EliteDesk 800 G4 Desktop Mini Core i5 8500T 4-32GB RAM 120-2000GB SSD](https://www.ebay.de/itm/178168671623?_skw=EliteDesk+800+G4+Mini&hash=item297bae2d87:g:rCcAAeSwMttqX27m) | nexchance_it | 🔥 at/near buy-low target · was €181,50 on 2026-08-23 |
 | **€289,48** | €251,85 | — | Gebraucht | [HP EliteDesk 800 G4 Desktop Mini Core i7 8700T 4-32GB RAM 120-2000GB SSD](https://www.ebay.de/itm/178567470602?_skw=EliteDesk+800+G4+Mini&hash=item2993735e0a:g:IiQAAeSwrt5qx5Fb) | nexchance_it | 🔥 at/near buy-low target · was €373,95 on 2026-10-09 |
 | **€299,00** | €260,13 | — | Gebraucht | [HP EliteDesk 800 G4 Mini PC i7-8700 16GB 512GB SSD  Win11 Pro](https://www.ebay.de/itm/127564548274?_skw=EliteDesk+800+G4+Mini&hash=item1db37088b2:g:zccAAeSwGvhpWsVC) | onero_tekno | 🔥 at/near buy-low target |
 | **€349,00** | €303,63 | — | Gebraucht | [HP EliteDesk 800 G4 Desktop Mini, Intel Core i5 8500T, 8GB RAM, 256GB SSD, Windo](https://www.ebay.de/itm/960074137336?_skw=EliteDesk+800+G4+Mini&hash=itemdf88e0bef8:g:SkEAAeSwCilqvorD) | it-versand-com | ok |
 | **€359,00** | €312,33 | — | Gebraucht | [HP EliteDesk 800 G4 Desktop Mini, Intel Core i5 8500, 16GB RAM, 256GB SSD, Windo](https://www.ebay.de/itm/158337986593?_skw=EliteDesk+800+G4+Mini&hash=item24ddadf021:g:WO8AAeSwzkdqp86k) | it-versand-com | ok |
 | **€359,00** | €312,33 | — | Gebraucht | [HP EliteDesk 800 G4 Desktop Mini, Intel Core i5 8500T, 8GB RAM, 256GB SSD, Windo](https://www.ebay.de/itm/960030329478?_skw=EliteDesk+800+G4+Mini&hash=itemdf86444a86:g:HBEAAeSwUHVqxiQ~) | it-versand-com | ok |
-| **€379,00** | €329,73 | — | Gebraucht | [HP EliteDesk 800 G4 Desktop Mini, Intel Core i5 8500T, 8GB RAM, 256GB SSD, Windo](https://www.ebay.de/itm/960038572874?_skw=EliteDesk+800+G4+Mini&hash=itemdf86c2134a:g:V8gAAeSwxhhqx9vr) | it-versand-com | ok |
 | **€379,00** | €329,73 | — | Gebraucht | [HP EliteDesk 800 G4 Desktop Mini, Intel Core i5 8500T, 16GB RAM, 256GB SSD, Wind](https://www.ebay.de/itm/960030329457?_skw=EliteDesk+800+G4+Mini&hash=itemdf86444a71:g:kt4AAeSwd1FqxiWt) | it-versand-com | ok |
+| **€379,00** | €329,73 | — | Gebraucht | [HP EliteDesk 800 G4 Desktop Mini, Intel Core i5 8500T, 8GB RAM, 256GB SSD, Windo](https://www.ebay.de/itm/960038572874?_skw=EliteDesk+800+G4+Mini&hash=itemdf86c2134a:g:V8gAAeSwxhhqx9vr) | it-versand-com | ok |
 | **€399,00** | €347,13 | — | Gebraucht | [HP EliteDesk 800 G4 Mini PC Core i7 8700 16 GB 240 GB M.2 nVME SSD](https://www.ebay.de/itm/206371343484?_skw=EliteDesk+800+G4+Mini&hash=item300cb0cc7c:g:BaEAAeSw7bpqx0fq) | esm-computer-shop | ok |
 | **€409,00** | €355,83 | — | Gebraucht | [HP EliteDesk 800 G4 Mini-PC i7-8700 6-Core 16GB DDR4 512GB NVMe SSD Win 11 Pro](https://www.ebay.de/itm/147633873590?_skw=EliteDesk+800+G4+Mini&hash=item225faa22b6:g:qzgAAeSwUJVqzg8H) | notebook-pro | ok |
 | **€429,00** | €373,23 | — | Gebraucht | [HP EliteDesk 800 G4 Mini PC Intel Core i7 32GB RAM 4 TB SSD W11 WLAN + BT](https://www.ebay.de/itm/257544211547?_skw=EliteDesk+800+G4+Mini&hash=item3bf6d4cc5b:g:3uAAAeSw37xqIC75) | workstation4u | ok |
@@ -454,10 +466,11 @@ _Window €281–621 · median **€463,00** · cheapest **€284,34** · 3 at/n
 | **€589,00** | €512,43 | — | Gebraucht | [HP EliteDesk 800 G4 SFF Office PC Intel Core i7 64GB RAM 2 TB SSD NVIDIA W11](https://www.ebay.de/itm/257544043259?_skw=EliteDesk+800+G4+Mini&hash=item3bf6d23afb:g:n-MAAeSwvGZqIB26) | workstation4u | ok · was €429,00 on 2026-09-20 |
 | **€616,00** | €535,92 | — | Gebraucht | [HP EliteDesk 800 G4 Mini Intel Core i5-8500T 32GB RAM 250GB SSD Win 11 WLAN](https://www.ebay.de/itm/257580582478?_skw=EliteDesk+800+G4+Mini&hash=item3bf8ffc64e:g:AjgAAeSw60hqNTN4) | workstation4u | ok |
 | **€616,00** | €535,92 | — | Gebraucht | [HP EliteDesk 800 G4 Mini Intel Core i5-8500 32GB RAM 250GB SSD Win 11 WLAN](https://www.ebay.de/itm/257580606095?_skw=EliteDesk+800+G4+Mini&hash=item3bf900228f:g:AjgAAeSw60hqNTN4) | workstation4u | ok |
+| **€626,00** | €544,62 | — | Gebraucht | [HP EliteDesk 800 G4 Mini Intel Core i5-8600 32GB RAM 250GB SSD Win 11 WLAN](https://www.ebay.de/itm/267706358363?_skw=EliteDesk+800+G4+Mini&hash=item3e548ada5b:g:AjgAAeSw60hqNTN4) | workstation4u | ok |
 
 ## EliteDesk 800 G5 Mini (18 items)
 
-_Window €174–336 · median **€210,00** · cheapest **€180,00** · 6 at/near buy-low · 30d €224,97→€210,00 (30d)_
+_Window €174–330 · median **€210,00** · cheapest **€180,00** · 6 at/near buy-low · 30d €224,97→€210,00 (30d)_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
@@ -465,8 +478,8 @@ _Window €174–336 · median **€210,00** · cheapest **€180,00** · 6 at/n
 | **€180,00** | €156,60 | — | Gebraucht | [HP Elitedesk G5 800 mini PC i5-9500](https://www.ebay.de/itm/377529740919?_skw=EliteDesk+800+G5+Mini&hash=item57e686ae77:g:Nz8AAeSwoDtquuAw) | sejfmust0 | 🔥 at/near buy-low target |
 | **€189,00** | €164,43 | — | Gebraucht | [HP Elitedesk 800 G5 DM i5-9500T Mini-PC 8GB 256GB NVME VGA (WLAN-Antennen fehlen](https://www.ebay.de/itm/306838167583?_skw=EliteDesk+800+G5+Mini&hash=item4770fae01f:g:DkcAAeSwHGxpwO01) | www.pcline24 | 🔥 at/near buy-low target · was €219,00 on 2026-08-23 |
 | **€195,00** | €169,65 | — | Gebraucht | [HP EliteDesk 800 G5 DM MINI-PC Intel Core i5 9500 16GB RAM 256GB SSD](https://www.ebay.de/itm/198710119458?_skw=EliteDesk+800+G5+Mini&hash=item2e440bcc22:g:KQ4AAeSwTPNqzTA1) | etech101 | 🔥 at/near buy-low target |
-| **€199,00** | €173,13 | — | Gebraucht | [HP Elitedesk 800 G5 DM i5-9500T 8GB 256GB Mini-PC WLAN 3x DP (Win 11 ready)](https://www.ebay.de/itm/298152164624?_skw=EliteDesk+800+G5+Mini&hash=item456b40fd10:g:EwgAAeSwDz9pwOz-) | www.pcline24 | 🔥 at/near buy-low target · was €239,00 on 2026-08-23 |
 | **€199,00** | €173,13 | — | Gebraucht | [HP Elitedesk 800 G5 DM Core i5-9500T 8GB 256GB NVME WLAN VGA Desktop Mini PC](https://www.ebay.de/itm/298143907694?_skw=EliteDesk+800+G5+Mini&hash=item456ac2ff6e:g:K-cAAeSwXbFpvVrl) | www.pcline24 | 🔥 at/near buy-low target · was €239,00 on 2026-08-23 |
+| **€199,00** | €173,13 | — | Gebraucht | [HP Elitedesk 800 G5 DM i5-9500T 8GB 256GB Mini-PC WLAN 3x DP (Win 11 ready)](https://www.ebay.de/itm/298152164624?_skw=EliteDesk+800+G5+Mini&hash=item456b40fd10:g:EwgAAeSwDz9pwOz-) | www.pcline24 | 🔥 at/near buy-low target · was €239,00 on 2026-08-23 |
 | **€207,51** | €180,53 | — | Used | [HP EliteDesk 800 G5 65W Mini PC - i5-9500 -8GB RAM -256GB SSD - OS (ANGEBOTE OK)](https://www.ebay.de/itm/116456010828?_skw=EliteDesk+800+G5+Mini&hash=item1b1d51b44c:g:q~cAAOSwdfJnk6rr) | techlabzltd | ok · was €206,94 on 2026-10-15 |
 | **€208,19** | €181,13 | — | Gebraucht | [HP EliteDesk 800 G5 Desktop Mini Core i5 9500T 4-32GB RAM 120-2000GB SSD](https://www.ebay.de/itm/178168671666?_skw=EliteDesk+800+G5+Mini&hash=item297bae2db2:g:4U4AAeSwZl5qX27n) | nexchance_it | ok · was €181,50 on 2026-08-18 |
 | **€209,99** | €182,69 | — | Gebraucht | [HP EliteDesk 800 G5 Mini PC 256GB NVMe SSD  Intel Core i5-9500T 8GB RAM](https://www.ebay.de/itm/146940173958?_skw=EliteDesk+800+G5+Mini&hash=item2236511e86:g:QwoAAeSwG8dpCfUh) | berlin-shop | ok |
@@ -482,7 +495,7 @@ _Window €174–336 · median **€210,00** · cheapest **€180,00** · 6 at/n
 
 ## Gaming PC mit RTX 3080 (50 items)
 
-_Window €1.039–2.094 · median **€1.400,00** · cheapest **€1.100,00** · 6 at/near buy-low · 30d €1.199,99→€1.400,00 (30d)_
+_Window €1.039–2.099 · median **€1.400,00** · cheapest **€1.100,00** · 6 at/near buy-low · 30d €1.249,00→€1.400,00 (30d)_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
@@ -497,7 +510,6 @@ _Window €1.039–2.094 · median **€1.400,00** · cheapest **€1.100,00** �
 | **€1.200,00** | €1.044,00 | — | Gebraucht | [High-End Gaming PC - Ryzen 7 5800X / RTX 3080 / 32GB RAM](https://www.ebay.de/itm/187370185369?_skw=Gaming+PC+RTX+3080&hash=item2ba0222299:g:w0UAAeSwIcFoXs7W) | flchue0 | ok |
 | **€1.250,00** | €1.087,50 | — | Gebraucht | [Gaming PC - Ryzen 7 5800X, RTX 3080, 16GB RAM, 2TB M2 SSD](https://www.ebay.de/itm/257292425583?_skw=Gaming+PC+RTX+3080&hash=item3be7d2d96f:g:OUkAAeSwmtxpWjaL) | crank9571 | ok |
 | **€1.250,00** | €1.087,50 | — | Gebraucht | [gaming pc rtx 3080](https://www.ebay.de/itm/386985802553?_skw=Gaming+PC+RTX+3080&hash=item5a1a26bb39:g:CeYAAOSw68hmOVzA) | finn-ga-0 | ok |
-| **€1.250,00** | €1.087,50 | — | Gebraucht | [Gaming PC - Ryzen 9 5900X, RTX 3080 Ti, 64 GB RAM, 2 TB SSD](https://www.ebay.de/itm/198701356245?_skw=Gaming+PC+RTX+3080&hash=item2e438614d5:g:YwEAAeSwW-lqvBy3) | ahmoa2 | ok · was €1.450,00 on 2026-10-10 |
 | **€1.280,00** | €1.113,60 | — | Gebraucht | [Gaming PC \| Ryzen 7 5800X \| RTX 3080 10GB LHR \| 32GB RAM \| 1TB SSD](https://www.ebay.de/itm/397164256903?_skw=Gaming+PC+RTX+3080&hash=item5c78d59e87:g:-5gAAeSwqhJo8VWC) | yas_736170 | ok |
 | **€1.299,00** | €1.130,13 | — | Gebraucht | [Gebrauchter Gaming PC Funktioniert Einwandfrei Mit RTX 3080](https://www.ebay.de/itm/117312633083?_skw=Gaming+PC+RTX+3080&hash=item1b5060b8fb:g:41EAAeSwvqJqXhr~) | endersbach | ok |
 | **€1.299,00** | €1.130,13 | — | Gebraucht | [gaming pc rtx 3080](https://www.ebay.de/itm/365339641158?_skw=Gaming+PC+RTX+3080&hash=item550ff08546:g:K2oAAOSwrz5nhAqm) | adrian.l40 | ok |
@@ -533,13 +545,14 @@ _Window €1.039–2.094 · median **€1.400,00** · cheapest **€1.100,00** �
 | **€1.700,00** | €1.479,00 | — | Gebraucht | [Gaming PC, RTX 3080, Intel core i7 13700KF mit AOC Bildschirm, guter Zustand](https://www.ebay.de/itm/316085159968?_skw=Gaming+PC+RTX+3080&hash=item499824c820:g:5SIAAOSwOUhncBHg) | anwo-3891 | ok |
 | **€1.700,00** | €1.479,00 | — | Gebraucht | [Gaming PC RTX 3080 AMD Ryzen 9 5900X](https://www.ebay.de/itm/235554240794?_skw=Gaming+PC+RTX+3080&hash=item36d820791a:g:BjQAAOSwCz5mOltl) | patju_81 | ok |
 | **€1.750,00** | €1.522,50 | — | Gebraucht | [GIGABYTE  GeForce RTX 3080 AORUS Xtreme Water, i9 9900, 16Gb Ram Gaming Pc](https://www.ebay.de/itm/185919766732?_skw=Gaming+PC+RTX+3080&hash=item2b49ae80cc:g:PT4AAOSwYWpkdedK) | songoku-emre | ok |
-| **€1.800,00** | €1.566,00 | — | Gebraucht | [GAMING PC \| FORTNITE \| CALL OF DUTY \| 200+ FPS \| WATERCOOLED \| RTX 3080](https://www.ebay.de/itm/355295669387?_skw=Gaming+PC+RTX+3080&hash=item52b945ac8b:g:KHsAAOSwZ4Jlfkpc) | essa_5049 | ok |
 | **€1.800,00** | €1.566,00 | — | Gebraucht | [Gaming PC (Intel Core i7 10700F, RTX 3080 Ti, 16GB RAM, 960GB SSD, Air Cooling)](https://www.ebay.de/itm/125939662001?_skw=Gaming+PC+RTX+3080&hash=item1d5296bcb1:g:pqYAAOSwFTBkYT35) | hasalba49 | ok |
+| **€1.800,00** | €1.566,00 | — | Gebraucht | [GAMING PC \| FORTNITE \| CALL OF DUTY \| 200+ FPS \| WATERCOOLED \| RTX 3080](https://www.ebay.de/itm/355295669387?_skw=Gaming+PC+RTX+3080&hash=item52b945ac8b:g:KHsAAOSwZ4Jlfkpc) | essa_5049 | ok |
 | **€1.800,00** | €1.566,00 | — | Gebraucht | [Gaming PC Intel i9 10900k NVIDEA GeForce RTX 3080 64GB RAM](https://www.ebay.de/itm/335705471602?_skw=Gaming+PC+RTX+3080&hash=item4e299afa72:g:FXYAAOSwF59nTHEJ) | rangierer2013 | ok |
+| **€1.850,00** | €1.609,50 | — | Gebraucht | [NZXT Gaming PC \| 3080 TI \| i9 12900K](https://www.ebay.de/itm/385892528423?_skw=Gaming+PC+RTX+3080&hash=item59d8fcb127:g:tnoAAOSwLUZkzBDn) | musta-4766 | ok |
 
 ## Gaming PC mit RTX 3090 (2 items)
 
-_Window €2.000–4.048 · median **€2.699,00** · cheapest **€2.599,00** · 0 at/near buy-low · 30d €2.799,00→€2.699,00 (30d)_
+_Window €2.000–4.048 · median **€2.699,00** · cheapest **€2.599,00** · 0 at/near buy-low · 30d €2.599,00→€2.699,00 (30d)_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
@@ -548,7 +561,7 @@ _Window €2.000–4.048 · median **€2.699,00** · cheapest **€2.599,00** �
 
 ## HP Z8 G4 Workstation (27 items)
 
-_Window €1.331–13.500 · median **€1.695,00** · cheapest **€1.346,00** · 9 at/near buy-low · 30d €1.528,00→€1.695,00 (14d)_
+_Window €1.334–13.500 · median **€1.695,00** · cheapest **€1.346,00** · 9 at/near buy-low · 30d €1.528,00→€1.695,00 (15d)_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
@@ -582,7 +595,7 @@ _Window €1.331–13.500 · median **€1.695,00** · cheapest **€1.346,00** 
 
 ## Lenovo ThinkStation P920 (13 items)
 
-_Window €1.419–11.000 · median **€1.999,00** · cheapest **€1.431,00** · 6 at/near buy-low · 30d €1.365,00→€1.999,00 (14d)_
+_Window €1.422–11.000 · median **€1.999,00** · cheapest **€1.431,00** · 6 at/near buy-low · 30d €1.365,00→€1.999,00 (15d)_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
@@ -600,9 +613,9 @@ _Window €1.419–11.000 · median **€1.999,00** · cheapest **€1.431,00** 
 | **€2.599,00** | €2.261,13 | — | Gebraucht | [LENOVO P920 THINKSTATION RTX A4000 1x XEON SILVER 4215 128GB-ECC 2TB WORKSTATION](https://www.ebay.de/itm/226973058551?_skw=ThinkStation+P920&hash=item34d8a605f7:g:qDUAAOSwQVNjlfLH) | captainnotebook | ok |
 | **€2.970,00** | €2.583,90 | — | Gebraucht | [LENOVO P920 THINKSTATION 1x XEON GOLD 6246 A6000 192GB-ECC DATA CAD-WORKSTATION](https://www.ebay.de/itm/226864485750?_skw=ThinkStation+P920&hash=item34d22d5576:g:RoYAAeSwhvRoc-z8) | captainnotebook | ok |
 
-## Mac Studio Ultra (8 items)
+## Mac Studio Ultra (6 items)
 
-_Window €3.578–7.492 · median **€4.799,50** · cheapest **€3.806,81** · 2 at/near buy-low · 30d €4.472,50→€4.799,50 (30d)_
+_Window €3.578–7.457 · median **€4.592,60** · cheapest **€3.806,81** · 2 at/near buy-low · 30d €4.472,50→€4.592,60 (30d)_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
@@ -610,53 +623,52 @@ _Window €3.578–7.492 · median **€4.799,50** · cheapest **€3.806,81** �
 | **€3.950,00** | €3.436,50 | — | Gebraucht | [Apple Mac Studio M1 Ultra 20C CPU 64C GPU 64GB RAM 1TB SSD mit Apple Care+ OVP](https://www.ebay.de/itm/237039451061?_skw=Mac+Studio+Ultra&hash=item3730a6fbb5:g:4YwAAeSwo5FqlGMK) | wodcleaner | 🔥 at/near buy-low target |
 | **€4.386,21** | €3.816,00 | — | Gebraucht | [Mac Studio M2 Ultra / 64GB RAM / 1TB SSD + 1TB HDD Hub / Windows 11 / Office](https://www.ebay.de/itm/800270577585?_skw=Mac+Studio+Ultra&hash=itemba53d7efb1:g:NsgAAeSwbJRqRKL0) | apples_and_windows | ok |
 | **€4.799,00** | €4.175,13 | — | Gebraucht | [Apple Mac Studio M1 Ultra 64-Core GPU 128GB RAM 4TB SSD](https://www.ebay.de/itm/920027291061?_skw=Mac+Studio+Ultra&hash=itemd635e65db5:g:SKsAAeSwFrlqvq2V) | wiss7878 | ok |
-| **€4.800,00** | €4.176,00 | — | Gebraucht | [Mac Studio M2 Ultra 24C CPU / 76C GPU / 128GB Ram Ultimate Pro Workstation OVP](https://www.ebay.de/itm/257769333305?_skw=Mac+Studio+Ultra&hash=item3c043fe239:g:a84AAeSwy5ZquVgb) | mori_klei | ok · was €5.000,00 on 2026-09-28 |
 | **€5.245,00** | €4.563,15 | — | Gebraucht | [Apple Mac Studio 2022 (A2615) M1 Ultra 20C CPU 64C GPU, 128 GB RAM, 4 TB SSD OVP](https://www.ebay.de/itm/940005703473?_skw=Mac+Studio+Ultra&hash=itemdadcb4bf31:g:AUoAAeSweINqy0Hn) | nikonfredel | ok · was €5.295,00 on 2026-10-12 |
-| **€5.928,91** | €5.158,15 | — | Used | [Mac Studio 2025 M3 Ultra 28-Core CPU 60-Core GPU 96GB 1TB](https://www.ebay.de/itm/398427880818?_skw=Mac+Studio+Ultra&hash=item5cc426fd72:g:gBEAAeSwJh9qtTvr) | shardtechltd | ok · was €5.808,00 on 2026-09-25 |
 | **€6.495,00** | €5.650,65 | — | Gebraucht | [Apple Mac Studio 2023 M2 Ultra 24C CPU 60 Core GPU 128GB RAM 1TB SSD A2901](https://www.ebay.de/itm/820169984589?_skw=Mac+Studio+Ultra&hash=itembef5f0ca4d:g:Y18AAeSwU59pbwGa) | ds_resell_gbr | ok · was €6.395,00 on 2026-09-25 |
 
 ## NVMe SSD 2TB (49 items)
 
-_Window €140–300 · median **€200,00** · cheapest **€144,95** · 3 at/near buy-low · 30d €175,00→€200,00 (30d)_
+_Window €140–300 · median **€200,00** · cheapest **€144,95** · 3 at/near buy-low · 30d €174,96→€200,00 (30d)_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
 | **€144,95** | €126,11 | — | Gebraucht | [Office-PC \| 2,8 GHz \| bis 32GB RAM \| bis 2 TB SSD \| Win 11 Pro \| Office 2024 Pro](https://www.ebay.de/itm/198071390916?_skw=NVMe+2TB&hash=item2e1df992c4:g:W98AAeSw3Hxp77FJ) | secondlife_it-solution | 🔥 at/near buy-low target · was €79,95 on 2026-08-23 |
 | **€159,00** | €138,33 | — | Gebraucht | [Apple MacBook Pro 13" (A1502) Early 2015 bis zu 2TB NVMe SSD Upgrade](https://www.ebay.de/itm/264094788032?_skw=NVMe+2TB&hash=item3d7d46a9c0:g:1oQAAOSwzDFcGj0k) | tronicspot | 🔥 at/near buy-low target · was €119,00 on 2026-08-23 |
 | **€159,00** | €138,33 | — | Gebraucht | [HP Z Turbo Drive Quad Pro](https://www.ebay.de/itm/377073885231?_skw=NVMe+2TB&hash=item57cb5ae02f:g:OZsAAeSwcXdqU5tB) | burc-3871 | 🔥 at/near buy-low target · was €147,00 on 2026-08-23 |
+| **€169,95** | €147,86 | — | Gebraucht | [Intel SSD-Laufwerk P3700 Series 800 GB HHHL (PCIe 3.0 x4) (SSDPEDMD800G4)](https://www.ebay.de/itm/366719054666?_skw=NVMe+2TB&hash=item556228b34a:g:G44AAeSwxk5qxrcM) | pigiai | ok · was €199,95 on 2026-10-08 |
 | **€175,00** | €152,25 | — | Gebraucht | [Intel SSD 660p Series NVMe mit 2 TB (Modell: SSDPEKNW020T8)](https://www.ebay.de/itm/158205484887?_skw=NVMe+2TB&hash=item24d5c81f57:g:-qkAAeSwxB9qhaOh) | svenadam | ok |
-| **€179,95** | €156,56 | — | Gebraucht | [Intel SSD-Laufwerk P3700 Series 800 GB HHHL (PCIe 3.0 x4) (SSDPEDMD800G4)](https://www.ebay.de/itm/366719054666?_skw=NVMe+2TB&hash=item556228b34a:g:G44AAeSwxk5qxrcM) | pigiai | ok · was €199,95 on 2026-10-08 |
 | **€180,00** | €156,60 | — | Gebraucht | [Fanxiang M.2 2280 2TB NVMe SSD Heatsink PCIe 4.0 PS5 Interne Festplatte 7300MB/S](https://www.ebay.de/itm/406688312079?_skw=NVMe+2TB&hash=item5eb0832b0f:g:nbAAAeSwiqxpi08P) | adredze62 | ok |
 | **€180,00** | €156,60 | — | Gebraucht | [Western Digital WD_BLACK P50 Game Drive 2TB NVMe Externe SSD USB-C Schwarz](https://www.ebay.de/itm/327381024556?_skw=NVMe+2TB&hash=item4c396dff2c:g:wrsAAeSwRblqvLbx) | schfeluka | ok · was €190,00 on 2026-09-30 |
 | **€180,49** | €157,03 | — | Used | [Dell Inspiron 3501 15,6" intel i3-1115G4 12GB RAM 256GB NVMe +2TB HDD Windows 11](https://www.ebay.de/itm/257802580291?_skw=NVMe+2TB&hash=item3c063b3143:g:59sAAeSw6qJq0Mae) | sale.point0 | ok |
 | **€181,63** | €158,02 | — | Used | [Intel DC P3600 1,2TB NVMe SSD PCIe Storage Drive 99% Health](https://www.ebay.de/itm/398228217696?_skw=NVMe+2TB&hash=item5cb8405f60:g:Ft4AAeSw-~pqakIc) | tectac2 | ok · was €178,58 on 2026-09-22 |
 | **€184,00** | €160,08 | — | Gebraucht | [Lexar NM610 PRO SSD 2TB M.2 2280 NVMe PCIe 3.0 x4 – LNM610P002T-RNNNG](https://www.ebay.de/itm/840017069719?_skw=NVMe+2TB&hash=itemc394eb4697:g:FIAAAeSwdbRqzfa6) | drhouse14 | ok |
 | **€189,73** | €165,07 | — | Used | [Crucial P3 Plus 2TB 2000GB Interne SSD NVMe PCIe 4.0 M.2 2280](https://www.ebay.de/itm/860025664722?_skw=NVMe+2TB&hash=itemc83d8634d2:g:2swAAeSw6wZqoDD8) | pro-guy99 | ok · was €200,59 on 2026-10-09 |
-| **€189,90** | €165,21 | — | Gebraucht | [2TB BIWIN NV7200 - M.2 2280 PCIe Gen4 NVMe SSD](https://www.ebay.de/itm/227570562025?_skw=NVMe+2TB&hash=item34fc4333e9:g:7ysAAeSwQthq0oGH) | *technicx* | ok |
 | **€189,99** | €165,29 | — | Gebraucht | [Crucial P3 Plus 2TB NVMe M.2 SSD \| Voll funktionsfähig \| Guter Zustand](https://www.ebay.de/itm/227520001927?_skw=NVMe+2TB&hash=item34f93fb787:g:ENAAAeSwnsxqpu5V) | halk0_57 | ok |
 | **€190,00** | €165,30 | — | Gebraucht | [2TB Externe SSD USB-C NVME Festplatte 10 Gbit/s Gbps](https://www.ebay.de/itm/137699176371?_skw=NVMe+2TB&hash=item200f82afb3:g:vsMAAeSw5NJqmwkZ) | nanox1000 | ok |
 | **€193,03** | €167,94 | — | Used | [SSD 2TB WD blue SN550 M.2 NVMe](https://www.ebay.de/itm/336831398751?_skw=NVMe+2TB&hash=item4e6cb7435f:g:mIYAAeSwZzBqxQ3u) | teggl-97 | ok · was €192,35 on 2026-10-12 |
 | **€193,89** | €168,68 | — | Gebraucht | [Western Digital WD_BLACK SN750 2TB NVMe M.2 interne SSD Schwarz WDS200T3X0C](https://www.ebay.de/itm/137833961796?_skw=NVMe+2TB&hash=item20178b5944:g:t5IAAeSwdbRqy2OP) | carbronian | ok |
 | **€199,00** | €173,13 | — | Gebraucht | [Fanxiang M.2 SSD 2TB NVMe Interne Festplatte W/Heat Sink 5000MB/S PCIe 4.0 SSD](https://www.ebay.de/itm/920035814151?_skw=NVMe+2TB&hash=itemd636686b07:g:I3MAAeSwhu1qzimu) | player.0163 | ok |
+| **€199,00** | €173,13 | — | Gebraucht | [Crucial P3 Plus 2TB NVMe M.2 SSD PCIe 4.0 + Ugreen USB-C Gehäuse](https://www.ebay.de/itm/960081172509?_skw=NVMe+2TB&hash=itemdf894c181d:g:wIsAAeSw2NBq1BsB) | lukarec_9 | ok |
 | **€199,00** | €173,13 | — | Gebraucht | [Crucial P1 2TB NVMe SSD m.2 Schnittstelle (CT2000P1SSD8)](https://www.ebay.de/itm/127790923472?_skw=NVMe+2TB&hash=item1dc0eebed0:g:RIwAAeSwSSBp0L6D) | pathar_42 | ok |
 | **€199,00** | €173,13 | — | Gebraucht | [WD Blue SN580 SSD 2TB M.2 PCle Gen4NVMe](https://www.ebay.de/itm/860019491918?_skw=NVMe+2TB&hash=itemc83d28044e:g:8GUAAeSw-1pqxlBL) | zazakage | ok |
+| **€199,00** | €173,13 | — | Gebraucht | [Micron 2500 2TB NVMe M.2 PCIe 4.0 SSD (Sehr guter Zustand / 6 Monate alt)](https://www.ebay.de/itm/206634320424?_skw=NVMe+2TB&hash=item301c5d8228:g:knIAAeSwJyFq0~RD) | andanpa | ok |
 | **€199,90** | €173,91 | — | Gebraucht | [Crucial P310 2TB SSD PCIe Gen4 NVMe M.2 CT2000P310SSD801 - *100% Health*](https://www.ebay.de/itm/407288026909?_skw=NVMe+2TB&hash=item5ed442171d:g:elkAAeSwONJqznw0) | hardware-marsiske | ok · was €219,90 on 2026-10-14 |
 | **€200,00** | €174,00 | — | Gebraucht | [nvme m.2 2tb](https://www.ebay.de/itm/366409949420?_skw=NVMe+2TB&hash=item554fbc20ec:g:G1oAAeSwmc1qBqpK) | mc58-9656 | ok |
 | **€200,00** | €174,00 | — | Gebraucht | [WD_BLACK SN770 2TB M.2 NVMe PCIe 4.0 x4 interne SSD WDS200T3X0E](https://www.ebay.de/itm/820242741998?_skw=NVMe+2TB&hash=itembefa46faee:g:-9EAAeSwoL1q0R4o) | crislabi_0 | ok |
 | **€200,00** | €174,00 | — | Gebraucht | [GameStop 2 TB M.2 2280 PCIe Gen4x4 NVMe Interne SSD mit Kühlkörper, Silber](https://www.ebay.de/itm/800611981185?_skw=NVMe+2TB&hash=itemba68315781:g:pDIAAeSwfPFqmsz9) | heesy1986 | ok |
 | **€200,00** | €174,00 | — | Gebraucht | [HP FX700 2TB NVMe 2.0, Gen4x4, M.2 2280, 7200 MB/s, PCIe 4.0 SSD](https://www.ebay.de/itm/237116287886?_skw=NVMe+2TB&hash=item37353b6b8e:g:yjUAAeSwMZlqyRKc) | mqm6t29 | ok |
-| **€200,00** | €174,00 | — | Gebraucht | [KIOXIA Toshiba 2TB KXG8AZNV2T04 LA NVME M.2 Solid State Drive](https://www.ebay.de/itm/237116307568?_skw=NVMe+2TB&hash=item37353bb870:g:yfgAAeSwujpqyRcz) | mqm6t29 | ok |
-| **€200,40** | €174,35 | — | Used | [Samsung PM981a 2TB NVMe SSD MZ-VLB2T0B](https://www.ebay.de/itm/256345425119?_skw=NVMe+2TB&hash=item3baf60c4df:g:Pv8AAOSwvoJlfy0u) | sarahe2003 | ok · was €199,28 on 2026-10-07 |
 | **€201,58** | €175,37 | — | Used | [Crucial E100 2TB NVMe M.2 SSD PCIe Gen4 - 99% Health - getestet funktioniert](https://www.ebay.de/itm/398408139933?_skw=NVMe+2TB&hash=item5cc2f9c49d:g:U5oAAeSwnJNqrXpv) | d-rigs | ok · was €200,45 on 2026-10-07 |
 | **€203,29** | €176,86 | — | Used | [Intel DC P3600 1,2TB NVMe SSD PCIe Storage Drive 100% Health](https://www.ebay.de/itm/398228215543?_skw=NVMe+2TB&hash=item5cb84056f7:g:Ft4AAeSw-~pqakIc) | tectac2 | ok · was €202,15 on 2026-10-07 |
 | **€209,00** | €181,83 | — | Gebraucht | [Verbatim Vi5000 2 TB, PCI Express 4.0 3D NAND NVMe M.2 SSD (31827) gebraucht](https://www.ebay.de/itm/358666159414?_skw=NVMe+2TB&hash=item53822b4536:g:juEAAeSwC7hqKpdu) | patrick12b | ok |
-| **€209,00** | €181,83 | — | Gebraucht | [SK Hynix Tube T31 Stick SSD 2TB USB-A 3.2 Gen2 10Gbit M.2 NVMe & DRAM-Cache](https://www.ebay.de/itm/168794734567?_skw=NVMe+2TB&hash=item274cf33fe7:g:RywAAeSwp-1qQcHV) | 55_fatih | ok |
+| **€209,00** | €181,83 | — | Gebraucht | [SK Hynix Tube T31 Stick SSD 2TB USB-A 3.2 Gen2 10Gbit M.2 NVMe & DRAM-Cache](https://www.ebay.de/itm/168799563388?_skw=NVMe+2TB&hash=item274d3cee7c:g:RywAAeSwp-1qQcHV) | 55_fatih | ok |
+| **€209,99** | €182,69 | — | Gebraucht | [Samsung T7 Shield 2TB NVMe Tragbare Externe SSD, wie neu, 1 Jahr Restgarantie](https://www.ebay.de/itm/880024866917?_skw=NVMe+2TB&hash=itemcce591d065:g:QX8AAeSwzuhqzc4i) | joweha611 | ok |
+| **€210,00** | €182,70 | — | Gebraucht | [Western Digital WD_BLACK SN770 2TB M.2 NVMe Interne SSD (WDS200T3X0E)](https://www.ebay.de/itm/900021144241?_skw=NVMe+2TB&hash=itemd18d70cab1:g:S-UAAeSwj1lq1A7Z) | louis-ch172 | ok |
+| **€210,00** | €182,70 | — | Gebraucht | [2TB Lexar NM790 M.2 2280 PCIe G 4x4 SSD NVMe 7400MB/s 2000GB M2](https://www.ebay.de/itm/327410703447?_skw=NVMe+2TB&hash=item4c3b32dc57:g:yS8AAeSwgAlq05hI) | sun-solar | ok |
 | **€212,90** | €185,22 | — | Gebraucht | [Kingston NV1 2 TB M.2 2280 NVMe SNVS/2000G SSD SSM   #331805](https://www.ebay.de/itm/128096486247?_skw=NVMe+2TB&hash=item1dd3254367:g:htwAAeSwekZqu0ib) | computer-store-berlin | ok · was €192,99 on 2026-09-29 |
 | **€219,00** | €190,53 | — | Gebraucht | [2TB WD_Black SN850X NVMe M.2 SSD 7300 MB/s & 6600 MB/s PCIe Gen4 inkl OVP](https://www.ebay.de/itm/366727023172?_skw=NVMe+2TB&hash=item5562a24a44:g:Qh8AAeSw6bZqy4-7) | ebori_96 | ok |
 | **€219,00** | €190,53 | — | Gebraucht | [Corsair MP400 2TB Interne Festplatte NVMe PCIe M.2 SSD](https://www.ebay.de/itm/117210721549?_skw=NVMe+2TB&hash=item1b4a4dad0d:g:0BwAAeSwwgRqEWxK) | www*tachowelt*de | ok |
 | **€219,90** | €191,31 | — | Gebraucht | [Kingston FURY Renegade 2TB PCIe 4.0 NVMe M.2 SSD (SFYRD/2000G) - *sehr gut*](https://www.ebay.de/itm/407292257939?_skw=NVMe+2TB&hash=item5ed482a693:g:0U8AAeSwA7Jq0My-) | hardware-marsiske | ok |
 | **€219,90** | €191,31 | — | Gebraucht | [Kingston NV2 mit 2TB PCIe 4.0 NVMe Typ SNV2S/2000G](https://www.ebay.de/itm/157663779859?_skw=NVMe+2TB&hash=item24b57e5c13:g:5zUAAeSwwFFphfWG) | www*tachowelt*de | ok |
-| **€219,99** | €191,39 | — | Gebraucht | [Samsung T7 Shield 2TB NVMe Tragbare Externe SSD, wie neu, 1 Jahr Restgarantie](https://www.ebay.de/itm/880012922205?_skw=NVMe+2TB&hash=itemcce4db8d5d:g:QX8AAeSwzuhqzc4i) | joweha611 | ok |
 | **€220,00** | €191,40 | — | Gebraucht | [Fikwot FN960 Interne SSD Solid State Drive PCIe 4.0 M.2 NVMe](https://www.ebay.de/itm/800783248667?_skw=NVMe+2TB&hash=itemba7266ad1b:g:bY4AAeSwEPpqy5tY) | mahut-6146 | ok |
 | **€220,00** | €191,40 | — | Gebraucht | [WD Black SN850X 2TB NVMe M.2 SSD PCIe 4.0 – 97% Zustand – CrystalDiskInfo](https://www.ebay.de/itm/377566642060?_skw=NVMe+2TB&hash=item57e8b9bf8c:g:QHMAAeSwdIJqzeUg) | derhardwarefreund | ok |
 | **€220,00** | €191,40 | — | Gebraucht | [Intel SSD 660p Series 2TB 2048GB M.2 NVME PCIe 3.0 x4 Festplatte](https://www.ebay.de/itm/198196544698?_skw=NVMe+2TB&hash=item2e256f44ba:g:mPgAAeSwdWNpuJqj) | nordlicht15 | ok |
@@ -668,19 +680,17 @@ _Window €140–300 · median **€200,00** · cheapest **€144,95** · 3 at/n
 | **€229,00** | €199,23 | — | Gebraucht | [Samsung 2TB SSD M.2 2280 PCIe NVMe MZVL22T0HBLB-00B00 MZ-VL22T00 PM9A1](https://www.ebay.de/itm/137739446076?_skw=NVMe+2TB&hash=item2011e9273c:g:ugIAAeSwQIRqqSDc) | jack0582 | ok |
 | **€229,00** | €199,23 | — | Gebraucht | [2TB Kingston NV2 NVMe M.2 2280 PCIe 4.0 x4  3D NAND  (SNV2S/2000G)](https://www.ebay.de/itm/117421783981?_skw=NVMe+2TB&hash=item1b56e23bad:g:xvcAAeSwlOpqr6eD) | www*tachowelt*de | ok |
 | **€229,00** | €199,23 | — | Gebraucht | [Toshiba Kioxia 2TB KXG50PNV2T04 NVMe SSD TOSHIBA 2048GB M.2 2280 PCI Express 3.0](https://www.ebay.de/itm/960047487308?_skw=NVMe+2TB&hash=itemdf874a194c:g:4M0AAeSwvx5qyhpH) | www*tachowelt*de | ok |
-| **€229,00** | €199,23 | — | Gebraucht | [Kingston NV1 2TB PCIe NVMe M.2 Interne SSD (SNVS/2000G)](https://www.ebay.de/itm/117298071609?_skw=NVMe+2TB&hash=item1b4f828839:g:4pUAAeSwK7RqU7su) | www*tachowelt*de | ok |
 | **€229,90** | €200,01 | — | Gebraucht | [WD_BLACK SN850X 2TB NVMe M.2 interne SSD Kühlkörper 7300/6600 MB/s ps5](https://www.ebay.de/itm/366730854054?_skw=NVMe+2TB&hash=item5562dcbea6:g:2fgAAeSwFJJqzfDq) | sv7mj-89 | ok |
 
-## Nvidia Quadro RTX (21 items)
+## Nvidia Quadro RTX (20 items)
 
-_Window €624–1.183 · median **€780,00** · cheapest **€632,17** · 7 at/near buy-low · 30d €749,00→€780,00 (30d)_
+_Window €624–1.183 · median **€780,15** · cheapest **€632,17** · 6 at/near buy-low · 30d €732,00→€780,15 (30d)_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
 | **€632,17** | €549,99 | — | Gebraucht | [Dell NVIDIA QUADRO RTX 5000 16GB GDDR6 PCI-E Grafikkarte](https://www.ebay.de/itm/327398196591?_skw=Quadro+RTX&hash=item4c3a74056f:g:1zIAAOSwME5m21CG) | t-traderz | 🔥 at/near buy-low target |
 | **€650,00** | €565,50 | — | Gebraucht | [NVIDIA QUADRO RTX 4000 8GB GDDR6 Graphic Card](https://www.ebay.de/itm/286690115998?_skw=Quadro+RTX&hash=item42c010019e:g:IxwAAOSwn2Nl6ozW) | ruixiu | 🔥 at/near buy-low target |
 | **€650,00** | €565,50 | — | Gebraucht | [NVIDIA QUADRO RTX 4000 8GB GDDR6 Graphic Card](https://www.ebay.de/itm/127218727595?_skw=Quadro+RTX&hash=item1d9ed3baab:g:Z7wAAeSwScZoa6Fp) | newdisk | 🔥 at/near buy-low target |
-| **€689,47** | €599,84 | — | Gebraucht | [NVIDIA Quadro RTX 4000 Professional Grafikkarte 8GB GDDR6 GPU getestet](https://www.ebay.de/itm/206491453056?_skw=Quadro+RTX&hash=item3013d98680:g:WYgAAeSw7Ddqf3Pp) | risingsungaming | 🔥 at/near buy-low target · was €668,61 on 2026-08-18 |
 | **€699,00** | €608,13 | — | Gebraucht | [Nvidia Quadro RTX 5000 16GB GDDR6 256 Bit PCI Express x16 3.0](https://www.ebay.de/itm/147455604808?_skw=Quadro+RTX&hash=item225509f848:g:84oAAeSwxclqu4o5) | smg-germany | 🔥 at/near buy-low target |
 | **€715,00** | €622,05 | — | Gebraucht | [NVIDIA QUADRO RTX 4000 8GB GDDR6 Graphic Card](https://www.ebay.de/itm/176294482916?_skw=Quadro+RTX&hash=item290bf853e4:g:1RQAAOSwoAtl-WvV) | zepenl-0 | 🔥 at/near buy-low target |
 | **€715,00** | €622,05 | — | Gebraucht | [NVIDIA QUADRO RTX 4000 8GB GDDR6 288 cores Graphic Card 256-bit 160W](https://www.ebay.de/itm/186361101619?_skw=Quadro+RTX&hash=item2b63fcbd33:g:LUMAAOSwBOtl~pL1) | sinobright | 🔥 at/near buy-low target |
@@ -701,7 +711,7 @@ _Window €624–1.183 · median **€780,00** · cheapest **€632,17** · 7 at
 
 ## OptiPlex 3070 Micro (50 items)
 
-_Window €145–289 · median **€194,00** · cheapest **€148,22** · 7 at/near buy-low · 30d €179,00→€194,00 (30d)_
+_Window €146–290 · median **€194,00** · cheapest **€148,22** · 7 at/near buy-low · 30d €179,00→€194,00 (30d)_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
@@ -758,40 +768,40 @@ _Window €145–289 · median **€194,00** · cheapest **€148,22** · 7 at/n
 
 ## RTX 3090 (41 items)
 
-_Window €1.234–2.475 · median **€1.695,83** · cheapest **€1.384,25** · 4 at/near buy-low · 30d €1.599,00→€1.695,83 (30d) · median €70,66/GB_
+_Window €1.236–2.481 · median **€1.699,00** · cheapest **€1.384,25** · 4 at/near buy-low · 30d €1.552,57→€1.699,00 (30d) · median €70,79/GB_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
 | **€1.384,25** | €1.204,30 | 57,68/GB | Used | [*TESTED* MSI GeForce RTX 3090 VENTUS 3X OC 24GB GDDR6X Graphics Card](https://www.ebay.de/itm/820116623988?_skw=RTX+3090&hash=itembef2c29274:g:K0wAAeSwyb9qpLme) | videogameszzz123 | 🔥 at/near buy-low target · was €1.522,78 on 2026-09-12 |
 | **€1.390,00** | €1.209,30 | 57,92/GB | Gebraucht | [Aorus RTX3090 24GB GDDR6X Master Ki, Workstation & Gaming GPU - OHNE KÜHLER!](https://www.ebay.de/itm/407202964384?_skw=RTX+3090&hash=item5ecf3023a0:g:2E8AAeSwBsNqoLo4) | hardwaredrop | 🔥 at/near buy-low target |
+| **€1.390,00** | €1.209,30 | 57,92/GB | Gebraucht | [ASUS ROG Strix GeForce RTX 3090 O24G Gaming](https://www.ebay.de/itm/227571370841?_skw=RTX+3090&hash=item34fc4f8b59:g:wpgAAeSw0H5q01i9) | lennart30 | 🔥 at/near buy-low target |
 | **€1.400,00** | €1.218,00 | 58,33/GB | Gebraucht | [GIGABYTE AORUS XTREME GeForce RTX 3090 24GB GDDR6X Wasserkühler RGB](https://www.ebay.de/itm/117466215333?_skw=RTX+3090&hash=item1b598833a5:g:GCIAAeSweihqz1yp) | fordi-2005 | 🔥 at/near buy-low target |
-| **€1.400,00** | €1.218,00 | 58,33/GB | Gebraucht | [GIGABYTE GeForce RTX 3090 Gaming OC 24G 24GB PCIe x16 RGB Lüfter](https://www.ebay.de/itm/336844912318?_skw=RTX+3090&hash=item4e6d8576be:g:hicAAeSw7ZRq0FgU) | de_toade | 🔥 at/near buy-low target |
 | **€1.450,00** | €1.261,50 | 60,42/GB | Gebraucht | [KFA2 GeForce RTX 3090 SG 24GB GDDR6X - getestet - KI](https://www.ebay.de/itm/147635754065?_skw=RTX+3090&hash=item225fc6d451:g:YoUAAeSwhqZqz6Lc) | 1055elke | ok · was €1.550,00 on 2026-10-15 |
+| **€1.450,00** | €1.261,50 | 60,42/GB | Gebraucht | [MSI SUPRIM X NVIDIA GeForce RTX 3090 24GB GDDR6X Lüfter/Kühlkörper](https://www.ebay.de/itm/820239166897?_skw=RTX+3090&hash=itembefa106db1:g:HNoAAeSwa2Vqz7sy) | a.a100_1 | ok · was €1.500,00 on 2026-10-15 |
 | **€1.450,00** | €1.261,50 | 60,42/GB | Gebraucht | [ASUS ROG Strix NVIDIA GeForce RTX 3090 Triple-Fan Lüfter/Kühlkörper](https://www.ebay.de/itm/820246727835?_skw=RTX+3090&hash=itembefa83cc9b:g:L30AAeSwuUJq0qCL) | a.a100_1 | ok |
 | **€1.499,00** | €1.304,13 | 62,46/GB | Gebraucht | [GIGABYTE AORUS GeForce RTX 3090 Master 24GB GDDR6X Grafikkarte GPU](https://www.ebay.de/itm/227563716726?_skw=RTX+3090&hash=item34fbdac076:g:qB0AAeSwsutqu~gp) | halk0_57 | ok |
-| **€1.499,00** | €1.304,13 | 62,46/GB | Gebraucht | [Nvidia RTX 3090 24GB PNY XLR8 KI LLM Gaming Grafikkarte FURMARK&MEMTEST 100%](https://www.ebay.de/itm/117466766907?_skw=RTX+3090&hash=item1b59909e3b:g:gfIAAeSw0uBqz9~3) | bialecki_tech | ok |
 | **€1.499,00** | €1.304,13 | 62,46/GB | Gebraucht | [GIGABYTE AORUS GeForce RTX 3090 XTREME 24GB GDDR6X Grafikkarte](https://www.ebay.de/itm/327401342706?_skw=RTX+3090&hash=item4c3aa406f2:g:XnEAAeSwGhZqzOPk) | 4orty4ore | ok · was €1.549,00 on 2026-10-13 |
-| **€1.500,00** | €1.305,00 | 62,50/GB | Gebraucht | [MSI SUPRIM X NVIDIA GeForce RTX 3090 24GB GDDR6X Lüfter/Kühlkörper](https://www.ebay.de/itm/820239166897?_skw=RTX+3090&hash=itembefa106db1:g:HNoAAeSwa2Vqz7sy) | a.a100_1 | ok |
 | **€1.500,00** | €1.305,00 | 62,50/GB | Gebraucht | [RTX 3090 24GB  (EK-WaKü doppelseitig montiert, Luftkühler vorhanden)](https://www.ebay.de/itm/900018075067?_skw=RTX+3090&hash=itemd18d41f5bb:g:4NoAAeSwGEVq0kZ0) | smiley1125 | ok |
 | **€1.510,09** | €1.313,78 | 62,92/GB | Used | [*TESTED* ASUS ROG Strix RTX 3090 OC 24GB GDDR6X](https://www.ebay.de/itm/820116625457?_skw=RTX+3090&hash=itembef2c29831:g:FUcAAeSwVXhqpLoH) | videogameszzz123 | ok · was €1.616,01 on 2026-09-12 |
 | **€1.549,00** | €1.347,63 | 64,54/GB | Gebraucht | [GIGABYTE AORUS GeForce RTX 3090 XTREME 24GB GDDR6X Grafikkarte](https://www.ebay.de/itm/327401336713?_skw=RTX+3090&hash=item4c3aa3ef89:g:NEAAAeSw42ZqzOMX) | 4orty4ore | ok · was €1.599,00 on 2026-10-13 |
 | **€1.550,00** | €1.348,50 | 64,58/GB | Gebraucht | [ASUS ROG Strix GeForce RTX 3090 - Top Zustand – OVP Geprüft & Stabil KI](https://www.ebay.de/itm/206631449420?_skw=RTX+3090&hash=item301c31b34c:g:0dYAAeSwT9tq0lE1) | batzy13 | ok |
 | **€1.599,00** | €1.391,13 | 66,62/GB | Gebraucht | [MSI NVIDA GeForce  RTX 3090Ti GAMING X TRIO Graphics Card GPU 24G GDDR6X](https://www.ebay.de/itm/127774066669?_skw=RTX+3090&hash=item1dbfed87ed:g:DxkAAeSw3ulpxiJM) | newdisk | ok |
 | **€1.599,00** | €1.391,13 | 66,62/GB | Gebraucht | [ASUS NVIDIA GeForce RTX 3090 24GB Turbo Graphics Card Server Disassembly GPU](https://www.ebay.de/itm/358644793873?_skw=RTX+3090&hash=item5380e54211:g:f-kAAeSw-cBpx3Ye) | duehu82 | ok · was €1.400,00 on 2026-08-23 |
+| **€1.645,00** | €1.431,15 | 68,54/GB | Gebraucht | [RTX 3090 24GB VRAM GDDR6X graphics card 4K ASUS, not Used Much](https://www.ebay.de/itm/206617258593?_skw=RTX+3090&hash=item301b592a61:g:KRQAAeSwJ9Jqyo5h) | ror462 | ok · was €2.000,00 on 2026-10-11 |
 | **€1.650,00** | €1.435,50 | 68,75/GB | Gebraucht | [GeForce RTX 3090 24GB Public Turbo Graphics Card Server Disassembly](https://www.ebay.de/itm/227524121272?_skw=RTX+3090&hash=item34f97e92b8:g:iz4AAeSw0p1qqnS8) | diskclubs-eu | ok · was €1.345,17 on 2026-09-17 |
 | **€1.650,00** | €1.435,50 | 68,75/GB | Gebraucht | [GeForce RTX 3090 24GB Public Turbo Graphics Card Server Disassembly](https://www.ebay.de/itm/820133697293?_skw=RTX+3090&hash=itembef3c7170d:g:hpoAAeSwmuxqqnX8) | terratechnologies | ok · was €1.345,17 on 2026-09-17 |
 | **€1.669,65** | €1.452,60 | 69,57/GB | Gebraucht | [MSI GeForce RTX 3090 Gaming X Trio 24G 24GB GDDR6X Grafikkarte GPU Gebraucht](https://www.ebay.de/itm/287592180406?_skw=RTX+3090&hash=item42f5d46ab6:g:UzwAAeSw3Txqq7Dx) | tk0_19 | ok · was €1.561,08 on 2026-09-26 |
-| **€1.685,00** | €1.465,95 | 70,21/GB | Gebraucht | [RTX 3090 24GB VRAM GDDR6X Grafikkarte 4K ASUS, not Used Much](https://www.ebay.de/itm/206617258593?_skw=RTX+3090&hash=item301b592a61:g:KRQAAeSwJ9Jqyo5h) | ror462 | ok · was €2.000,00 on 2026-10-11 |
 | **€1.695,83** | €1.475,37 | 70,66/GB | Gebraucht | [ASUS NVIDIA GeForce RTX 3090 24GB Turbo Graphics Card Server Disassembly GPU](https://www.ebay.de/itm/389810105369?_skw=RTX+3090&hash=item5ac27e2c19:g:f-kAAeSw-cBpx3Ye) | long2207 | ok · was €1.541,66 on 2026-08-23 |
-| **€1.699,00** | €1.478,13 | 70,79/GB | Gebraucht | [GALAXY NVIDIA AMPERE Accelarator GEFORCE RTX3090 24G turbo AI deep learning GPU](https://www.ebay.de/itm/286825238717?_skw=RTX+3090&hash=item42c81dd0bd:g:ttYAAeSw83ZoypOf) | ruixiu | ok · was €1.599,00 on 2026-08-23 |
 | **€1.699,00** | €1.478,13 | 70,79/GB | Gebraucht | [GALAXY NVIDIA AMPERE Accelarator GEFORCE RTX3090 24G turbo AI deep learning GPU](https://www.ebay.de/itm/128103049218?_skw=RTX+3090&hash=item1dd3896802:g:RCIAAeSwv7RqukDx) | newdisk | ok |
 | **€1.699,00** | €1.478,13 | 70,79/GB | Gebraucht | [GIGABYTE GeForce RTX 3090 24GB Turbo GPU Graphics Card Server Disassembly](https://www.ebay.de/itm/358644698712?_skw=RTX+3090&hash=item5380e3ce58:g:GWwAAeSwzP9px3PK) | duehu82 | ok · was €1.400,00 on 2026-08-23 |
 | **€1.699,00** | €1.478,13 | 70,79/GB | Gebraucht | [GeForce RTX 3090 GAMING X TRIO 24G](https://www.ebay.de/itm/900007643078?_skw=RTX+3090&hash=itemd18ca2c7c6:g:wgIAAeSwfppqzJq-) | ephystor | ok |
 | **€1.699,00** | €1.478,13 | 70,79/GB | Gebraucht | [MSI NVIDA GeForce  RTX 3090Ti GAMING X TRIO Graphics Card GPU 24G GDDR6X](https://www.ebay.de/itm/396321732316?_skw=RTX+3090&hash=item5c469db6dc:g:oN4AAOSwBNNkis0y) | yiermei | ok |
+| **€1.699,00** | €1.478,13 | 70,79/GB | Gebraucht | [GALAXY NVIDIA AMPERE Accelarator GEFORCE RTX3090 24G turbo AI deep learning GPU](https://www.ebay.de/itm/286825238717?_skw=RTX+3090&hash=item42c81dd0bd:g:ttYAAeSw83ZoypOf) | ruixiu | ok · was €1.599,00 on 2026-08-23 |
 | **€1.730,31** | €1.505,37 | 72,10/GB | Used | [Asus ROG STRIX RTX 3090 ti OC 24GB](https://www.ebay.de/itm/366737033622?_skw=RTX+3090&hash=item55633b0996:g:V5EAAeSwFR1q0Ys9) | dhdc-25 | ok · was €1.727,75 on 2026-10-16 |
 | **€1.799,00** | €1.565,13 | 74,96/GB | Gebraucht | [Gigabyte AORUS RTX 3090 Ti Xtreme Waterforce 24GB - Hervorragend](https://www.ebay.de/itm/820179312702?_skw=RTX+3090&hash=itembef67f203e:g:HKwAAeSwIF5quXmV) | resellelectronicsde | ok |
 | **€1.799,00** | €1.565,13 | 74,96/GB | Gebraucht | [GIGABYTE AORUS GeForce RTX 3090 XTREME 24GB GDDR6X Grafikkarte GPU NEUWERTIG](https://www.ebay.de/itm/314392881428?_skw=RTX+3090&hash=item493346a914:g:I4kAAOSwSWpj6VDB) | john_wh17 | ok |
 | **€1.800,00** | €1.566,00 | 75,00/GB | Gebraucht | [EVGA GeForce RTX 3090 FTW3 ULTRA 24GB GDDR6X Grafikkarte](https://www.ebay.de/itm/186906445587?_skw=RTX+3090&hash=item2b847e0713:g:lw8AAOSwqkNnj7iR) | heyhal1 | ok |
+| **€1.800,00** | €1.566,00 | 75,00/GB | Gebraucht | [EVGA NVIDIA GeForce RTX 3090 Ti FTW3 Ultra Gaming 24GB GDDR6X](https://www.ebay.de/itm/920049401020?_skw=RTX+3090&hash=itemd63737bcbc:g:jJUAAeSwV65q0-c2) | fabstr-49 | ok |
 | **€1.850,00** | €1.609,50 | 77,08/GB | Gebraucht | [NVIDIA GEFORCE RTX 3090 Founders Edition GDDR6X 24GB neu Grafikkarte AI](https://www.ebay.de/itm/177473249778?_skw=RTX+3090&hash=item29523ae1f2:g:UYUAAeSwvPRo5i2O) | zepenl-0 | ok |
 | **€1.850,00** | €1.609,50 | 77,08/GB | Gebraucht | [NVIDIA GEFORCE RTX 3090 Founders Edition GDDR6X 24GB neu AI Grafikkarte](https://www.ebay.de/itm/187632778587?_skw=RTX+3090&hash=item2bafc8fd5b:g:lxEAAeSwTzto5i2O) | sinobright | ok |
 | **€1.861,40** | €1.619,42 | 77,56/GB | Gebraucht | [EVGA GeForce RTX 3090 24GB GDDR6X FTW3 ULTRA Grafikkarte](https://www.ebay.de/itm/237108890508?_skw=RTX+3090&hash=item3734ca8b8c:g:5bgAAOSwa9hoCk1W) | t-traderz | ok |
@@ -804,9 +814,9 @@ _Window €1.234–2.475 · median **€1.695,83** · cheapest **€1.384,25** �
 | **€1.999,00** | €1.739,13 | 83,29/GB | Gebraucht | [EVGA GeForce RTX 3090 FTW3 ULTRA 24GB GDDR6X Grafikkarte](https://www.ebay.de/itm/267807665823?_skw=RTX+3090&hash=item3e5a94ae9f:g:wtkAAeSwErFqYzPk) | letsgogo_9708 | ok · was €2.200,00 on 2026-10-08 |
 | **€2.200,00** | €1.914,00 | 91,67/GB | Gebraucht | [MSI GeForce RTX 3090 SUPRIM X 24GB GDDR6X Grafikkarte](https://www.ebay.de/itm/266658867502?_skw=RTX+3090&hash=item3e161b692e:g:BjUAAOSw8sBlwjmp) | maneumrke_0 | ok |
 
-## RTX 3090 Ti (9 items)
+## RTX 3090 Ti (10 items)
 
-_Window €1.439–2.840 · median **€1.900,00** · cheapest **€1.599,00** · 1 at/near buy-low · 30d €1.988,00→€1.900,00 (30d) · median €79,17/GB_
+_Window €1.439–2.840 · median **€1.850,00** · cheapest **€1.599,00** · 1 at/near buy-low · 30d €1.869,00→€1.850,00 (30d) · median €77,08/GB_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
@@ -814,6 +824,7 @@ _Window €1.439–2.840 · median **€1.900,00** · cheapest **€1.599,00** �
 | **€1.699,00** | €1.478,13 | 70,79/GB | Gebraucht | [MSI NVIDA GeForce  RTX 3090Ti GAMING X TRIO Graphics Card GPU 24G GDDR6X](https://www.ebay.de/itm/396321732316?_skw=RTX+3090+Ti&hash=item5c469db6dc:g:oN4AAOSwBNNkis0y) | yiermei | ok |
 | **€1.730,31** | €1.505,37 | 72,10/GB | Used | [Asus ROG STRIX RTX 3090 ti OC 24GB](https://www.ebay.de/itm/366737033622?_skw=RTX+3090+Ti&hash=item55633b0996:g:V5EAAeSwFR1q0Ys9) | dhdc-25 | ok · was €1.727,75 on 2026-10-16 |
 | **€1.799,00** | €1.565,13 | 74,96/GB | Gebraucht | [Gigabyte AORUS RTX 3090 Ti Xtreme Waterforce 24GB - Hervorragend](https://www.ebay.de/itm/820179312702?_skw=RTX+3090+Ti&hash=itembef67f203e:g:HKwAAeSwIF5quXmV) | resellelectronicsde | ok |
+| **€1.800,00** | €1.566,00 | 75,00/GB | Gebraucht | [EVGA NVIDIA GeForce RTX 3090 Ti FTW3 Ultra Gaming 24GB GDDR6X](https://www.ebay.de/itm/920049401020?_skw=RTX+3090+Ti&hash=itemd63737bcbc:g:jJUAAeSwV65q0-c2) | fabstr-49 | ok |
 | **€1.900,00** | €1.653,00 | 79,17/GB | Gebraucht | [MSI RTX 3090 TI Suprim 24 GB](https://www.ebay.de/itm/128128130056?_skw=RTX+3090+Ti&hash=item1dd5081c08:g:PeYAAeSwnSVqyyWZ) | waffensuchti287 | ok · was €2.000,00 on 2026-10-11 |
 | **€1.988,00** | €1.729,56 | 82,83/GB | Gebraucht | [MSI NVIDA GeForce  RTX 3090Ti GAMING X TRIO Graphics Card GPU 24G GDDR6X](https://www.ebay.de/itm/155699149778?_skw=RTX+3090+Ti&hash=item2440647bd2:g:svcAAOSwUVNkyim7) | ea_memory | ok |
 | **€1.990,29** | €1.731,55 | 82,93/GB | Gebraucht | [MSI NVIDA GeForce RTX 3090Ti GAMING X TRIO Graphics Card GPU 24G GDDR6X New](https://www.ebay.de/itm/167895217370?_skw=RTX+3090+Ti&hash=item271755b4da:g:~MYAAeSwJANpA~zx) | diskclubs-de | ok |
@@ -822,15 +833,15 @@ _Window €1.439–2.840 · median **€1.900,00** · cheapest **€1.599,00** �
 
 ## RTX 4060 Ti 16GB (1 items)
 
-_Window €438–885 · median **€599,00** · cheapest **€599,00** · 0 at/near buy-low · 30d €535,00→€599,00 (30d) · median €37,44/GB_
+_Window €438–885 · median **€734,00** · cheapest **€734,00** · 0 at/near buy-low · 30d €544,99→€734,00 (30d) · median €45,88/GB_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
-| **€599,00** | €521,13 | 37,44/GB | Gebraucht | [MSI VENTUS 3X NVIDIA GeForce RTX 4060 Ti 16GB GDDR6 DisplayPort HDMI](https://www.ebay.de/itm/800801126770?_skw=RTX+4060+Ti+16GB&hash=itemba73777972:g:FCcAAeSwPf1q0fsh) | janre_93 | ok |
+| **€734,00** | €638,58 | 45,88/GB | Gebraucht | [MSI GeForce RTX 4060 Ti GAMING X SLIM 16GB GDDR6 – Top Zustand – mit OVP](https://www.ebay.de/itm/227571976158?_skw=RTX+4060+Ti+16GB&hash=item34fc58c7de:g:g4YAAeSwRVxq1AL-) | rejsell | ok |
 
 ## RTX 4070 Ti Super (17 items)
 
-_Window €848–1.650 · median **€1.100,00** · cheapest **€900,00** · 2 at/near buy-low · 30d €1.084,50→€1.100,00 (30d) · median €68,75/GB_
+_Window €848–1.650 · median **€1.100,00** · cheapest **€900,00** · 2 at/near buy-low · 30d €1.106,10→€1.100,00 (30d) · median €68,75/GB_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
@@ -875,12 +886,13 @@ _Window €1.034–2.027 · median **€1.351,48** · cheapest **€1.100,00** �
 | **€1.832,60** | €1.594,36 | 114,54/GB | Gebraucht | [GIGABYTE GeForce RTX 4080 SUPER WINDFORCE V2 D6X 16GB Gaming Graphics Card](https://www.ebay.de/itm/187012028517?_skw=RTX+4080+Super&hash=item2b8ac91865:g:eVIAAOSw8PtnxWgG) | sinobright | ok |
 | **€1.900,00** | €1.653,00 | 118,75/GB | Gebraucht | [AORUS RTX 4080 SUPER XTREME ICE 16GB – Limited Edition #189/300 – OVP](https://www.ebay.de/itm/188876832468?_skw=RTX+4080+Super&hash=item2bf9efbed4:g:y-4AAeSwXSZqmG60) | xxpunisher1996 | ok |
 
-## RTX 5060 (4 items)
+## RTX 5060 (5 items)
 
-_Window €522–1.050 · median **€752,00** · cheapest **€700,00** · 0 at/near buy-low · 30d €685,00→€752,00 (30d) · median €47,00/GB_
+_Window €522–1.050 · median **€734,00** · cheapest **€650,00** · 0 at/near buy-low · 30d €670,00→€734,00 (30d) · median €45,88/GB_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
+| **€650,00** | €565,50 | 40,62/GB | Gebraucht | [ASUS GeForce RTX 5060 Ti Prime OC 16GB GDDR7 *Rechnung 01/2026*](https://www.ebay.de/itm/267816785334?_skw=RTX+5060+16GB&hash=item3e5b1fd5b6:g:mwgAAeSwLKpq1HvT) | deejay-supreme | ok |
 | **€700,00** | €609,00 | 43,75/GB | Gebraucht | [GIGABYTE GeForce RTX 5060 Ti WINDFORCE OC 16G Grafikkarte – 16 GB GDDR7, 128 Bit](https://www.ebay.de/itm/137648444558?_skw=RTX+5060+16GB&hash=item200c7c948e:g:tZMAAeSwie9qiNLl) | theego1844 | ok · was €670,00 on 2026-08-22 |
 | **€734,00** | €638,58 | 45,88/GB | Gebraucht | [Gainward GeForce RTX 5060 Ti Python III 16 GB GDDR7 – ohne OVP](https://www.ebay.de/itm/227569187780?_skw=RTX+5060+16GB&hash=item34fc2e3bc4:g:9NYAAeSwpYtq0VSg) | rejsell | ok |
 | **€770,00** | €669,90 | 48,12/GB | Gebraucht | [ASUS  GeForce RTX 5060 Ti Dual OC  16 GB GDDR7 PCIe 5.0 x16](https://www.ebay.de/itm/880021548422?_skw=RTX+5060+16GB&hash=itemcce55f2d86:g:u2QAAeSwBXtq0fvL) | johanneth-0 | ok |
@@ -888,7 +900,7 @@ _Window €522–1.050 · median **€752,00** · cheapest **€700,00** · 0 at
 
 ## RTX 5070 16GB (3 items)
 
-_Window €920–1.799 · median **€1.546,03** · cheapest **€1.500,00** · 0 at/near buy-low · 30d €1.149,99→€1.546,03 (30d) · median €96,63/GB_
+_Window €920–1.800 · median **€1.546,03** · cheapest **€1.500,00** · 0 at/near buy-low · 30d €1.149,99→€1.546,03 (30d) · median €96,63/GB_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
@@ -914,10 +926,10 @@ _Window €223–434 · median **€278,50** · cheapest **€240,68** · 10 at/
 | **€249,00** | €216,63 | 10,38/GB | Gebraucht | [Genuine original NVIDIA Tesla P40 24GB DDR5 Accelerator Card PCI-E FOR SERVERS](https://www.ebay.de/itm/358641961423?_skw=Tesla+P40&hash=item5380ba09cf:g:cQIAAeSw1MxqIucw) | xgjhf1866 | 🔥 at/near buy-low target · was €255,00 on 2026-08-23 |
 | **€259,99** | €226,19 | 10,83/GB | Gebraucht | [NVIDIA Tesla P40 24GB DDR5 GPU Accelerator Card Dual PCI-E 3.0 x16 FOR SERVERS](https://www.ebay.de/itm/168652554047?_skw=Tesla+P40&hash=item274479bf3f:g:LnUAAeSwF5BqlU2G) | muzoon_industry_2 | ok |
 | **€260,00** | €226,20 | 10,83/GB | Gebraucht | [NVIDIA Tesla P40 24GB GDDR5 PCI-E 3.0 x16 GPU Accelerator Card](https://www.ebay.de/itm/358644659156?_skw=Tesla+P40&hash=item5380e333d4:g:jkEAAOSwfXZmclD1) | duehu82 | ok |
-| **€262,00** | €227,94 | 10,92/GB | Gebraucht | [NVIDIA Tesla P40 24GB GDDR5 Graphics Card With Cooling Turbine Fan](https://www.ebay.de/itm/198138652630?_skw=Tesla+P40&hash=item2e21fbe7d6:g:fK8AAOSw7WJlp9kE) | pykj666 | ok · was €275,00 on 2026-09-08 |
 | **€262,00** | €227,94 | 10,92/GB | Gebraucht | [NVIDIA Tesla P40 24GB GDDR5 and U-shaped blower Fan Kit](https://www.ebay.de/itm/317926308750?_skw=Tesla+P40&hash=item4a05e27b8e:g:kv4AAOSw4Qplp9tI) | mens6053 | ok · was €275,00 on 2026-09-08 |
 | **€262,00** | €227,94 | 10,92/GB | Gebraucht | [NVIDIA Tesla P40 24GB GDDR5 Graphics Card With Cooling Turbine Fan](https://www.ebay.de/itm/317926308900?_skw=Tesla+P40&hash=item4a05e27c24:g:fK8AAOSw7WJlp9kE) | mens6053 | ok · was €275,00 on 2026-09-08 |
 | **€262,00** | €227,94 | 10,92/GB | Gebraucht | [NVIDIA Tesla P40 24GB GDDR5 and U-shaped blower Fan Kit](https://www.ebay.de/itm/198138651991?_skw=Tesla+P40&hash=item2e21fbe557:g:kv4AAOSw4Qplp9tI) | pykj666 | ok · was €275,00 on 2026-09-08 |
+| **€262,00** | €227,94 | 10,92/GB | Gebraucht | [NVIDIA Tesla P40 24GB GDDR5 Graphics Card With Cooling Turbine Fan](https://www.ebay.de/itm/198138652630?_skw=Tesla+P40&hash=item2e21fbe7d6:g:fK8AAOSw7WJlp9kE) | pykj666 | ok · was €275,00 on 2026-09-08 |
 | **€269,00** | €234,03 | 11,21/GB | Gebraucht | [NVIDIA Tesla P40 PG610 24GB DDR5 GPU Accelerator Video Card Dual PCI-E 3.0 x16](https://www.ebay.de/itm/405102081902?_skw=Tesla+P40&hash=item5e51f7376e:g:QxYAAOSwNjZmlMj5) | plcsuppliers | ok |
 | **€273,36** | €237,82 | 11,39/GB | Gebraucht | [FedEx Nvidia Tesla P40 24GB GPU GDDR5 PCIE Accelerator Card 900-2G610-0000-000](https://www.ebay.de/itm/820026381037?_skw=Tesla+P40&hash=itembeed6192ed:g:FwQAAeSwu7ZqhthP) | terratechnologies | ok |
 | **€273,36** | €237,82 | 11,39/GB | Gebraucht | [FedEx Nvidia Tesla P40 24GB GPU GDDR5 PCIE Accelerator Card 900-2G610-0000-000](https://www.ebay.de/itm/168028009006?_skw=Tesla+P40&hash=item271f3ff22e:g:Cb0AAOSwfdRmMJMw) | diskclubs-de | ok |
@@ -973,26 +985,27 @@ _Window €576–1.106 · median **€699,00** · cheapest **€580,08** · 5 at
 
 ## ThinkCentre M720q (50 items)
 
-_Window €176–341 · median **€228,45** · cheapest **€179,99** · 12 at/near buy-low · 30d €218,55→€228,45 (30d)_
+_Window €176–343 · median **€226,52** · cheapest **€178,38** · 13 at/near buy-low · 30d €219,95→€226,52 (30d)_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
+| **€178,38** | €155,19 | — | Gebraucht | [Lenovo ThinkCentre M720q Tiny Core i5-8400T 1,70 GHz 8 GB DDR4 Ohne Festplatte](https://www.ebay.de/itm/840021649591?_skw=ThinkCentre+M720q&hash=itemc3953128b7:g:7FIAAeSwi1pq1G82) | harddrivesonly | 🔥 at/near buy-low target |
 | **€179,99** | €156,59 | — | Gebraucht | [Lenovo ThinkCentre M720q Tiny Mini PC \| i5-8400T 8GB RAM 256GB SSD Win11](https://www.ebay.de/itm/820196699483?_skw=ThinkCentre+M720q&hash=itembef7886d5b:g:QLYAAeSw~yNqv-OX) | clm_tgg | 🔥 at/near buy-low target |
 | **€188,76** | €164,22 | — | Used | [lenovo thinkcentre m720q tiny Desktop i5 8th Gen 256GB SSD 8GB RAM Win 10 PRO](https://www.ebay.de/itm/255872209349?_skw=ThinkCentre+M720q&hash=item3b932c11c5:g:ahQAAOSwMFdjlMtL) | mr_r0b0t | 🔥 at/near buy-low target · was €186,85 on 2026-09-08 |
 | **€189,05** | €164,47 | — | Gebraucht | [Mini PC Lenovo ThinkCentre M720q Tiny i5-9400T @ 1,8Ghz 8 GB oh. HDD W-LAN # 5](https://www.ebay.de/itm/820047153761?_skw=ThinkCentre+M720q&hash=itembeee9e8a61:g:y~EAAOSwi3RoQdQU) | computerteile-shop | 🔥 at/near buy-low target · was €218,00 on 2026-08-26 |
 | **€189,71** | €165,05 | — | Used | [Lenovo ThinkCentre M720q Tiny PC - i5-9400T - 8GB RAM - 240GB SSD (ANGEBOTE OK)](https://www.ebay.de/itm/115875156217?_skw=ThinkCentre+M720q&hash=item1afab290f9:g:5fYAAOSwbJBn58fw) | techlabzltd | 🔥 at/near buy-low target · was €186,91 on 2026-08-23 |
 | **€189,99** | €165,29 | — | Gebraucht | [Mini PC Lenovo ThinkCentre M720q Tiny Intel i3-8100T 8GB 256GB SSD HDMI Seriell](https://www.ebay.de/itm/236997020719?_skw=ThinkCentre+M720q&hash=item372e1f8c2f:g:iYIAAeSwjJxqeYpa) | thinkstore24_de | 🔥 at/near buy-low target |
-| **€196,00** | €170,52 | — | Gebraucht | [Lenovo ThinkCentre M720q Win11 Pro I5-8400T 6x1.70GHz 8GB RAM 128GB](https://www.ebay.de/itm/900010129357?_skw=ThinkCentre+M720q&hash=itemd18cc8b7cd:g:8M0AAeSwniBqwLIh) | farnyman182 | 🔥 at/near buy-low target |
 | **€196,00** | €170,52 | — | Gebraucht | [Lenovo ThinkCentre M720q Mini PC Intel Core i5 8GB 256GB SSD Windows 10 Pro](https://www.ebay.de/itm/960057523135?_skw=ThinkCentre+M720q&hash=itemdf87e33bbf:g:VDQAAeSwSWNqw7Ji) | pe212495 | 🔥 at/near buy-low target |
+| **€196,00** | €170,52 | — | Gebraucht | [Lenovo ThinkCentre M720q Win11 Pro I5-8400T 6x1.70GHz 8GB RAM 128GB](https://www.ebay.de/itm/900021889317?_skw=ThinkCentre+M720q&hash=itemd18d7c2925:g:8M0AAeSwniBqwLIh) | farnyman182 | 🔥 at/near buy-low target |
 | **€198,50** | €172,69 | — | Gebraucht | [Lenovo ThinkCentre M720q TINY i5-8500T 8GB 256GB NVMe SSD W11 Pro](https://www.ebay.de/itm/357871617687?_skw=ThinkCentre+M720q&hash=item5352cf8697:g:ZroAAeSwPttpDfXZ) | save-it.shop | 🔥 at/near buy-low target |
 | **€199,00** | €173,13 | — | Gebraucht | [Lenovo ThinkCentre M720q Tiny i5-9400T 1,8Ghz 8GB W-LAN Bluethooth oh. SSD](https://www.ebay.de/itm/257646825901?_skw=ThinkCentre+M720q&hash=item3bfcf291ad:g:kN4AAeSwkR5pNyxD) | darya-international | 🔥 at/near buy-low target |
 | **€199,56** | €173,62 | — | Gebraucht | [Lenovo ThinkCentre M720q Tiny Core i7-8700T 2.40 GHz 16 GB DDR4 Ohne HDD Schwarz](https://www.ebay.de/itm/840024919173?_skw=ThinkCentre+M720q&hash=itemc395630c85:g:7S8AAeSw6LVq0frg) | harddrivesonly | 🔥 at/near buy-low target |
 | **€200,00** | €174,00 | — | Gebraucht | [Lenovo Thinkcentre M720q Tiny Intel Core i5-8500T 256GB SSD 512 GB HDD 8GB RAM](https://www.ebay.de/itm/336839454258?_skw=ThinkCentre+M720q&hash=item4e6d322e32:g:OpUAAeSwF-5qy2vI) | exbitliners | 🔥 at/near buy-low target |
 | **€200,00** | €174,00 | — | Gebraucht | [Lenovo ThinkCentre M720q Tiny 512GB SSD, Intel Core i3-8100T, 3,10GHz, 16GB RAM](https://www.ebay.de/itm/336818963240?_skw=ThinkCentre+M720q&hash=item4e6bf98328:g:o1gAAeSwtJFqu8l9) | hermantoothrot | 🔥 at/near buy-low target |
-| **€204,43** | €177,85 | — | Used | [Lenovo ThinkCentre M720q - i5-9400T - 16GB RAM - 256GB SSD - NVMe PCIe Riser](https://www.ebay.de/itm/960078361584?_skw=ThinkCentre+M720q&hash=itemdf892133f0:g:SvYAAeSwY~Nq0zLy) | t.burns01 | ok |
 | **€209,97** | €182,67 | — | Gebraucht | [Lenovo ThinkCentre M720q Intel i5-8400T 8GB RAM 256GB SSD Windows 11 Schwarz](https://www.ebay.de/itm/960025428634?_skw=ThinkCentre+M720q&hash=itemdf85f9829a:g:fn4AAeSwERVqxP9s) | projexbusinessgmbh | ok |
 | **€210,00** | €182,70 | — | Gebraucht | [Lenovo Tiny M720q i3 16 GB 2 x SSD´s Neu 256 GB  + 1 TB Wlan Win11 Pro](https://www.ebay.de/itm/137317811736?_skw=ThinkCentre+M720q&hash=item1ff8c78618:g:xlUAAeSwRHNqCai~) | wdj18 | ok |
 | **€210,00** | €182,70 | — | Gebraucht | [Lenovo ThinkCentre m720q Mini PC  i3 8100t  16GB Ram -wahlweise Win11 oder Linux](https://www.ebay.de/itm/327407810411?_skw=ThinkCentre+M720q&hash=item4c3b06b76b:g:HWcAAeSwK~Vq0jaJ) | overdrive77 | ok |
+| **€210,00** | €182,70 | — | Gebraucht | [Lenovo ThinkCentre M720q Intel Core i5-8400t/16Gb/500Gb SSD Tiny PC Computer](https://www.ebay.de/itm/168799202899?_skw=ThinkCentre+M720q&hash=item274d376e53:g:GfIAAeSwFY9q04pM) | logihanns | ok |
 | **€219,90** | €191,31 | — | Gebraucht | [Lenovo ThinkCentre M720q Tiny Mini PC \| i3-9100T \| 8GB \| 256GB SSD \| Win11 Pro](https://www.ebay.de/itm/188791882305?_skw=ThinkCentre+M720q&hash=item2bf4df8241:g:v54AAeSw3C1qfyG8) | go-discount | ok |
 | **€220,00** | €191,40 | — | Gebraucht | [Lenovo ThinkCentre M720Q Tiny PC, i5 8500T, 8 GB RAM, 256 GB SSD](https://www.ebay.de/itm/178413272376?_skw=ThinkCentre+M720q&hash=item298a427d38:g:XFwAAeSw4U1qgc~j) | c.sauer97 | ok · was €240,00 on 2026-08-24 |
 | **€222,17** | €193,29 | — | Used | [Lenovo Thinkcentre M720q Tiny PC Intel Core i5-8gen 16GB, 256GB SSD Windows11](https://www.ebay.de/itm/406671745595?_skw=ThinkCentre+M720q&hash=item5eaf86623b:g:dCYAAeSwyV5phMmP) | premiercomputersuk | ok · was €218,88 on 2026-08-23 |
@@ -1024,13 +1037,12 @@ _Window €176–341 · median **€228,45** · cheapest **€179,99** · 12 at/
 | **€259,00** | €225,33 | — | Gebraucht | [Lenovo ThinkCentre M720Q Intel Core i5-9400T 16GB RAM 256GB SSD TINY Windows 11](https://www.ebay.de/itm/800728710633?_skw=ThinkCentre+M720q&hash=itemba6f267de9:g:pTcAAeSwsutqumgk) | itsalepl | ok |
 | **€259,00** | €225,33 | — | Gebraucht | [Lenovo ThinkCentre M720q Tiny i5-8500T 8GB 256GB Win11 StoreDeal #20](https://www.ebay.de/itm/137422494667?_skw=ThinkCentre+M720q&hash=item1fff04dbcb:g:AJMAAeSwSX9qxWmZ) | lapstore-muenster | ok · was €239,00 on 2026-10-07 |
 | **€259,00** | €225,33 | — | Gebraucht | [Lenovo ThinkCentre M720q Tiny i5-8500T 8GB 256GB Win11 StoreDeal #26](https://www.ebay.de/itm/137422494770?_skw=ThinkCentre+M720q&hash=item1fff04dc32:g:Xv0AAeSwOoxqxWmf) | lapstore-muenster | ok · was €239,00 on 2026-10-07 |
-| **€259,00** | €225,33 | — | Gebraucht | [*3Jahre GEWL* Lenovo ThinkCentre M720q Tiny i3 9Gen 4GB 480GB SSD 2.5' W11H](https://www.ebay.de/itm/127471829155?_skw=ThinkCentre+M720q&hash=item1dade9c0a3:g:2~kAAeSwCIxpCyeb) | dealo24_de | ok |
 | **€261,45** | €227,46 | — | Gebraucht | [Lenovo ThinkCentre M720q TINY Core i5-9400T 16GB 256GB SSD WLAN+BT Win11 Pro](https://www.ebay.de/itm/167517774182?_skw=ThinkCentre+M720q&hash=item2700d66166:g:mqYAAeSwtppqEGcl) | hells_dells | ok · was €264,90 on 2026-09-19 |
 | **€264,90** | €230,46 | — | Gebraucht | [Lenovo ThinkCentre M720q TINY Core i5-8500T 16GB 256GB WLAN, Win 11 + HDMI Kab.](https://www.ebay.de/itm/156561731447?_skw=ThinkCentre+M720q&hash=item2473ce6f77:g:rwIAAOSw0gJnvycz) | hells_dells | ok |
 
 ## ThinkCentre M920q (50 items)
 
-_Window €223–427 · median **€280,50** · cheapest **€226,04** · 9 at/near buy-low · 30d €264,00→€280,50 (30d)_
+_Window €223–427 · median **€280,50** · cheapest **€226,04** · 9 at/near buy-low · 30d €263,00→€280,50 (30d)_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
@@ -1087,20 +1099,21 @@ _Window €223–427 · median **€280,50** · cheapest **€226,04** · 9 at/n
 
 ## X99 Mainboard (49 items)
 
-_Window €103–240 · median **€179,00** · cheapest **€119,00** · 0 at/near buy-low · 30d €104,50→€179,00 (30d)_
+_Window €107–241 · median **€177,31** · cheapest **€110,00** · 4 at/near buy-low · 30d €119,99→€177,31 (30d)_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
-| **€119,00** | €103,53 | — | Gebraucht | [ASUS X99-DELUXE Intel X99 ATX Mainboard mit i7-5820k CPU (6 Kerne, max. 3.6GHz)](https://www.ebay.de/itm/227537365613?_skw=X99+Mainboard&hash=item34fa48aa6d:g:-jkAAeSwq8Rqr~1M) | bertholdb21 | ok |
-| **€119,90** | €104,31 | — | Gebraucht | [ASRock X99 Extreme4 Mainboard LGA2011-3 ATX DDR4 Ultra M.2 mit Blende gebraucht](https://www.ebay.de/itm/287652262571?_skw=X99+Mainboard&hash=item42f96932ab:g:Iw0AAeSwrD9q0jyi) | sk-phone | ok |
-| **€119,99** | €104,39 | — | Gebraucht | [JGINYUE X99-8D4/2.5G SERVER DUAL SOCKET 2011-3 MAINBOARD + I/O-SHIELD](https://www.ebay.de/itm/278369565653?_skw=X99+Mainboard&hash=item40d01e7bd5:g:3zkAAeSwOZRqpfuH) | m-comp | ok |
+| **€110,00** | €95,70 | — | Gebraucht | [Asus X99-A  Intel X99 ATX Mainboard inkl. XEON E5 1660 V3 3GHz & Kühlkörper](https://www.ebay.de/itm/158377682054?_skw=X99+Mainboard&hash=item24e00ba486:g:d6gAAeSw2Alqvslw) | canspar-63 | 🔥 at/near buy-low target · was €150,00 on 2026-10-02 |
+| **€119,00** | €103,53 | — | Gebraucht | [ASUS X99-DELUXE Intel X99 ATX Mainboard mit i7-5820k CPU (6 Kerne, max. 3.6GHz)](https://www.ebay.de/itm/227537365613?_skw=X99+Mainboard&hash=item34fa48aa6d:g:-jkAAeSwq8Rqr~1M) | bertholdb21 | 🔥 at/near buy-low target |
+| **€119,90** | €104,31 | — | Gebraucht | [ASRock X99 Extreme4 Mainboard LGA2011-3 ATX DDR4 Ultra M.2 mit Blende gebraucht](https://www.ebay.de/itm/287652262571?_skw=X99+Mainboard&hash=item42f96932ab:g:Iw0AAeSwrD9q0jyi) | sk-phone | 🔥 at/near buy-low target |
+| **€119,99** | €104,39 | — | Gebraucht | [JGINYUE X99-8D4/2.5G SERVER DUAL SOCKET 2011-3 MAINBOARD + I/O-SHIELD](https://www.ebay.de/itm/278369565653?_skw=X99+Mainboard&hash=item40d01e7bd5:g:3zkAAeSwOZRqpfuH) | m-comp | 🔥 at/near buy-low target |
+| **€124,00** | €107,88 | — | Gebraucht | [MSI X99A SLI PLUS DDR4 ATX Mainboard LGA 2011-3 PCIe3.0x16 M.2 USB 3.1 Gen2](https://www.ebay.de/itm/317871764193?_skw=X99+Mainboard&hash=item4a02a232e1:g:cYgAAeSwDoBpjdjK) | avrora_1984 | ok · was €133,00 on 2026-09-25 |
 | **€124,40** | €108,23 | — | Gebraucht | [MSI X99A SLI PLUS Mainboard Motherboard - Sockel 2011-3 - MS-7885 -](https://www.ebay.de/itm/800763281795?_skw=X99+Mainboard&hash=itemba71360183:g:txEAAeSwyIdqxKr7) | it_remarketing | ok |
-| **€129,00** | €112,23 | — | Gebraucht | [ASRock X99 Extreme4 Mainboard LGA 2011-3 ATX DDR4 Ultra M.2](https://www.ebay.de/itm/820227778299?_skw=X99+Mainboard&hash=itembef962a6fb:g:ZKIAAeSwAJNqy5x7) | schiffi-privat | ok |
 | **€140,00** | €121,80 | — | Gebraucht | [ASUS X99-A II ATX Mainboard (90MB0Q80-M0EAY0)](https://www.ebay.de/itm/860022723660?_skw=X99+Mainboard&hash=itemc83d59544c:g:eJsAAeSw7Ppqx3RV) | veromayo-0 | ok |
-| **€140,00** | €121,80 | — | Gebraucht | [Asus X99-A  Intel X99 ATX Mainboard inkl. XEON E5 1660 V3 3GHz & Kühlkörper](https://www.ebay.de/itm/158377682054?_skw=X99+Mainboard&hash=item24e00ba486:g:d6gAAeSw2Alqvslw) | canspar-63 | ok · was €150,00 on 2026-10-02 |
 | **€146,52** | €127,47 | — | Gebraucht | [ASROCK X99 Extreme3: LGA2011-3 X99 ATX DDR4 unterstützt ECC/REG RAM](https://www.ebay.de/itm/820125790231?_skw=X99+Mainboard&hash=itembef34e7017:g:BTgAAeSwT~dqp5qy) | clnplus | ok · was €144,18 on 2026-09-24 |
 | **€149,00** | €129,63 | — | Gebraucht | [GIGABYTE GA-X99-UD3 Mainboard Motherboard ATX, X99, LGA2011-3, LAN, USB](https://www.ebay.de/itm/267663711004?_skw=X99+Mainboard&hash=item3e52001b1c:g:4KEAAeSw77xp~dfZ) | workstation4u | ok · was €169,00 on 2026-09-26 |
 | **€149,00** | €129,63 | — | Gebraucht | [Gigabyte X99-UD3 Mainboard LGA 2011-3, optional mit i7-6800K und Kühler, TOP](https://www.ebay.de/itm/136299258726?_skw=X99+Mainboard&hash=item1fbc11a366:g:IMgAAeSwbrdomMJs) | com_stor_e | ok |
+| **€149,00** | €129,63 | — | Gebraucht | [MSI X99A Gaming 7  MS-7885  ATX Mainboard Sockel LGA 2011 + CPU i7-5930K](https://www.ebay.de/itm/147639848649?_skw=X99+Mainboard&hash=item2260054ec9:g:TvAAAeSw3DBq03wi) | saturn112200 | ok |
 | **€149,90** | €130,41 | — | Gebraucht | [ASUS X99 Deluxe • LGA 2011-3 • USB 3.2 • M.2 NVMe](https://www.ebay.de/itm/960052658364?_skw=X99+Mainboard&hash=itemdf879900bc:g:NX0AAeSwgrhqvnsJ) | hardware_hanspeter | ok |
 | **€149,95** | €130,46 | — | Gebraucht | [MSI X99A RAIDER Motherboard Intel X99 LGA 2011-3 DDR4 ATX USB 3.1 M.2](https://www.ebay.de/itm/178298476813?_skw=X99+Mainboard&hash=item29836ad90d:g:jl4AAeSwvU5qUCOb) | hardwareliquidators | ok · was €129,95 on 2026-09-19 |
 | **€150,00** | €130,50 | — | Gebraucht | [ASUS X99-M WS Rev.1.01 Intel X99 Mainboard Micro ATX Sockel 2011-3  #302756](https://www.ebay.de/itm/128026069576?_skw=X99+Mainboard&hash=item1dcef2ca48:g:M1oAAeSwYspqgwum) | computer-store-berlin | ok |
@@ -1115,16 +1128,15 @@ _Window €103–240 · median **€179,00** · cheapest **€119,00** · 0 at/n
 | **€174,99** | €152,24 | — | Gebraucht | [ASROCK X99 Extreme4 Intel X99 Mainboard ATX Sockel 2011-3 DDR4](https://www.ebay.de/itm/358561301266?_skw=X99+Mainboard&hash=item537beb4312:g:QO8AAeSw7kpqCBUj) | shopdash24_7 | ok |
 | **€175,00** | €152,25 | — | Gebraucht | [Gigabyte GA-X99-UD4 Intel X99 Mainboard ATX Sockel 2011-3  + Verpackung](https://www.ebay.de/itm/357880044129?_skw=X99+Mainboard&hash=item5353501a61:g:VtMAAeSwLdVpEKlK) | flojg-33 | ok |
 | **€177,31** | €154,26 | — | Gebraucht | [X99 Dual CPU Motherboard LGA 2011-3 Socket Dual NVME M.2 Slot 8*DDR4 RAM Memory](https://www.ebay.de/itm/176408499606?_skw=X99+Mainboard&hash=item2912c41596:g:mDUAAOSwiZ9mXuGQ) | zepenl-0 | ok |
-| **€179,00** | €155,73 | — | Gebraucht | [MSI X99A SLI PLUS DDR4 ATX Mainboard LGA 2011-3 PCIe3.0x16 M.2 USB 3.1 Gen2](https://www.ebay.de/itm/317871764193?_skw=X99+Mainboard&hash=item4a02a232e1:g:cYgAAeSwDoBpjdjK) | avrora_1984 | ok · was €133,00 on 2026-09-25 |
 | **€179,00** | €155,73 | — | Gebraucht | [MSI X99A SLI PLUS + Intel Core i7-6850K 3,60GHz CPU Mainboard Bundle](https://www.ebay.de/itm/327391339104?_skw=X99+Mainboard&hash=item4c3a0b6260:g:r~4AAeSw7PpqxM2F) | msaack | ok |
 | **€180,00** | €156,60 | — | Gebraucht | [Mainboard ASUS X99-A](https://www.ebay.de/itm/315193637995?_skw=X99+Mainboard&hash=item4963013c6b:g:-KIAAOSwL5pl4iQz) | desomme97 | ok |
 | **€180,00** | €156,60 | — | Gebraucht | [ASUS X99-A/USB 3.1 + Intel i7-5820K + 16GB DDR4](https://www.ebay.de/itm/800760803084?_skw=X99+Mainboard&hash=itemba71102f0c:g:RFcAAeSwr~Rqw9gJ) | pc_fangirl1928 | ok |
 | **€184,44** | €160,46 | — | Gebraucht | [Dell Alienware Area 51 R2 LGA 2011-3 DDR4 ATX Desktop Motherboard XJKKD](https://www.ebay.de/itm/366696292820?_skw=X99+Mainboard&hash=item5560cd61d4:g:PIoAAeSwM0NqqDn0) | trreusegroup | ok |
 | **€185,63** | €161,50 | — | Gebraucht | [ASUS RAMPAGE V EXTREME: LGA2011-3 X99 WI-FI E-ATX DDR4 unterstützt ECC/REG RAM](https://www.ebay.de/itm/358685909504?_skw=X99+Mainboard&hash=item538358a200:g:2SAAAeSww81qLLR9) | clnplus | ok |
-| **€189,00** | €164,43 | — | Gebraucht | [ASUS X99 Deluxe Intel X99 ATX Mainboard Sockel LGA 2011-3 (#23745)](https://www.ebay.de/itm/166910253731?_skw=X99+Mainboard&hash=item26dca05aa3:g:j8UAAOSwBX9mtqQD) | hardware_galaxy | ok |
+| **€189,00** | €164,43 | — | Gebraucht | [ASUS X99-A Intel X99 ATX Mainboard Sockel LGA 2011-3 (#10689)](https://www.ebay.de/itm/166365243774?_skw=X99+Mainboard&hash=item26bc24297e:g:TfQAAOSw3C9l-sor) | hardware_galaxy | ok · was €135,79 on 2026-09-20 |
 | **€189,00** | €164,43 | — | Gebraucht | [MSI X99A XPower Gaming Titanium Intel X99 ATX Sockel 2011-3 *mit Makel* (#34881)](https://www.ebay.de/itm/168208093314?_skw=X99+Mainboard&hash=item2729fbd082:g:zyUAAeSwXghqRdfS) | hardware_galaxy | ok |
 | **€189,00** | €164,43 | — | Gebraucht | [MSI X99S SLI Plus MS-7885 Ver:1.1 Intel X99 ATX Mainboard Sockel 2066 (#5387)](https://www.ebay.de/itm/168208112716?_skw=X99+Mainboard&hash=item2729fc1c4c:g:0mYAAeSw2yNpqcFX) | hardware_galaxy | ok |
-| **€189,00** | €164,43 | — | Gebraucht | [ASUS X99-A Intel X99 ATX Mainboard Sockel LGA 2011-3 (#10689)](https://www.ebay.de/itm/166365243774?_skw=X99+Mainboard&hash=item26bc24297e:g:TfQAAOSw3C9l-sor) | hardware_galaxy | ok · was €135,79 on 2026-09-20 |
+| **€189,00** | €164,43 | — | Gebraucht | [ASUS X99 Deluxe Intel X99 ATX Mainboard Sockel LGA 2011-3 (#23745)](https://www.ebay.de/itm/166910253731?_skw=X99+Mainboard&hash=item26dca05aa3:g:j8UAAOSwBX9mtqQD) | hardware_galaxy | ok |
 | **€189,00** | €164,43 | — | Gebraucht | [Asus X99-A/USB 3.1 Intel X99 ATX Mainboard Sockel LGA 2011-3 (#13151)](https://www.ebay.de/itm/168604767523?_skw=X99+Mainboard&hash=item2741a09523:g:thEAAeSwbspqerjQ) | hardware_galaxy | ok |
 | **€189,00** | €164,43 | — | Gebraucht | [ASRock X99E-ITX/ac Mini-ITX Top Zustand](https://www.ebay.de/itm/117347255092?_skw=X99+Mainboard&hash=item1b52710334:g:3cAAAeSwQGhqdyUQ) | derdelidder | ok |
 | **€189,00** | €164,43 | — | Gebraucht | [MSI X99A SLI PLUS DDR4 ATX Mainboard LGA 2011-3 PCIe3.0x16 M.2 USB 3.1 Gen2](https://www.ebay.de/itm/137032738601?_skw=X99+Mainboard&hash=item1fe7c9a729:g:KUsAAeSwP8Zpjdge) | violla73irina | ok · was €169,00 on 2026-09-26 |
@@ -1138,16 +1150,15 @@ _Window €103–240 · median **€179,00** · cheapest **€119,00** · 0 at/n
 | **€199,00** | €173,13 | — | Gebraucht | [Supermicro X10DRI-T4+ dual X99V3 V4 Server Motherboard C612 four port 10 Gigabit](https://www.ebay.de/itm/365654063774?_skw=X99+Mainboard&hash=item5522ae3a9e:g:XzcAAOSwZSNkWLY~) | quark32 | ok |
 | **€199,00** | €173,13 | — | Gebraucht | [ASRock Fatal1ty X99M Killer/3.1 Motherboard M-ATX Intel X99 LGA2011-3 CORE XEON](https://www.ebay.de/itm/116557772776?_skw=X99+Mainboard&hash=item1b236277e8:g:eNgAAOSwnHBn-i7S) | newdisk | ok |
 | **€199,00** | €173,13 | — | Gebraucht | [ASRock Fatal1ty X99M Killer/3.1 Motherboard M-ATX Intel X99 LGA2011-3 CORE XEON](https://www.ebay.de/itm/176578997600?_skw=X99+Mainboard&hash=item291cedad60:g:5yUAAOSw4l5m5V-8) | zepenl-0 | ok |
+| **€199,90** | €173,91 | — | Gebraucht | [ASRock X99 Taichi • LGA 2011-3 • USB 3.2 • M.2 NVMe #9757](https://www.ebay.de/itm/960052658313?_skw=X99+Mainboard&hash=itemdf87990089:g:cyoAAeSwcZpqvnkq) | hardware_hanspeter | ok |
 | **€200,00** | €174,00 | — | Gebraucht | [5x lot ASUS Z10PA-U8 Mainboard X99 C612 \| LGA 2011-3 DDR4 Posten - 19% MwST.](https://www.ebay.de/itm/398237710329?_skw=X99+Mainboard&hash=item5cb8d137f9:g:Z4UAAeSwlONpzQG1) | hardwareparts24 | ok |
-| **€205,80** | €179,05 | — | Gebraucht | [GIGABYTE GA-X99-UD3 ATX Mainboard Gebraucht, Funktioniert](https://www.ebay.de/itm/406952847976?_skw=X99+Mainboard&hash=item5ec047aa68:g:EOoAAeSwcdBpNnNg) | supportive-service | ok |
 
-## Xeon E5-2690v4 (9 items)
+## Xeon E5-2690v4 (8 items)
 
-_Window €38–75 · median **€50,00** · cheapest **€41,74** · 2 at/near buy-low · 30d €47,59→€50,00 (30d)_
+_Window €38–75 · median **€50,09** · cheapest **€41,74** · 1 at/near buy-low · 30d €47,59→€50,09 (30d)_
 
 | Price | Net (−13 %) | €/GB | Condition | Title | Seller | Note |
 |---|---|---|---|---|---|---|
-| **€41,74** | €36,31 | — | Gebraucht | [Intel Xeon 14-Core E5-2690v4 - (14 x 2,60 GHz)](https://www.ebay.de/itm/267068574899?_skw=Xeon+E5-2690v4&hash=item3e2e870cb3:g:jMMAAeSw2jVomw0x) | buerorechner24 | 🔥 at/near buy-low target |
 | **€41,74** | €36,31 | — | Gebraucht | [Intel Xeon 14-Core E5-2690v4 - (14 x 2,60 GHz)](https://www.ebay.de/itm/266890150382?_skw=Xeon+E5-2690v4&hash=item3e23e481ee:g:oSsAAeSwAnpomwvX) | buerorechner24 | 🔥 at/near buy-low target |
 | **€47,59** | €41,40 | — | Gebraucht | [Intel Xeon E5-2690 V4 2,6GHz CPU 14 Cores 28-Threads 35MB SR2N2 official version](https://www.ebay.de/itm/116215626181?_skw=Xeon+E5-2690v4&hash=item1b0efdb9c5:g:Z9AAAOSwZbhmaW3R) | newdisk | ok |
 | **€47,59** | €41,40 | — | Gebraucht | [Intel Xeon E5-2690 V4 2,6GHz CPU 14 Cores 28-Threads 35MB SR2N2 official version](https://www.ebay.de/itm/286648118309?_skw=Xeon+E5-2690v4&hash=item42bd8f2c25:g:n84AAOSwBQtkdWG3) | ruixiu | ok |
