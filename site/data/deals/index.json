@@ -2,7 +2,7 @@
   {
     "query": "AMD Ryzen AI Max 395 (Strix Halo)",
     "file": "AMD-Ryzen-AI-Max-395-Strix-Halo.csv",
-    "rows": 2,
+    "rows": 3,
     "capacity_gb": null
   },
   {
@@ -14,7 +14,7 @@
   {
     "query": "DDR4 RDIMM 64GB",
     "file": "DDR4-RDIMM-64GB.csv",
-    "rows": 44,
+    "rows": 43,
     "capacity_gb": 64
   },
   {
@@ -44,7 +44,7 @@
   {
     "query": "EliteDesk 800 G5 Mini",
     "file": "EliteDesk-800-G5-Mini.csv",
-    "rows": 14,
+    "rows": 16,
     "capacity_gb": null
   },
   {
@@ -62,31 +62,31 @@
   {
     "query": "HP Z8 G4 Workstation",
     "file": "HP-Z8-G4-Workstation.csv",
-    "rows": 16,
+    "rows": 28,
     "capacity_gb": null
   },
   {
     "query": "Lenovo ThinkStation P920",
     "file": "Lenovo-ThinkStation-P920.csv",
-    "rows": 9,
+    "rows": 19,
     "capacity_gb": null
   },
   {
     "query": "Mac Studio Ultra",
     "file": "Mac-Studio-Ultra.csv",
-    "rows": 4,
+    "rows": 3,
     "capacity_gb": null
   },
   {
     "query": "NVMe SSD 2TB",
     "file": "NVMe-SSD-2TB.csv",
-    "rows": 50,
+    "rows": 49,
     "capacity_gb": null
   },
   {
     "query": "Nvidia Quadro RTX",
     "file": "Nvidia-Quadro-RTX.csv",
-    "rows": 21,
+    "rows": 19,
     "capacity_gb": null
   },
   {
@@ -98,19 +98,19 @@
   {
     "query": "RTX 3090",
     "file": "RTX-3090.csv",
-    "rows": 43,
+    "rows": 45,
     "capacity_gb": 24
   },
   {
     "query": "RTX 3090 Ti",
     "file": "RTX-3090-Ti.csv",
-    "rows": 8,
+    "rows": 7,
     "capacity_gb": 24
   },
   {
     "query": "RTX 4060 Ti 16GB",
     "file": "RTX-4060-Ti-16GB.csv",
-    "rows": 3,
+    "rows": 4,
     "capacity_gb": 16
   },
   {
@@ -134,13 +134,13 @@
   {
     "query": "RTX 5070 16GB",
     "file": "RTX-5070-16GB.csv",
-    "rows": 7,
+    "rows": 4,
     "capacity_gb": 16
   },
   {
     "query": "Tesla P40",
     "file": "Tesla-P40.csv",
-    "rows": 45,
+    "rows": 37,
     "capacity_gb": 24
   },
   {
