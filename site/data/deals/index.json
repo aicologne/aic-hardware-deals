@@ -14,7 +14,7 @@
   {
     "query": "DDR4 RDIMM 64GB",
     "file": "DDR4-RDIMM-64GB.csv",
-    "rows": 43,
+    "rows": 41,
     "capacity_gb": 64
   },
   {
@@ -26,19 +26,19 @@
   {
     "query": "DDR5 RDIMM",
     "file": "DDR5-RDIMM.csv",
-    "rows": 1,
+    "rows": 2,
     "capacity_gb": 32
   },
   {
     "query": "Dell Precision 7920 Tower",
     "file": "Dell-Precision-7920-Tower.csv",
-    "rows": 50,
+    "rows": 49,
     "capacity_gb": null
   },
   {
     "query": "EliteDesk 800 G4 Mini",
     "file": "EliteDesk-800-G4-Mini.csv",
-    "rows": 31,
+    "rows": 32,
     "capacity_gb": null
   },
   {
@@ -62,13 +62,13 @@
   {
     "query": "HP Z8 G4 Workstation",
     "file": "HP-Z8-G4-Workstation.csv",
-    "rows": 28,
+    "rows": 27,
     "capacity_gb": null
   },
   {
     "query": "Lenovo ThinkStation P920",
     "file": "Lenovo-ThinkStation-P920.csv",
-    "rows": 19,
+    "rows": 20,
     "capacity_gb": null
   },
   {
@@ -86,7 +86,7 @@
   {
     "query": "Nvidia Quadro RTX",
     "file": "Nvidia-Quadro-RTX.csv",
-    "rows": 19,
+    "rows": 22,
     "capacity_gb": null
   },
   {
@@ -98,7 +98,7 @@
   {
     "query": "RTX 3090",
     "file": "RTX-3090.csv",
-    "rows": 45,
+    "rows": 44,
     "capacity_gb": 24
   },
   {
@@ -110,7 +110,7 @@
   {
     "query": "RTX 4060 Ti 16GB",
     "file": "RTX-4060-Ti-16GB.csv",
-    "rows": 4,
+    "rows": 2,
     "capacity_gb": 16
   },
   {
@@ -122,13 +122,13 @@
   {
     "query": "RTX 4080 Super",
     "file": "RTX-4080-Super.csv",
-    "rows": 14,
+    "rows": 13,
     "capacity_gb": 16
   },
   {
     "query": "RTX 5060",
     "file": "RTX-5060.csv",
-    "rows": 4,
+    "rows": 6,
     "capacity_gb": 16
   },
   {
