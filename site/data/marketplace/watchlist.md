@@ -1,6 +1,6 @@
 # Facebook Marketplace — watchlist
 
-_Generated 2026-10-29 11:18 UTC · links pasted from your own browsing · deep links only — no scraping._
+_Generated 2026-10-30 11:11 UTC · links pasted from your own browsing · deep links only — no scraping._
 
 ## Searches you're tracking
 
