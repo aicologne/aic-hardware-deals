@@ -8,7 +8,7 @@
   {
     "query": "DDR4 RDIMM 32GB",
     "file": "DDR4-RDIMM-32GB.csv",
-    "rows": 47,
+    "rows": 46,
     "capacity_gb": 32
   },
   {
@@ -20,7 +20,7 @@
   {
     "query": "DDR5 32GB",
     "file": "DDR5-32GB.csv",
-    "rows": 35,
+    "rows": 32,
     "capacity_gb": 32
   },
   {
@@ -62,13 +62,13 @@
   {
     "query": "HP Z8 G4 Workstation",
     "file": "HP-Z8-G4-Workstation.csv",
-    "rows": 9,
+    "rows": 6,
     "capacity_gb": null
   },
   {
     "query": "Lenovo ThinkStation P920",
     "file": "Lenovo-ThinkStation-P920.csv",
-    "rows": 18,
+    "rows": 14,
     "capacity_gb": null
   },
   {
@@ -86,7 +86,7 @@
   {
     "query": "Nvidia Quadro RTX",
     "file": "Nvidia-Quadro-RTX.csv",
-    "rows": 20,
+    "rows": 22,
     "capacity_gb": null
   },
   {
@@ -98,13 +98,13 @@
   {
     "query": "RTX 3090",
     "file": "RTX-3090.csv",
-    "rows": 50,
+    "rows": 49,
     "capacity_gb": 24
   },
   {
     "query": "RTX 3090 Ti",
     "file": "RTX-3090-Ti.csv",
-    "rows": 8,
+    "rows": 6,
     "capacity_gb": 24
   },
   {
@@ -116,7 +116,7 @@
   {
     "query": "RTX 4070 Ti Super",
     "file": "RTX-4070-Ti-Super.csv",
-    "rows": 13,
+    "rows": 14,
     "capacity_gb": 16
   },
   {
@@ -128,20 +128,14 @@
   {
     "query": "RTX 5060",
     "file": "RTX-5060.csv",
-    "rows": 5,
+    "rows": 3,
     "capacity_gb": 16
   },
   {
     "query": "RTX 5070 16GB",
     "file": "RTX-5070-16GB.csv",
-    "rows": 8,
+    "rows": 6,
     "capacity_gb": 16
-  },
-  {
-    "query": "Radeon PRO W7800",
-    "file": "Radeon-PRO-W7800.csv",
-    "rows": 1,
-    "capacity_gb": 32
   },
   {
     "query": "Tesla P40",
@@ -170,7 +164,7 @@
   {
     "query": "X99 Mainboard",
     "file": "X99-Mainboard.csv",
-    "rows": 49,
+    "rows": 48,
     "capacity_gb": null
   },
   {
