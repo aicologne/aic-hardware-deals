@@ -8,7 +8,7 @@
   {
     "query": "DDR4 RDIMM 32GB",
     "file": "DDR4-RDIMM-32GB.csv",
-    "rows": 44,
+    "rows": 43,
     "capacity_gb": 32
   },
   {
@@ -20,7 +20,7 @@
   {
     "query": "DDR5 32GB",
     "file": "DDR5-32GB.csv",
-    "rows": 32,
+    "rows": 30,
     "capacity_gb": 32
   },
   {
@@ -44,7 +44,7 @@
   {
     "query": "EliteDesk 800 G5 Mini",
     "file": "EliteDesk-800-G5-Mini.csv",
-    "rows": 12,
+    "rows": 13,
     "capacity_gb": null
   },
   {
@@ -68,25 +68,25 @@
   {
     "query": "Lenovo ThinkStation P920",
     "file": "Lenovo-ThinkStation-P920.csv",
-    "rows": 12,
+    "rows": 8,
     "capacity_gb": null
   },
   {
     "query": "Mac Studio Ultra",
     "file": "Mac-Studio-Ultra.csv",
-    "rows": 5,
+    "rows": 6,
     "capacity_gb": null
   },
   {
     "query": "NVMe SSD 2TB",
     "file": "NVMe-SSD-2TB.csv",
-    "rows": 48,
+    "rows": 45,
     "capacity_gb": null
   },
   {
     "query": "Nvidia Quadro RTX",
     "file": "Nvidia-Quadro-RTX.csv",
-    "rows": 19,
+    "rows": 18,
     "capacity_gb": null
   },
   {
@@ -116,25 +116,25 @@
   {
     "query": "RTX 4070 Ti Super",
     "file": "RTX-4070-Ti-Super.csv",
-    "rows": 7,
+    "rows": 8,
     "capacity_gb": 16
   },
   {
     "query": "RTX 4080 Super",
     "file": "RTX-4080-Super.csv",
-    "rows": 9,
+    "rows": 8,
     "capacity_gb": 16
   },
   {
     "query": "RTX 5060",
     "file": "RTX-5060.csv",
-    "rows": 4,
+    "rows": 5,
     "capacity_gb": 16
   },
   {
     "query": "RTX 5070 16GB",
     "file": "RTX-5070-16GB.csv",
-    "rows": 10,
+    "rows": 9,
     "capacity_gb": 16
   },
   {
@@ -146,7 +146,7 @@
   {
     "query": "Tesla T4",
     "file": "Tesla-T4.csv",
-    "rows": 18,
+    "rows": 17,
     "capacity_gb": 16
   },
   {
@@ -170,7 +170,7 @@
   {
     "query": "Xeon E5-2690v4",
     "file": "Xeon-E5-2690v4.csv",
-    "rows": 7,
+    "rows": 8,
     "capacity_gb": null
   }
 ]
