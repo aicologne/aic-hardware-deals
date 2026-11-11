@@ -20,13 +20,13 @@
   {
     "query": "DDR5 32GB",
     "file": "DDR5-32GB.csv",
-    "rows": 31,
+    "rows": 29,
     "capacity_gb": 32
   },
   {
     "query": "DDR5 RDIMM",
     "file": "DDR5-RDIMM.csv",
-    "rows": 11,
+    "rows": 12,
     "capacity_gb": 32
   },
   {
@@ -38,7 +38,7 @@
   {
     "query": "EliteDesk 800 G4 Mini",
     "file": "EliteDesk-800-G4-Mini.csv",
-    "rows": 30,
+    "rows": 29,
     "capacity_gb": null
   },
   {
@@ -56,7 +56,7 @@
   {
     "query": "Gaming PC mit RTX 3090",
     "file": "Gaming-PC-mit-RTX-3090.csv",
-    "rows": 2,
+    "rows": 1,
     "capacity_gb": null
   },
   {
@@ -86,7 +86,7 @@
   {
     "query": "Nvidia Quadro RTX",
     "file": "Nvidia-Quadro-RTX.csv",
-    "rows": 17,
+    "rows": 18,
     "capacity_gb": null
   },
   {
@@ -122,19 +122,19 @@
   {
     "query": "RTX 4080 Super",
     "file": "RTX-4080-Super.csv",
-    "rows": 9,
+    "rows": 8,
     "capacity_gb": 16
   },
   {
     "query": "RTX 5060",
     "file": "RTX-5060.csv",
-    "rows": 4,
+    "rows": 3,
     "capacity_gb": 16
   },
   {
     "query": "RTX 5070 16GB",
     "file": "RTX-5070-16GB.csv",
-    "rows": 8,
+    "rows": 10,
     "capacity_gb": 16
   },
   {
@@ -152,7 +152,7 @@
   {
     "query": "Tesla T4",
     "file": "Tesla-T4.csv",
-    "rows": 23,
+    "rows": 24,
     "capacity_gb": 16
   },
   {
