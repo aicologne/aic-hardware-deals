@@ -2,25 +2,25 @@
   {
     "query": "AMD Ryzen AI Max 395 (Strix Halo)",
     "file": "AMD-Ryzen-AI-Max-395-Strix-Halo.csv",
-    "rows": 4,
+    "rows": 5,
     "capacity_gb": null
   },
   {
     "query": "DDR4 RDIMM 32GB",
     "file": "DDR4-RDIMM-32GB.csv",
-    "rows": 43,
+    "rows": 41,
     "capacity_gb": 32
   },
   {
     "query": "DDR4 RDIMM 64GB",
     "file": "DDR4-RDIMM-64GB.csv",
-    "rows": 37,
+    "rows": 35,
     "capacity_gb": 64
   },
   {
     "query": "DDR5 32GB",
     "file": "DDR5-32GB.csv",
-    "rows": 31,
+    "rows": 29,
     "capacity_gb": 32
   },
   {
@@ -56,25 +56,25 @@
   {
     "query": "Gaming PC mit RTX 3090",
     "file": "Gaming-PC-mit-RTX-3090.csv",
-    "rows": 1,
+    "rows": 2,
     "capacity_gb": null
   },
   {
     "query": "HP Z8 G4 Workstation",
     "file": "HP-Z8-G4-Workstation.csv",
-    "rows": 6,
+    "rows": 9,
     "capacity_gb": null
   },
   {
     "query": "Lenovo ThinkStation P920",
     "file": "Lenovo-ThinkStation-P920.csv",
-    "rows": 9,
+    "rows": 10,
     "capacity_gb": null
   },
   {
     "query": "Mac Studio Ultra",
     "file": "Mac-Studio-Ultra.csv",
-    "rows": 6,
+    "rows": 5,
     "capacity_gb": null
   },
   {
@@ -86,7 +86,7 @@
   {
     "query": "Nvidia Quadro RTX",
     "file": "Nvidia-Quadro-RTX.csv",
-    "rows": 17,
+    "rows": 18,
     "capacity_gb": null
   },
   {
@@ -116,25 +116,25 @@
   {
     "query": "RTX 4070 Ti Super",
     "file": "RTX-4070-Ti-Super.csv",
-    "rows": 8,
+    "rows": 9,
     "capacity_gb": 16
   },
   {
     "query": "RTX 4080 Super",
     "file": "RTX-4080-Super.csv",
-    "rows": 10,
+    "rows": 12,
     "capacity_gb": 16
   },
   {
     "query": "RTX 5060",
     "file": "RTX-5060.csv",
-    "rows": 4,
+    "rows": 2,
     "capacity_gb": 16
   },
   {
     "query": "RTX 5070 16GB",
     "file": "RTX-5070-16GB.csv",
-    "rows": 9,
+    "rows": 7,
     "capacity_gb": 16
   },
   {
@@ -152,7 +152,7 @@
   {
     "query": "Tesla T4",
     "file": "Tesla-T4.csv",
-    "rows": 22,
+    "rows": 24,
     "capacity_gb": 16
   },
   {
