@@ -2,25 +2,25 @@
   {
     "query": "AMD Ryzen AI Max 395 (Strix Halo)",
     "file": "AMD-Ryzen-AI-Max-395-Strix-Halo.csv",
-    "rows": 4,
+    "rows": 5,
     "capacity_gb": null
   },
   {
     "query": "DDR4 RDIMM 32GB",
     "file": "DDR4-RDIMM-32GB.csv",
-    "rows": 40,
+    "rows": 41,
     "capacity_gb": 32
   },
   {
     "query": "DDR4 RDIMM 64GB",
     "file": "DDR4-RDIMM-64GB.csv",
-    "rows": 38,
+    "rows": 50,
     "capacity_gb": 64
   },
   {
     "query": "DDR5 32GB",
     "file": "DDR5-32GB.csv",
-    "rows": 29,
+    "rows": 30,
     "capacity_gb": 32
   },
   {
@@ -44,13 +44,13 @@
   {
     "query": "EliteDesk 800 G5 Mini",
     "file": "EliteDesk-800-G5-Mini.csv",
-    "rows": 12,
+    "rows": 11,
     "capacity_gb": null
   },
   {
     "query": "Gaming PC mit RTX 3080",
     "file": "Gaming-PC-mit-RTX-3080.csv",
-    "rows": 50,
+    "rows": 49,
     "capacity_gb": null
   },
   {
@@ -62,7 +62,7 @@
   {
     "query": "HP Z8 G4 Workstation",
     "file": "HP-Z8-G4-Workstation.csv",
-    "rows": 8,
+    "rows": 27,
     "capacity_gb": null
   },
   {
@@ -80,7 +80,7 @@
   {
     "query": "NVMe SSD 2TB",
     "file": "NVMe-SSD-2TB.csv",
-    "rows": 50,
+    "rows": 49,
     "capacity_gb": null
   },
   {
@@ -104,7 +104,7 @@
   {
     "query": "RTX 3090 Ti",
     "file": "RTX-3090-Ti.csv",
-    "rows": 7,
+    "rows": 5,
     "capacity_gb": 24
   },
   {
@@ -122,7 +122,7 @@
   {
     "query": "RTX 4080 Super",
     "file": "RTX-4080-Super.csv",
-    "rows": 16,
+    "rows": 14,
     "capacity_gb": 16
   },
   {
@@ -134,7 +134,7 @@
   {
     "query": "RTX 5070 16GB",
     "file": "RTX-5070-16GB.csv",
-    "rows": 8,
+    "rows": 9,
     "capacity_gb": 16
   },
   {
@@ -152,7 +152,7 @@
   {
     "query": "Tesla T4",
     "file": "Tesla-T4.csv",
-    "rows": 20,
+    "rows": 19,
     "capacity_gb": 16
   },
   {
@@ -176,7 +176,7 @@
   {
     "query": "Xeon E5-2690v4",
     "file": "Xeon-E5-2690v4.csv",
-    "rows": 8,
+    "rows": 9,
     "capacity_gb": null
   }
 ]
