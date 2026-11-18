@@ -20,7 +20,7 @@
   {
     "query": "DDR5 32GB",
     "file": "DDR5-32GB.csv",
-    "rows": 30,
+    "rows": 26,
     "capacity_gb": 32
   },
   {
@@ -38,7 +38,7 @@
   {
     "query": "EliteDesk 800 G4 Mini",
     "file": "EliteDesk-800-G4-Mini.csv",
-    "rows": 31,
+    "rows": 30,
     "capacity_gb": null
   },
   {
@@ -62,7 +62,7 @@
   {
     "query": "HP Z8 G4 Workstation",
     "file": "HP-Z8-G4-Workstation.csv",
-    "rows": 27,
+    "rows": 26,
     "capacity_gb": null
   },
   {
@@ -80,7 +80,7 @@
   {
     "query": "NVMe SSD 2TB",
     "file": "NVMe-SSD-2TB.csv",
-    "rows": 49,
+    "rows": 50,
     "capacity_gb": null
   },
   {
@@ -104,7 +104,7 @@
   {
     "query": "RTX 3090 Ti",
     "file": "RTX-3090-Ti.csv",
-    "rows": 5,
+    "rows": 4,
     "capacity_gb": 24
   },
   {
@@ -122,13 +122,13 @@
   {
     "query": "RTX 4080 Super",
     "file": "RTX-4080-Super.csv",
-    "rows": 14,
+    "rows": 16,
     "capacity_gb": 16
   },
   {
     "query": "RTX 5060",
     "file": "RTX-5060.csv",
-    "rows": 2,
+    "rows": 3,
     "capacity_gb": 16
   },
   {
