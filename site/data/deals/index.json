@@ -8,7 +8,7 @@
   {
     "query": "DDR4 RDIMM 32GB",
     "file": "DDR4-RDIMM-32GB.csv",
-    "rows": 45,
+    "rows": 44,
     "capacity_gb": 32
   },
   {
@@ -20,13 +20,13 @@
   {
     "query": "DDR5 32GB",
     "file": "DDR5-32GB.csv",
-    "rows": 28,
+    "rows": 29,
     "capacity_gb": 32
   },
   {
     "query": "DDR5 RDIMM",
     "file": "DDR5-RDIMM.csv",
-    "rows": 13,
+    "rows": 14,
     "capacity_gb": 32
   },
   {
@@ -38,13 +38,13 @@
   {
     "query": "EliteDesk 800 G4 Mini",
     "file": "EliteDesk-800-G4-Mini.csv",
-    "rows": 28,
+    "rows": 25,
     "capacity_gb": null
   },
   {
     "query": "EliteDesk 800 G5 Mini",
     "file": "EliteDesk-800-G5-Mini.csv",
-    "rows": 12,
+    "rows": 11,
     "capacity_gb": null
   },
   {
@@ -62,7 +62,7 @@
   {
     "query": "HP Z8 G4 Workstation",
     "file": "HP-Z8-G4-Workstation.csv",
-    "rows": 27,
+    "rows": 25,
     "capacity_gb": null
   },
   {
@@ -74,7 +74,7 @@
   {
     "query": "Mac Studio Ultra",
     "file": "Mac-Studio-Ultra.csv",
-    "rows": 14,
+    "rows": 13,
     "capacity_gb": null
   },
   {
@@ -86,7 +86,7 @@
   {
     "query": "Nvidia Quadro RTX",
     "file": "Nvidia-Quadro-RTX.csv",
-    "rows": 16,
+    "rows": 15,
     "capacity_gb": null
   },
   {
@@ -104,31 +104,31 @@
   {
     "query": "RTX 3090 Ti",
     "file": "RTX-3090-Ti.csv",
-    "rows": 6,
+    "rows": 5,
     "capacity_gb": 24
   },
   {
     "query": "RTX 4060 Ti 16GB",
     "file": "RTX-4060-Ti-16GB.csv",
-    "rows": 8,
+    "rows": 10,
     "capacity_gb": 16
   },
   {
     "query": "RTX 4070 Ti Super",
     "file": "RTX-4070-Ti-Super.csv",
-    "rows": 8,
+    "rows": 9,
     "capacity_gb": 16
   },
   {
     "query": "RTX 4080 Super",
     "file": "RTX-4080-Super.csv",
-    "rows": 16,
+    "rows": 15,
     "capacity_gb": 16
   },
   {
     "query": "RTX 5060",
     "file": "RTX-5060.csv",
-    "rows": 7,
+    "rows": 4,
     "capacity_gb": 16
   },
   {
@@ -146,13 +146,13 @@
   {
     "query": "Tesla P40",
     "file": "Tesla-P40.csv",
-    "rows": 42,
+    "rows": 44,
     "capacity_gb": 24
   },
   {
     "query": "Tesla T4",
     "file": "Tesla-T4.csv",
-    "rows": 19,
+    "rows": 20,
     "capacity_gb": 16
   },
   {
