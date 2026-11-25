@@ -14,13 +14,13 @@
   {
     "query": "DDR4 RDIMM 64GB",
     "file": "DDR4-RDIMM-64GB.csv",
-    "rows": 50,
+    "rows": 48,
     "capacity_gb": 64
   },
   {
     "query": "DDR5 32GB",
     "file": "DDR5-32GB.csv",
-    "rows": 30,
+    "rows": 31,
     "capacity_gb": 32
   },
   {
@@ -62,7 +62,7 @@
   {
     "query": "HP Z8 G4 Workstation",
     "file": "HP-Z8-G4-Workstation.csv",
-    "rows": 8,
+    "rows": 5,
     "capacity_gb": null
   },
   {
@@ -110,31 +110,31 @@
   {
     "query": "RTX 4060 Ti 16GB",
     "file": "RTX-4060-Ti-16GB.csv",
-    "rows": 8,
+    "rows": 11,
     "capacity_gb": 16
   },
   {
     "query": "RTX 4070 Ti Super",
     "file": "RTX-4070-Ti-Super.csv",
-    "rows": 9,
+    "rows": 8,
     "capacity_gb": 16
   },
   {
     "query": "RTX 4080 Super",
     "file": "RTX-4080-Super.csv",
-    "rows": 17,
+    "rows": 19,
     "capacity_gb": 16
   },
   {
     "query": "RTX 5060",
     "file": "RTX-5060.csv",
-    "rows": 4,
+    "rows": 6,
     "capacity_gb": 16
   },
   {
     "query": "RTX 5070 16GB",
     "file": "RTX-5070-16GB.csv",
-    "rows": 8,
+    "rows": 7,
     "capacity_gb": 16
   },
   {
@@ -146,7 +146,7 @@
   {
     "query": "Tesla T4",
     "file": "Tesla-T4.csv",
-    "rows": 20,
+    "rows": 21,
     "capacity_gb": 16
   },
   {
