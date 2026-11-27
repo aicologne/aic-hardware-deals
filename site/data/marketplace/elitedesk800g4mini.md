@@ -1,6 +1,6 @@
 # Facebook Marketplace — EliteDesk 800 G4
 
-_Generated 2026-11-26 14:44 UTC · filters: query='EliteDesk 800 G4', radius 65 km, max 200 · deep links only — open each in a logged-in browser._
+_Generated 2026-11-27 14:42 UTC · filters: query='EliteDesk 800 G4', radius 65 km, max 200 · deep links only — open each in a logged-in browser._
 
 ## Germany (DE) — EUR
 
